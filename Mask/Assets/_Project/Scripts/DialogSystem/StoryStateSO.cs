@@ -15,7 +15,15 @@ public class StoryStateSO : ScriptableObject
 
     public List<StateVariable> stateVariables;
 
-    public Dictionary<string, int> pairs;
+    public Dictionary<string, int> pairs = new Dictionary<string, int>();
+
+    public void ResetState()
+    {
+        foreach(StateVariable variable in stateVariables)
+        {
+            SetValue(variable.name, variable.initialValue);
+        }
+    }
 
     public void SetValue(string name, int value)
     {
@@ -27,6 +35,8 @@ public class StoryStateSO : ScriptableObject
         {
             pairs.Add(name, value);
         }
+
+        Debug.Log("Setting " + name + " to " +  value);
     }
 
     public int GetValue(string name)

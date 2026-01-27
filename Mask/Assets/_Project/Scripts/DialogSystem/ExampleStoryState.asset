@@ -12,4 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b11d28d9d887b346b46aa46d1351056, type: 3}
   m_Name: ExampleStoryState
   m_EditorClassIdentifier: Assembly-CSharp::StoryStateSO
-  stateVariables: []
+  stateVariables:
+  - name: testvar1
+    initialValue: 0
+  - name: testvar2
+    initialValue: 0
+  - name: testvar3
+    initialValue: 0
