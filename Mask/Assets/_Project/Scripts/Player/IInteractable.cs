@@ -1,16 +1,28 @@
 using UnityEngine;
 
-public class IInteractable : MonoBehaviour
-{
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+public interface IInteractable {
+    /// <summary>
+    /// The verb to display on the HUD (e.g., "Grab", "Pickup", "Talk")
+    /// </summary>
+    string InteractionVerb { get; }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    /// <summary>
+    /// Called when the player interacts with this object
+    /// </summary>
+    void OnInteract(GameObject interactor);
+
+    /// <summary>
+    /// Optional: Called when the player starts looking at this interactable
+    /// </summary>
+    void OnLookEnter(GameObject looker) { }
+
+    /// <summary>
+    /// Optional: Called when the player stops looking at this interactable
+    /// </summary>
+    void OnLookExit(GameObject looker) { }
+
+    /// <summary>
+    /// Optional: Returns the transform of the interactable (useful for highlighting)
+    /// </summary>
+    Transform GetTransform() { return null; }
 }
