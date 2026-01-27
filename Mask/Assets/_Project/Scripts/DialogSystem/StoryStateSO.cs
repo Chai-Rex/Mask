@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 [System.Serializable]
 public struct StateVariable
@@ -15,4 +16,27 @@ public class StoryStateSO : ScriptableObject
     public List<StateVariable> stateVariables;
 
     public Dictionary<string, int> pairs;
+
+    public void SetValue(string name, int value)
+    {
+        if (pairs.ContainsKey(name))
+        {
+            pairs[name] = value;
+        }
+        else
+        {
+            pairs.Add(name, value);
+        }
+    }
+
+    public int GetValue(string name)
+    {
+        if(pairs.ContainsKey(name))
+        {
+            return pairs[name];
+        }
+
+        return 0;
+    }
 }
+
