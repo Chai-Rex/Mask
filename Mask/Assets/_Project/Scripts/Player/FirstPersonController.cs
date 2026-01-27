@@ -34,7 +34,6 @@ public class FirstPersonController : MonoBehaviour {
     private float rotationX = 0f;
     private float currentHeight;
     private bool isCrouching = false;
-    private bool canStandUp = true;
 
     // Input values
     private Vector2 moveInput;
