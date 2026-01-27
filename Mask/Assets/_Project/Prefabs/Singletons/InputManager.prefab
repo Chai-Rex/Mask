@@ -76,3 +76,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InputManager
   AutoUnparentOnAwake: 1
+  _iPlayerInput: {fileID: 6239183602040393161}

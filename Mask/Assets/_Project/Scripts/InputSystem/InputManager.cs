@@ -10,6 +10,7 @@ public class InputManager : PersistentSingleton<InputManager> {
     public event UnityAction<string> _OnControlsChanged;
 
     // Player
+    // subscribe to these
     public InputAction _MoveAction { get; private set; }
     public InputAction _LookAction { get; private set; }
     public InputAction _InteractAction { get; private set; }
@@ -21,30 +22,30 @@ public class InputManager : PersistentSingleton<InputManager> {
     // UI
     public InputAction _NavigateAction { get; private set; }
 
-    private PlayerInput _playerInput;
+    [SerializeField] private PlayerInput _iPlayerInput;
     private InputActionAsset _inputActionsAsset;
     private Gamepad _gamepad;
 
     protected override void Awake() {
         base.Awake();
 
-        _playerInput = GetComponent<PlayerInput>();
+        _iPlayerInput = GetComponent<PlayerInput>();
 
-        _playerInput.onControlsChanged += PlayerInput_onControlsChanged;
+        _iPlayerInput.onControlsChanged += PlayerInput_onControlsChanged;
 
-        _inputActionsAsset = _playerInput.actions;
+        _inputActionsAsset = _iPlayerInput.actions;
 
         GetInputActions();
     }
 
     private void OnDestroy() {
-        _playerInput.onControlsChanged -= PlayerInput_onControlsChanged;
+        _iPlayerInput.onControlsChanged -= PlayerInput_onControlsChanged;
     }
 
     private void PlayerInput_onControlsChanged(PlayerInput obj) {
-        if (_playerInput.currentControlScheme == "Gamepad") _gamepad = Gamepad.current;
+        if (_iPlayerInput.currentControlScheme == "Gamepad") _gamepad = Gamepad.current;
 
-        _OnControlsChanged?.Invoke(_playerInput.currentControlScheme);
+        _OnControlsChanged?.Invoke(_iPlayerInput.currentControlScheme);
     }
 
     private void GetInputActions() {
@@ -98,19 +99,19 @@ public class InputManager : PersistentSingleton<InputManager> {
     #region Rumble
     public void SetRumble(float lowFrequency, float highFrequency) {
 
-        if (_playerInput.currentControlScheme != "Gamepad") return;
+        if (_iPlayerInput.currentControlScheme != "Gamepad") return;
         _gamepad.SetMotorSpeeds(lowFrequency, highFrequency);
     }
 
     public void StopRumble() {
 
-        if (_playerInput.currentControlScheme != "Gamepad") return;
+        if (_iPlayerInput.currentControlScheme != "Gamepad") return;
         _gamepad.SetMotorSpeeds(0f, 0f);
     }
 
     public void RumbleDuration(AnimationCurve lowFrequencyCurve, AnimationCurve highFrequencyCurve, float duration) {
 
-        if (_playerInput.currentControlScheme != "Gamepad") return;
+        if (_iPlayerInput.currentControlScheme != "Gamepad") return;
         StopAllCoroutines();
         StartCoroutine(RumbleRoutine(lowFrequencyCurve, highFrequencyCurve, duration, _gamepad));
     }
