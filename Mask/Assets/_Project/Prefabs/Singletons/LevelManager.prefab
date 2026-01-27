@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbb1f4242c4efd645a76137bc99215aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelManager
+  AutoUnparentOnAwake: 1
   loadingCanvas: {fileID: 2912764527502246243}
   progressImage: {fileID: 7838497073530074328}
 --- !u!1001 &2440431848352521880
@@ -58,6 +59,10 @@ PrefabInstance:
     - target: {fileID: 698638698253344763, guid: c3e501a646322b249a62a84fac824d11, type: 3}
       propertyPath: m_Name
       value: LoadingCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 698638698253344763, guid: c3e501a646322b249a62a84fac824d11, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6070509909389936335, guid: c3e501a646322b249a62a84fac824d11, type: 3}
       propertyPath: m_Pivot.x
