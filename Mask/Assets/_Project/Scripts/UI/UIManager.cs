@@ -40,8 +40,8 @@ public class UIManager : Singleton<UIManager> {
     #endregion
 
     [Header("Canvas")]
-    [SerializeField] private Canvas shopCanvas;
-    [SerializeField] private Canvas settingsCanvas;
+    [SerializeField] private Canvas _iShopCanvas;
+    [SerializeField] private Canvas _iSettingsCanvas;
 
     public void PauseGame() {
 

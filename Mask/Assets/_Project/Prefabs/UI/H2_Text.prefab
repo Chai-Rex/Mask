@@ -13,6 +13,10 @@ PrefabInstance:
       value: H2_Text
       objectReference: {fileID: 0}
     - target: {fileID: 4358547394090561897, guid: 616c98aaf72501543b99e03fcd52e71b, type: 3}
+      propertyPath: m_text
+      value: Time
+      objectReference: {fileID: 0}
+    - target: {fileID: 4358547394090561897, guid: 616c98aaf72501543b99e03fcd52e71b, type: 3}
       propertyPath: m_fontSize
       value: 48
       objectReference: {fileID: 0}
@@ -34,7 +38,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6865064115357928504, guid: 616c98aaf72501543b99e03fcd52e71b, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6865064115357928504, guid: 616c98aaf72501543b99e03fcd52e71b, type: 3}
       propertyPath: m_AnchorMin.x
@@ -42,7 +46,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6865064115357928504, guid: 616c98aaf72501543b99e03fcd52e71b, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6865064115357928504, guid: 616c98aaf72501543b99e03fcd52e71b, type: 3}
       propertyPath: m_SizeDelta.x

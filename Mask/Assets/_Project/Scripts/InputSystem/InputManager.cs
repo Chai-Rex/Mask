@@ -7,19 +7,19 @@ using UtilitySingletons;
 [RequireComponent(typeof(PlayerInput))]
 public class InputManager : PersistentSingleton<InputManager> {
 
-    public event UnityAction<string> OnControlsChanged;
+    public event UnityAction<string> _OnControlsChanged;
 
     // Player
-    public InputAction MoveAction { get; private set; }
-    public InputAction LookAction { get; private set; }
-    public InputAction InteractAction { get; private set; }
-    public InputAction CrouchAction { get; private set; }
-    public InputAction JumpAction { get; private set; }
-    public InputAction SprintAction { get; private set; }
-    public InputAction CancelAction { get; private set; }
+    public InputAction _MoveAction { get; private set; }
+    public InputAction _LookAction { get; private set; }
+    public InputAction _InteractAction { get; private set; }
+    public InputAction _CrouchAction { get; private set; }
+    public InputAction _JumpAction { get; private set; }
+    public InputAction _SprintAction { get; private set; }
+    public InputAction _CancelAction { get; private set; }
 
     // UI
-    public InputAction NavigateAction { get; private set; }
+    public InputAction _NavigateAction { get; private set; }
 
     private PlayerInput _playerInput;
     private InputActionAsset _inputActionsAsset;
@@ -44,18 +44,18 @@ public class InputManager : PersistentSingleton<InputManager> {
     private void PlayerInput_onControlsChanged(PlayerInput obj) {
         if (_playerInput.currentControlScheme == "Gamepad") _gamepad = Gamepad.current;
 
-        OnControlsChanged?.Invoke(_playerInput.currentControlScheme);
+        _OnControlsChanged?.Invoke(_playerInput.currentControlScheme);
     }
 
     private void GetInputActions() {
-        MoveAction = BuildAction("Move");
-        LookAction = BuildAction("Look");
-        InteractAction = BuildAction("Interact");
-        CrouchAction = BuildAction("Crouch");
-        JumpAction = BuildAction("Jump");
-        SprintAction = BuildAction("Sprint");
-        CancelAction = BuildAction("Cancel");
-        NavigateAction = BuildAction("Navigate");
+        _MoveAction = BuildAction("Move");
+        _LookAction = BuildAction("Look");
+        _InteractAction = BuildAction("Interact");
+        _CrouchAction = BuildAction("Crouch");
+        _JumpAction = BuildAction("Jump");
+        _SprintAction = BuildAction("Sprint");
+        _CancelAction = BuildAction("Cancel");
+        _NavigateAction = BuildAction("Navigate");
     }
 
     private InputAction BuildAction(string i_name) {
@@ -68,31 +68,31 @@ public class InputManager : PersistentSingleton<InputManager> {
     }
 
     public void EnablePlayerActions() {
-        MoveAction.Enable();
-        LookAction.Enable();
-        InteractAction.Enable();
-        CrouchAction.Enable();
-        JumpAction.Enable();
-        SprintAction.Enable();
-        CancelAction.Enable();
+        _MoveAction.Enable();
+        _LookAction.Enable();
+        _InteractAction.Enable();
+        _CrouchAction.Enable();
+        _JumpAction.Enable();
+        _SprintAction.Enable();
+        _CancelAction.Enable();
     }
 
     public void DisablePlayerActions() {
-        MoveAction.Disable();
-        LookAction.Disable();
-        InteractAction.Disable();
-        CrouchAction.Disable();
-        JumpAction.Disable();
-        SprintAction.Disable();
-        CancelAction.Disable();
+        _MoveAction.Disable();
+        _LookAction.Disable();
+        _InteractAction.Disable();
+        _CrouchAction.Disable();
+        _JumpAction.Disable();
+        _SprintAction.Disable();
+        _CancelAction.Disable();
     }
 
     public void EnableUIActions() {
-        NavigateAction.Enable();
+        _NavigateAction.Enable();
     }
 
     public void DisableUIActions() {
-        NavigateAction.Disable();
+        _NavigateAction.Disable();
     }
 
     #region Rumble

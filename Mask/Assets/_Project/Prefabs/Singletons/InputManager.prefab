@@ -75,4 +75,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c50eeeac001155644bcff949a2a6e2ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InputManager
-  AutoUnparentOnAwake: 0
+  AutoUnparentOnAwake: 1
