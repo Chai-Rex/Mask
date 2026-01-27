@@ -6,5 +6,7 @@ public class CharacterDialogSO : ScriptableObject
 {
     public List<string> DialogText;
 
+    public bool hasChoice;
+    public PlayerDecisionSO playerDecision;
     public CharacterDialogSO nextDialog;
 }
