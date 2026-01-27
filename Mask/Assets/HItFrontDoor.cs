@@ -1,0 +1,16 @@
+using UnityEngine;
+
+public class HitFrontDoor : MonoBehaviour
+{
+    [SerializeField] private Door door;
+
+    private void OnTriggerEnter(Collider other)
+    {
+        // Has NPC or Pllayer Touched Front of Door
+
+        if (door != null)
+        {
+            door.OnDoorOpen(true);
+        }    
+    }
+}
