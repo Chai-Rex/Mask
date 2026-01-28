@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4477410797322675171}
   - component: {fileID: 1744163685522361128}
   m_Layer: 5
-  m_Name: NPC Text
+  m_Name: Dialogue Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -88,7 +88,7 @@ GameObject:
   - component: {fileID: 883830228163414144}
   - component: {fileID: 1980797112224982779}
   m_Layer: 5
-  m_Name: NPC Name
+  m_Name: Name Background
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -163,6 +163,8 @@ GameObject:
   - component: {fileID: 6340363571625421592}
   - component: {fileID: 689075860650521254}
   - component: {fileID: 1542225007095737190}
+  - component: {fileID: 7898645165117691666}
+  - component: {fileID: 3441014478136602370}
   m_Layer: 5
   m_Name: Player Response Options
   m_TagString: Untagged
@@ -187,7 +189,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
   m_AnchoredPosition: {x: 677.5, y: 299.4}
-  m_SizeDelta: {x: 358.1, y: 536.2}
+  m_SizeDelta: {x: 358.1, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &689075860650521254
 CanvasRenderer:
@@ -227,6 +229,46 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &7898645165117691666
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7890516517391184711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.VerticalLayoutGroup
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_Spacing: 16
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 0
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 0
+  m_ChildScaleWidth: 1
+  m_ChildScaleHeight: 0
+  m_ReverseArrangement: 0
+--- !u!114 &3441014478136602370
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7890516517391184711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.ContentSizeFitter
+  m_HorizontalFit: 0
+  m_VerticalFit: 2
 --- !u!1001 &1096441029793671628
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -342,6 +384,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 616c98aaf72501543b99e03fcd52e71b, type: 3}
+--- !u!114 &3696325604316747941 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4358547394090561897, guid: 616c98aaf72501543b99e03fcd52e71b, type: 3}
+  m_PrefabInstance: {fileID: 1096441029793671628}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!224 &5796920237143303668 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6865064115357928504, guid: 616c98aaf72501543b99e03fcd52e71b, type: 3}
@@ -357,7 +410,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2573746385078967684, guid: 63f0aac048144f846b15d230daf68846, type: 3}
       propertyPath: m_Name
-      value: TextCanvas Variant
+      value: DialogueCanvas Variant
       objectReference: {fileID: 0}
     - target: {fileID: 9095881581520061616, guid: 63f0aac048144f846b15d230daf68846, type: 3}
       propertyPath: m_Pivot.x
@@ -451,8 +504,33 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9095881581520061616, guid: 63f0aac048144f846b15d230daf68846, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6340363571625421592}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2573746385078967684, guid: 63f0aac048144f846b15d230daf68846, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6968033200800043996}
   m_SourcePrefab: {fileID: 100100000, guid: 63f0aac048144f846b15d230daf68846, type: 3}
+--- !u!1 &1906468560005442442 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2573746385078967684, guid: 63f0aac048144f846b15d230daf68846, type: 3}
+  m_PrefabInstance: {fileID: 4162148209570936334}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6968033200800043996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1906468560005442442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff208cc190e57744a9441d6bc3fee6aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueCanvas
+  _iResponseButton: {fileID: 3781307631170661794, guid: 966e0cb46ef25694d8e7f907e46a1102, type: 3}
+  _iResponseOptions: {fileID: 7890516517391184711}
+  _iMaxResponseOptions: 5
+  _iDialogueText: {fileID: 3696325604316747941}
+  _iNameText: {fileID: 8557611013897997475}
 --- !u!224 &5186453134792553150 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9095881581520061616, guid: 63f0aac048144f846b15d230daf68846, type: 3}
@@ -564,3 +642,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8084364617089922649, guid: 977a707c63d2c1448850e043404ce025, type: 3}
   m_PrefabInstance: {fileID: 7334925194906421163}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8557611013897997475 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1371449967988280072, guid: 977a707c63d2c1448850e043404ce025, type: 3}
+  m_PrefabInstance: {fileID: 7334925194906421163}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI

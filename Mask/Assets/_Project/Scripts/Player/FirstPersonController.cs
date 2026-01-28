@@ -66,6 +66,7 @@ public class FirstPersonController : MonoBehaviour {
 
         // Subscribe to control scheme changes
         InputManager.Instance._OnControlsChanged += OnControlsChanged;
+
     }
 
     private void OnDestroy() {
@@ -80,15 +81,13 @@ public class FirstPersonController : MonoBehaviour {
     private void SubscribeToInput() {
         if (InputManager.Instance == null) return;
 
-        InputManager.Instance._CrouchAction.started += OnCrouchToggled;
-        InputManager.Instance._CancelAction.started += OnCancelStarted;
+        InputManager.Instance._PlayerCrouchAction.started += OnCrouchToggled;
     }
 
     private void UnsubscribeFromInput() {
         if (InputManager.Instance == null) return;
 
-        InputManager.Instance._CrouchAction.started -= OnCrouchToggled;
-        InputManager.Instance._CancelAction.started -= OnCancelStarted;
+        InputManager.Instance._PlayerCrouchAction.started -= OnCrouchToggled;
     }
 
     private void OnControlsChanged(string controlScheme) {
@@ -118,16 +117,7 @@ public class FirstPersonController : MonoBehaviour {
         }
     }
 
-    private void OnCancelStarted(UnityEngine.InputSystem.InputAction.CallbackContext context) {
-        // Toggle cursor lock
-        if (Cursor.lockState == CursorLockMode.Locked) {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        } else {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
-    }
+
 
     private void Update() {
         if (InputManager.Instance == null) return;
@@ -140,13 +130,13 @@ public class FirstPersonController : MonoBehaviour {
 
     private void HandleInput() {
         // Movement input
-        moveInput = InputManager.Instance._MoveAction.ReadValue<Vector2>();
+        moveInput = InputManager.Instance._PlayerMoveAction.ReadValue<Vector2>();
 
         // Look input
-        lookInput = InputManager.Instance._LookAction.ReadValue<Vector2>();
+        lookInput = InputManager.Instance._PlayerLookAction.ReadValue<Vector2>();
 
         // Sprint input
-        sprintInput = InputManager.Instance._SprintAction.IsPressed();
+        sprintInput = InputManager.Instance._PlayerSprintAction.IsPressed();
     }
 
     private void HandleMouseLook() {

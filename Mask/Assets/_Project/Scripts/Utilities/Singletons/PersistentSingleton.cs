@@ -14,8 +14,8 @@ namespace UtilitySingletons {
                 if (instance == null) {
                     instance = FindAnyObjectByType<T>();
                     if (instance == null) {
-                        var go = new GameObject(typeof(T).Name + " Auto-Generated");
-                        instance = go.AddComponent<T>();
+                        //var go = new GameObject(typeof(T).Name + " Auto-Generated");
+                        //instance = go.AddComponent<T>();
                     }
                 }
 

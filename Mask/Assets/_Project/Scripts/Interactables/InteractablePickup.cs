@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class InteractablePickup : MonoBehaviour, IInteractable {
 
-    [SerializeField] private string verb = "Pickup";
-    [SerializeField] private string itemName = "Key";
+    [SerializeField] private string _iVerb = "Pickup";
+    [SerializeField] private string _iItemName = "Key";
 
-    public string InteractionVerb => verb;
+    public string InteractionVerb => _iVerb;
 
     public void OnInteract(GameObject i_interactor) {
-        Debug.Log($"Picked up {itemName}");
+        Debug.Log($"Picked up {_iItemName}");
 
         // animate hand moving to item and picking it up.
         // i_interactor.GetComponent<typeof(hands)>()

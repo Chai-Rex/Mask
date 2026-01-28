@@ -20,10 +20,10 @@ public class DialogTesterScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        InputManager.Instance._InteractAction.performed += InteractPressed;
+        InputManager.Instance._PlayerInteractAction.performed += InteractPressed;
 
         timeBetweenChars = 1f / textSpeed;
-        currentDialog.ResetDialog();
+        //currentDialog.ResetDialog();
     }
 
     // Update is called once per frame
@@ -53,11 +53,11 @@ public class DialogTesterScript : MonoBehaviour
     {
         if (finishedDisplayingText)
         {
-            if(!currentDialog.IsDialogFinished())
-            {
-                DisplayNextDialog();
-            }
-            else
+            //if(!currentDialog.IsDialogFinished())
+            //{
+            //    DisplayNextDialog();
+            //}
+            //else
             {
                 if(!displayingPlayerOptions)
                 {
@@ -80,7 +80,7 @@ public class DialogTesterScript : MonoBehaviour
     private void DisplayNextDialog()
     {
         displayedText = string.Empty;
-        dialogText = currentDialog.GetDialogText();
+        //dialogText = currentDialog.GetDialogText();
 
         if (dialogText != string.Empty)
         {
@@ -107,7 +107,7 @@ public class DialogTesterScript : MonoBehaviour
         {
             PlayerDecision chosenDecision = currentDialog.decisionOptions[choice];
             currentDialog = chosenDecision.nextDialog;
-            currentDialog.ResetDialog(); // Make sure we start from the beginning of the dialog
+            //currentDialog.ResetDialog(); // Make sure we start from the beginning of the dialog
 
             if (chosenDecision.affectsState)
             {

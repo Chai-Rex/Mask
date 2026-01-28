@@ -36,7 +36,7 @@ public class StoryStateSO : ScriptableObject
             pairs.Add(name, value);
         }
 
-        Debug.Log("Setting " + name + " to " +  value);
+        //Debug.Log("Setting " + name + " to " +  value);
     }
 
     public int GetValue(string name)

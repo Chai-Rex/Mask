@@ -509,8 +509,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3abb513143b59249acc1dd99ed52b4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenuCanvas
-  _StartButton: {fileID: 8823460836889980784}
-  _QuitButton: {fileID: 2073859603538762822}
+  _iStartButton: {fileID: 8823460836889980784}
+  _iQuitButton: {fileID: 2073859603538762822}
   levelToLoad: 1
 --- !u!224 &5356634696886719595 stripped
 RectTransform:
