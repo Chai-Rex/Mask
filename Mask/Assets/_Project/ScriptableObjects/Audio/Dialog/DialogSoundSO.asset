@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogSoundSO
   _iTypingSoundData:
     Clip: {fileID: 8300000, guid: 43fd5a3f5b42e6a4fb9b40f983dec5a6, type: 3}
-    MixerGroup: {fileID: 0}
+    MixerGroup: {fileID: -6138096475860399183, guid: 49963274511b53442bc8ea85953fe90d, type: 2}
     Loop: 0
     PlayOnAwake: 0
     FrequentSound: 0
