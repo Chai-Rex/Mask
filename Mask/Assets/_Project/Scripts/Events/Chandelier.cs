@@ -9,6 +9,11 @@ public class Chandelier : BaseTimeEvent
     private bool canFall = true;
     private bool hasFallen = false;
 
+    private void Start()
+    {
+        TimeManager.Instance.ScheduleAt(5.0f, ActivateTimeEvent);
+    }
+
     protected override void ActivateTimeEvent()
     {
         base.ActivateTimeEvent();

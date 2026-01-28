@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4583598252089079033}
   - component: {fileID: 3172237773796689801}
   - component: {fileID: 1778920481796655341}
+  - component: {fileID: 5813366370196961629}
   m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
@@ -28,10 +29,12 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5727861714227782536}
+  - {fileID: 4755751037080030408}
+  - {fileID: 5900244457271739628}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &3172237773796689801
@@ -53,8 +56,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 5}
+  m_Center: {x: 0, y: 0, z: 2.5}
 --- !u!114 &1778920481796655341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,7 +70,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c13a6506e5d858b4d858fccfcfcbfec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BetweenDoor
-  door: {fileID: 4332362116772429401}
+  door: {fileID: 5813366370196961629}
+--- !u!114 &5813366370196961629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3592373717638733206}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4582e3fc3ab511540b1bc98835ce8069, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Door
+  doorDuration: 1
+  betweenDoorCollider: {fileID: 3172237773796689801}
 --- !u!1 &5125380750242588931
 GameObject:
   m_ObjectHideFlags: 0
@@ -99,7 +116,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5727861714227782536}
+  m_Father: {fileID: 4583598252089079033}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &8961455318427066136
 BoxCollider:
@@ -134,7 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 719dc67c38263df4e82107e5708cca4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HitBackDoor
-  door: {fileID: 4332362116772429401}
+  door: {fileID: 5813366370196961629}
 --- !u!1 &7249646078260018330
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,7 +183,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5727861714227782536}
+  m_Father: {fileID: 4583598252089079033}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &4516117204209715912
 BoxCollider:
@@ -201,7 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1313d4097f9223f4fad70c406b297e4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HitFrontDoor
-  door: {fileID: 4332362116772429401}
+  door: {fileID: 5813366370196961629}
 --- !u!1 &7839308121906125167
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,7 +231,6 @@ GameObject:
   - component: {fileID: 1540930435542042675}
   - component: {fileID: 492253466507866522}
   - component: {fileID: 8404712148525126748}
-  - component: {fileID: 4332362116772429401}
   m_Layer: 0
   m_Name: DoorObject
   m_TagString: Untagged
@@ -234,9 +250,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 4755751037080030408}
-  - {fileID: 5900244457271739628}
+  m_Children: []
   m_Father: {fileID: 4583598252089079033}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &1540930435542042675
@@ -317,16 +331,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4332362116772429401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7839308121906125167}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4582e3fc3ab511540b1bc98835ce8069, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Door
-  doorDuration: 1

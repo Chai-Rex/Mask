@@ -7,6 +7,7 @@ public class Door : MonoBehaviour
 
     Tween doorTween;
     [SerializeField] private float doorDuration = 1.0f;
+    [SerializeField] private BoxCollider betweenDoorCollider;
 
     public void OnDoorOpen(bool isFront)
     {
@@ -16,6 +17,10 @@ public class Door : MonoBehaviour
 
             if (isFront)
             {
+                if (betweenDoorCollider != null)
+                {
+                    betweenDoorCollider.center = new Vector3(0.0f, 0.0f, 2.5f);
+                }
                 doorTween = transform.DORotate(new Vector3(0.0f, 90.0f, 0.0f), doorDuration)
                 .OnComplete(() =>
                 {
@@ -24,6 +29,10 @@ public class Door : MonoBehaviour
             }
             else
             {
+                if (betweenDoorCollider != null)
+                {
+                    betweenDoorCollider.center = new Vector3(0.0f, 0.0f, -2.5f);
+                }
                 doorTween = transform.DORotate(new Vector3(0.0f, -90.0f, 0.0f), doorDuration)
                 .OnComplete(() =>
                 {
@@ -35,15 +44,12 @@ public class Door : MonoBehaviour
 
     public void OnDoorClose()
     {
-        if (isOpen)
-        {
-            doorTween.Kill();
+        doorTween.Kill();
 
-            doorTween = transform.DORotate(new Vector3(0.0f, 0.0f, 0.0f), doorDuration)
-                .OnComplete(() =>
-                {
-                    isOpen = false;
-                });
-        }
+        doorTween = transform.DORotate(new Vector3(0.0f, 0.0f, 0.0f), doorDuration)
+            .OnComplete(() =>
+            {
+                isOpen = false;
+            });
     }
 }
