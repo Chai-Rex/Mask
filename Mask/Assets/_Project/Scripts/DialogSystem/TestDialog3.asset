@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: TestDialog3
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
   DialogText:
-  - i cast uno reverse card
-  - get attacked by bees nerd
+  - i cast uno reverse card. your hubris will be your undoing
+  - get attacked by bees... nerd
   decisionOptions:
   - text: oh damn
     nextDialog: {fileID: 11400000, guid: 2b7ec59d95c38b74eb3ad9eeee673389, type: 2}

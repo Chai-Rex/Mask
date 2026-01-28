@@ -18,6 +18,7 @@ public class DialogueHandler : Singleton<DialogueHandler> {
     [Header("Audio (Testing)")]
     [SerializeField] private AudioSource _iTypingAudioSource;
     [SerializeField] private AudioClip[] _iTypingSounds;
+    [SerializeField] private float _iPunctuationPauseLength;
 
     private CancellationTokenSource _typingCancellation;
     private int _currentDialogIndex = 0;
@@ -168,8 +169,19 @@ public class DialogueHandler : Singleton<DialogueHandler> {
 
             // Only delay and play sound for visible characters
             if (!insideTag) {
-                PlayTypingSound();
-                await Task.Delay(TimeSpan.FromSeconds(_iTypingSpeed), i_cancellationToken);
+                if (char.IsLetterOrDigit(currentChar))
+                {
+                    PlayTypingSound();
+                }
+                
+                if(!char.IsPunctuation(currentChar))
+                {
+                    await Task.Delay(TimeSpan.FromSeconds(_iTypingSpeed), i_cancellationToken);
+                }
+                else
+                {
+                    await Task.Delay(TimeSpan.FromSeconds(_iPunctuationPauseLength), i_cancellationToken);
+                }
             }
         }
     }
