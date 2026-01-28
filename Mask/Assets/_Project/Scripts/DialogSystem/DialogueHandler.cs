@@ -19,8 +19,8 @@ public class DialogueHandler : Singleton<DialogueHandler> {
     [SerializeField] private AudioSource _iTypingAudioSource;
     private AudioClip _iTypingSound;
     [SerializeField] private float _iPunctuationPauseLength;
-    [SerializeField] private float _iMinPitchModulation = 1;
-    [SerializeField] private float _iMaxPitchModulation = 1;
+    private float _iMinPitchModulation = 1;
+    private float _iMaxPitchModulation = 1;
 
     private CancellationTokenSource _typingCancellation;
     private int _currentDialogIndex = 0;
@@ -54,10 +54,12 @@ public class DialogueHandler : Singleton<DialogueHandler> {
         }
     }
     
-    public void SetCharacterSpeechSettings(AudioClip i_typingSound, float i_typingSpeed)
+    public void SetCharacterSpeechSettings(AudioClip i_typingSound, float i_typingSpeed, float i_minPitch, float i_maxPitch)
     {
         _iTypingSound = i_typingSound;
         _iTypingSpeed = i_typingSpeed;
+        _iMinPitchModulation = i_minPitch;
+        _iMaxPitchModulation = i_maxPitch;
     }
 
     public void StartDialogueTree(CharacterDialogSO i_dialogueTree, string i_name) {
