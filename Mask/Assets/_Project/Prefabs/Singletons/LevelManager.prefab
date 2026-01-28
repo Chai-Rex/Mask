@@ -46,8 +46,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelManager
   AutoUnparentOnAwake: 1
-  loadingCanvas: {fileID: 2912764527502246243}
-  progressImage: {fileID: 7838497073530074328}
+  _iLoadingCanvas: {fileID: 2912764527502246243}
+  _iProgressImage: {fileID: 7838497073530074328}
 --- !u!1001 &2440431848352521880
 PrefabInstance:
   m_ObjectHideFlags: 0

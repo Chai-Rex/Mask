@@ -8,35 +8,20 @@ public class PauseHandler : MonoBehaviour {
 
     private void Start() {
         // Subscribe to input events
-        SubscribeToInput();
+        InputManager.Instance._PlayerPauseAction.started += OnPauseStarted;
+        InputManager.Instance._DialoguePauseAction.started += OnPauseStarted;
+        InputManager.Instance._UIUnpauseAction.started += OnUnpauseStarted;
 
         // Hide pause canvas
         _iPauseCanvas.gameObject.SetActive(false);
     }
 
     private void OnDestroy() {
-        // Unsubscribe from input events
-        UnsubscribeFromInput();
-    }
-
-    private void SubscribeToInput() {
         if (InputManager.Instance == null) return;
-
-
-        InputManager.Instance._PlayerPauseAction.started += OnPauseStarted;
-        InputManager.Instance._DialoguePauseAction.started += OnPauseStarted;
-        InputManager.Instance._UIUnpauseAction.started += OnUnpauseStarted;
-    }
-
-    private void UnsubscribeFromInput() {
-        if (InputManager.Instance == null) return;
-
-
         InputManager.Instance._PlayerPauseAction.started -= OnPauseStarted;
         InputManager.Instance._DialoguePauseAction.started -= OnPauseStarted;
         InputManager.Instance._UIUnpauseAction.started -= OnUnpauseStarted;
     }
-
 
     private void OnPauseStarted(UnityEngine.InputSystem.InputAction.CallbackContext context) {
 
