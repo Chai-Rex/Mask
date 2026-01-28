@@ -18,6 +18,7 @@ public class InputManager : PersistentSingleton<InputManager> {
     public InputAction _PlayerJumpAction { get; private set; }
     public InputAction _PlayerSprintAction { get; private set; }
     public InputAction _PlayerPauseAction { get; private set; }
+    public InputAction _PlayerDropAction { get; private set; }
 
     // UI
     public InputAction _UINavigateAction { get; private set; }
@@ -68,6 +69,7 @@ public class InputManager : PersistentSingleton<InputManager> {
         _PlayerJumpAction = BuildAction("Jump");
         _PlayerSprintAction = BuildAction("Sprint");
         _PlayerPauseAction = BuildAction("PlayerPause");
+        _PlayerDropAction = BuildAction("Drop");
 
         _UINavigateAction = BuildAction("UINavigation");
         _UIUnpauseAction = BuildAction("Unpause");
@@ -126,6 +128,7 @@ public class InputManager : PersistentSingleton<InputManager> {
         _PlayerJumpAction.Enable();
         _PlayerSprintAction.Enable();
         _PlayerPauseAction.Enable();
+        _PlayerDropAction.Enable();
     }
 
     public void DisablePlayerActions() {
@@ -136,6 +139,7 @@ public class InputManager : PersistentSingleton<InputManager> {
         _PlayerJumpAction.Disable();
         _PlayerSprintAction.Disable();
         _PlayerPauseAction.Disable();
+        _PlayerDropAction.Disable();
     }
 
     public void EnableUIActions() {
