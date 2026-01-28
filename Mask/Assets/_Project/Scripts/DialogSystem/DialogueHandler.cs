@@ -19,6 +19,8 @@ public class DialogueHandler : Singleton<DialogueHandler> {
     [SerializeField] private AudioSource _iTypingAudioSource;
     [SerializeField] private AudioClip[] _iTypingSounds;
     [SerializeField] private float _iPunctuationPauseLength;
+    [SerializeField] private float _iMinPitchModulation = 1;
+    [SerializeField] private float _iMaxPitchModulation = 1;
 
     private CancellationTokenSource _typingCancellation;
     private int _currentDialogIndex = 0;
@@ -189,6 +191,7 @@ public class DialogueHandler : Singleton<DialogueHandler> {
     private void PlayTypingSound() {
         if (_iTypingAudioSource != null && _iTypingSounds != null && _iTypingSounds.Length > 0) {
             AudioClip clip = _iTypingSounds[UnityEngine.Random.Range(0, _iTypingSounds.Length)];
+            _iTypingAudioSource.pitch = UnityEngine.Random.Range(_iMinPitchModulation, _iMaxPitchModulation);
             _iTypingAudioSource.PlayOneShot(clip);
         }
     }
