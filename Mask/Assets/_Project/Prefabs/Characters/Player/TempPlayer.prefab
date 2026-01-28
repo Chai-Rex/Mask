@@ -471,6 +471,8 @@ MonoBehaviour:
   _iTypingSounds:
   - {fileID: 8300000, guid: 43fd5a3f5b42e6a4fb9b40f983dec5a6, type: 3}
   _iPunctuationPauseLength: 0.5
+  _iMinPitchModulation: 0.92
+  _iMaxPitchModulation: 1.02
 --- !u!114 &883894458546270514
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -12,12 +12,12 @@ public class DialogueHandler : Singleton<DialogueHandler> {
     [SerializeField] private StoryStateSO _iStoryState;
 
     [Header("Typing Settings")]
-    [SerializeField] private float _iTypingSpeed = 0.05f;
     [SerializeField] private bool _iCanSkip = true;
+    private float _iTypingSpeed = 0.05f;
 
     [Header("Audio (Testing)")]
     [SerializeField] private AudioSource _iTypingAudioSource;
-    [SerializeField] private AudioClip[] _iTypingSounds;
+    private AudioClip _iTypingSound;
     [SerializeField] private float _iPunctuationPauseLength;
     [SerializeField] private float _iMinPitchModulation = 1;
     [SerializeField] private float _iMaxPitchModulation = 1;
@@ -52,6 +52,12 @@ public class DialogueHandler : Singleton<DialogueHandler> {
         } else if (!_isPaused) {
             _isPlayerInput = true;
         }
+    }
+    
+    public void SetCharacterSpeechSettings(AudioClip i_typingSound, float i_typingSpeed)
+    {
+        _iTypingSound = i_typingSound;
+        _iTypingSpeed = i_typingSpeed;
     }
 
     public void StartDialogueTree(CharacterDialogSO i_dialogueTree, string i_name) {
@@ -189,8 +195,8 @@ public class DialogueHandler : Singleton<DialogueHandler> {
     }
 
     private void PlayTypingSound() {
-        if (_iTypingAudioSource != null && _iTypingSounds != null && _iTypingSounds.Length > 0) {
-            AudioClip clip = _iTypingSounds[UnityEngine.Random.Range(0, _iTypingSounds.Length)];
+        if (_iTypingAudioSource != null && _iTypingSound != null) {
+            AudioClip clip = _iTypingSound;
             _iTypingAudioSource.pitch = UnityEngine.Random.Range(_iMinPitchModulation, _iMaxPitchModulation);
             _iTypingAudioSource.PlayOneShot(clip);
         }

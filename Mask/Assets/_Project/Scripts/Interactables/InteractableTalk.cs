@@ -12,16 +12,21 @@ public class InteractableTalk : MonoBehaviour, IInteractable {
     [SerializeField] private CharacterDialogSO _iCompleteDialogue;
     private bool _isDialogueComplete = false;
 
+    [SerializeField] private AudioClip _iTypingSound;
+    [SerializeField] private float _iTypingSpeed = 0.05f;
+
     public string InteractionVerb => _iVerb;
 
     public void OnInteract(GameObject i_interactor) {
         //Debug.Log($"My name is: {_iName}");
 
+        DialogueHandler handler = i_interactor.GetComponent<DialogueHandler>();
+        handler.SetCharacterSpeechSettings(_iTypingSound, _iTypingSpeed);
         if (_isDialogueComplete) {
-            i_interactor.GetComponent<DialogueHandler>().StartDialogueTree(_iCompleteDialogue, _iName);
+            handler.StartDialogueTree(_iCompleteDialogue, _iName);
         } else {
             // get dialog tree from gabe's bool solver
-            i_interactor.GetComponent<DialogueHandler>().StartDialogueTree(_iTempDialogSO, _iName);
+            handler.StartDialogueTree(_iTempDialogSO, _iName);
             _isDialogueComplete = true;
         }
 
