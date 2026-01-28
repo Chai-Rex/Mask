@@ -1,3 +1,4 @@
+using AudioSystem;
 using System;
 using System.Text;
 using System.Threading;
@@ -13,14 +14,6 @@ public class DialogueHandler : Singleton<DialogueHandler> {
 
     [Header("Typing Settings")]
     [SerializeField] private bool _iCanSkip = true;
-    private float _iTypingSpeed = 0.05f;
-
-    [Header("Audio (Testing)")]
-    [SerializeField] private AudioSource _iTypingAudioSource;
-    private AudioClip _iTypingSound;
-    [SerializeField] private float _iPunctuationPauseLength;
-    private float _iMinPitchModulation = 1;
-    private float _iMaxPitchModulation = 1;
 
     private CancellationTokenSource _typingCancellation;
     private int _currentDialogIndex = 0;
@@ -30,6 +23,8 @@ public class DialogueHandler : Singleton<DialogueHandler> {
     private bool _isPlayerInput = false;
 
     private CharacterDialogSO currentDialog;
+
+    private DialogSoundSO _currentDialogSound;
 
     private void Start() {
         if (InputManager.Instance != null) {
@@ -53,16 +48,8 @@ public class DialogueHandler : Singleton<DialogueHandler> {
             _isPlayerInput = true;
         }
     }
-    
-    public void SetCharacterSpeechSettings(AudioClip i_typingSound, float i_typingSpeed, float i_minPitch, float i_maxPitch)
-    {
-        _iTypingSound = i_typingSound;
-        _iTypingSpeed = i_typingSpeed;
-        _iMinPitchModulation = i_minPitch;
-        _iMaxPitchModulation = i_maxPitch;
-    }
-
-    public void StartDialogueTree(CharacterDialogSO i_dialogueTree, string i_name) {
+   
+    public void StartDialogueTree(CharacterDialogSO i_dialogueTree, string i_name, DialogSoundSO i_dialogSound) {
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -73,6 +60,8 @@ public class DialogueHandler : Singleton<DialogueHandler> {
         _iDialogueCanvas.SetName(i_name);
 
         currentDialog = i_dialogueTree;
+
+        _currentDialogSound = i_dialogSound;
 
         ContinueDialogue();
     }
@@ -186,22 +175,26 @@ public class DialogueHandler : Singleton<DialogueHandler> {
                 
                 if(!char.IsPunctuation(currentChar))
                 {
-                    await Task.Delay(TimeSpan.FromSeconds(_iTypingSpeed), i_cancellationToken);
+                    await Task.Delay(TimeSpan.FromSeconds(_currentDialogSound._iTypingSpeed), i_cancellationToken);
                 }
                 else
                 {
-                    await Task.Delay(TimeSpan.FromSeconds(_iPunctuationPauseLength), i_cancellationToken);
+                    await Task.Delay(TimeSpan.FromSeconds(_currentDialogSound._iPunctuationPauseLength), i_cancellationToken);
                 }
             }
         }
     }
 
     private void PlayTypingSound() {
-        if (_iTypingAudioSource != null && _iTypingSound != null) {
-            AudioClip clip = _iTypingSound;
-            _iTypingAudioSource.pitch = UnityEngine.Random.Range(_iMinPitchModulation, _iMaxPitchModulation);
-            _iTypingAudioSource.PlayOneShot(clip);
-        }
+        SoundManager.Instance.CreateSound()
+            .WithRandomPitch()
+            .Play(_currentDialogSound._iTypingSoundData);
+
+        //if (_iTypingAudioSource != null && _iTypingSound != null) {
+        //    AudioClip clip = _iTypingSound;
+        //    _iTypingAudioSource.pitch = UnityEngine.Random.Range(_iMinPitchModulation, _iMaxPitchModulation);
+        //    _iTypingAudioSource.PlayOneShot(clip);
+        //}
     }
 
     public void Pause() {
@@ -215,10 +208,6 @@ public class DialogueHandler : Singleton<DialogueHandler> {
     #region Public Properties
     public bool IsTyping => _isTyping;
     public bool IsPaused => _isPaused;
-    public float TypingSpeed {
-        get => _iTypingSpeed;
-        set => _iTypingSpeed = Mathf.Max(0.01f, value);
-    }
     #endregion
 
 }
