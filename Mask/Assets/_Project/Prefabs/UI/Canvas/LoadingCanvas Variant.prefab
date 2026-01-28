@@ -160,7 +160,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1371449967988280072, guid: 977a707c63d2c1448850e043404ce025, type: 3}
       propertyPath: m_text
-      value: Loading . . .
+      value: . . .
       objectReference: {fileID: 0}
     - target: {fileID: 1371449967988280072, guid: 977a707c63d2c1448850e043404ce025, type: 3}
       propertyPath: m_fontColor.b
