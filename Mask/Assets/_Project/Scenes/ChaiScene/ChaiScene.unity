@@ -1271,6 +1271,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3044203949616991097, guid: a606e884a4375954d8bbfe35913b6dcb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1675144043}
+    - targetCorrespondingSourceObject: {fileID: 3044203949616991097, guid: a606e884a4375954d8bbfe35913b6dcb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1675144046}
   m_SourcePrefab: {fileID: 100100000, guid: a606e884a4375954d8bbfe35913b6dcb, type: 3}
 --- !u!1 &1675144041 stripped
 GameObject:
@@ -1314,12 +1317,41 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InteractableTalk
   _iVerb: Talk
   _iName: Boberto
-  _iTempDialogSO: {fileID: 11400000, guid: 42f76f4323c579e4596f4e5fdab1f4b6, type: 2}
-  _iCompleteDialogue: {fileID: 11400000, guid: 2b7ec59d95c38b74eb3ad9eeee673389, type: 2}
+  _dialogTreeSelector: {fileID: 1675144046}
   _iTypingSound: {fileID: 8300000, guid: 43fd5a3f5b42e6a4fb9b40f983dec5a6, type: 3}
   _iTypingSpeed: 0.05
   _iMinPitchModulation: 0.85
   _iMaxPitchModulation: 0.95
+--- !u!114 &1675144046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1675144041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c23acaf37dbfa54ebfdeb7f984f2806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogTreeSelector
+  _StoryState: {fileID: 11400000, guid: cdd420038140c28488a65d05b61e1c6d, type: 2}
+  _treeOptions:
+  - requiredStates:
+    - name: deathByBees
+      value: 1
+    - name: skeleton
+      value: 0
+    dialogTree: {fileID: 11400000, guid: 65cf09805db7d5f4c8036adaf7bebd69, type: 2}
+  - requiredStates:
+    - name: attackedByBees
+      value: 1
+    dialogTree: {fileID: 11400000, guid: 4b26a4957f352a145b3e362d7b734723, type: 2}
+  - requiredStates:
+    - name: skeleton
+      value: 1
+    dialogTree: {fileID: 11400000, guid: f332698306c07ba4eae24cf0d76bdf99, type: 2}
+  _defaultDialogTree: {fileID: 11400000, guid: 42f76f4323c579e4596f4e5fdab1f4b6, type: 2}
+  _iCompleteDialogue: {fileID: 11400000, guid: 2b7ec59d95c38b74eb3ad9eeee673389, type: 2}
 --- !u!4 &1780786184 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 403222784824180589, guid: 741e027466c45cf4d9b8bd1c4502fd8e, type: 3}

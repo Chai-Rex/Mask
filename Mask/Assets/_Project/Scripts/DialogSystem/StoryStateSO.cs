@@ -6,22 +6,22 @@ using static UnityEngine.Rendering.DebugUI;
 public struct StateVariable
 {
     public string name;
-    public int initialValue;
+    public int value;
 }
 
 [CreateAssetMenu(fileName = "StoryStateSO", menuName = "Scriptable Objects/StoryStateSO")]
 public class StoryStateSO : ScriptableObject
 {
 
-    public List<StateVariable> stateVariables;
+    public List<StateVariable> _initialStateVariables;
 
     public Dictionary<string, int> pairs = new Dictionary<string, int>();
 
     public void ResetState()
     {
-        foreach(StateVariable variable in stateVariables)
+        foreach(StateVariable variable in _initialStateVariables)
         {
-            SetValue(variable.name, variable.initialValue);
+            SetValue(variable.name, variable.value);
         }
     }
 

@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
-  m_Name: TestDialog3
+  m_Name: StartPoint2
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
   DialogText:
-  - i cast uno reverse card. your hubris will be your undoing
-  - get attacked by bees... nerd
+  - This character has died to bees
   decisionOptions:
-  - text: oh damn
+  - text: so sad
     nextDialog: {fileID: 11400000, guid: 2b7ec59d95c38b74eb3ad9eeee673389, type: 2}
     affectsState: 1
-    stateVariable: testvar3
+    stateVariable: skeleton
     stateValue: 1
