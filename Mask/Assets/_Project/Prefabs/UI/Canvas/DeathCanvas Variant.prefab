@@ -32,10 +32,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 9071287010998727638}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 1182.4}
+  m_AnchoredPosition: {x: 0, y: 270}
+  m_SizeDelta: {x: 0, y: -540}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6716029962458082485
 CanvasRenderer:
@@ -65,14 +65,14 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 2207a07b97a69b34a9b36120f06655ce, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 1
   m_FillAmount: 1
   m_FillClockwise: 1
-  m_FillOrigin: 0
+  m_FillOrigin: 1
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
 --- !u!1 &8894770391412285127
@@ -108,9 +108,9 @@ RectTransform:
   m_Father: {fileID: 9071287010998727638}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 870.1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: -270}
+  m_SizeDelta: {x: 0, y: -540}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2931261226655117818
 CanvasRenderer:
@@ -140,11 +140,11 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
-  m_Type: 0
+  m_Sprite: {fileID: 21300000, guid: 2207a07b97a69b34a9b36120f06655ce, type: 3}
+  m_Type: 3
   m_PreserveAspect: 0
   m_FillCenter: 1
-  m_FillMethod: 4
+  m_FillMethod: 1
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
@@ -254,8 +254,32 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9095881581520061616, guid: 63f0aac048144f846b15d230daf68846, type: 3}
       insertIndex: -1
       addedObject: {fileID: 75404076873321723}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2573746385078967684, guid: 63f0aac048144f846b15d230daf68846, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4408430972481024613}
   m_SourcePrefab: {fileID: 100100000, guid: 63f0aac048144f846b15d230daf68846, type: 3}
+--- !u!1 &2337218474434620130 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2573746385078967684, guid: 63f0aac048144f846b15d230daf68846, type: 3}
+  m_PrefabInstance: {fileID: 277181807725918054}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4408430972481024613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2337218474434620130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e2d9a7c8d8af449ae7fdf26c103b04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DeathCanvas
+  _iDeathText: {fileID: 7075950134880547242}
+  _iUpperImage: {fileID: 7225920703529720256}
+  _iLowerImage: {fileID: 4524718700431766877}
+  _iFillSpeed: 1
 --- !u!224 &9071287010998727638 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9095881581520061616, guid: 63f0aac048144f846b15d230daf68846, type: 3}
@@ -383,3 +407,14 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8084364617089922649, guid: 977a707c63d2c1448850e043404ce025, type: 3}
   m_PrefabInstance: {fileID: 8158989060757994146}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7075950134880547242 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1371449967988280072, guid: 977a707c63d2c1448850e043404ce025, type: 3}
+  m_PrefabInstance: {fileID: 8158989060757994146}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI

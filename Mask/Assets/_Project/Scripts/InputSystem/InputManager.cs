@@ -25,10 +25,12 @@ public class InputManager : PersistentSingleton<InputManager> {
     public InputAction _UISubmitAction { get; private set; }
 
     // Dialogue
-
     public InputAction _DialogueNavigateAction { get; private set; }
     public InputAction _DialogueContinueAction { get; private set; }
     public InputAction _DialoguePauseAction { get; private set; }
+
+    // Death
+    public InputAction _DeathRespawnAction { get; private set; }
 
     ///////////////////////
 
@@ -46,8 +48,6 @@ public class InputManager : PersistentSingleton<InputManager> {
         _inputActionsAsset = _iPlayerInput.actions;
 
         GetInputActions();
-
-        SetPlayerActionMap();
     }
 
     private void OnDestroy() {
@@ -76,6 +76,8 @@ public class InputManager : PersistentSingleton<InputManager> {
         _DialogueNavigateAction = BuildAction("DialogueNavigation");
         _DialogueContinueAction = BuildAction("Continue");
         _DialoguePauseAction = BuildAction("DialoguePause");
+
+        _DeathRespawnAction = BuildAction("Respawn");
     }
 
     private InputAction BuildAction(string i_name) {
@@ -91,18 +93,29 @@ public class InputManager : PersistentSingleton<InputManager> {
         EnablePlayerActions();
         DisableUIActions();
         DisableDialogueActions();
+        DisableDeathActions();
     }
 
     public void SetUIActionMap() {
         DisablePlayerActions();
         EnableUIActions();
         DisableDialogueActions();
+        DisableDeathActions();
     }
 
     public void SetDialogueActionMap() {
         DisablePlayerActions();
         DisableUIActions();
         EnableDialogueActions();
+        DisableDeathActions();
+
+    }
+
+    public void SetDeathActionMap() {
+        DisablePlayerActions();
+        DisableUIActions();
+        DisableDialogueActions();
+        EnableDeathActions();
     }
 
     public void EnablePlayerActions() {
@@ -147,6 +160,14 @@ public class InputManager : PersistentSingleton<InputManager> {
         _DialogueNavigateAction.Disable();
         _DialogueContinueAction.Disable();
         _DialoguePauseAction.Disable();
+    }
+
+    public void EnableDeathActions() {
+        _DeathRespawnAction.Enable();
+    }
+
+    public void DisableDeathActions() {
+        _DeathRespawnAction.Disable();
     }
 
     #region Rumble

@@ -367,7 +367,7 @@ PrefabInstance:
       addedObject: {fileID: 883894458546270514}
     - targetCorrespondingSourceObject: {fileID: 3044203949616991097, guid: a606e884a4375954d8bbfe35913b6dcb, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 4833043435222990382}
+      addedObject: {fileID: 3749005762764097588}
   m_SourcePrefab: {fileID: 100100000, guid: a606e884a4375954d8bbfe35913b6dcb, type: 3}
 --- !u!1 &1132479045204797082 stripped
 GameObject:
@@ -465,14 +465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueHandler
   _iDialogueCanvas: {fileID: 1447737351065233301}
   _iStoryState: {fileID: 11400000, guid: cdd420038140c28488a65d05b61e1c6d, type: 2}
-  _iTypingSpeed: 0.05
   _iCanSkip: 1
-  _iTypingAudioSource: {fileID: 4833043435222990382}
-  _iTypingSounds:
-  - {fileID: 8300000, guid: 43fd5a3f5b42e6a4fb9b40f983dec5a6, type: 3}
-  _iPunctuationPauseLength: 0.5
-  _iMinPitchModulation: 0.92
-  _iMaxPitchModulation: 1.02
 --- !u!114 &883894458546270514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -488,103 +481,20 @@ MonoBehaviour:
   _iPauseCanvas: {fileID: 5133652378890656792}
   _iDialogueCanvas: {fileID: 1447737351065233301}
   _iDialogueHandler: {fileID: 2915828378367474140}
---- !u!82 &4833043435222990382
-AudioSource:
+--- !u!114 &3749005762764097588
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1132479045204797082}
   m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 0
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36290283225e4274d8e44da56377b278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DeathManager
+  _iEyeCanvas: {fileID: 7793189125044232713}
+  levelToLoad: 1
 --- !u!4 &8371913895182561534 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5883798675804724509, guid: a606e884a4375954d8bbfe35913b6dcb, type: 3}
@@ -600,7 +510,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2337218474434620130, guid: 5ca5cad4defaefb40bb4c9b1268113f6, type: 3}
       propertyPath: m_Name
-      value: DeathCanvas
+      value: EyesCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 2337218474434620130, guid: 5ca5cad4defaefb40bb4c9b1268113f6, type: 3}
       propertyPath: m_IsActive
@@ -696,6 +606,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 9071287010998727638, guid: 5ca5cad4defaefb40bb4c9b1268113f6, type: 3}
   m_PrefabInstance: {fileID: 5839792835909210220}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7793189125044232713 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4408430972481024613, guid: 5ca5cad4defaefb40bb4c9b1268113f6, type: 3}
+  m_PrefabInstance: {fileID: 5839792835909210220}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89e2d9a7c8d8af449ae7fdf26c103b04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DeathCanvas
 --- !u!1001 &5985947793475283272
 PrefabInstance:
   m_ObjectHideFlags: 0

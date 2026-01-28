@@ -141,6 +141,13 @@ public class TimeManager : Singleton<TimeManager> {
         _scheduledEvents.Clear();
     }
 
+    /// <summary>
+    /// Get current in-game time with conversion rate
+    /// </summary>
+    public string GetTime() {
+        return _currentTime.ToString();
+    }
+
     private void InsertEvent(ScheduledEvent i_event) {
         // Binary search to find insertion point to keep list sorted
         int index = _scheduledEvents.BinarySearch(i_event);
