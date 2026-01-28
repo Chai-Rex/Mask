@@ -1,26 +1,26 @@
 using UnityEngine;
 
 public class InteractableDoor : MonoBehaviour, IInteractable {
-    [SerializeField] private string verb = "Open";
-    [SerializeField] private string verbWhenOpen = "Close";
-    [SerializeField] private float openAngle = 90f;
-    [SerializeField] private float openSpeed = 2f;
+    [SerializeField] private string _iVerb = "Open";
+    [SerializeField] private string _iVerbWhenOpen = "Close";
+    [SerializeField] private float _iOpenAngle = 90f;
+    [SerializeField] private float _iOpenSpeed = 2f;
 
-    private bool isOpen = false;
-    private Quaternion closedRotation;
-    private Quaternion openRotation;
-    private bool isAnimating = false;
+    private bool _isOpen = false;
+    private Quaternion _closedRotation;
+    private Quaternion _openRotation;
+    private bool _isAnimating = false;
 
-    public string InteractionVerb => isOpen ? verbWhenOpen : verb;
+    public string InteractionVerb => _isOpen ? _iVerbWhenOpen : _iVerb;
 
     private void Awake() {
-        closedRotation = transform.rotation;
-        openRotation = closedRotation * Quaternion.Euler(0, openAngle, 0);
+        _closedRotation = transform.rotation;
+        _openRotation = _closedRotation * Quaternion.Euler(0, _iOpenAngle, 0);
     }
 
     public void OnInteract(GameObject interactor) {
-        if (!isAnimating) {
-            isOpen = !isOpen;
+        if (!_isAnimating) {
+            _isOpen = !_isOpen;
             StartCoroutine(AnimateDoor());
         }
     }
@@ -38,18 +38,18 @@ public class InteractableDoor : MonoBehaviour, IInteractable {
     }
 
     private System.Collections.IEnumerator AnimateDoor() {
-        isAnimating = true;
+        _isAnimating = true;
         Quaternion startRotation = transform.rotation;
-        Quaternion targetRotation = isOpen ? openRotation : closedRotation;
+        Quaternion targetRotation = _isOpen ? _openRotation : _closedRotation;
         float elapsed = 0f;
 
         while (elapsed < 1f) {
-            elapsed += Time.deltaTime * openSpeed;
+            elapsed += Time.deltaTime * _iOpenSpeed;
             transform.rotation = Quaternion.Slerp(startRotation, targetRotation, elapsed);
             yield return null;
         }
 
         transform.rotation = targetRotation;
-        isAnimating = false;
+        _isAnimating = false;
     }
 }

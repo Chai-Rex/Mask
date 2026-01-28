@@ -16,7 +16,7 @@ MonoBehaviour:
   - This person has nothing left to say...
   decisionOptions:
   - text: okie :3
-    nextDialog: {fileID: 11400000}
+    nextDialog: {fileID: 0}
     affectsState: 0
     stateVariable: 
     stateValue: 0

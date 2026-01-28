@@ -11,16 +11,26 @@ public class InputManager : PersistentSingleton<InputManager> {
 
     // Player
     // subscribe to these
-    public InputAction _MoveAction { get; private set; }
-    public InputAction _LookAction { get; private set; }
-    public InputAction _InteractAction { get; private set; }
-    public InputAction _CrouchAction { get; private set; }
-    public InputAction _JumpAction { get; private set; }
-    public InputAction _SprintAction { get; private set; }
-    public InputAction _CancelAction { get; private set; }
+    public InputAction _PlayerMoveAction { get; private set; }
+    public InputAction _PlayerLookAction { get; private set; }
+    public InputAction _PlayerInteractAction { get; private set; }
+    public InputAction _PlayerCrouchAction { get; private set; }
+    public InputAction _PlayerJumpAction { get; private set; }
+    public InputAction _PlayerSprintAction { get; private set; }
+    public InputAction _PlayerPauseAction { get; private set; }
 
     // UI
-    public InputAction _NavigateAction { get; private set; }
+    public InputAction _UINavigateAction { get; private set; }
+    public InputAction _UIUnpauseAction { get; private set; }
+    public InputAction _UISubmitAction { get; private set; }
+
+    // Dialogue
+
+    public InputAction _DialogueNavigateAction { get; private set; }
+    public InputAction _DialogueContinueAction { get; private set; }
+    public InputAction _DialoguePauseAction { get; private set; }
+
+    ///////////////////////
 
     [SerializeField] private PlayerInput _iPlayerInput;
     private InputActionAsset _inputActionsAsset;
@@ -36,6 +46,8 @@ public class InputManager : PersistentSingleton<InputManager> {
         _inputActionsAsset = _iPlayerInput.actions;
 
         GetInputActions();
+
+        SetPlayerActionMap();
     }
 
     private void OnDestroy() {
@@ -49,14 +61,21 @@ public class InputManager : PersistentSingleton<InputManager> {
     }
 
     private void GetInputActions() {
-        _MoveAction = BuildAction("Move");
-        _LookAction = BuildAction("Look");
-        _InteractAction = BuildAction("Interact");
-        _CrouchAction = BuildAction("Crouch");
-        _JumpAction = BuildAction("Jump");
-        _SprintAction = BuildAction("Sprint");
-        _CancelAction = BuildAction("Cancel");
-        _NavigateAction = BuildAction("Navigate");
+        _PlayerMoveAction = BuildAction("Move");
+        _PlayerLookAction = BuildAction("Look");
+        _PlayerInteractAction = BuildAction("Interact");
+        _PlayerCrouchAction = BuildAction("Crouch");
+        _PlayerJumpAction = BuildAction("Jump");
+        _PlayerSprintAction = BuildAction("Sprint");
+        _PlayerPauseAction = BuildAction("PlayerPause");
+
+        _UINavigateAction = BuildAction("UINavigation");
+        _UIUnpauseAction = BuildAction("Unpause");
+        _UISubmitAction = BuildAction("Submit");
+
+        _DialogueNavigateAction = BuildAction("DialogueNavigation");
+        _DialogueContinueAction = BuildAction("Continue");
+        _DialoguePauseAction = BuildAction("DialoguePause");
     }
 
     private InputAction BuildAction(string i_name) {
@@ -68,32 +87,66 @@ public class InputManager : PersistentSingleton<InputManager> {
         return action;
     }
 
+    public void SetPlayerActionMap() {
+        EnablePlayerActions();
+        DisableUIActions();
+        DisableDialogueActions();
+    }
+
+    public void SetUIActionMap() {
+        DisablePlayerActions();
+        EnableUIActions();
+        DisableDialogueActions();
+    }
+
+    public void SetDialogueActionMap() {
+        DisablePlayerActions();
+        DisableUIActions();
+        EnableDialogueActions();
+    }
+
     public void EnablePlayerActions() {
-        _MoveAction.Enable();
-        _LookAction.Enable();
-        _InteractAction.Enable();
-        _CrouchAction.Enable();
-        _JumpAction.Enable();
-        _SprintAction.Enable();
-        _CancelAction.Enable();
+        _PlayerMoveAction.Enable();
+        _PlayerLookAction.Enable();
+        _PlayerInteractAction.Enable();
+        _PlayerCrouchAction.Enable();
+        _PlayerJumpAction.Enable();
+        _PlayerSprintAction.Enable();
+        _PlayerPauseAction.Enable();
     }
 
     public void DisablePlayerActions() {
-        _MoveAction.Disable();
-        _LookAction.Disable();
-        _InteractAction.Disable();
-        _CrouchAction.Disable();
-        _JumpAction.Disable();
-        _SprintAction.Disable();
-        _CancelAction.Disable();
+        _PlayerMoveAction.Disable();
+        _PlayerLookAction.Disable();
+        _PlayerInteractAction.Disable();
+        _PlayerCrouchAction.Disable();
+        _PlayerJumpAction.Disable();
+        _PlayerSprintAction.Disable();
+        _PlayerPauseAction.Disable();
     }
 
     public void EnableUIActions() {
-        _NavigateAction.Enable();
+        _UINavigateAction.Enable();
+        _UIUnpauseAction.Enable();
+        _UISubmitAction.Enable();
     }
 
     public void DisableUIActions() {
-        _NavigateAction.Disable();
+        _UINavigateAction.Disable();
+        _UIUnpauseAction.Disable();
+        _UISubmitAction.Disable();
+    }
+
+    public void EnableDialogueActions() {
+        _DialogueNavigateAction.Enable();
+        _DialogueContinueAction.Enable();
+        _DialoguePauseAction.Enable();
+    }
+
+    public void DisableDialogueActions() {
+        _DialogueNavigateAction.Disable();
+        _DialogueContinueAction.Disable();
+        _DialoguePauseAction.Disable();
     }
 
     #region Rumble

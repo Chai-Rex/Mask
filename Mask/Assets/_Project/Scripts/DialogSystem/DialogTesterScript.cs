@@ -20,7 +20,7 @@ public class DialogTesterScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        InputManager.Instance._InteractAction.performed += InteractPressed;
+        InputManager.Instance._PlayerInteractAction.performed += InteractPressed;
 
         timeBetweenChars = 1f / textSpeed;
         currentDialog.ResetDialog();

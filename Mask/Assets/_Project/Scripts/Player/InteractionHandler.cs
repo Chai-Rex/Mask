@@ -30,13 +30,13 @@ public class InteractionHandler : MonoBehaviour {
     private void Start() {
         // Subscribe to interact input
         if (InputManager.Instance != null) {
-            InputManager.Instance._InteractAction.started += OnInteractInput;
+            InputManager.Instance._PlayerInteractAction.started += OnInteractInput;
         }
     }
 
     private void OnDestroy() {
         if (InputManager.Instance != null) {
-            InputManager.Instance._InteractAction.started -= OnInteractInput;
+            InputManager.Instance._PlayerInteractAction.started -= OnInteractInput;
         }
     }
 
