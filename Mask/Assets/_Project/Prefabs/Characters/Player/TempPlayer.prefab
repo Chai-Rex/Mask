@@ -968,29 +968,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2455251432620148320}
     m_Modifications:
-    - target: {fileID: 698485052281254050, guid: 9cae8fb36fd82cc4491df0d2bdcccb6b, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1250075787283330045, guid: 9cae8fb36fd82cc4491df0d2bdcccb6b, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 1906468560005442442, guid: 9cae8fb36fd82cc4491df0d2bdcccb6b, type: 3}
       propertyPath: m_Name
       value: DialogueCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 1906468560005442442, guid: 9cae8fb36fd82cc4491df0d2bdcccb6b, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 1906468560005442442, guid: 9cae8fb36fd82cc4491df0d2bdcccb6b, type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4382901989207075201, guid: 9cae8fb36fd82cc4491df0d2bdcccb6b, type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 5186453134792553150, guid: 9cae8fb36fd82cc4491df0d2bdcccb6b, type: 3}
       propertyPath: m_Pivot.x
@@ -1042,15 +1026,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5186453134792553150, guid: 9cae8fb36fd82cc4491df0d2bdcccb6b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5186453134792553150, guid: 9cae8fb36fd82cc4491df0d2bdcccb6b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5186453134792553150, guid: 9cae8fb36fd82cc4491df0d2bdcccb6b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5186453134792553150, guid: 9cae8fb36fd82cc4491df0d2bdcccb6b, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1071,14 +1055,6 @@ PrefabInstance:
     - target: {fileID: 5186453134792553150, guid: 9cae8fb36fd82cc4491df0d2bdcccb6b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6111499194704439291, guid: 9cae8fb36fd82cc4491df0d2bdcccb6b, type: 3}
-      propertyPath: m_Layer
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7890516517391184711, guid: 9cae8fb36fd82cc4491df0d2bdcccb6b, type: 3}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
