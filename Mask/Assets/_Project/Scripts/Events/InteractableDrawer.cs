@@ -2,19 +2,19 @@ using DG.Tweening;
 using System;
 using UnityEngine;
 
-public class LaundryShoot : BaseTimeEvent, IInteractable
+public class InteractableDrawer : BaseTimeEvent, IInteractable
 {
-    private bool isActive = false;
     [SerializeField] private string verb = "Close";
     [SerializeField] private string verbWhenOpen = "Open";
+    [SerializeField] private bool isDeathDrawer = false;
+    private bool isActive = false;
+    private bool isOpen = false;
 
     private Vector3 startLocation;
     private Vector3 endLocation;
 
-    private bool isOpen = false;
-
-    [SerializeField] private float shootDuration = 3.0f;
-    [SerializeField] private float deathDelay = 5.0f;
+    [SerializeField] private float drawerDuration = 3.0f;
+    [SerializeField] private float deathDelay = 3.0f;
     private Action currentCallback;
 
     public string InteractionVerb => isOpen ? verbWhenOpen : verb;
@@ -22,51 +22,50 @@ public class LaundryShoot : BaseTimeEvent, IInteractable
     private void Awake()
     {
         startLocation = transform.position;
-        endLocation = transform.position + new Vector3(0.0f, 200.0f, 0.0f);
-    }
-
-    public void OnInteract(GameObject interactor)
-    {
-        OnLaudryShootOpen();
+        endLocation = transform.position + new Vector3(0.0f, 0.0f, 100.0f);
     }
 
     protected override void ActivateTimeEvent()
     {
         base.ActivateTimeEvent();
 
-        if (isActive)
+        if (isActive && isDeathDrawer)
         {
             // Player Death
         }
     }
 
-    void OnLaudryShootOpen()
+    public void OnInteract(GameObject interactor)
+    {
+        OnDrawerOpen();
+    }
+
+    private void OnDrawerOpen()
     {
         if (isOpen)
         {
-            transform.DOMove(startLocation, shootDuration)
+            transform.DOMove(startLocation, drawerDuration)
                 .OnComplete(() =>
                 {
                     isOpen = false;
                     isActive = false;
 
-                    if (currentCallback == null)
+                    if (currentCallback == null && isDeathDrawer)
                     {
                         currentCallback = ActivateTimeEvent;
                         TimeManager.Instance.ScheduleAfter(deathDelay, currentCallback);
                     }
-                    
                 });
         }
         else
         {
-            transform.DOMove(endLocation, shootDuration)
+            transform.DOMove(endLocation, drawerDuration)
                 .OnComplete(() =>
                 {
                     isOpen = true;
                     isActive = true;
 
-                    if (currentCallback != null)
+                    if (currentCallback != null && isDeathDrawer)
                     {
                         TimeManager.Instance.CancelScheduled(currentCallback);
                     }

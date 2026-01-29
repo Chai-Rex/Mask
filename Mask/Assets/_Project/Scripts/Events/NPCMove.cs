@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Splines;
@@ -5,8 +6,11 @@ using UnityEngine.Splines;
 public enum ENPCSplineState
 {
     None,
-    AtStart,
-    AtEnd
+    PointOne,
+    PointTwo,
+    PointThree,
+    PointFour,
+    PointFive,
 }
 
 [System.Serializable]
@@ -19,11 +23,13 @@ public class NPCSpline
 public class NPCMove : BaseTimeEvent
 {
     [SerializeField] private float moveDuration = 5.0f;
-    private SplineAnimate splineAnimate;
+    protected SplineAnimate splineAnimate;
 
     [SerializeField] private List<NPCSpline> npcSplines = new List<NPCSpline>();
     private Dictionary<ENPCSplineState, SplineContainer> npcSplineDictionary = new Dictionary<ENPCSplineState, SplineContainer>();
-    private ENPCSplineState currentNPCSplineState = ENPCSplineState.AtStart;
+    protected ENPCSplineState currentNPCSplineState = ENPCSplineState.PointOne;
+
+    protected Coroutine currentCoroutine;
 
     private void Awake()
     {
@@ -48,20 +54,15 @@ public class NPCMove : BaseTimeEvent
         }
     }
 
-    private void NPCMoveOnSpline()
+    protected virtual void NPCMoveOnSpline()
     {
         splineAnimate.Container = npcSplineDictionary[currentNPCSplineState];
         splineAnimate.Restart(false);
         splineAnimate.Play();
+    }
 
-        switch (currentNPCSplineState)
-        {
-            case ENPCSplineState.AtStart:
-                currentNPCSplineState = ENPCSplineState.AtEnd;
-                break;
-            case ENPCSplineState.AtEnd:
-                currentNPCSplineState = ENPCSplineState.AtStart;
-                break;
-        }
+    protected virtual IEnumerator HasNPCFinishedMoving()
+    {
+        yield return null;
     }
 }

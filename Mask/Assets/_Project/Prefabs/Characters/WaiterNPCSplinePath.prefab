@@ -142,7 +142,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5637039271458261646}
   m_Layer: 0
-  m_Name: TestNPCSplinePath
+  m_Name: WaiterNPCSplinePath
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
