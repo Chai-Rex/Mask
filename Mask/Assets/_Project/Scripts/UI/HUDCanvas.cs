@@ -8,8 +8,8 @@ public class HUDCanvas : MonoBehaviour {
     [SerializeField] private GameObject _iInteractionPrompt;
     [SerializeField] private TextMeshProUGUI _iVerbText;
 
-    [Header("Settings")]
-    [SerializeField] private string _iKeyPrompt = "[E] ";
+    //[Header("Settings")]
+    //[SerializeField] private string _iKeyPrompt = "[E] ";
 
     private void Start() {
         if (_iInteractionHandler == null) {
@@ -35,7 +35,7 @@ public class HUDCanvas : MonoBehaviour {
         _iInteractionPrompt.SetActive(true);
 
         if (_iVerbText != null) {
-            _iVerbText.text = _iKeyPrompt + verb;
+            _iVerbText.text = verb;
         }
     }
 
