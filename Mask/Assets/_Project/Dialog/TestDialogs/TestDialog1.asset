@@ -13,10 +13,11 @@ MonoBehaviour:
   m_Name: TestDialog1
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
   DialogText:
-  - <b>aaaaaahhhhh</b>
-  - the bees
+  - '[excited]<color="red">aaaaaahhhhh.</color>[/excited]'
+  - '[excited]the bees[/excited]'
   - theyre in my eyes
-  - aaaAAAAAAAhhhhhh
+  - '[nod]aaaAAAAAAAhhhhhh[/nod]'
+  - '[NA]*the bees seem to be angry*[/NA]'
   decisionOptions:
   - text: lmao bees
     nextDialog: {fileID: 11400000, guid: 14d63178ceb68c949b04040c12944c5e, type: 2}

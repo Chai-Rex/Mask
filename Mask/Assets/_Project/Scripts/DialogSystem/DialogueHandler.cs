@@ -1,5 +1,6 @@
 using AudioSystem;
 using System;
+using System.Collections.Generic;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -11,9 +12,13 @@ public class DialogueHandler : Singleton<DialogueHandler> {
     [Header("References")]
     [SerializeField] private DialogueCanvas _iDialogueCanvas;
     [SerializeField] private StoryStateSO _iStoryState;
+    [SerializeField] private DialogueAnimationHandler _iSpeakingAnimationHandler;
 
     [Header("Typing Settings")]
     [SerializeField] private bool _iCanSkip = true;
+
+    [Header("Silent Preset")]
+    [SerializeField] private string _silentPresetName = "NA";
 
     private CancellationTokenSource _typingCancellation;
     private int _currentDialogIndex = 0;
@@ -22,9 +27,12 @@ public class DialogueHandler : Singleton<DialogueHandler> {
     private bool _isPaused = false;
     private bool _isPlayerInput = false;
 
-    private CharacterDialogSO currentDialog;
-
+    private CharacterDialogSO _currentDialog;
     private DialogSoundSO _currentDialogSound;
+    private DialogueAnimationHandler _currentNPCAnimator;
+
+    private DialogueAnimationParser.AnimationTag _currentAnimation = null;
+    private string _currentActivePreset = null; // Track current preset name
 
     private void Start() {
         if (InputManager.Instance != null) {
@@ -48,8 +56,8 @@ public class DialogueHandler : Singleton<DialogueHandler> {
             _isPlayerInput = true;
         }
     }
-   
-    public void StartDialogueTree(CharacterDialogSO i_dialogueTree, string i_name, DialogSoundSO i_dialogSound) {
+
+    public void StartDialogueTree(CharacterDialogSO i_dialogueTree, string i_name, DialogSoundSO i_dialogSound, DialogueAnimationHandler i_npcAnimator = null) {
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -59,9 +67,10 @@ public class DialogueHandler : Singleton<DialogueHandler> {
         _iDialogueCanvas.gameObject.SetActive(true);
         _iDialogueCanvas.SetName(i_name);
 
-        currentDialog = i_dialogueTree;
-
+        _currentDialog = i_dialogueTree;
         _currentDialogSound = i_dialogSound;
+        _currentNPCAnimator = i_npcAnimator;
+        _currentActivePreset = null; // Reset preset tracking
 
         ContinueDialogue();
     }
@@ -70,16 +79,16 @@ public class DialogueHandler : Singleton<DialogueHandler> {
 
         _currentDialogIndex = 0;
 
-        while (_currentDialogIndex < currentDialog.DialogText.Count) {
-            await SetDialogue(currentDialog.DialogText[_currentDialogIndex]);
+        while (_currentDialogIndex < _currentDialog.DialogText.Count) {
+            await SetDialogue(_currentDialog.DialogText[_currentDialogIndex]);
             _currentDialogIndex++;
 
             await PlayerInput();
         }
 
         // player choice
-        for (int id = 0; id < currentDialog.decisionOptions.Count; id++) {
-            _iDialogueCanvas.AddResponse(currentDialog.decisionOptions[id].text, id);
+        for (int id = 0; id < _currentDialog.decisionOptions.Count; id++) {
+            _iDialogueCanvas.AddResponse(_currentDialog.decisionOptions[id].text, id);
         }
     }
 
@@ -94,6 +103,10 @@ public class DialogueHandler : Singleton<DialogueHandler> {
         InputManager.Instance.SetPlayerActionMap();
         _iDialogueCanvas.gameObject.SetActive(false);
 
+        _currentNPCAnimator = null;
+        _currentAnimation = null;
+        _currentActivePreset = null;
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -101,14 +114,14 @@ public class DialogueHandler : Singleton<DialogueHandler> {
     public void SelectResponse(int i_id) {
         _iDialogueCanvas.ClearResponses();
 
-        PlayerDecision chosenDecision = currentDialog.decisionOptions[i_id];
+        PlayerDecision chosenDecision = _currentDialog.decisionOptions[i_id];
 
         if (chosenDecision.affectsState) {
             _iStoryState.SetValue(chosenDecision.stateVariable, chosenDecision.stateValue);
         }
 
-        currentDialog = chosenDecision.nextDialog;
-        if (currentDialog == null) { FinishDialogue(); return; }
+        _currentDialog = chosenDecision.nextDialog;
+        if (_currentDialog == null) { FinishDialogue(); return; }
 
         ContinueDialogue();
     }
@@ -125,35 +138,48 @@ public class DialogueHandler : Singleton<DialogueHandler> {
         try {
             await TypeTextWithRichText(i_dialogue, _typingCancellation.Token);
         } catch (OperationCanceledException) {
-            _iDialogueCanvas.SetDialogue(i_dialogue);
+            // Parse to get clean text for instant display
+            var (cleanText, _) = DialogueAnimationParser.Parse(i_dialogue);
+            _iDialogueCanvas.SetDialogue(cleanText);
         } finally {
             _isTyping = false;
         }
     }
 
     private async Task TypeTextWithRichText(string i_text, CancellationToken i_cancellationToken) {
+
+        // Start NPC speaking animation with default preset at the beginning
+        if (_currentNPCAnimator != null) {
+            _currentNPCAnimator.StartSpeaking();
+            _currentActivePreset = null; // Default preset (no name)
+        }
+
+        // Parse animation tags
+        var (cleanText, animations) = DialogueAnimationParser.Parse(i_text);
+
         StringBuilder displayedText = new StringBuilder();
         bool insideTag = false;
+        int cleanTextIndex = 0; // Track position in clean text (for animation lookup)
 
-        for (int i = 0; i < i_text.Length; i++) {
+        for (int i = 0; i < cleanText.Length; i++) {
 
             // Wait while paused
             while (_isPaused) {
                 i_cancellationToken.ThrowIfCancellationRequested();
-                await Task.Yield();
+                await Awaitable.NextFrameAsync(i_cancellationToken);
             }
 
             if (_skipRequested) {
-                _iDialogueCanvas.SetDialogue(i_text);
+                _iDialogueCanvas.SetDialogue(cleanText);
                 _skipRequested = false;
-                return;
+                break; // Exit loop but still stop animation below
             }
 
             i_cancellationToken.ThrowIfCancellationRequested();
 
-            char currentChar = i_text[i];
+            char currentChar = cleanText[i];
 
-            // Check if we're entering or exiting a tag
+            // Check if we're entering or exiting a rich text tag (like <color>)
             if (currentChar == '<') {
                 insideTag = true;
             }
@@ -163,25 +189,126 @@ public class DialogueHandler : Singleton<DialogueHandler> {
 
             if (currentChar == '>') {
                 insideTag = false;
-                continue; // Don't delay or play sound for closing bracket
+                continue;
             }
 
             // Only delay and play sound for visible characters
             if (!insideTag) {
-                if (char.IsLetterOrDigit(currentChar))
-                {
-                    PlayTypingSound();
+                // Check if entering a new animation range
+                if (DialogueAnimationParser.IsEnteringAnimationRange(cleanTextIndex, animations, out var enteringAnim)) {
+                    _currentAnimation = enteringAnim;
+                    HandleAnimationEnter(enteringAnim);
                 }
-                
-                if(!char.IsPunctuation(currentChar))
-                {
-                    await Task.Delay(TimeSpan.FromSeconds(_currentDialogSound._iTypingSpeed), i_cancellationToken);
+
+                // Check if exiting an animation range
+                if (DialogueAnimationParser.IsExitingAnimationRange(cleanTextIndex, animations, out var exitingAnim)) {
+                    HandleAnimationExit(exitingAnim);
+                    _currentAnimation = null;
                 }
-                else
-                {
-                    await Task.Delay(TimeSpan.FromSeconds(_currentDialogSound._iPunctuationPauseLength), i_cancellationToken);
+
+                if (char.IsLetterOrDigit(currentChar)) {
+                    // Only play typing sound if not in silent preset
+                    if (!IsCurrentPreset(_silentPresetName)) {
+                        PlayTypingSound();
+                    }
                 }
+
+                if (!char.IsPunctuation(currentChar)) {
+                    await Awaitable.WaitForSecondsAsync(_currentDialogSound._iTypingSpeed, i_cancellationToken);
+                } else {
+                    await Awaitable.WaitForSecondsAsync(_currentDialogSound._iPunctuationPauseLength, i_cancellationToken);
+                }
+
+                cleanTextIndex++;
             }
+        }
+
+        // Stop NPC speaking animation when text is done displaying
+        if (_currentNPCAnimator != null) {
+            _currentNPCAnimator.StopSpeaking();
+        }
+
+        // Reset animation and preset tracking when done
+        _currentAnimation = null;
+        _currentActivePreset = null;
+    }
+
+    private void HandleAnimationEnter(DialogueAnimationParser.AnimationTag i_animationTag) {
+        if (_currentNPCAnimator == null) return;
+
+        if (i_animationTag._CommandType == DialogueAnimationParser.AnimationCommandType.Preset) {
+            // Change to the new emotion preset (stops and restarts with new preset)
+            _currentNPCAnimator.SetEmotionPreset(i_animationTag._AnimationType);
+            _currentActivePreset = i_animationTag._AnimationType;
+        } else {
+            // Trigger one-time animation (doesn't stop base animation, layers on top)
+            TriggerAnimation(i_animationTag._AnimationType);
+        }
+    }
+
+    private void HandleAnimationExit(DialogueAnimationParser.AnimationTag i_animationTag) {
+        if (_currentNPCAnimator == null) return;
+
+        // If exiting a preset, return to default preset
+        if (i_animationTag._CommandType == DialogueAnimationParser.AnimationCommandType.Preset) {
+            ReturnToBasePreset();
+        }
+    }
+
+    private void ReturnToBasePreset() {
+        if (_currentNPCAnimator == null) return;
+        // Return to default preset (restarts animation with default)
+        _currentNPCAnimator.SetEmotionPreset();
+        _currentActivePreset = null; // Back to default (no name)
+    }
+
+    /// <summary>
+    /// Check if a specific preset is currently active
+    /// </summary>
+    public bool IsCurrentPreset(string i_presetName) {
+        if (string.IsNullOrEmpty(i_presetName)) {
+            // Check if we're using default preset (no name)
+            return string.IsNullOrEmpty(_currentActivePreset);
+        }
+
+        return _currentActivePreset != null &&
+               _currentActivePreset.Equals(i_presetName, StringComparison.OrdinalIgnoreCase);
+    }
+
+    /// <summary>
+    /// Get the name of the currently active preset (null if default)
+    /// </summary>
+    public string GetCurrentPresetName() {
+        return _currentActivePreset;
+    }
+
+    private void TriggerAnimation(string i_animationType) {
+        if (_currentNPCAnimator == null) return;
+
+        // Trigger specific animations based on type
+        switch (i_animationType.ToLower()) {
+            case "nod":
+            case "yes":
+                _currentNPCAnimator.TriggerNod();
+                break;
+
+            case "no":
+            case "deny":
+                _currentNPCAnimator.TriggerHeadShake();
+                break;
+
+            case "emphasis":
+            case "important":
+                _currentNPCAnimator.TriggerEmphasis();
+                break;
+
+            case "shake":
+                _currentNPCAnimator.TriggerShake(0.1f, 0.3f);
+                break;
+
+            default:
+                Debug.LogWarning($"Unknown trigger animation type: {i_animationType}");
+                break;
         }
     }
 
@@ -189,12 +316,6 @@ public class DialogueHandler : Singleton<DialogueHandler> {
         SoundManager.Instance.CreateSound()
             .WithRandomPitch()
             .Play(_currentDialogSound._iTypingSoundData);
-
-        //if (_iTypingAudioSource != null && _iTypingSound != null) {
-        //    AudioClip clip = _iTypingSound;
-        //    _iTypingAudioSource.pitch = UnityEngine.Random.Range(_iMinPitchModulation, _iMaxPitchModulation);
-        //    _iTypingAudioSource.PlayOneShot(clip);
-        //}
     }
 
     public void Pause() {
@@ -209,5 +330,4 @@ public class DialogueHandler : Singleton<DialogueHandler> {
     public bool IsTyping => _isTyping;
     public bool IsPaused => _isPaused;
     #endregion
-
 }
