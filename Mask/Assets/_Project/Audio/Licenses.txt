@@ -3,6 +3,27 @@ All uncredited sounds and adaptations made by Gabriel Robinson-Barr using FLStud
 ----- DialogSFX -----
 "SFX_RetroSinglev1", "SFX_RetroSinglev4", and "SFX_SingleLowONoReverbv1" by AD Sounds has no license to use or distribute and can be found here: https://ad-sounds.itch.io/dialog-text-sound-effects
 
+----- BGM -----
+"【LOFI 】Hadar" by lofi_nemuko (https://pixabay.com/users/lofi_nemuko-42265913/) -- https://pixabay.com/music/beats-lofi-hadar-253141/ -- License: Pixabay Content License (https://pixabay.com/service/terms/)
+
+"Trygve Larsen -Sleaze Puppy -Ballroom Music" by Nesrality (https://pixabay.com/users/nesrality-22721863/) -- https://pixabay.com/music/folk-trygve-larsen-sleaze-puppy-ballroom-music-116506/ --  -- License: Pixabay Content License (https://pixabay.com/service/terms/)
+
+"Trygve Larsen -Dramatic Wonder -Foxtrot Piano -Ballroom Music" by Nesrality (https://pixabay.com/users/nesrality-22721863/) -- https://pixabay.com/music/traditional-jazz-trygve-larsen-dramatic-wonder-foxtrot-piano-ballroom-music-116483/ -- License: Pixabay Content License (https://pixabay.com/service/terms/)
+
+"Trygve Larsen -Regularly Familiar -Polka Piano -Ballroom Music" by Nesrality (https://pixabay.com/users/nesrality-22721863/) -- https://pixabay.com/music/traditional-jazz-trygve-larsen-regularly-familiar-polka-piano-ballroom-music-116498/ -- License: Pixabay Content License (https://pixabay.com/service/terms/)
+
+"Chill Sky Bar - Nhạc Jazz Thư Giãn" by Jazz_BossaNova_BGM (https://pixabay.com/users/jazz_bossanova_bgm-44357536/) -- https://pixabay.com/music/traditional-jazz-chill-sky-bar-nh%e1%ba%a1c-jazz-th%c6%b0-gi%c3%a3n-222698/ -- License: Pixabay Content License (https://pixabay.com/service/terms/)
+
+"Two Grands - Piano Bar Music - Jazz" by JuliusH (https://pixabay.com/users/juliush-3921568/) -- https://pixabay.com/music/traditional-jazz-two-grands-piano-bar-music-jazz-3945/ -- License: Pixabay Content License (https://pixabay.com/service/terms/)
+
+Small_Town_Bar_001.wav by conleec -- https://freesound.org/s/212102/ -- License: Creative Commons 0
+
+Library with Light Chatter by calebowenw -- https://freesound.org/s/215963/ -- License: Attribution 3.0 -- Adapted for LightChatter.wav
+
+5 min of crowd chatter.  40 people.wav by Psykophobia -- https://freesound.org/s/608996/ -- License: Creative Commons 0 -- Adapted for CrowdChatter.wav
+
+DinnerDishes.mp3 by shelbyshark -- https://freesound.org/s/466608/ -- License: Creative Commons 0 -- Adapted for SilverwareAmbiance.wav
+
 ----- GameSFX -----
 soga.wav by lunches -- https://freesound.org/s/165895/ -- License: Attribution 3.0 -- Adapted for ChandelierFallFull.wav
 35_CorteCuerda.wav by Lextao -- https://freesound.org/s/471793/ -- License: Attribution 4.0 -- Adapted for ChandelierFallFull.wav
