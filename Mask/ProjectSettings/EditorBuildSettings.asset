@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Project/Scenes/ChaiScene/ChaiScene.unity
     guid: 3790e69c635d9ea419fec87994d510f8
+  - enabled: 1
+    path: Assets/_Project/Scenes/EventTestScene.unity
+    guid: cf2f57a190b87854eaf09281217e1440
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 8757c5aa73271af4ea6425b381783069, type: 3}
   m_UseUCBPForAssetBundles: 0

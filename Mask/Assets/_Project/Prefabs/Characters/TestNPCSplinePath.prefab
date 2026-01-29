@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8399523618689996828}
   - component: {fileID: 4009899360376541230}
   m_Layer: 0
-  m_Name: startSpline
+  m_Name: pointOneSpline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -176,7 +176,7 @@ GameObject:
   - component: {fileID: 3186522638206989073}
   - component: {fileID: 3853039677290664446}
   m_Layer: 0
-  m_Name: endSpline
+  m_Name: pointTwoSpline
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

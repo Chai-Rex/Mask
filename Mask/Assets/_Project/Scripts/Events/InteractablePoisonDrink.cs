@@ -9,10 +9,10 @@ public class InteractablePoisonDrink : BaseTimeEvent, IInteractable
 
     public void OnInteract(GameObject interactor)
     {
-
         if (!isActive) { return; }
 
         // Player Death
+        DeathManager.Instance.Die("Drink was Poisoned");
 
         Destroy(gameObject);
     }

@@ -5,8 +5,8 @@ using UnityEngine;
 public class LaundryShoot : BaseTimeEvent, IInteractable
 {
     private bool isActive = false;
-    [SerializeField] private string verb = "Open";
-    [SerializeField] private string verbWhenOpen = "Close";
+    [SerializeField] private string verb = "Close";
+    [SerializeField] private string verbWhenOpen = "Open";
 
     private Vector3 startLocation;
     private Vector3 endLocation;

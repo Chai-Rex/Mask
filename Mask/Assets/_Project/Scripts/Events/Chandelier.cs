@@ -40,6 +40,7 @@ public class Chandelier : BaseTimeEvent
         if (collision.gameObject.tag == "Player")
         {
             // Player Death
+            DeathManager.Instance.Die("Chandelier Bonked you on the head");
         }
     }
 }
