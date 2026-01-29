@@ -14,6 +14,7 @@ public class LevelManager : PersistentSingleton<LevelManager> {
     public enum Levels {
         MainMenuScene,
         ChaiScene,
+        EventTestScene
     }
 
     public async void LoadScene(Levels i_sceneName) {

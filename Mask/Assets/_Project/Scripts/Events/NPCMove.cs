@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Splines;
+using UnityEngine.AI;
 
-public enum ENPCSplineState
+public enum ENPCLocationState
 {
     None,
     PointOne,
@@ -11,36 +12,39 @@ public enum ENPCSplineState
     PointThree,
     PointFour,
     PointFive,
+    PointSix,
+    PointSeven,
 }
 
 [System.Serializable]
-public class NPCSpline
+public class NPCLocationPoints
 {
-    public ENPCSplineState npcSplineState;
-    public SplineContainer splineContainer;
+    public ENPCLocationState npcLocationState;
+    public List<Transform> npcTransforms;
 }
 
 public class NPCMove : BaseTimeEvent
 {
-    [SerializeField] private float moveDuration = 5.0f;
-    protected SplineAnimate splineAnimate;
+    [SerializeField] private float moveSpeed = 2.5f;
 
-    [SerializeField] private List<NPCSpline> npcSplines = new List<NPCSpline>();
-    private Dictionary<ENPCSplineState, SplineContainer> npcSplineDictionary = new Dictionary<ENPCSplineState, SplineContainer>();
-    protected ENPCSplineState currentNPCSplineState = ENPCSplineState.PointOne;
+    [SerializeField] private List<NPCLocationPoints> npcLocationPoints = new List<NPCLocationPoints>();
+    protected Dictionary<ENPCLocationState, List<Transform>> npcLocationDictionary = new Dictionary<ENPCLocationState, List<Transform>>();
+    protected ENPCLocationState currentNPCLocationState = ENPCLocationState.PointOne;
 
-    protected Coroutine currentCoroutine;
+    protected Coroutine collectionPointsCoroutine;
+    protected Coroutine pointCoroutine;
+    protected Coroutine npcMoveCoroutine;
 
-    private void Awake()
+    protected NavMeshAgent navMeshAgent;
+
+    protected virtual void Awake()
     {
-        splineAnimate = GetComponent<SplineAnimate>();
-        splineAnimate.PlayOnAwake = false;
-        splineAnimate.Loop = SplineAnimate.LoopMode.Once;
-        splineAnimate.Duration = moveDuration;
+        navMeshAgent = GetComponent<NavMeshAgent>();
+        navMeshAgent.speed = moveSpeed;
 
-        foreach (NPCSpline npcSpine in npcSplines)
+        foreach (NPCLocationPoints npcLocationPoint in npcLocationPoints)
         {
-            npcSplineDictionary[npcSpine.npcSplineState] = npcSpine.splineContainer;
+            npcLocationDictionary[npcLocationPoint.npcLocationState] = npcLocationPoint.npcTransforms;
         }
     }
 
@@ -48,21 +52,74 @@ public class NPCMove : BaseTimeEvent
     {
         base.ActivateTimeEvent();
 
-        if (!splineAnimate.IsPlaying)
+        if (navMeshAgent)
         {
-            NPCMoveOnSpline();
+            StopAllCoroutines();
+            collectionPointsCoroutine = null;
+            pointCoroutine = null;
+            npcMoveCoroutine = null;
+
+            if (npcLocationDictionary.Count != 0 && npcLocationDictionary.ContainsKey(currentNPCLocationState))
+            {
+                npcMoveCoroutine = StartCoroutine(OnNPCMove());
+            }
         }
     }
 
-    protected virtual void NPCMoveOnSpline()
+    protected virtual IEnumerator OnNPCMove()
     {
-        splineAnimate.Container = npcSplineDictionary[currentNPCSplineState];
-        splineAnimate.Restart(false);
-        splineAnimate.Play();
+        yield return collectionPointsCoroutine = StartCoroutine(OnNPCMoveThroughCollectionOfPoints());    
+
+        switch (currentNPCLocationState)
+        {
+            case ENPCLocationState.PointOne:
+                currentNPCLocationState = ENPCLocationState.PointTwo;
+                break;
+            case ENPCLocationState.PointTwo:
+                currentNPCLocationState = ENPCLocationState.PointThree;
+                break;
+            case ENPCLocationState.PointThree:
+                currentNPCLocationState = ENPCLocationState.PointFour;
+                break;
+            case ENPCLocationState.PointFour:
+                currentNPCLocationState = ENPCLocationState.PointFive;
+                break;
+            case ENPCLocationState.PointFive:
+                currentNPCLocationState = ENPCLocationState.PointSix;
+                break;
+            case ENPCLocationState.PointSix:
+                currentNPCLocationState = ENPCLocationState.PointSeven;
+                break;
+        }
     }
 
-    protected virtual IEnumerator HasNPCFinishedMoving()
+    protected virtual IEnumerator OnNPCMoveThroughCollectionOfPoints()
     {
-        yield return null;
+        int currentPoint = 0;
+
+        while (currentPoint < npcLocationDictionary[currentNPCLocationState].Count)
+        {
+            yield return pointCoroutine = StartCoroutine(OnNPCMoveToPoint(currentPoint));
+            currentPoint++;
+        }
+    }
+
+    protected virtual IEnumerator OnNPCMoveToPoint(int _currentPoint)
+    {
+        navMeshAgent.isStopped = false;
+
+        navMeshAgent.SetDestination(npcLocationDictionary[currentNPCLocationState][_currentPoint].position);      
+
+        while (navMeshAgent.pathPending)
+        {
+            yield return null;
+        }
+
+        while (navMeshAgent.remainingDistance > 0.001f)
+        {
+            yield return null;
+        }
+
+        navMeshAgent.isStopped = true;
     }
 }
