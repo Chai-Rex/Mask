@@ -457,6 +457,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4453917257786891485, guid: b8082798b84c8ff4e880b676cdee0118, type: 3}
+      propertyPath: field of view
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 4453917257786891485, guid: b8082798b84c8ff4e880b676cdee0118, type: 3}
       propertyPath: m_BackGroundColor.b
       value: 0
       objectReference: {fileID: 0}
@@ -482,7 +486,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8123594813028873093, guid: b8082798b84c8ff4e880b676cdee0118, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.136
+      value: -5.972
       objectReference: {fileID: 0}
     - target: {fileID: 8123594813028873093, guid: b8082798b84c8ff4e880b676cdee0118, type: 3}
       propertyPath: m_LocalRotation.w
@@ -543,7 +547,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 44eabf565ee347f42a12d4391a2e0dde, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.718
+      value: 4.08
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 44eabf565ee347f42a12d4391a2e0dde, type: 3}
       propertyPath: m_LocalPosition.z
