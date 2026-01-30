@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StoryStateSO
   _initialStateVariables:
   - name: attackedByBees
-    value: 0
-  - name: deathByBees
-    value: 0
+    _value: 0
   - name: skeleton
-    value: 0
+    _value: 0
+  - name: deathByBees
+    _value: 0

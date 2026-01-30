@@ -1956,17 +1956,17 @@ MonoBehaviour:
   _treeOptions:
   - requiredStates:
     - name: deathByBees
-      value: 1
+      _value: 1
     - name: skeleton
-      value: 0
+      _value: 0
     dialogTree: {fileID: 11400000, guid: 65cf09805db7d5f4c8036adaf7bebd69, type: 2}
   - requiredStates:
     - name: attackedByBees
-      value: 1
+      _value: 1
     dialogTree: {fileID: 11400000, guid: 4b26a4957f352a145b3e362d7b734723, type: 2}
   - requiredStates:
     - name: skeleton
-      value: 1
+      _value: 1
     dialogTree: {fileID: 11400000, guid: f332698306c07ba4eae24cf0d76bdf99, type: 2}
   _defaultDialogTree: {fileID: 11400000, guid: 42f76f4323c579e4596f4e5fdab1f4b6, type: 2}
   _iCompleteDialogue: {fileID: 11400000, guid: 2b7ec59d95c38b74eb3ad9eeee673389, type: 2}

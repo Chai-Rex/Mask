@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Lego : BaseTimeEvent
 {
-    private bool isActive = false;
+    private StateVariable isLegoActive = new StateVariable("isLegoActive", false);
 
     protected override void ActivateTimeEvent()
     {
@@ -13,7 +13,7 @@ public class Lego : BaseTimeEvent
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!isActive) { return; }
+        if (!isLegoActive.Value) { return; }
 
         if (collision.gameObject.tag == "Player")
         {
@@ -23,9 +23,9 @@ public class Lego : BaseTimeEvent
 
     public void SetLegoIsActive(bool _isActive)
     {
-        isActive = _isActive;
+        isLegoActive.SetValueAndUpdateBlackboard(_isActive);
 
-        if (isActive)
+        if (!isLegoActive.Value)
         {
             gameObject.SetActive(true);
         }

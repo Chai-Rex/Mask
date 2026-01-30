@@ -5,6 +5,8 @@ public class DeathManager : Singleton<DeathManager> {
     [SerializeField] private EyesCanvas _iEyeCanvas;
     [SerializeField] private LevelManager.Levels levelToLoad;
 
+    private StateVariable _hasDiedState = new StateVariable("hasPlayerDied", false);
+
     private void Start() {
         AwakenSequence();
     }
@@ -33,8 +35,13 @@ public class DeathManager : Singleton<DeathManager> {
     private void _DeathRespawnAction_started(UnityEngine.InputSystem.InputAction.CallbackContext obj) {
 
         // reset blackboard
+        StoryStateSO.Instance.ResetState();
+        _hasDiedState.SetValueAndUpdateBlackboard(true);
+
         InputManager.Instance.SetPlayerActionMap();
         LevelManager.Instance.LoadScene(levelToLoad);
+
+        
     }
 
     public async void Die(string i_causeOfDeath) {

@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class InteractableLooseBoard : BaseTimeEvent, IInteractable
 {
-    private bool isFalling = false;
-    private bool hasFallen = false;
+    private StateVariable isFalling = new StateVariable("isLooseBoardFalling", false);
+    private StateVariable hasFallen = new StateVariable("hasLooseBoardFallen", false);
 
     private string verb = "";
     [SerializeField] private string verbWhenFallen = "Fix";
@@ -19,7 +19,7 @@ public class InteractableLooseBoard : BaseTimeEvent, IInteractable
 
     private bool isPlayerDead = false;
 
-    public string InteractionVerb => hasFallen && !isPlayerDead ? verbWhenFallen : verb;
+    public string InteractionVerb => hasFallen.Value && !isPlayerDead ? verbWhenFallen : verb;
 
     private void Awake()
     {
@@ -37,7 +37,7 @@ public class InteractableLooseBoard : BaseTimeEvent, IInteractable
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!hasFallen) { return; }
+        if (!hasFallen.Value) { return; }
 
         if (other.gameObject.tag == "Player")
         {
@@ -48,13 +48,13 @@ public class InteractableLooseBoard : BaseTimeEvent, IInteractable
 
     private void OnLooseBoardFall()
     {
-        hasFallen = true;
-        isFalling = true;
+        hasFallen.SetValueAndUpdateBlackboard(true);
+        isFalling.SetValueAndUpdateBlackboard(true);
 
         transform.DOMove(endLocation, fallDuration)
             .OnComplete(() =>
             {
-                isFalling = false;
+                isFalling.SetValueAndUpdateBlackboard(false);
                 meshRenderer.enabled = false;
                 transform.position = startLocation;
             });
@@ -62,9 +62,9 @@ public class InteractableLooseBoard : BaseTimeEvent, IInteractable
 
     private void OnLooseBoardFix()
     {
-        if (!isFalling)
+        if (!isFalling.Value)
         {
-            hasFallen = false;
+            hasFallen.SetValueAndUpdateBlackboard(false);
             meshRenderer.enabled = true;
         }
     }
@@ -76,7 +76,7 @@ public class InteractableLooseBoard : BaseTimeEvent, IInteractable
 
     public void OnInteract(GameObject interactor)
     {
-        if (hasFallen)
+        if (hasFallen.Value)
         {
             OnLooseBoardFix();
         }

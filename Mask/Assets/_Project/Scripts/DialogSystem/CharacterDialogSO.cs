@@ -8,7 +8,7 @@ public struct PlayerDecision
     public CharacterDialogSO nextDialog;
     public bool affectsState;
     public string stateVariable;
-    public int stateValue;
+    public bool stateValue;
 }
 
 [CreateAssetMenu(fileName = "CharacterDialogSODialogTreeSO", menuName = "Scriptable Objects/CharacterDialogSO")]
@@ -18,5 +18,19 @@ public class CharacterDialogSO : ScriptableObject
     public List<string> DialogText;
 
     public List<PlayerDecision> decisionOptions;
+
+    private void OnEnable()
+    {
+        // Register potential decision states
+        foreach (PlayerDecision decision in decisionOptions)
+        { 
+            if(decision.affectsState)
+            {
+                StoryStateSO.RegisterInitialState(new StateVariable(decision.stateVariable, false, false));
+            }
+        }
+
+        
+    }
 
 }

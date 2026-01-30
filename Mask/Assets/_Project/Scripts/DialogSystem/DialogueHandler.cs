@@ -38,6 +38,8 @@ public class DialogueHandler : Singleton<DialogueHandler> {
         if (InputManager.Instance != null) {
             InputManager.Instance._DialogueContinueAction.started += OnSkipInput;
         }
+
+        _iStoryState.LoadRegisteredStates();
     }
 
     private void OnDestroy() {
