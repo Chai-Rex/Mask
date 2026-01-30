@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
   DialogText:
   - '[excited]<color="red">aaaaaahhhhh.</color>[/excited]'
-  - '[excited]the bees[/excited]'
-  - theyre in my eyes
-  - '[nod]aaaAAAAAAAhhhhhh[/nod]'
-  - '[NA]*the bees seem to be angry*[/NA]'
+  - '[yes]the bees[/yes]'
+  - '[emphasis]theyre in my eyes[/emphasis]'
+  - '[shake]aaaAAAAAAAhhhhhh[/shake]'
+  - '[na]*the bees seem to be angry*[/na]'
   decisionOptions:
   - text: lmao bees
     nextDialog: {fileID: 11400000, guid: 14d63178ceb68c949b04040c12944c5e, type: 2}

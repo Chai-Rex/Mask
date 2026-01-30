@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25c19864da6fc784c86ac8d58215d0af, type: 3}
   m_Name: NAPreset
   m_EditorClassIdentifier: Assembly-CSharp::EmotionPresetSO
-  _PresetName: NA
+  _PresetName: na
   _UseSquashStretch: 0
   _UseSway: 0
   _UseBob: 0
