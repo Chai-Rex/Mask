@@ -41,6 +41,7 @@ public class BathHeat : BaseTimeEvent
         {
             if (isPlayerIn.Value)
             {
+                PlayTriggerSound();
                 gameObject.SetActive(true);
                 bathCoroutine = StartCoroutine(BathHeating());
             }       

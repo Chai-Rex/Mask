@@ -36,6 +36,7 @@ public class LaundryShoot : BaseTimeEvent, IInteractable
 
         if (isActive.Value)
         {
+            PlayTriggerSound();
             // Player Death
         }
     }

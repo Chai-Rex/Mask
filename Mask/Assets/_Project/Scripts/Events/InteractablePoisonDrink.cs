@@ -11,6 +11,7 @@ public class InteractablePoisonDrink : BaseTimeEvent, IInteractable
     {
         if (!isActive.Value) { return; }
 
+        PlayTriggerSound();
         // Player Death
         DeathManager.Instance.Die("Drink was Poisoned");
 
