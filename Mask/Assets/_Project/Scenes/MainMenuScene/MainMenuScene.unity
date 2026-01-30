@@ -589,6 +589,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BrokenClockAnim
       objectReference: {fileID: 0}
+    - target: {fileID: 7144888972937182979, guid: 44eabf565ee347f42a12d4391a2e0dde, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 82c76bb170966ef4796d739b7e27c588, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1295,6 +1299,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 424079059}
     m_Modifications:
+    - target: {fileID: -9041531117694079289, guid: 9f92a15c098af0a4d92836b4051a929a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 82c76bb170966ef4796d739b7e27c588, type: 2}
     - target: {fileID: -8679921383154817045, guid: 9f92a15c098af0a4d92836b4051a929a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.142
@@ -1335,6 +1343,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -453615173548524335, guid: 9f92a15c098af0a4d92836b4051a929a, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 82c76bb170966ef4796d739b7e27c588, type: 2}
     - target: {fileID: 919132149155446097, guid: 9f92a15c098af0a4d92836b4051a929a, type: 3}
       propertyPath: m_Name
       value: CombinedDoors
