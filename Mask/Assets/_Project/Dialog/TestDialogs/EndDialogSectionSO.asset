@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: EndDialogSectionSO
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
   DialogText:
-  - '[NA]This person has nothing left to say...[/NA]'
+  - '[na]This person has nothing left to say...[/na]'
   decisionOptions:
   - text: okie :3
     nextDialog: {fileID: 0}

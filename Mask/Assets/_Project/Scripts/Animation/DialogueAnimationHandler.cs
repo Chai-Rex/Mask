@@ -55,18 +55,7 @@ public class DialogueAnimationHandler : MonoBehaviour {
     public bool IsSpeaking => _isSpeaking;
 
     private void Awake() {
-        if (_iBodyTransform == null) {
-            _iBodyTransform = transform;
-        }
-
-        _originalScale = _iBodyTransform.localScale;
-        _originalPosition = _iBodyTransform.localPosition;
-        _originalRotation = _iBodyTransform.localRotation;
-
-        if (_iHeadTransform != null) {
-            _originalHeadRotation = _iHeadTransform.localRotation;
-        }
-
+        SetOriginTransforms();
         // Initialize current settings with defaults
         ResetToDefaults();
 
@@ -109,6 +98,19 @@ public class DialogueAnimationHandler : MonoBehaviour {
         _currentIntensityMultiplier = _iEmotionPreset._IntensityMultiplier;
     }
 
+    public void SetOriginTransforms() {
+        if (_iBodyTransform == null) {
+            _iBodyTransform = transform;
+        }
+
+        _originalScale = _iBodyTransform.localScale;
+        _originalPosition = _iBodyTransform.localPosition;
+        _originalRotation = _iBodyTransform.localRotation;
+
+        if (_iHeadTransform != null) {
+            _originalHeadRotation = _iHeadTransform.localRotation;
+        }
+    }
     public void StartSpeaking() {
         StartSpeaking(null);
     }

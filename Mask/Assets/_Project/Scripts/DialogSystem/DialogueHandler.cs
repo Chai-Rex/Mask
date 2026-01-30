@@ -34,6 +34,8 @@ public class DialogueHandler : Singleton<DialogueHandler> {
     private DialogueAnimationParser.AnimationTag _currentAnimation = null;
     private string _currentActivePreset = null; // Track current preset name
 
+    private InteractableTalk _interactableSpeaker;
+
     private void Start() {
         if (InputManager.Instance != null) {
             InputManager.Instance._DialogueContinueAction.started += OnSkipInput;
@@ -59,7 +61,7 @@ public class DialogueHandler : Singleton<DialogueHandler> {
         }
     }
 
-    public void StartDialogueTree(CharacterDialogSO i_dialogueTree, string i_name, DialogSoundSO i_dialogSound, DialogueAnimationHandler i_npcAnimator = null) {
+    public async void StartDialogueTree(InteractableTalk i_speaker, CharacterDialogSO i_dialogueTree, string i_name, DialogSoundSO i_dialogSound, DialogueAnimationHandler i_npcAnimator = null) {
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
@@ -73,6 +75,12 @@ public class DialogueHandler : Singleton<DialogueHandler> {
         _currentDialogSound = i_dialogSound;
         _currentNPCAnimator = i_npcAnimator;
         _currentActivePreset = null; // Reset preset tracking
+
+        _interactableSpeaker = i_speaker;
+
+        await i_speaker.RotateTowardsAsync(gameObject.transform);
+
+        _currentNPCAnimator.SetOriginTransforms();
 
         ContinueDialogue();
     }
@@ -102,6 +110,8 @@ public class DialogueHandler : Singleton<DialogueHandler> {
     }
 
     private void FinishDialogue() {
+        _interactableSpeaker.RotateBackToStartAsync();
+
         InputManager.Instance.SetPlayerActionMap();
         _iDialogueCanvas.gameObject.SetActive(false);
 
@@ -289,8 +299,8 @@ public class DialogueHandler : Singleton<DialogueHandler> {
 
         // Trigger specific animations based on type
         switch (i_animationType.ToLower()) {
-            case "nod":
             case "yes":
+            case "nod":
                 _currentNPCAnimator.TriggerNod();
                 break;
 
