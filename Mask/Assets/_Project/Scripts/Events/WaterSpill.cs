@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class WaterSpill : BaseTimeEvent
 {
-    private bool isActive = false;
-    private bool isCableTouching = false;
+    private StateVariable isActive = new StateVariable("isWaterSpillActive", false);
+    private StateVariable isCableTouching = new StateVariable("isCableTouchingSpill", false);
 
     private void Start()
     {
@@ -19,8 +19,8 @@ public class WaterSpill : BaseTimeEvent
 
     private void OnTriggerStay(Collider other)
     {
-        if (!isActive) { return; }
-        if (!isCableTouching) { return; }
+        if (!isActive.Value) { return; }
+        if (!isCableTouching.Value) { return; }
 
         if (other.gameObject.tag == "Player")
         {
@@ -30,8 +30,8 @@ public class WaterSpill : BaseTimeEvent
 
     public void WaterSpillActive(bool _isActive)
     {
-        isActive = _isActive;
-        if (isActive)
+        isActive.SetValueAndUpdateBlackboard(_isActive);
+        if (isActive.Value)
         {
             gameObject.SetActive(true);
         }
@@ -43,11 +43,11 @@ public class WaterSpill : BaseTimeEvent
 
     public bool GetWaterSpillActive()
     {
-        return isActive;
+        return isActive.Value;
     }
 
     public void SetIsCableTouching(bool _isCableTouching)
     {
-        isCableTouching = _isCableTouching;
+        isCableTouching.SetValueAndUpdateBlackboard(_isCableTouching);
     }
 }

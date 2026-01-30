@@ -6,8 +6,8 @@ public class Chandelier : BaseTimeEvent
     [SerializeField] private Transform targetLocation;
     [SerializeField] private float fallDuration = 0.5f;
 
-    private bool canFall = true;
-    private bool hasFallen = false;
+    private StateVariable canFall = new StateVariable("canChandelierFall", false);
+    private StateVariable hasFallen = new StateVariable("hasChandelierFallen", false);
 
     private void Start()
     {
@@ -18,7 +18,7 @@ public class Chandelier : BaseTimeEvent
     {
         base.ActivateTimeEvent();
 
-        if (canFall && !hasFallen)
+        if (canFall.Value && !hasFallen.Value)
         {
             ChandelierFall();
         }
@@ -29,13 +29,13 @@ public class Chandelier : BaseTimeEvent
         transform.DOMove(targetLocation.position, fallDuration)
             .OnComplete(() =>
             {
-                hasFallen = true;
+                hasFallen.SetValueAndUpdateBlackboard(true);
             });
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (hasFallen) { return; }
+        if (hasFallen.Value) { return; }
 
         if (collision.gameObject.tag == "Player")
         {

@@ -2,14 +2,14 @@ using UnityEngine;
 
 public class InteractablePoisonDrink : BaseTimeEvent, IInteractable
 {
-    private bool isActive = false;
+    private StateVariable isActive = new StateVariable("isPoisonDrinkActive", false);
     [SerializeField] private string verb = "Drink";
 
     public string InteractionVerb => verb;
 
     public void OnInteract(GameObject interactor)
     {
-        if (!isActive) { return; }
+        if (!isActive.Value) { return; }
 
         // Player Death
         DeathManager.Instance.Die("Drink was Poisoned");
@@ -26,9 +26,9 @@ public class InteractablePoisonDrink : BaseTimeEvent, IInteractable
 
     public void SetPoisonDrinkIsActive(bool _isActive)
     {
-        isActive = _isActive;
+        isActive.SetValueAndUpdateBlackboard(_isActive);
 
-        if (isActive)
+        if (isActive.Value)
         {
             gameObject.SetActive(true);
         }

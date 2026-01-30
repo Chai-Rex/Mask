@@ -1,15 +1,12 @@
-using System.Threading.Tasks;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UtilitySingletons;
 
 public class LevelManager : PersistentSingleton<LevelManager> {
-
     [SerializeField] private GameObject _iLoadingCanvas;
     [SerializeField] private Image _iProgressImage;
-
-    private float _target;
 
     public enum Levels {
         MainMenuScene,
@@ -17,31 +14,33 @@ public class LevelManager : PersistentSingleton<LevelManager> {
         EventTestScene
     }
 
-    public async void LoadScene(Levels i_sceneName) {
+    public void LoadScene(Levels i_sceneName) {
+        StartCoroutine(LoadSceneAsync(i_sceneName));
+    }
+
+    private IEnumerator LoadSceneAsync(Levels i_sceneName) {
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
 
-        _target = 0;
         _iProgressImage.fillAmount = 0;
-        int fixedDeltaTime = (int)(Time.fixedDeltaTime * 1000);
+        _iLoadingCanvas.gameObject.SetActive(true);
 
         var scene = SceneManager.LoadSceneAsync(i_sceneName.ToString());
         scene.allowSceneActivation = false;
 
-        _iLoadingCanvas.gameObject.SetActive(true);
+        while (scene.progress < 0.9f) {
+            float targetProgress = scene.progress;
+            _iProgressImage.fillAmount = Mathf.MoveTowards(_iProgressImage.fillAmount, targetProgress, 3 * Time.deltaTime);
+            yield return null; // Wait for next frame
+        }
 
-        do {
-            await Task.Delay(fixedDeltaTime);
-            _target = scene.progress;
-
-            _iProgressImage.fillAmount = Mathf.MoveTowards(_iProgressImage.fillAmount, _target, 3 * Time.fixedDeltaTime);
-        } while (scene.progress < 0.9f);
-        _iProgressImage.fillAmount = 1f;
-
-        _iLoadingCanvas.gameObject.SetActive(false);
+        // Smoothly fill to 100%
+        while (_iProgressImage.fillAmount < 1f) {
+            _iProgressImage.fillAmount = Mathf.MoveTowards(_iProgressImage.fillAmount, 1f, 3 * Time.deltaTime);
+            yield return null;
+        }
 
         scene.allowSceneActivation = true;
-
+        _iLoadingCanvas.gameObject.SetActive(false);
     }
-
 }

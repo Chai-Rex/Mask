@@ -26,7 +26,7 @@ public class DialogTreeSelector : MonoBehaviour
             bool stateMatches = true;
             foreach (StateVariable variable in treeSelection.requiredStates)
             {
-                if(_StoryState.GetValue(variable.name) != variable.value)
+                if(_StoryState.GetValue(variable.Name) != variable.Value)
                 {
                     stateMatches = false;
                     break;

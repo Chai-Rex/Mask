@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: StartPoint2
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
   DialogText:
-  - This character has died to bees
+  - '[NA]This character has died to bees[/NA]'
   decisionOptions:
   - text: so sad
     nextDialog: {fileID: 11400000, guid: 2b7ec59d95c38b74eb3ad9eeee673389, type: 2}

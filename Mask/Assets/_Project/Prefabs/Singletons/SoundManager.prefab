@@ -44,8 +44,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c98d4e79236c814187da3c26f45df75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AutoUnparentOnAwake: 1
   soundEmitterPrefab: {fileID: 1051550674759104591, guid: 2751bd26e9fe21846a11b261e824ed77, type: 3}
   collectionCheck: 1
   defaultCapacity: 10
   maxPoolSize: 100
   maxSoundInstances: 30
+  _iMixer: {fileID: 24100000, guid: 49963274511b53442bc8ea85953fe90d, type: 2}

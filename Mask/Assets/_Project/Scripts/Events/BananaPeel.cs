@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class BananaPeel : BaseTimeEvent
 {
-    private bool isActive = false;
+    private StateVariable isActive = new StateVariable("isBananaPeelActive", false);
 
     protected override void ActivateTimeEvent()
     {
@@ -13,7 +13,7 @@ public class BananaPeel : BaseTimeEvent
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!isActive) { return; }
+        if (!isActive.Value) { return; }
 
         if (collision.gameObject.tag == "Player")
         {
@@ -23,9 +23,9 @@ public class BananaPeel : BaseTimeEvent
 
     public void SetBananaPeelIsActive(bool _isActive)
     {
-        isActive = _isActive;
+        isActive.SetValueAndUpdateBlackboard(_isActive);
 
-        if (isActive)
+        if (isActive.Value)
         {
             gameObject.SetActive(true);
         }

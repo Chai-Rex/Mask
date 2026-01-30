@@ -2,30 +2,27 @@ using UnityEngine;
 
 public class InteractableTalk : MonoBehaviour, IInteractable {
 
-
+    [Header("Interaction Settings")]
     [SerializeField] private string _iVerb = "Talk";
+
+    [Header("Dialogue Settings")]
     [SerializeField] private string _iName = "Boberto";
-
     [SerializeField] private DialogTreeSelector _dialogTreeSelector;
+    [SerializeField] private DialogueAnimationHandler _iDialogueAnimationHandler;
 
-    [Header("Typing Settings")]
-    [SerializeField] private DialogSoundSO soundData;
-    //[SerializeField] private AudioClip _iTypingSound;
-    //[SerializeField] private float _iTypingSpeed = 0.05f;
-    //[SerializeField] private float _iMinPitchModulation = 1;
-    //[SerializeField] private float _iMaxPitchModulation = 1;
+    [Header("Sound Settings")]
+    [SerializeField] private DialogSoundSO _iSoundData;
 
-
+    private CharacterDialogSO _dialogueTree;
 
     public string InteractionVerb => _iVerb;
 
     public void OnInteract(GameObject i_interactor) {
-        //Debug.Log($"My name is: {_iName}");
 
         DialogueHandler handler = i_interactor.GetComponent<DialogueHandler>();
 
-        CharacterDialogSO dialog = _dialogTreeSelector.GetDialogTree();
-        handler.StartDialogueTree(dialog, _iName, soundData);
+        _dialogueTree = _dialogTreeSelector.GetDialogTree();
+        handler.StartDialogueTree(_dialogueTree, _iName, _iSoundData, _iDialogueAnimationHandler);
     }
 
     public void OnLookEnter(GameObject i_looker) {

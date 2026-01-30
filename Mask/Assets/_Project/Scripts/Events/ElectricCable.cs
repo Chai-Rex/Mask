@@ -3,7 +3,7 @@ using UnityEngine;
 public class ElectricCable : BaseTimeEvent
 {
     [SerializeField] private WaterSpill waterSpill;
-    private bool isActive = false;
+    private StateVariable isActive = new StateVariable("isElectricCableActive", false);
 
     protected override void ActivateTimeEvent()
     {
@@ -14,9 +14,9 @@ public class ElectricCable : BaseTimeEvent
 
     public void SetIsElectricCableActive(bool _isActive)
     {
-        isActive = _isActive;
+        isActive.SetValueAndUpdateBlackboard(_isActive);
 
-        if (isActive)
+        if (isActive.Value)
         {
             gameObject.SetActive(true);
             if (waterSpill != null)

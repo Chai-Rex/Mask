@@ -728,6 +728,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51331ff64dc058b49991847db01f7df0, type: 3}
+--- !u!4 &59944951 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4663500791115630360, guid: a606e884a4375954d8bbfe35913b6dcb, type: 3}
+  m_PrefabInstance: {fileID: 1619787798}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &110384258
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1886,6 +1891,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3044203949616991097, guid: a606e884a4375954d8bbfe35913b6dcb, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1675144046}
+    - targetCorrespondingSourceObject: {fileID: 3044203949616991097, guid: a606e884a4375954d8bbfe35913b6dcb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1675144048}
   m_SourcePrefab: {fileID: 100100000, guid: a606e884a4375954d8bbfe35913b6dcb, type: 3}
 --- !u!1 &1675144041 stripped
 GameObject:
@@ -1930,7 +1938,8 @@ MonoBehaviour:
   _iVerb: Talk
   _iName: Boberto
   _dialogTreeSelector: {fileID: 1675144046}
-  soundData: {fileID: 11400000, guid: dd0b2cc7d97535a44b6ca437a0b11709, type: 2}
+  _iDialogueAnimationHandler: {fileID: 1675144048}
+  _iSoundData: {fileID: 11400000, guid: dd0b2cc7d97535a44b6ca437a0b11709, type: 2}
 --- !u!114 &1675144046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1947,20 +1956,41 @@ MonoBehaviour:
   _treeOptions:
   - requiredStates:
     - name: deathByBees
-      value: 1
+      _value: 1
     - name: skeleton
-      value: 0
+      _value: 0
     dialogTree: {fileID: 11400000, guid: 65cf09805db7d5f4c8036adaf7bebd69, type: 2}
   - requiredStates:
     - name: attackedByBees
-      value: 1
+      _value: 1
     dialogTree: {fileID: 11400000, guid: 4b26a4957f352a145b3e362d7b734723, type: 2}
   - requiredStates:
     - name: skeleton
-      value: 1
+      _value: 1
     dialogTree: {fileID: 11400000, guid: f332698306c07ba4eae24cf0d76bdf99, type: 2}
   _defaultDialogTree: {fileID: 11400000, guid: 42f76f4323c579e4596f4e5fdab1f4b6, type: 2}
   _iCompleteDialogue: {fileID: 11400000, guid: 2b7ec59d95c38b74eb3ad9eeee673389, type: 2}
+--- !u!4 &1675144047 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5883798675804724509, guid: a606e884a4375954d8bbfe35913b6dcb, type: 3}
+  m_PrefabInstance: {fileID: 1619787798}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1675144048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1675144041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d10a691835d662e4abdc8f89c7cf1233, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueAnimationHandler
+  _iBodyTransform: {fileID: 1675144047}
+  _iHeadTransform: {fileID: 59944951}
+  _iEmotionPreset: {fileID: 11400000, guid: d7cff1fa385e01b4fad216ba5dcf064d, type: 2}
+  _iAnimationProfile: {fileID: 11400000, guid: 17dce80549ffae041bb00ece86221a0a, type: 2}
 --- !u!4 &1780786184 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 403222784824180589, guid: 741e027466c45cf4d9b8bd1c4502fd8e, type: 3}
@@ -2037,7 +2067,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8758267709815348652, guid: c65ee349fafd13643b80eb91d2e37dcc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1446.7587
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8758267709815348652, guid: c65ee349fafd13643b80eb91d2e37dcc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2045,7 +2075,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8758267709815348652, guid: c65ee349fafd13643b80eb91d2e37dcc, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1361.9667
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8758267709815348652, guid: c65ee349fafd13643b80eb91d2e37dcc, type: 3}
       propertyPath: m_LocalRotation.w

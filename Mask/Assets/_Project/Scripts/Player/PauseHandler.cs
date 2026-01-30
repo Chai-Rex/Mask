@@ -10,7 +10,7 @@ public class PauseHandler : MonoBehaviour {
         // Subscribe to input events
         InputManager.Instance._PlayerPauseAction.started += OnPauseStarted;
         InputManager.Instance._DialoguePauseAction.started += OnPauseStarted;
-        InputManager.Instance._UIUnpauseAction.started += OnUnpauseStarted;
+        InputManager.Instance._UIResumeAction.started += OnResumeStarted;
 
         // Hide pause canvas
         _iPauseCanvas.gameObject.SetActive(false);
@@ -20,11 +20,18 @@ public class PauseHandler : MonoBehaviour {
         if (InputManager.Instance == null) return;
         InputManager.Instance._PlayerPauseAction.started -= OnPauseStarted;
         InputManager.Instance._DialoguePauseAction.started -= OnPauseStarted;
-        InputManager.Instance._UIUnpauseAction.started -= OnUnpauseStarted;
+        InputManager.Instance._UIResumeAction.started -= OnResumeStarted;
     }
 
     private void OnPauseStarted(UnityEngine.InputSystem.InputAction.CallbackContext context) {
+        PauseGame();
+    }
+    private void OnResumeStarted(UnityEngine.InputSystem.InputAction.CallbackContext context) {
 
+        ResumeGame();
+    }
+
+    public void PauseGame() {
         _iPauseCanvas.gameObject.SetActive(true);
         InputManager.Instance.SetUIActionMap();
 
@@ -35,8 +42,8 @@ public class PauseHandler : MonoBehaviour {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
-    private void OnUnpauseStarted(UnityEngine.InputSystem.InputAction.CallbackContext context) {
 
+    public void ResumeGame() {
         _iPauseCanvas.gameObject.SetActive(false);
 
         if (_iDialogueCanvas.isActiveAndEnabled) {

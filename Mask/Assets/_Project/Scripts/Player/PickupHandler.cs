@@ -129,6 +129,7 @@ public class PickupHandler : MonoBehaviour {
             i_item.transform.localRotation = Quaternion.identity;
 
             _currentHeldItem = i_item;
+            i_item.GetComponent<PickupableItem>().SetItemPickedUp(true);
 
             if (itemCollider != null) {
                 i_item.layer = (int)Mathf.Log(_iInHandLayer.value, 2);
@@ -185,7 +186,9 @@ public class PickupHandler : MonoBehaviour {
             }
         }
 
+        _currentHeldItem.GetComponent<PickupableItem>().SetItemPickedUp(false);
         _currentHeldItem = null;
+        
     }
 
     /// <summary>
@@ -216,6 +219,7 @@ public class PickupHandler : MonoBehaviour {
             rb.angularVelocity = Vector3.zero;
         }
 
+        _currentHeldItem.GetComponent<PickupableItem>().SetItemPickedUp(false);
         _currentHeldItem = null;
     }
 
@@ -279,6 +283,7 @@ public class PickupHandler : MonoBehaviour {
             rb.isKinematic = false;
         }
 
+        _currentHeldItem.GetComponent<PickupableItem>().SetItemPickedUp(false);
         _currentHeldItem = null;
     }
 }
