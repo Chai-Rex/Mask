@@ -19,4 +19,18 @@ public class CharacterDialogSO : ScriptableObject
 
     public List<PlayerDecision> decisionOptions;
 
+    private void OnEnable()
+    {
+        // Register potential decision states
+        foreach (PlayerDecision decision in decisionOptions)
+        { 
+            if(decision.affectsState)
+            {
+                StoryStateSO.RegisterInitialState(new StateVariable(decision.stateVariable, false, false));
+            }
+        }
+
+        
+    }
+
 }

@@ -62,7 +62,7 @@ public class StoryStateSO : ScriptableObject
 
     public Dictionary<string, bool> pairs = new Dictionary<string, bool>();
 
-    private void Awake()
+    private void OnEnable()
     {
         _instance = this;
 
@@ -72,6 +72,7 @@ public class StoryStateSO : ScriptableObject
     // Also helps see what variables are available
     public void LoadRegisteredStates()
     {
+        _initialStateVariables.Clear();
         foreach (string state in RegisteredInitialStates.Keys)
         {
             // Sync the initial state variable list with our registered states at game start
