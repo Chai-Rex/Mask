@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3778526131720477399}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 7043148843537710596, guid: 70ab75c02809e9e4d9a5289271be544d, type: 3}
 --- !u!23 &3461385564943726070
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -105,6 +105,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38a0302d9ea4a92499c2219b3b180db2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Lego
+  _eventAudioData:
+    Clip: {fileID: 0}
+    MixerGroup: {fileID: 0}
+    Loop: 0
+    PlayOnAwake: 0
+    FrequentSound: 0
+    Mute: 0
+    BypassEffects: 0
+    BypassListenerEffects: 0
+    BypassReverbZones: 0
+    Priority: 128
+    Volume: 1
+    Pitch: 1
+    PanStereo: 0
+    SpatialBlend: 0
+    ReverbZoneMix: 1
+    DopplerLevel: 1
+    Spread: 0
+    MinDistance: 1
+    MaxDistance: 500
+    IgnoreListenerVolume: 0
+    IgnoreListenerPause: 0
+    rolloffMode: 0
 --- !u!65 &5690439368618348888
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -121,11 +144,11 @@ BoxCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.66, y: 0.25, z: 0.43}
+  m_Center: {x: 0, y: 0.12, z: 0}
 --- !u!54 &7835893159549810502
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -149,7 +172,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0

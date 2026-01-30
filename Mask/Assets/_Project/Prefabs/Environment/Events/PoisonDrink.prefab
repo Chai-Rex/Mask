@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8806507378401120648}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 2669982292116509526, guid: cec2c9c78fb0a164bbe697441f806ae8, type: 3}
 --- !u!23 &5090439490214817187
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -105,6 +105,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f151c328adc880645baffc98730ed42b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractablePoisonDrink
+  _eventAudioData:
+    Clip: {fileID: 0}
+    MixerGroup: {fileID: 0}
+    Loop: 0
+    PlayOnAwake: 0
+    FrequentSound: 0
+    Mute: 0
+    BypassEffects: 0
+    BypassListenerEffects: 0
+    BypassReverbZones: 0
+    Priority: 128
+    Volume: 1
+    Pitch: 1
+    PanStereo: 0
+    SpatialBlend: 0
+    ReverbZoneMix: 1
+    DopplerLevel: 1
+    Spread: 0
+    MinDistance: 1
+    MaxDistance: 500
+    IgnoreListenerVolume: 0
+    IgnoreListenerPause: 0
+    rolloffMode: 0
   verb: Drink
 --- !u!65 &1191486473694107621
 BoxCollider:
