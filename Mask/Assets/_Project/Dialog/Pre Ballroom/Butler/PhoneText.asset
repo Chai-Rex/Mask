@@ -13,10 +13,15 @@ MonoBehaviour:
   m_Name: PhoneText
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
   DialogText:
-  - Your phone buzzes
+  - '[na]Its a message from your agent.[/na]'
+  - '[na]RE:New Offer - Musician at Dame Claudette''s Masquerade[/na] '
+  - '[na]This is HUGE for you. Forget about money. Think of the exposure, //the connections//![/na] '
+  - '[na]Be there tonight at 8PM SHARP. Cancel whatever plans you have. It took a
+    lot to get you here. [/na] '
+  - '[na]DON''T. MESS. THIS. UP.[/na] '
   decisionOptions:
-  - text: Pick it up
-    nextDialog: {fileID: 11400000}
+  - text: '*Turn to the butler*'
+    nextDialog: {fileID: 11400000, guid: 0e32d6abcfbcff3408871dcc4977648d, type: 2}
     affectsState: 0
     stateVariable: 
     stateValue: 0

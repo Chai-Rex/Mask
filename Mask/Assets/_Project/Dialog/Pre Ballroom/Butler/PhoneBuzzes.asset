@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: PhoneBuzzes
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
   DialogText:
-  - Your phone buzzes
+  - '[na]Your phone buzzes[/na]'
   decisionOptions:
   - text: Pick it up
-    nextDialog: {fileID: 0}
+    nextDialog: {fileID: 11400000, guid: c49d335ebe80344498b0f96e0430f925, type: 2}
     affectsState: 0
     stateVariable: 
     stateValue: 0

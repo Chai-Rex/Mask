@@ -47,6 +47,12 @@ public class DialogTreeSelector : MonoBehaviour
             }
         }
 
+        if(visitedDialogs.Contains(_defaultDialogTree))
+        {
+            return _iCompleteDialogue;
+        }
+
+        SetDialogVisited(_defaultDialogTree);
         return _defaultDialogTree;
     }
 

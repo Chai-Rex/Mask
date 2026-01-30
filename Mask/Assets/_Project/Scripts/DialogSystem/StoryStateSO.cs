@@ -45,6 +45,8 @@ public class StoryStateSO : ScriptableObject
     public static StoryStateSO Instance { get { return _instance; } }
 
     private static Dictionary<string, bool> RegisteredInitialStates = new Dictionary<string, bool>();
+
+    public delegate void StateCallback(bool i_newValue);
     public static void RegisterInitialState(StateVariable i_variable)
     {
         if (RegisteredInitialStates.ContainsKey(i_variable.Name))
@@ -61,6 +63,7 @@ public class StoryStateSO : ScriptableObject
     private List<StateVariable> _initialStateVariables;
 
     public Dictionary<string, bool> pairs = new Dictionary<string, bool>();
+    private Dictionary<string, List<StateCallback>> functionCallbacks = new Dictionary<string, List<StateCallback>>();
 
     private void OnEnable()
     {
@@ -79,6 +82,16 @@ public class StoryStateSO : ScriptableObject
             _initialStateVariables.Add(new StateVariable(state, RegisteredInitialStates[state], false));
             SetValue(state, RegisteredInitialStates[state]);
         }
+    }
+
+    public void RegisterCallback(string i_state, StateCallback i_callbackFunction)
+    {
+        if (!functionCallbacks.ContainsKey(i_state))
+        {
+            functionCallbacks.Add(i_state, new List<StateCallback>());
+        }
+
+        functionCallbacks[i_state].Add(i_callbackFunction);
     }
 
     public void ResetState()
@@ -104,6 +117,14 @@ public class StoryStateSO : ScriptableObject
         else
         {
             pairs.Add(name, value);
+        }
+
+        if (functionCallbacks.ContainsKey(name))
+        {
+            foreach (StateCallback callback in functionCallbacks[name])
+            {
+                callback(value);
+            }
         }
 
         //Debug.Log("Setting " + name + " to " +  value);
