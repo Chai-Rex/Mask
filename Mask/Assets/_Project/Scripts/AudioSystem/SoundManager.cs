@@ -1,6 +1,7 @@
-using UnityEngine;
-using UnityEngine.Pool;
 using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.Pool;
 using UtilitySingletons;
 
 namespace AudioSystem {
@@ -17,6 +18,9 @@ namespace AudioSystem {
         [SerializeField] private int defaultCapacity = 10;
         [SerializeField] private int maxPoolSize = 100;
         [SerializeField] private int maxSoundInstances = 30;
+
+        [Header("Mixer")]
+        [SerializeField] private AudioMixer _iMixer;
 
 
         protected override void Awake() {
@@ -90,6 +94,14 @@ namespace AudioSystem {
                 defaultCapacity,
                 maxPoolSize
             );
+        }
+
+        public void SetMixerFloat(string mixerParam, float value) {
+            // Clamp to avoid Log10(0)
+            value = Mathf.Clamp(value, 0.0001f, 1f);
+
+            float dB = Mathf.Log10(value) * 20f;
+            _iMixer.SetFloat(mixerParam, dB);
         }
     }
 

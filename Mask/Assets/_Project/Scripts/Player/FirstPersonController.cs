@@ -66,7 +66,6 @@ public class FirstPersonController : MonoBehaviour {
 
         // Subscribe to control scheme changes
         InputManager.Instance._OnControlsChanged += OnControlsChanged;
-
     }
 
     private void OnDestroy() {
