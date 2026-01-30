@@ -26,6 +26,7 @@ public class Chandelier : BaseTimeEvent
 
     private void ChandelierFall()
     {
+        PlayTriggerSound();
         transform.DOMove(targetLocation.position, fallDuration)
             .OnComplete(() =>
             {

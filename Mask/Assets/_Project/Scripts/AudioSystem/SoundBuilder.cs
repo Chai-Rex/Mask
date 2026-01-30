@@ -5,6 +5,8 @@ namespace AudioSystem {
         private readonly SoundManager soundManager;
         Vector3 position = Vector3.zero;
         bool randomPitch;
+        float minPitchMod = -0.05f;
+        float maxPitchMod = 0.05f;
 
         public SoundBuilder(SoundManager soundManager) {
             this.soundManager = soundManager;
@@ -22,18 +24,20 @@ namespace AudioSystem {
             return this;
         }
 
-        public SoundBuilder WithRandomPitch() {
+        public SoundBuilder WithRandomPitch(float min = -0.05f, float max = 0.05f) {
             this.randomPitch = true;
+            this.minPitchMod = min;
+            this.maxPitchMod = max;
             return this;
         }
 
-        public void Play(SoundData soundData) {
+        public SoundEmitter Play(SoundData soundData) {
             if (soundData == null) {
                 Debug.LogError("SoundData is null");
-                return;
+                return null;
             }
 
-            if (!soundManager.CanPlaySound(soundData)) return;
+            if (!soundManager.CanPlaySound(soundData)) return null;
 
             SoundEmitter soundEmitter = soundManager.Get();
             soundEmitter.Initialize(soundData);
@@ -41,7 +45,7 @@ namespace AudioSystem {
             soundEmitter.transform.parent = soundManager.transform;
 
             if (randomPitch) {
-                soundEmitter.WithRandomPitch();
+                soundEmitter.WithRandomPitch(minPitchMod, maxPitchMod);
             }
 
             if (soundData.FrequentSound) {
@@ -49,6 +53,8 @@ namespace AudioSystem {
             }
 
             soundEmitter.Play();
+
+            return soundEmitter;
         }
     }
 }

@@ -24,7 +24,9 @@ public class WaterSpill : BaseTimeEvent
 
         if (other.gameObject.tag == "Player")
         {
+            PlayTriggerSound();
             // Player Dies
+
         }
     }
 

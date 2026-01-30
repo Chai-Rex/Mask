@@ -17,6 +17,7 @@ public class BananaPeel : BaseTimeEvent
 
         if (collision.gameObject.tag == "Player")
         {
+            PlayTriggerSound();
             // Player Death
         }
     }
