@@ -491,7 +491,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 16}
   m_SizeDelta: {x: 666, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1932884463452185416
@@ -2229,6 +2229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseCanvas
   levelToLoad: 0
+  pauseHandler: {fileID: 0}
   _iResumeButton: {fileID: 2440040155726002447}
   _iMainMenuButton: {fileID: 1536429358752544965}
   _iQuitButton: {fileID: 1531437647128669927}
