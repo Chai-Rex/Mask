@@ -29,7 +29,6 @@ public class BathHeat : BaseTimeEvent
 
         bathCoroutine = null;
 
-        PlayTriggerSound();
         // Player Death
 
     }
@@ -42,6 +41,7 @@ public class BathHeat : BaseTimeEvent
         {
             if (isPlayerIn.Value)
             {
+                PlayTriggerSound();
                 gameObject.SetActive(true);
                 bathCoroutine = StartCoroutine(BathHeating());
             }       

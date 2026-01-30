@@ -26,6 +26,7 @@ public class Chandelier : BaseTimeEvent
 
     private void ChandelierFall()
     {
+        PlayTriggerSound();
         transform.DOMove(targetLocation.position, fallDuration)
             .OnComplete(() =>
             {
@@ -39,7 +40,6 @@ public class Chandelier : BaseTimeEvent
 
         if (collision.gameObject.tag == "Player")
         {
-            PlayTriggerSound();
             // Player Death
             DeathManager.Instance.Die("Chandelier Bonked you on the head");
         }

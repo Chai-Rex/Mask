@@ -1,3 +1,4 @@
+using AudioSystem;
 using DG.Tweening;
 using System;
 using UnityEngine;
@@ -7,6 +8,10 @@ public class InteractableDrawer : BaseTimeEvent, IInteractable
     [SerializeField] private string verb = "Close";
     [SerializeField] private string verbWhenOpen = "Open";
     [SerializeField] private bool isDeathDrawer = false;
+
+    [SerializeField]
+    private SoundData _openDrawerAudio;
+
     private bool isActive = false;
     private bool isOpen = false;
 
@@ -50,6 +55,13 @@ public class InteractableDrawer : BaseTimeEvent, IInteractable
 
     private void OnDrawerOpen()
     {
+        if (_openDrawerAudio != null && _openDrawerAudio.Clip != null)
+        {
+            SoundManager.Instance.CreateSound()
+                .WithPosition(gameObject.transform.position)
+                .Play(_openDrawerAudio);
+        }
+
         if (isOpen)
         {
             transform.DOMove(startLocation, drawerDuration)

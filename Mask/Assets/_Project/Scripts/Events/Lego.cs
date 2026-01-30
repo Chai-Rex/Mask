@@ -4,6 +4,11 @@ public class Lego : BaseTimeEvent
 {
     private StateVariable isLegoActive = new StateVariable("isLegoActive", false);
 
+    private void Start()
+    {
+        this.ActivateTimeEvent();
+    }
+
     protected override void ActivateTimeEvent()
     {
         base.ActivateTimeEvent();
@@ -14,9 +19,10 @@ public class Lego : BaseTimeEvent
     private void OnCollisionEnter(Collision collision)
     {
         if (!isLegoActive.Value) { return; }
-
+        Debug.Log("colllision");
         if (collision.gameObject.tag == "Player")
         {
+            Debug.Log("playing sound");
             PlayTriggerSound();
             // Player Death
         }
@@ -26,7 +32,7 @@ public class Lego : BaseTimeEvent
     {
         isLegoActive.SetValueAndUpdateBlackboard(_isActive);
 
-        if (!isLegoActive.Value)
+        if (isLegoActive.Value)
         {
             gameObject.SetActive(true);
         }
