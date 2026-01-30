@@ -8,13 +8,16 @@ public class BaseTimeEvent : MonoBehaviour
 
     protected virtual void ActivateTimeEvent()
     {
-        if(_eventAudioData != null && _eventAudioData.Clip != null)
+        
+    }
+
+    protected void PlayTriggerSound()
+    {
+        if (_eventAudioData != null && _eventAudioData.Clip != null)
         {
             SoundManager.Instance.CreateSound()
                 .WithPosition(gameObject.transform.position)
                 .Play(_eventAudioData);
         }
-
-       
     }
 }
