@@ -21,13 +21,14 @@ public class InteractableTalk : MonoBehaviour, IInteractable {
 
     private CharacterDialogSO _dialogueTree;
     private float _startingYaw;
-
+    private InteractionHandler _interactionHandler;
 
     public string InteractionVerb => _iVerb;
 
     public void OnInteract(GameObject i_interactor) {
 
         DialogueHandler handler = i_interactor.GetComponent<DialogueHandler>();
+        _interactionHandler = i_interactor.GetComponent<InteractionHandler>();
 
         _dialogueTree = _dialogTreeSelector.GetDialogTree();
         handler.StartDialogueTree(this, _dialogueTree, _iName, _iSoundData, _iDialogueAnimationHandler);
@@ -52,6 +53,8 @@ public class InteractableTalk : MonoBehaviour, IInteractable {
     public async Task RotateTowardsAsync( Transform target) {
         if (target == null)
             return;
+
+        if (_interactionHandler != null) _interactionHandler.HideHUD();
 
         Vector3 direction = target.position - transform.position;
         direction.y = 0f;
@@ -83,6 +86,8 @@ public class InteractableTalk : MonoBehaviour, IInteractable {
     /// Awaitable.
     /// </summary>
     public async void RotateBackToStartAsync() {
+        if (_interactionHandler != null) _interactionHandler.DisplayHUD();
+
         float startYaw = transform.eulerAngles.y;
         float targetYaw = _startingYaw;
 
