@@ -8,7 +8,7 @@ public struct PlayerDecision
     public CharacterDialogSO nextDialog;
     public bool affectsState;
     public string stateVariable;
-    public int stateValue;
+    public bool stateValue;
 }
 
 [CreateAssetMenu(fileName = "CharacterDialogSODialogTreeSO", menuName = "Scriptable Objects/CharacterDialogSO")]

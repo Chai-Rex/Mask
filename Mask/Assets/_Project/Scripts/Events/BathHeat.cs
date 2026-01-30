@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class BathHeat : BaseTimeEvent
 {
-    private bool isPlayerIn = false;
-    private bool isActive = false;
+    private StateVariable isPlayerIn = new StateVariable("isPlayerInBath", false);
+    private StateVariable isActive = new StateVariable("isBathHeatActive", false);
     [SerializeField] private float heatDuration = 5.0f;
 
     private Coroutine bathCoroutine;
@@ -35,11 +35,11 @@ public class BathHeat : BaseTimeEvent
 
     public void SetBathHeatIsActive(bool _isActive)
     {
-        isActive = _isActive;
+        isActive.SetValueAndUpdateBlackboard(_isActive);
 
-        if (isActive)
+        if (isActive.Value)
         {
-            if (isPlayerIn)
+            if (isPlayerIn.Value)
             {
                 gameObject.SetActive(true);
                 bathCoroutine = StartCoroutine(BathHeating());

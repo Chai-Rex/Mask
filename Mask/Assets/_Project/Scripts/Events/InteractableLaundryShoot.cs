@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class LaundryShoot : BaseTimeEvent, IInteractable
 {
-    private bool isActive = false;
+    private StateVariable isActive = new StateVariable("isLaundryShootActive", false);
     [SerializeField] private string verb = "Close";
     [SerializeField] private string verbWhenOpen = "Open";
 
     private Vector3 startLocation;
     private Vector3 endLocation;
 
-    private bool isOpen = false;
+    private StateVariable isOpen = new StateVariable("isLaundryShootOpen", false);
 
     [SerializeField] private float shootDuration = 3.0f;
     [SerializeField] private float deathDelay = 5.0f;
     private Action currentCallback;
 
-    public string InteractionVerb => isOpen ? verbWhenOpen : verb;
+    public string InteractionVerb => isOpen.Value ? verbWhenOpen : verb;
 
     private void Awake()
     {
@@ -34,7 +34,7 @@ public class LaundryShoot : BaseTimeEvent, IInteractable
     {
         base.ActivateTimeEvent();
 
-        if (isActive)
+        if (isActive.Value)
         {
             // Player Death
         }
@@ -42,13 +42,13 @@ public class LaundryShoot : BaseTimeEvent, IInteractable
 
     void OnLaudryShootOpen()
     {
-        if (isOpen)
+        if (isOpen.Value)
         {
             transform.DOMove(startLocation, shootDuration)
                 .OnComplete(() =>
                 {
-                    isOpen = false;
-                    isActive = false;
+                    isOpen.SetValueAndUpdateBlackboard(false);
+                    isActive.SetValueAndUpdateBlackboard(false);
 
                     if (currentCallback == null)
                     {
@@ -63,8 +63,8 @@ public class LaundryShoot : BaseTimeEvent, IInteractable
             transform.DOMove(endLocation, shootDuration)
                 .OnComplete(() =>
                 {
-                    isOpen = true;
-                    isActive = true;
+                    isOpen.SetValueAndUpdateBlackboard(true);
+                    isActive.SetValueAndUpdateBlackboard(true);
 
                     if (currentCallback != null)
                     {
