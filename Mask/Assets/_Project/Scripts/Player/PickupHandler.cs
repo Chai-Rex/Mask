@@ -6,6 +6,7 @@ using UnityEngine;
 public class PickupHandler : MonoBehaviour {
     [Header("References")] 
     [SerializeField] private Transform _iPickupTransform; // Where items end up
+    [SerializeField] private Animator _iAnimator;
 
     [Header("Pickup Settings")]
     [SerializeField] private float _iPickupDuration = 0.5f;
@@ -60,6 +61,8 @@ public class PickupHandler : MonoBehaviour {
         if (!TryPlaceItem()) {
             DropItem();
         }
+
+        _iAnimator.Play("Drop");
     }
 
     /// <summary>
@@ -120,6 +123,7 @@ public class PickupHandler : MonoBehaviour {
         }
 
         try {
+            _iAnimator.Play("PickUp");
             // Perform the arc animation
             await ArcToHand(i_item.transform, _pickupCancellation.Token);
 
