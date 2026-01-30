@@ -1159,7 +1159,7 @@ MonoBehaviour:
   _iStoryState: {fileID: 11400000, guid: cdd420038140c28488a65d05b61e1c6d, type: 2}
   _iSpeakingAnimationHandler: {fileID: 0}
   _iCanSkip: 1
-  _silentPresetName: NA
+  _silentPresetName: na
 --- !u!114 &883894458546270514
 MonoBehaviour:
   m_ObjectHideFlags: 0

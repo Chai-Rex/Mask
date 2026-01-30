@@ -18,7 +18,7 @@ public class DialogueHandler : Singleton<DialogueHandler> {
     [SerializeField] private bool _iCanSkip = true;
 
     [Header("Silent Preset")]
-    [SerializeField] private string _silentPresetName = "NA";
+    [SerializeField] private string _silentPresetName = "na";
 
     private CancellationTokenSource _typingCancellation;
     private int _currentDialogIndex = 0;
