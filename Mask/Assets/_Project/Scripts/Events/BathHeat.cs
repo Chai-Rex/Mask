@@ -29,6 +29,7 @@ public class BathHeat : BaseTimeEvent
 
         bathCoroutine = null;
 
+        PlayTriggerSound();
         // Player Death
 
     }

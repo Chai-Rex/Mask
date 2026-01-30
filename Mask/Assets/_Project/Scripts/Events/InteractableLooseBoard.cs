@@ -41,6 +41,7 @@ public class InteractableLooseBoard : BaseTimeEvent, IInteractable
 
         if (other.gameObject.tag == "Player")
         {
+            PlayTriggerSound();
             // Death
             isPlayerDead = true;
         }

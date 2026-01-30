@@ -17,6 +17,7 @@ public class Lego : BaseTimeEvent
 
         if (collision.gameObject.tag == "Player")
         {
+            PlayTriggerSound();
             // Player Death
         }
     }

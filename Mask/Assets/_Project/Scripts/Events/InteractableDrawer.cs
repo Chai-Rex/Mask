@@ -10,6 +10,8 @@ public class InteractableDrawer : BaseTimeEvent, IInteractable
     private bool isActive = false;
     private bool isOpen = false;
 
+    private StateVariable _deathDrawerActive = new StateVariable("", false, false);
+
     private Vector3 startLocation;
     private Vector3 endLocation;
 
@@ -23,6 +25,11 @@ public class InteractableDrawer : BaseTimeEvent, IInteractable
     {
         startLocation = transform.position;
         endLocation = transform.position + new Vector3(0.0f, 0.0f, 100.0f);
+
+        if (isDeathDrawer)
+        {
+            _deathDrawerActive = new StateVariable("isDeathDrawerActive", false);
+        }
     }
 
     protected override void ActivateTimeEvent()
@@ -31,6 +38,7 @@ public class InteractableDrawer : BaseTimeEvent, IInteractable
 
         if (isActive && isDeathDrawer)
         {
+            PlayTriggerSound();
             // Player Death
         }
     }
@@ -52,6 +60,7 @@ public class InteractableDrawer : BaseTimeEvent, IInteractable
 
                     if (currentCallback == null && isDeathDrawer)
                     {
+                        _deathDrawerActive.SetValueAndUpdateBlackboard(false);
                         currentCallback = ActivateTimeEvent;
                         TimeManager.Instance.ScheduleAfter(deathDelay, currentCallback);
                     }
@@ -67,6 +76,7 @@ public class InteractableDrawer : BaseTimeEvent, IInteractable
 
                     if (currentCallback != null && isDeathDrawer)
                     {
+                        _deathDrawerActive.SetValueAndUpdateBlackboard(true);
                         TimeManager.Instance.CancelScheduled(currentCallback);
                     }
                 });
