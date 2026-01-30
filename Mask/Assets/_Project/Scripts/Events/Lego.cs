@@ -19,10 +19,9 @@ public class Lego : BaseTimeEvent
     private void OnCollisionEnter(Collision collision)
     {
         if (!isLegoActive.Value) { return; }
-        Debug.Log("colllision");
+
         if (collision.gameObject.tag == "Player")
         {
-            Debug.Log("playing sound");
             PlayTriggerSound();
             // Player Death
         }

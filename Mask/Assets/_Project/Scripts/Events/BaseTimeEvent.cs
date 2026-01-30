@@ -16,7 +16,6 @@ public class BaseTimeEvent : MonoBehaviour
     {
         if (!_soundTriggered && _eventAudioData != null && _eventAudioData.Clip != null)
         {
-            Debug.Log("playing sound");
             _soundTriggered = true;
             SoundManager.Instance.CreateSound()
                 .WithPosition(gameObject.transform.position)
