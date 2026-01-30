@@ -22,7 +22,7 @@ public class InputManager : PersistentSingleton<InputManager> {
 
     // UI
     public InputAction _UINavigateAction { get; private set; }
-    public InputAction _UIUnpauseAction { get; private set; }
+    public InputAction _UIResumeAction { get; private set; }
     public InputAction _UISubmitAction { get; private set; }
 
     // Dialogue
@@ -72,7 +72,7 @@ public class InputManager : PersistentSingleton<InputManager> {
         _PlayerDropAction = BuildAction("Drop");
 
         _UINavigateAction = BuildAction("UINavigation");
-        _UIUnpauseAction = BuildAction("Unpause");
+        _UIResumeAction = BuildAction("Unpause");
         _UISubmitAction = BuildAction("Submit");
 
         _DialogueNavigateAction = BuildAction("DialogueNavigation");
@@ -144,13 +144,13 @@ public class InputManager : PersistentSingleton<InputManager> {
 
     public void EnableUIActions() {
         _UINavigateAction.Enable();
-        _UIUnpauseAction.Enable();
+        _UIResumeAction.Enable();
         _UISubmitAction.Enable();
     }
 
     public void DisableUIActions() {
         _UINavigateAction.Disable();
-        _UIUnpauseAction.Disable();
+        _UIResumeAction.Disable();
         _UISubmitAction.Disable();
     }
 
