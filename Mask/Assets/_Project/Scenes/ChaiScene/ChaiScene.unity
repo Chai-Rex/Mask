@@ -203,6 +203,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: TempPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 1132479045204797082, guid: 51331ff64dc058b49991847db01f7df0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1561078631625443057, guid: 51331ff64dc058b49991847db01f7df0, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -226,6 +230,10 @@ PrefabInstance:
     - target: {fileID: 1561078631625443057, guid: 51331ff64dc058b49991847db01f7df0, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -54.675
+      objectReference: {fileID: 0}
+    - target: {fileID: 1739562611699102677, guid: 51331ff64dc058b49991847db01f7df0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2173506679117914062, guid: 51331ff64dc058b49991847db01f7df0, type: 3}
       propertyPath: m_AnchorMax.y
@@ -2381,6 +2389,10 @@ PrefabInstance:
     - target: {fileID: 1818103894303894873, guid: 2160f3a8e1251654b9ec86c002abced3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2173715198698306466, guid: 2160f3a8e1251654b9ec86c002abced3, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5560403934533464108, guid: 2160f3a8e1251654b9ec86c002abced3, type: 3}
       propertyPath: m_Name

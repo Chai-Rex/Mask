@@ -16,32 +16,21 @@ public class HUDCanvas : MonoBehaviour {
             _iInteractionHandler = FindFirstObjectByType<InteractionHandler>();
         }
 
-        // Subscribe to interaction events
-        _iInteractionHandler._OnInteractableFound.AddListener(ShowInteractionPrompt);
-        _iInteractionHandler._OnInteractableLost.AddListener(HideInteractionPrompt);
-
         // Hide prompt initially
         HideInteractionPrompt();
     }
 
-    private void OnDestroy() {
-        if (_iInteractionHandler != null) {
-            _iInteractionHandler._OnInteractableFound.RemoveListener(ShowInteractionPrompt);
-            _iInteractionHandler._OnInteractableLost.RemoveListener(HideInteractionPrompt);
-        }
-    }
-
-    private void ShowInteractionPrompt(string verb) {
+    public void ShowInteractionPrompt(string verb) {
         _iInteractionPrompt.SetActive(true);
 
         if (_iVerbText != null) {
             _iVerbText.text = verb;
         }
     }
-
-    private void HideInteractionPrompt() {
+    public void ShowInteractionPrompt() {
+        _iInteractionPrompt.SetActive(true);
+    }
+    public void HideInteractionPrompt() {
         _iInteractionPrompt.SetActive(false);
     }
-
-
 }

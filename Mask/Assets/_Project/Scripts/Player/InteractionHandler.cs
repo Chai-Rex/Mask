@@ -3,6 +3,8 @@ using UnityEngine.Events;
 
 public class InteractionHandler : MonoBehaviour {
 
+    [SerializeField] private HUDCanvas _iHUDCanvas;
+
     [Header("Raycast Settings")]
     [SerializeField] private Transform _iCameraTransform;
     [SerializeField] private float _iInteractionRange = 3f;
@@ -11,10 +13,6 @@ public class InteractionHandler : MonoBehaviour {
 
     [Header("Debug")]
     [SerializeField] private bool _iShowDebugRay = true;
-
-    // Events for UI to subscribe to
-    public UnityEvent<string> _OnInteractableFound; // Passes the verb string
-    public UnityEvent _OnInteractableLost;
 
     private IInteractable _currentInteractable;
     private GameObject _currentInteractableObject;
@@ -71,8 +69,7 @@ public class InteractionHandler : MonoBehaviour {
                     _currentInteractableObject = hitInteractable.collider.gameObject;
                     _currentInteractable.OnLookEnter(gameObject);
 
-                    // Notify UI
-                    _OnInteractableFound?.Invoke("[e] " + _currentInteractable.InteractionVerb);
+                    _iHUDCanvas.ShowInteractionPrompt("[e] " + _currentInteractable.InteractionVerb);
                 }
                 return;
             }
@@ -81,7 +78,8 @@ public class InteractionHandler : MonoBehaviour {
         if (Physics.Raycast(ray, out RaycastHit hitHand, _iInteractionRange, _iInHandLayer)) {
             if (_currentInHandObject != hitHand.collider.gameObject) {
                 _currentInHandObject = hitHand.collider.gameObject;
-                _OnInteractableFound?.Invoke("[q] drop item");
+
+                _iHUDCanvas.ShowInteractionPrompt("[q] drop item");
             }
             return;
         }
@@ -92,16 +90,14 @@ public class InteractionHandler : MonoBehaviour {
             _currentInteractable = null;
             _currentInteractableObject = null;
 
-            // Notify UI
-            _OnInteractableLost?.Invoke();
+            _iHUDCanvas.HideInteractionPrompt();
         }
 
         // No InHand item found or lost line of sight
         if (_currentInHandObject != null) {
             _currentInHandObject = null;
 
-            // Notify UI
-            _OnInteractableLost?.Invoke();
+            _iHUDCanvas.HideInteractionPrompt();
         }
     }
 
@@ -118,5 +114,12 @@ public class InteractionHandler : MonoBehaviour {
 
     public float GetInteractionRange() {
         return _iInteractionRange;
+    }
+
+    public void HideHUD() {
+        _iHUDCanvas.HideInteractionPrompt();
+    }
+    public void DisplayHUD() {
+        _iHUDCanvas.ShowInteractionPrompt();
     }
 }
