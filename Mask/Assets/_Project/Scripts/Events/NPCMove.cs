@@ -28,8 +28,11 @@ public struct NPCTimePoints
     public float npcLocationTime;
 }
 
-    public class NPCMove : BaseTimeEvent
+[RequireComponent(typeof(NavMeshAgent))]
+[RequireComponent(typeof(ProceduralWalkAnimation))]
+public class NPCMove : BaseTimeEvent
 {
+    [SerializeField] private ProceduralWalkAnimation _iProceduralWalkAnimation;
     [SerializeField] private float moveSpeed = 2.5f;
 
     [SerializeField] protected List<NPCLocationPoints> npcLocationPoints = new List<NPCLocationPoints>();
@@ -102,7 +105,10 @@ public struct NPCTimePoints
     {
         navMeshAgent.isStopped = false;
 
-        navMeshAgent.SetDestination(npcLocationDictionary[currentNPCLocationState][_currentPoint].position);      
+        navMeshAgent.SetDestination(npcLocationDictionary[currentNPCLocationState][_currentPoint].position);
+
+        // move animation start
+        _iProceduralWalkAnimation.StartWalking(moveSpeed);
 
         while (navMeshAgent.pathPending)
         {
@@ -115,5 +121,8 @@ public struct NPCTimePoints
         }
 
         navMeshAgent.isStopped = true;
+
+        // move animation end
+        _iProceduralWalkAnimation.StopWalking();
     }
 }
