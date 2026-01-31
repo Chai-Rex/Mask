@@ -75,6 +75,8 @@ public class DialogueHandler : Singleton<DialogueHandler> {
 
         _interactableSpeaker = i_speaker;
 
+        TimeManager.instance.Pause();
+
         await i_speaker.RotateTowardsAsync(gameObject.transform);
 
         _iDialogueCanvas.gameObject.SetActive(true);
@@ -117,6 +119,8 @@ public class DialogueHandler : Singleton<DialogueHandler> {
     }
 
     private void FinishDialogue() {
+        TimeManager.instance.Resume();
+
         _interactableSpeaker.RotateBackToStartAsync();
 
         InputManager.Instance.SetPlayerActionMap();
