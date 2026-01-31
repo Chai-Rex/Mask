@@ -4,8 +4,6 @@ using UnityEngine.UI;
 
 public class MainMenuCanvas : MonoBehaviour {
 
-    [SerializeField] private LevelManager.Levels levelToLoad;
-
     [Header("Buttons")]
     [SerializeField] private Button _iStartButton;
     [SerializeField] private Button _iQuitButton;
@@ -44,7 +42,7 @@ public class MainMenuCanvas : MonoBehaviour {
     }
 
     public void StartGame() {
-        LevelManager.Instance.LoadScene(levelToLoad);
+        StartGameSequenceManager.Instance.StartGame();
     }
 
     public void Quit() {
