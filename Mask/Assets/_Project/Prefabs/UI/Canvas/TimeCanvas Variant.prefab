@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1859291991824665914}
     m_Modifications:
+    - target: {fileID: 1371449967988280072, guid: 977a707c63d2c1448850e043404ce025, type: 3}
+      propertyPath: m_text
+      value: 00:00
+      objectReference: {fileID: 0}
+    - target: {fileID: 1371449967988280072, guid: 977a707c63d2c1448850e043404ce025, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 3538294085968486480, guid: 977a707c63d2c1448850e043404ce025, type: 3}
       propertyPath: m_Name
       value: H2_Text
@@ -239,3 +247,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimeCanvas
   _iText: {fileID: 2336431340512282785}
+  secondsPerGameMinute: 1
