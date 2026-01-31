@@ -37,7 +37,7 @@ public class DialogTreeSelector : MonoBehaviour
             {
                 if (visitedDialogs.Contains(treeSelection.dialogTree))
                 {
-                    return _iCompleteDialogue;
+                    return _defaultDialogTree;
                 }
                 else
                 {

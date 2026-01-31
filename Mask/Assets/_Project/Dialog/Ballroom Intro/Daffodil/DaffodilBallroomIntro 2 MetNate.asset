@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
+  m_Name: DaffodilBallroomIntro 2 MetNate
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
+  DialogText:
+  - 'Yes! He did the flowers, do you like them? He says that daffodils means beginnings,
+    thats how my parents picked my name! '
+  decisionOptions:
+  - text: Do you help out your dad?
+    nextDialog: {fileID: 11400000, guid: e8b4f92b4c744354584f47273a9d9cb2, type: 2}
+    affectsState: 0
+    stateVariable: 
+    stateValue: 0
+  - text: You enjoying the party so far?
+    nextDialog: {fileID: 11400000, guid: c33c046663c8d024291be31909c2607d, type: 2}
+    affectsState: 0
+    stateVariable: 
+    stateValue: 0

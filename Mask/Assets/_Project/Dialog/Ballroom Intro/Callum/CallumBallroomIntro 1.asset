@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
+  m_Name: CallumBallroomIntro 1
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
+  DialogText:
+  - "Well if it\u2019s anything like football just take that anxiety and turn it
+    into focus. Though I guess I\u2019m not one to talk."
+  - "My wife and kids haven\u2019t been too happy since I decided to retire. "
+  decisionOptions:
+  - text: Are they here tonight?
+    nextDialog: {fileID: 11400000, guid: 5c44d95a4c96ea348ad0aaf978f06998, type: 2}
+    affectsState: 0
+    stateVariable: 
+    stateValue: 0
+  - text: Football?
+    nextDialog: {fileID: 11400000, guid: daab6a983835fac48aa517da19cd8b43, type: 2}
+    affectsState: 0
+    stateVariable: 
+    stateValue: 0

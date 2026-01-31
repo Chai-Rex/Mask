@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
+  m_Name: CallumBallroomIntro 2 Alt
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
+  DialogText:
+  - Yeah, I was a big star back in the day. Probably still would be if it wasn't
+    for...
+  - Nevermind. I'm getting off topic
+  decisionOptions:
+  - text: You don't really seem like a party person
+    nextDialog: {fileID: 11400000, guid: 04f2eff2ff6f443418d5f22db7ae7e87, type: 2}
+    affectsState: 0
+    stateVariable: 
+    stateValue: 0
+  - text: American or rest of the worldian?
+    nextDialog: {fileID: 11400000, guid: 58abc7f6f27b2ca4ba6689e8e9e229e8, type: 2}
+    affectsState: 0
+    stateVariable: 
+    stateValue: 0

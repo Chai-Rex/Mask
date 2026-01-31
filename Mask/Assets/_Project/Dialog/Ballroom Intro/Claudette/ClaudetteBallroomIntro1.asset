@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
+  m_Name: ClaudetteBallroomIntro1
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
+  DialogText:
+  - Ah, you must be that musician we hired for tonight
+  - I truly hope you can give as good of a performance as your backer claims. I'm
+    taking a big gamble on you.
+  decisionOptions:
+  - text: Of course, miss. I won't let you down.
+    nextDialog: {fileID: 11400000, guid: 21ae2e62c5a64c24cad9339696d49fde, type: 2}
+    affectsState: 1
+    stateVariable: hasTalkedToClaudetteInIntro
+    stateValue: 1

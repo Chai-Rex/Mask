@@ -1,3 +1,5 @@
+using System.Threading;
+using System.Threading.Tasks;
 using UnityEngine;
 using UtilitySingletons;
 public class DeathManager : Singleton<DeathManager> {
@@ -29,13 +31,14 @@ public class DeathManager : Singleton<DeathManager> {
     }
 
     private void _PlayerJumpAction_started(UnityEngine.InputSystem.InputAction.CallbackContext obj) {
+        StoryStateSO.Instance.RegisterDeath("hasDiedToBEEs");
         Die("BEEs");
     }
 
     private void _DeathRespawnAction_started(UnityEngine.InputSystem.InputAction.CallbackContext obj) {
 
         // reset blackboard
-        StoryStateSO.Instance.ResetState();
+        
         _hasDiedState.SetValueAndUpdateBlackboard(true);
 
         InputManager.Instance.SetPlayerActionMap();
@@ -55,6 +58,9 @@ public class DeathManager : Singleton<DeathManager> {
         _iEyeCanvas.SetCauseOfDeathText($"[ {TimeManager.instance.GetTime()} ] died to {i_causeOfDeath}");
 
         InputManager.Instance.SetDeathActionMap();
+
+        StoryStateSO.Instance.ResetState();
+
     }
 
 

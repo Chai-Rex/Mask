@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,13 +12,23 @@ public struct PlayerDecision
     public bool stateValue;
 }
 
+[System.Serializable]
+public struct ConditionalDecision
+{
+    public string conditionalState;
+    public PlayerDecision decision;
+}
+
 [CreateAssetMenu(fileName = "CharacterDialogSODialogTreeSO", menuName = "Scriptable Objects/CharacterDialogSO")]
 public class CharacterDialogSO : ScriptableObject
 {
     
-    public List<string> DialogText;
+    public List<string> DialogText = new List<string>();
 
-    public List<PlayerDecision> decisionOptions;
+    public List<PlayerDecision> decisionOptions = new List<PlayerDecision>();
+
+    [SerializeField]
+    private List<ConditionalDecision> conditionalDecisions = new List<ConditionalDecision>();
 
     private void OnEnable()
     {
@@ -30,7 +41,31 @@ public class CharacterDialogSO : ScriptableObject
             }
         }
 
-        
+        foreach(ConditionalDecision conditional in conditionalDecisions)
+        {
+            StoryStateSO.RegisterInitialState(new StateVariable(conditional.conditionalState, false, false));
+            if (conditional.decision.affectsState)
+            {
+                StoryStateSO.RegisterInitialState(new StateVariable(conditional.decision.stateVariable, false, false));
+            }
+        }
+
+    }
+
+    public List<PlayerDecision> GetActiveConditionalDecisions()
+    {
+        List<PlayerDecision> activeConditionals = new List<PlayerDecision>();
+
+        foreach (ConditionalDecision conditional in conditionalDecisions)
+        {
+            Debug.Log(conditional.conditionalState + " is " + StoryStateSO.Instance.GetValue(conditional.conditionalState));
+            if (StoryStateSO.Instance.GetValue(conditional.conditionalState))
+            {
+                activeConditionals.Add(conditional.decision);
+            }
+        }
+
+        return activeConditionals;
     }
 
 }

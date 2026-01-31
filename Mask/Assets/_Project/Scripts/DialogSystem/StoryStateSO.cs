@@ -45,6 +45,9 @@ public class StoryStateSO : ScriptableObject
     public static StoryStateSO Instance { get { return _instance; } }
 
     private static Dictionary<string, bool> RegisteredInitialStates = new Dictionary<string, bool>();
+
+    public delegate void StateCallback(bool i_newValue);
+    
     public static void RegisterInitialState(StateVariable i_variable)
     {
         if (RegisteredInitialStates.ContainsKey(i_variable.Name))
@@ -57,10 +60,27 @@ public class StoryStateSO : ScriptableObject
         }
     }
 
+   
+
     [SerializeField]
-    private List<StateVariable> _initialStateVariables;
+    private List<StateVariable> _initialStateVariables = new List<StateVariable>();
 
     public Dictionary<string, bool> pairs = new Dictionary<string, bool>();
+    private Dictionary<string, List<StateCallback>> functionCallbacks = new Dictionary<string, List<StateCallback>>();
+
+    [SerializeField]
+    private List<string> DeathFlags = new List<string>();
+    public void RegisterDeath(string i_deathType)
+    {
+        if (!DeathFlags.Contains(i_deathType))
+        {
+            DeathFlags.Add(i_deathType);
+            if (Instance != null)
+            {
+                Instance.SetValue(i_deathType, true);
+            }
+        }
+    }
 
     private void OnEnable()
     {
@@ -68,26 +88,50 @@ public class StoryStateSO : ScriptableObject
 
     }
 
-    // Call this on game start to register all our state variables into the blackboard
+    private bool _hasBeenRegistered = false;
+    // Call this ONCE on game start to register all our state variables into the blackboard and clear existing death flags
     // Also helps see what variables are available
     public void LoadRegisteredStates()
     {
+        if(_hasBeenRegistered) { return; }
+        _hasBeenRegistered = true;
+
+        DeathFlags.Clear();
+
         _initialStateVariables.Clear();
         foreach (string state in RegisteredInitialStates.Keys)
         {
             // Sync the initial state variable list with our registered states at game start
             _initialStateVariables.Add(new StateVariable(state, RegisteredInitialStates[state], false));
-            SetValue(state, RegisteredInitialStates[state]);
         }
+
+        ResetState();
+
+    }
+
+    public void RegisterCallback(string i_state, StateCallback i_callbackFunction)
+    {
+        if (!functionCallbacks.ContainsKey(i_state))
+        {
+            functionCallbacks.Add(i_state, new List<StateCallback>());
+        }
+
+        functionCallbacks[i_state].Add(i_callbackFunction);
     }
 
     public void ResetState()
     {
         pairs.Clear();
+        functionCallbacks.Clear();
 
         foreach(StateVariable variable in _initialStateVariables)
         {
             SetValue(variable.Name, variable.Value);
+        }
+
+        foreach(string deathType in DeathFlags)
+        {
+            SetValue(deathType, true);
         }
     }
     public void SetValue(StateVariable i_variable)
@@ -106,7 +150,15 @@ public class StoryStateSO : ScriptableObject
             pairs.Add(name, value);
         }
 
-        //Debug.Log("Setting " + name + " to " +  value);
+        if (functionCallbacks.ContainsKey(name))
+        {
+            foreach (StateCallback callback in functionCallbacks[name])
+            {
+                callback(value);
+            }
+        }
+
+        Debug.Log("Setting " + name + " to " +  value);
     }
 
     public bool GetValue(string name)
