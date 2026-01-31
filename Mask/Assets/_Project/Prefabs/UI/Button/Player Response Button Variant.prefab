@@ -120,9 +120,25 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -17.88
       objectReference: {fileID: 0}
+    - target: {fileID: 4000592833594365096, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000592833594365096, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000592833594365096, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
+      propertyPath: m_Color.r
+      value: 0.56884766
+      objectReference: {fileID: 0}
     - target: {fileID: 5681363264718655159, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
       propertyPath: m_TextWrappingMode
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681363264718655159, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
