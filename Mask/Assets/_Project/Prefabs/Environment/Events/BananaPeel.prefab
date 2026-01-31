@@ -106,8 +106,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BananaPeel
   _eventAudioData:
-    Clip: {fileID: 0}
-    MixerGroup: {fileID: 0}
+    Clip: {fileID: 8300000, guid: 781c8fd073784204f903c668b08ee051, type: 3}
+    MixerGroup: {fileID: -7791223585700606962, guid: 49963274511b53442bc8ea85953fe90d, type: 2}
     Loop: 0
     PlayOnAwake: 0
     FrequentSound: 0
@@ -128,6 +128,7 @@ MonoBehaviour:
     IgnoreListenerVolume: 0
     IgnoreListenerPause: 0
     rolloffMode: 0
+  bananaPeelActivateTime: 160
 --- !u!65 &775453508134793385
 BoxCollider:
   m_ObjectHideFlags: 0

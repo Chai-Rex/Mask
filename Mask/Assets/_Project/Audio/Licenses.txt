@@ -37,8 +37,11 @@ Pepper Spray Coughing by qubodup -- https://freesound.org/s/739416/ -- License: 
 Body fall.wav by DylanTheFish -- https://freesound.org/s/417994/ -- License: Creative Commons 0 -- Adapted for PlayerFall.wav
 Fall on carpet by j0rd4nkzf -- https://freesound.org/s/244259/ -- License: Creative Commons 0 -- Adapted for PlayerFall.wav
 
-Light Switch Turn Off Sound by ChrisTutorials -- https://freesound.org/s/440499/ -- License: Creative Commons 0 -- Adapted for StabDeath.wav
+Light Switch Turn Off Sound by ChrisTutorials -- https://freesound.org/s/440499/ -- License: Creative Commons 0 -- Adapted for LightFlick.wav
+
 Nasty Knife Stab.wav by Aris621 -- https://freesound.org/s/435238/ -- License: Attribution 4.0 -- Adapted for StabDeath.wav
+
+Footsteps_Quick.wav by georgisound -- https://freesound.org/s/368833/ -- License: Creative Commons 0 -- Adapted for Footsteps.wav
 
 cartoon_siren_whistle_001.wav by soundscalpel.com -- https://freesound.org/s/110390/ -- License: Attribution 3.0  -- Adapted for cartoon-long-throw.wav by copyc4t
 cartoon-long-throw.wav by copyc4t -- https://freesound.org/s/482735/ -- License: Attribution 4.0 -- Adapted for PlayerSlip.wav

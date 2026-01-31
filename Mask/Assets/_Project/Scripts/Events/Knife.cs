@@ -1,3 +1,4 @@
+using AudioSystem;
 using System;
 using UnityEngine;
 
@@ -7,7 +8,12 @@ public class Knife : BaseTimeEvent
     private bool isPlayerNear = false;
     private Action currentCallback = null;
     [SerializeField] private float disappearTime = 145.0f;
-    [SerializeField] private float deathDelay = 3.0f; 
+    [SerializeField] private float deathDelay = 3.0f;
+
+    [SerializeField]
+    private SoundData _lightSwitchAudio;
+    [SerializeField]
+    private SoundData _footstepsAudio;
 
     private MeshRenderer meshRenderer;
 
@@ -49,6 +55,12 @@ public class Knife : BaseTimeEvent
         {
             if (isActive && isPlayerNear && currentCallback == null)
             {
+                SoundManager.Instance.CreateSound()
+                .WithPosition(gameObject.transform.position)
+                .Play(_lightSwitchAudio);
+                SoundManager.Instance.CreateSound()
+                .WithPosition(gameObject.transform.position)
+                .Play(_footstepsAudio);
                 currentCallback = ActivateTimeEvent;
                 LightManager.Instance.TurnOffLights();
                 TimeManager.Instance.ScheduleAfter(deathDelay, currentCallback);
@@ -64,6 +76,10 @@ public class Knife : BaseTimeEvent
 
             if (isActive && currentCallback != null)
             {
+                SoundManager.Instance.CreateSound()
+                .WithPosition(gameObject.transform.position)
+                .Play(_lightSwitchAudio);
+                PlayTriggerSound();
                 LightManager.Instance.TurnOnLights();
                 TimeManager.Instance.CancelScheduled(currentCallback);
                 currentCallback = null;
