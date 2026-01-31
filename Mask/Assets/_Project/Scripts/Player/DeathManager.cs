@@ -1,3 +1,4 @@
+using AudioSystem;
 using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -8,6 +9,11 @@ public class DeathManager : Singleton<DeathManager> {
     [SerializeField] private LevelManager.Levels levelToLoad;
 
     private StateVariable _hasDiedState = new StateVariable("hasPlayerDied", false);
+
+    [SerializeField]
+    private SoundData _deathAudio;
+    [SerializeField]
+    private SoundData _fallAudio;
 
     private void Start() {
         AwakenSequence();
@@ -48,12 +54,19 @@ public class DeathManager : Singleton<DeathManager> {
     }
 
     public async void Die(string i_causeOfDeath) {
-
         InputManager.Instance.SetDeathActionMap();
 
         _iEyeCanvas.gameObject.SetActive(true);
 
+        SoundManager.Instance.CreateSound()
+                .WithPosition(gameObject.transform.position)
+                .Play(_deathAudio);
+
         await _iEyeCanvas.CloseEyes();
+
+        SoundManager.Instance.CreateSound()
+                .WithPosition(gameObject.transform.position)
+                .Play(_fallAudio);
 
         _iEyeCanvas.SetCauseOfDeathText($"[ {TimeManager.instance.GetTime()} ] died to {i_causeOfDeath}");
 

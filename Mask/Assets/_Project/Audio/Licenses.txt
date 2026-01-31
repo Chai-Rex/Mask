@@ -62,4 +62,4 @@ Bug Zapper_Long moth electrocution.wav by CGEffex -- https://freesound.org/s/101
 Remix of 101127__CGEffex__Bug_Zapper_Long_moth_electrocution_Remix.wav by Timbre -- https://freesound.org/s/101334/ -- License: Attribution NonCommercial 4.0 -- Adapted for ElectricLoop.wav
 
 Bone Crunch by Clearwavsound -- https://freesound.org/s/524609/ -- License: Attribution 3.0 -- Adapted for LegoDeath.wav
-grunts.wav by mattgarkusha -- https://freesound.org/s/209664/ -- License: Creative Commons 0 -- Adapted for LegoDeath.wav
+grunts.wav by mattgarkusha -- https://freesound.org/s/209664/ -- License: Creative Commons 0 -- Adapted for LegoDeath.wav and PlayerDeathGrunt.wav
