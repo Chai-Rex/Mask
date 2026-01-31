@@ -128,8 +128,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 301310f32ab19b842a8c32d8c17665e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NPCDaffodil
+  _eventAudioData:
+    Clip: {fileID: 0}
+    MixerGroup: {fileID: 0}
+    Loop: 0
+    PlayOnAwake: 0
+    FrequentSound: 0
+    Mute: 0
+    BypassEffects: 0
+    BypassListenerEffects: 0
+    BypassReverbZones: 0
+    Priority: 128
+    Volume: 1
+    Pitch: 1
+    PanStereo: 0
+    SpatialBlend: 0
+    ReverbZoneMix: 1
+    DopplerLevel: 1
+    Spread: 0
+    MinDistance: 1
+    MaxDistance: 500
+    IgnoreListenerVolume: 0
+    IgnoreListenerPause: 0
+    rolloffMode: 0
   moveSpeed: 2.5
   npcLocationPoints: []
+  npcTimePoints:
+  - npcLocationState: 0
+    npcLocationTime: 60
+  - npcLocationState: 1
+    npcLocationTime: 120
+  - npcLocationState: 2
+    npcLocationTime: 180
+  - npcLocationState: 3
+    npcLocationTime: 240
+  - npcLocationState: 4
+    npcLocationTime: 300
+  - npcLocationState: 5
+    npcLocationTime: 360
+  - npcLocationState: 6
+    npcLocationTime: 420
 --- !u!195 &4163802399941295605
 NavMeshAgent:
   m_ObjectHideFlags: 0

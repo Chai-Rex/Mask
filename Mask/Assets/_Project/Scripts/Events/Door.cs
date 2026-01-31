@@ -4,7 +4,7 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     private bool isOpen = false;
-    private bool isDoorLocked = false;
+    [SerializeField] private bool isDoorLocked = false;
 
     Tween doorTween;
     [SerializeField] private float doorDuration = 1.0f;
@@ -45,9 +45,9 @@ public class Door : MonoBehaviour
             {
                 if (betweenDoorCollider != null)
                 {
-                    betweenDoorCollider.center = new Vector3(0.0f, 0.0f, 2.5f);
+                    betweenDoorCollider.center = new Vector3(-0.56f, 1.0f, 1.0f);
                 }
-                doorTween = transform.DORotate(new Vector3(0.0f, 90.0f, 0.0f), doorDuration)
+                doorTween = transform.DORotate(new Vector3(0.0f, -90.0f, 0.0f), doorDuration)
                 .OnComplete(() =>
                 {
                     isOpen = true;
@@ -57,9 +57,9 @@ public class Door : MonoBehaviour
             {
                 if (betweenDoorCollider != null)
                 {
-                    betweenDoorCollider.center = new Vector3(0.0f, 0.0f, -2.5f);
+                    betweenDoorCollider.center = new Vector3(-0.56f, 1.0f, -1.0f);
                 }
-                doorTween = transform.DORotate(new Vector3(0.0f, -90.0f, 0.0f), doorDuration)
+                doorTween = transform.DORotate(new Vector3(0.0f, 90.0f, 0.0f), doorDuration)
                 .OnComplete(() =>
                 {
                     isOpen = true;

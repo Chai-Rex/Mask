@@ -8,7 +8,7 @@ public class BetweenDoor : MonoBehaviour
     {
         // If NPC Or Player is not in Between
 
-        if (door != null)
+        if (door != null && other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             door.OnDoorClose();
         }

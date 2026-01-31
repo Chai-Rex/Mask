@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1537066525305245495}
-  m_Mesh: {fileID: 4079106847406072358, guid: cc3f5491e06e8c74c940b74308881108, type: 3}
+  m_Mesh: {fileID: -7966592091268404495, guid: 7a24f1622d10426428183d6e27e053a3, type: 3}
 --- !u!23 &8477918801158738315
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -69,7 +69,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 82c76bb170966ef4796d739b7e27c588, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -128,7 +128,8 @@ MonoBehaviour:
     IgnoreListenerVolume: 0
     IgnoreListenerPause: 0
     rolloffMode: 0
-  waterSpill: {fileID: 0}
+  waterSpills: []
+  electricCableActivateTime: 60
 --- !u!65 &9052780547791690119
 BoxCollider:
   m_ObjectHideFlags: 0
