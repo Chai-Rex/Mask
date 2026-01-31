@@ -1,9 +1,16 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ElectricCable : BaseTimeEvent
 {
-    [SerializeField] private WaterSpill waterSpill;
+    [SerializeField] private List<WaterSpill> waterSpills = new List<WaterSpill>();
     private StateVariable isActive = new StateVariable("isElectricCableActive", false);
+    [SerializeField] private float electricCableActivateTime = 60.0f;
+
+    private void Start()
+    {
+        TimeManager.Instance.ScheduleAt(electricCableActivateTime, ActivateTimeEvent);
+    }
 
     protected override void ActivateTimeEvent()
     {
@@ -19,17 +26,29 @@ public class ElectricCable : BaseTimeEvent
         if (isActive.Value)
         {
             gameObject.SetActive(true);
-            if (waterSpill != null)
+            if (waterSpills != null && waterSpills.Count != 0)
             {
-                waterSpill.SetIsCableTouching(true);
+                foreach (WaterSpill waterSpill in waterSpills)
+                {
+                    if (waterSpill)
+                    {
+                        waterSpill.SetIsCableTouching(true);
+                    }
+                }
             }
         }
         else
         {
             gameObject.SetActive(false);
-            if (waterSpill != null)
+            if (waterSpills != null && waterSpills.Count != 0)
             {
-                waterSpill.SetIsCableTouching(false);
+                foreach (WaterSpill waterSpill in waterSpills)
+                {
+                    if (waterSpill)
+                    {
+                        waterSpill.SetIsCableTouching(false);
+                    }
+                }
             }
         }
     }

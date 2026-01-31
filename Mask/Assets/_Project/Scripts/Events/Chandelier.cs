@@ -9,9 +9,11 @@ public class Chandelier : BaseTimeEvent
     private StateVariable canFall = new StateVariable("canChandelierFall", false);
     private StateVariable hasFallen = new StateVariable("hasChandelierFallen", false);
 
+    [SerializeField] private float chandelierFallTime = 60.0f;
+
     private void Start()
     {
-        TimeManager.Instance.ScheduleAt(5.0f, ActivateTimeEvent);
+        TimeManager.Instance.ScheduleAt(chandelierFallTime, ActivateTimeEvent);
     }
 
     protected override void ActivateTimeEvent()

@@ -21,7 +21,7 @@ public class InteractableDrawer : BaseTimeEvent, IInteractable
     private Vector3 endLocation;
 
     [SerializeField] private float drawerDuration = 3.0f;
-    [SerializeField] private float deathDelay = 3.0f;
+    [SerializeField] private float deathDelay = 0.5f;
     private Action currentCallback;
 
     public string InteractionVerb => isOpen ? verbWhenOpen : verb;
@@ -44,7 +44,7 @@ public class InteractableDrawer : BaseTimeEvent, IInteractable
         if (isActive && isDeathDrawer)
         {
             PlayTriggerSound();
-            // Player Death
+            DeathManager.Instance.Die("Got Blasted");
         }
     }
 
@@ -70,12 +70,12 @@ public class InteractableDrawer : BaseTimeEvent, IInteractable
                     isOpen = false;
                     isActive = false;
 
-                    if (currentCallback == null && isDeathDrawer)
+                    if (currentCallback != null && isDeathDrawer)
                     {
                         _deathDrawerActive.SetValueAndUpdateBlackboard(false);
-                        currentCallback = ActivateTimeEvent;
-                        TimeManager.Instance.ScheduleAfter(deathDelay, currentCallback);
+                        TimeManager.Instance.CancelScheduled(currentCallback);
                     }
+
                 });
         }
         else
@@ -86,10 +86,11 @@ public class InteractableDrawer : BaseTimeEvent, IInteractable
                     isOpen = true;
                     isActive = true;
 
-                    if (currentCallback != null && isDeathDrawer)
+                    if (currentCallback == null && isDeathDrawer)
                     {
                         _deathDrawerActive.SetValueAndUpdateBlackboard(true);
-                        TimeManager.Instance.CancelScheduled(currentCallback);
+                        currentCallback = ActivateTimeEvent;
+                        TimeManager.Instance.ScheduleAfter(deathDelay, currentCallback);
                     }
                 });
         }
