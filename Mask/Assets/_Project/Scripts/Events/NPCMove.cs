@@ -49,6 +49,8 @@ public class NPCMove : BaseTimeEvent
 
     protected virtual void Awake()
     {
+        if (_iProceduralWalkAnimation == null) _iProceduralWalkAnimation = GetComponent<ProceduralWalkAnimation>();
+
         navMeshAgent = GetComponent<NavMeshAgent>();
         navMeshAgent.speed = moveSpeed;
 
