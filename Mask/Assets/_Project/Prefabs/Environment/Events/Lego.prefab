@@ -105,6 +105,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38a0302d9ea4a92499c2219b3b180db2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Lego
+  _eventAudioData:
+    Clip: {fileID: 8300000, guid: edd356fe4eb74364091efd2ff50b1350, type: 3}
+    MixerGroup: {fileID: -7791223585700606962, guid: 49963274511b53442bc8ea85953fe90d, type: 2}
+    Loop: 0
+    PlayOnAwake: 0
+    FrequentSound: 0
+    Mute: 0
+    BypassEffects: 0
+    BypassListenerEffects: 0
+    BypassReverbZones: 0
+    Priority: 128
+    Volume: 1
+    Pitch: 1
+    PanStereo: 0
+    SpatialBlend: 0
+    ReverbZoneMix: 1
+    DopplerLevel: 1
+    Spread: 0
+    MinDistance: 1
+    MaxDistance: 500
+    IgnoreListenerVolume: 0
+    IgnoreListenerPause: 0
+    rolloffMode: 0
 --- !u!65 &5690439368618348888
 BoxCollider:
   m_ObjectHideFlags: 0
