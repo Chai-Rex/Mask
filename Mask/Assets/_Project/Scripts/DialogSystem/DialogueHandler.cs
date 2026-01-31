@@ -97,8 +97,15 @@ public class DialogueHandler : Singleton<DialogueHandler> {
         }
 
         // player choice
-        for (int id = 0; id < _currentDialog.decisionOptions.Count; id++) {
+        int id = 0;
+        for ( ; id < _currentDialog.decisionOptions.Count; id++) {
             _iDialogueCanvas.AddResponse(_currentDialog.decisionOptions[id].text, id);
+        }
+
+        List<PlayerDecision> activeConditionalDecisions = _currentDialog.GetActiveConditionalDecisions();
+        for(int conditionalId = 0; conditionalId < activeConditionalDecisions.Count; conditionalId++)
+        {
+            _iDialogueCanvas.AddResponse(activeConditionalDecisions[conditionalId].text, id + conditionalId);
         }
     }
 
@@ -126,9 +133,18 @@ public class DialogueHandler : Singleton<DialogueHandler> {
     public void SelectResponse(int i_id) {
         _iDialogueCanvas.ClearResponses();
 
-        PlayerDecision chosenDecision = _currentDialog.decisionOptions[i_id];
+        PlayerDecision chosenDecision;
+        if (i_id >= 0 && i_id < _currentDialog.decisionOptions.Count)
+        { 
+            chosenDecision = _currentDialog.decisionOptions[i_id];
+        }
+        else
+        {
+            chosenDecision = _currentDialog.GetActiveConditionalDecisions()[i_id - _currentDialog.decisionOptions.Count];
+        }
 
-        if (chosenDecision.affectsState) {
+        if (chosenDecision.affectsState)
+        {
             _iStoryState.SetValue(chosenDecision.stateVariable, chosenDecision.stateValue);
         }
 

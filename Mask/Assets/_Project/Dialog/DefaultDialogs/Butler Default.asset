@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
-  m_Name: DefaultDialogSectionSO
+  m_Name: Butler Default
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
   DialogText:
   - Can I help you?
@@ -25,3 +25,11 @@ MonoBehaviour:
     affectsState: 0
     stateVariable: 
     stateValue: 0
+  conditionalDecisions:
+  - conditionalState: hasTalkedToClaudetteInIntro
+    decision:
+      text: damn that claudette kinda nasty tho
+      nextDialog: {fileID: 0}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
