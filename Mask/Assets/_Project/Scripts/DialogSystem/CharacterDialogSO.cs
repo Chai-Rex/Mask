@@ -15,9 +15,9 @@ public struct PlayerDecision
 public class CharacterDialogSO : ScriptableObject
 {
     
-    public List<string> DialogText;
+    public List<string> DialogText = new List<string>();
 
-    public List<PlayerDecision> decisionOptions;
+    public List<PlayerDecision> decisionOptions = new List<PlayerDecision>();
 
     private void OnEnable()
     {

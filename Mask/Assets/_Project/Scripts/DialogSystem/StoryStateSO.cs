@@ -97,6 +97,7 @@ public class StoryStateSO : ScriptableObject
     public void ResetState()
     {
         pairs.Clear();
+        functionCallbacks.Clear();
 
         foreach(StateVariable variable in _initialStateVariables)
         {

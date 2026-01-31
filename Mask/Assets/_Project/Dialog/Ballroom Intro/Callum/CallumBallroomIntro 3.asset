@@ -10,18 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
-  m_Name: AskToBeLetIn
+  m_Name: CallumBallroomIntro 3
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
   DialogText:
-  - Ah, you must be <color=orange>Aiden</color>, the musician for tonights masquerade
+  - "I\u2019m not. These things are loud in all the wrong ways. But <color=#4b006eff>Claudette</color>
+    sure knows how to impress."
+  - Anyway, good luck out there tonight.
   decisionOptions:
-  - text: Thats me
-    nextDialog: {fileID: 11400000, guid: 47ed7e8e0c76fd4458d98df3eecf220b, type: 2}
-    affectsState: 0
-    stateVariable: 
-    stateValue: 0
-  - text: Indeed my good man
-    nextDialog: {fileID: 11400000, guid: 47ed7e8e0c76fd4458d98df3eecf220b, type: 2}
+  - text: Thanks, you have a good time
+    nextDialog: {fileID: 11400000, guid: e89bdf1e02b1da0418aa558cff95c2cc, type: 2}
     affectsState: 0
     stateVariable: 
     stateValue: 0

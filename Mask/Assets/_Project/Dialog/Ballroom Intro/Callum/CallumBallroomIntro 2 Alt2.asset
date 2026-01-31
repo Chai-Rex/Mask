@@ -10,18 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
-  m_Name: AskToBeLetIn
+  m_Name: CallumBallroomIntro 2 Alt2
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
   DialogText:
-  - Ah, you must be <color=orange>Aiden</color>, the musician for tonights masquerade
+  - Yee haw brother
   decisionOptions:
-  - text: Thats me
-    nextDialog: {fileID: 11400000, guid: 47ed7e8e0c76fd4458d98df3eecf220b, type: 2}
-    affectsState: 0
-    stateVariable: 
-    stateValue: 0
-  - text: Indeed my good man
-    nextDialog: {fileID: 11400000, guid: 47ed7e8e0c76fd4458d98df3eecf220b, type: 2}
+  - text: You don't really seem like a party person
+    nextDialog: {fileID: 11400000, guid: 04f2eff2ff6f443418d5f22db7ae7e87, type: 2}
     affectsState: 0
     stateVariable: 
     stateValue: 0
