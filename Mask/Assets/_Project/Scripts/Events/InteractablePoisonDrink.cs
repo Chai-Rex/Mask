@@ -8,7 +8,7 @@ public class InteractablePoisonDrink : BaseTimeEvent, IInteractable
     [SerializeField] private Mesh drinkFull;
     [SerializeField] private Mesh drinkEmpty;
 
-    [SerializeField] bool isPoison = false;
+    [SerializeField] bool isPoison = true;
     private bool isPoisoned = false;
     [SerializeField] float poisonScheduledTime = 120.0f;
     [SerializeField] float fillDrinkDelay = 5.0f;
