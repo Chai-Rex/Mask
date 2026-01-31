@@ -16,7 +16,7 @@ MonoBehaviour:
   - '[excited]<color="red">aaaaaahhhhh.</color>[/excited]'
   - '[yes]the bees[/yes]'
   - '[emphasis]theyre in my eyes[/emphasis]'
-  - '[shake]aaaAAAAAAAhhhhhh[/shake]'
+  - '[shake]aaaAAAAAAAhhhhhh</b>[/shake]'
   - '[na]*the bees seem to be angry*[/na]'
   decisionOptions:
   - text: lmao bees
