@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5601670102504568641}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4898376589914736847, guid: 8594f7d1df76fe54eb61818e88243de8, type: 3}
 --- !u!23 &2682267800483858853
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -105,6 +105,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2419921833c4e514b85bbe1e473fadd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Knife
+  _eventAudioData:
+    Clip: {fileID: 0}
+    MixerGroup: {fileID: 0}
+    Loop: 0
+    PlayOnAwake: 0
+    FrequentSound: 0
+    Mute: 0
+    BypassEffects: 0
+    BypassListenerEffects: 0
+    BypassReverbZones: 0
+    Priority: 128
+    Volume: 1
+    Pitch: 1
+    PanStereo: 0
+    SpatialBlend: 0
+    ReverbZoneMix: 1
+    DopplerLevel: 1
+    Spread: 0
+    MinDistance: 1
+    MaxDistance: 500
+    IgnoreListenerVolume: 0
+    IgnoreListenerPause: 0
+    rolloffMode: 0
+  disappearTime: 10
+  deathDelay: 3
 --- !u!65 &2019841645263981350
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -120,11 +145,11 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 5, y: 1, z: 5}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &3995853851742583426
 Rigidbody:
@@ -149,7 +174,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0

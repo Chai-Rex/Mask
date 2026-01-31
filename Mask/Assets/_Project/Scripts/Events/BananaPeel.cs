@@ -3,6 +3,12 @@ using UnityEngine;
 public class BananaPeel : BaseTimeEvent
 {
     private StateVariable isActive = new StateVariable("isBananaPeelActive", false);
+    [SerializeField] private float bananaPeelActivateTime = 160.0f;
+
+    private void Start()
+    {
+        TimeManager.Instance.ScheduleAt(bananaPeelActivateTime, ActivateTimeEvent);
+    }
 
     protected override void ActivateTimeEvent()
     {
@@ -11,14 +17,14 @@ public class BananaPeel : BaseTimeEvent
         SetBananaPeelIsActive(true);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
         if (!isActive.Value) { return; }
 
-        if (collision.gameObject.tag == "Player")
+        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             PlayTriggerSound();
-            // Player Death
+            DeathManager.Instance.Die("Slipped On A Banana Peel");
         }
     }
 

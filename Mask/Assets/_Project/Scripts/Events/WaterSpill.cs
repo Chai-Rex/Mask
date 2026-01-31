@@ -5,34 +5,38 @@ public class WaterSpill : BaseTimeEvent
     private StateVariable isActive = new StateVariable("isWaterSpillActive", false);
     private StateVariable isCableTouching = new StateVariable("isCableTouchingSpill", false);
 
+    [SerializeField] private float waterSpillTime = 120.0f;
+
     private void Start()
     {
-        WaterSpillActive(false);
+        SetWaterSpillActive(false);
+        TimeManager.Instance.ScheduleAt(waterSpillTime, ActivateTimeEvent);
     }
 
     protected override void ActivateTimeEvent()
     {
         base.ActivateTimeEvent();
 
-        WaterSpillActive(true);
+        SetWaterSpillActive(true);
     }
 
-    private void OnTriggerStay(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (!isActive.Value) { return; }
         if (!isCableTouching.Value) { return; }
 
-        if (other.gameObject.tag == "Player")
+
+        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             PlayTriggerSound();
-            // Player Dies
-
+            DeathManager.Instance.Die("Was Electrocuted");
         }
     }
 
-    public void WaterSpillActive(bool _isActive)
+    public void SetWaterSpillActive(bool _isActive)
     {
         isActive.SetValueAndUpdateBlackboard(_isActive);
+
         if (isActive.Value)
         {
             gameObject.SetActive(true);

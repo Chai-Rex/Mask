@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1537066525305245495}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4079106847406072358, guid: cc3f5491e06e8c74c940b74308881108, type: 3}
 --- !u!23 &8477918801158738315
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ElectricCable
   _eventAudioData:
     Clip: {fileID: 0}
-    MixerGroup: {fileID: -7791223585700606962, guid: 49963274511b53442bc8ea85953fe90d, type: 2}
+    MixerGroup: {fileID: 0}
     Loop: 0
     PlayOnAwake: 0
     FrequentSound: 0

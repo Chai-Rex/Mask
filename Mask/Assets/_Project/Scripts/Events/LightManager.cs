@@ -1,55 +1,29 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UtilitySingletons;
 
-public class LightManager : BaseTimeEvent
+public class LightManager : Singleton<LightManager>
 {
-    public static LightManager Instance;
+    [SerializeField] private GameObject lightsOutCanvas;
 
-    [SerializeField] private List<Light> lights = new List<Light>();
-
-    private bool isLightsOn = true;
-
-    private void Awake()
+    protected override void Awake()
     {
-        if (Instance == null)
+        base.Awake();
+    }
+
+    public void TurnOnLights()
+    {
+        if (lightsOutCanvas)
         {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
+            lightsOutCanvas.SetActive(false);
         }
     }
 
-    protected override void ActivateTimeEvent()
+    public void TurnOffLights()
     {
-        base.ActivateTimeEvent();
-
-        if (isLightsOn)
+        if (lightsOutCanvas)
         {
-            TurnOffLights();
-        }
-        else
-        {
-            TurnOnLights();
-        }
-    }
-
-    private void TurnOnLights()
-    {
-        isLightsOn = true;
-        foreach (Light light in lights)
-        {
-            light.enabled = true;
-        }
-    }
-
-    private void TurnOffLights()
-    {
-        isLightsOn = false;
-        foreach (Light light in lights)
-        {
-            light.enabled = false;
+            lightsOutCanvas.SetActive(true);
         }
     }
 

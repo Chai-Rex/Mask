@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 779939655462108729}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -10, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 6240516845701402615}
   - component: {fileID: 6838823395487817976}
   - component: {fileID: 116212888328886514}
+  - component: {fileID: -1186219204665993611}
   m_Layer: 0
   m_Name: Chandelier
   m_TagString: Untagged
@@ -60,7 +61,7 @@ Transform:
   m_GameObject: {fileID: 8276104367290421776}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 10, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -74,7 +75,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8276104367290421776}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 9096884052415582558, guid: d8698e41b86950c49ac478743b9baac1, type: 3}
 --- !u!23 &6240516845701402615
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -139,12 +140,12 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 2.2, y: 1, z: 2}
+  m_Center: {x: 0, y: -1.5, z: 0}
 --- !u!114 &116212888328886514
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,8 +159,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Chandelier
   _eventAudioData:
-    Clip: {fileID: 8300000, guid: 4edc9536877baab42b83137267be64cd, type: 3}
-    MixerGroup: {fileID: -7791223585700606962, guid: 49963274511b53442bc8ea85953fe90d, type: 2}
+    Clip: {fileID: 0}
+    MixerGroup: {fileID: 0}
     Loop: 0
     PlayOnAwake: 0
     FrequentSound: 0
@@ -182,3 +183,30 @@ MonoBehaviour:
     rolloffMode: 0
   targetLocation: {fileID: 1804978278480782389}
   fallDuration: 0.5
+--- !u!54 &-1186219204665993611
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8276104367290421776}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

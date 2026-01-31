@@ -9,9 +9,11 @@ public class Chandelier : BaseTimeEvent
     private StateVariable canFall = new StateVariable("canChandelierFall", false);
     private StateVariable hasFallen = new StateVariable("hasChandelierFallen", false);
 
+    [SerializeField] private float chandelierFallTime = 60.0f;
+
     private void Start()
     {
-        TimeManager.Instance.ScheduleAt(5.0f, ActivateTimeEvent);
+        TimeManager.Instance.ScheduleAt(chandelierFallTime, ActivateTimeEvent);
     }
 
     protected override void ActivateTimeEvent()
@@ -34,11 +36,11 @@ public class Chandelier : BaseTimeEvent
             });
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
         if (hasFallen.Value) { return; }
 
-        if (collision.gameObject.tag == "Player")
+        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             // Player Death
             DeathManager.Instance.Die("Chandelier Bonked you on the head");

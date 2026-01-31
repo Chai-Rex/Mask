@@ -4,6 +4,7 @@ using UnityEngine;
 public class Door : MonoBehaviour
 {
     private bool isOpen = false;
+    private bool isDoorLocked = false;
 
     Tween doorTween;
     [SerializeField] private float doorDuration = 1.0f;
@@ -11,6 +12,8 @@ public class Door : MonoBehaviour
 
     public void OnDoorOpen(bool isFront)
     {
+        if (isDoorLocked) { return; }
+
         if (!isOpen)
         {
             doorTween.Kill();
@@ -51,5 +54,10 @@ public class Door : MonoBehaviour
             {
                 isOpen = false;
             });
+    }
+
+    public void SetIsDoorLocked(bool _isDoorLocked)
+    {
+        isDoorLocked = _isDoorLocked;
     }
 }

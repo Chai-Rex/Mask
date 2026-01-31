@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6591778667929955583}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 2669982292116509526, guid: cec2c9c78fb0a164bbe697441f806ae8, type: 3}
 --- !u!23 &7089717677071450011
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -106,8 +106,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WaterSpill
   _eventAudioData:
-    Clip: {fileID: 8300000, guid: 2144e7f779f803347918e1a7437a0cab, type: 3}
-    MixerGroup: {fileID: -7791223585700606962, guid: 49963274511b53442bc8ea85953fe90d, type: 2}
+    Clip: {fileID: 0}
+    MixerGroup: {fileID: 0}
     Loop: 0
     PlayOnAwake: 0
     FrequentSound: 0
@@ -143,11 +143,11 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1.25, y: 0.1, z: 1.1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &258506411866523870
 Rigidbody:
@@ -172,7 +172,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0

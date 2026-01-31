@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1191486473694107621}
   - component: {fileID: 2037565285616341563}
   m_Layer: 10
-  m_Name: PoisonDrink
+  m_Name: WinePoisonDrink
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -43,7 +43,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8806507378401120648}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -2908981415613187103, guid: a50f2cb18a8ca4d4ab5e8f14f624a407, type: 3}
 --- !u!23 &5090439490214817187
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -106,8 +106,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractablePoisonDrink
   _eventAudioData:
-    Clip: {fileID: 8300000, guid: 47e8aba0a139a47488423ecd74346530, type: 3}
-    MixerGroup: {fileID: -7791223585700606962, guid: 49963274511b53442bc8ea85953fe90d, type: 2}
+    Clip: {fileID: 0}
+    MixerGroup: {fileID: 0}
     Loop: 0
     PlayOnAwake: 0
     FrequentSound: 0
@@ -129,6 +129,11 @@ MonoBehaviour:
     IgnoreListenerPause: 0
     rolloffMode: 0
   verb: Drink
+  drinkFull: {fileID: -2908981415613187103, guid: a50f2cb18a8ca4d4ab5e8f14f624a407, type: 3}
+  drinkEmpty: {fileID: 2360121406081596032, guid: 1b69c05efb1360b498990e86789ace81, type: 3}
+  isPoison: 0
+  poisonScheduledTime: 120
+  fillDrinkDelay: 5
 --- !u!65 &1191486473694107621
 BoxCollider:
   m_ObjectHideFlags: 0
