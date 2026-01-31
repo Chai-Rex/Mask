@@ -47,8 +47,9 @@ locking modern exterior door - 1 by FOSSarts -- https://freesound.org/s/761917/ 
 HeatDeath.wav
 Gas Leak by kwahmah_02 -- https://freesound.org/s/274752/ -- License: Attribution 3.0 -- Adapted for HeatDeath.wav
 
-Layered Gunshot 2.WAV by Xenonn -- https://freesound.org/s/128294/ -- License: Creative Commons 0 -- Adapted for DrawerTrap.wav
-Wooden drawer in old kitchen cabinet opening and closing by Davor -- https://freesound.org/s/383157/ -- License: Creative Commons 0 -- Adapted for DrawerTrap.wav
+Layered Gunshot 2.WAV by Xenonn -- https://freesound.org/s/128294/ -- License: Creative Commons 0 -- Adapted for GunshotDeath.wav
+
+Wooden drawer in old kitchen cabinet opening and closing by Davor -- https://freesound.org/s/383157/ -- License: Creative Commons 0 -- Adapted for DrawerOpen.wav
 
 JacobsLadderSingle2.flac by Halleck -- https://freesound.org/s/19487/ -- License: Attribution 4.0 -- Adapted for electric zap.aiff by bevibeldesign
 electric_wire_02.wav by Glaneur de sons -- https://freesound.org/s/34169/ -- License: Attribution 4.0 -- Adapted for electric zap.aiff by bevibeldesign

@@ -105,6 +105,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b831478c53ac9aa4dba9bcca0ef4c01d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ElectricCable
+  _eventAudioData:
+    Clip: {fileID: 0}
+    MixerGroup: {fileID: -7791223585700606962, guid: 49963274511b53442bc8ea85953fe90d, type: 2}
+    Loop: 0
+    PlayOnAwake: 0
+    FrequentSound: 0
+    Mute: 0
+    BypassEffects: 0
+    BypassListenerEffects: 0
+    BypassReverbZones: 0
+    Priority: 128
+    Volume: 1
+    Pitch: 1
+    PanStereo: 0
+    SpatialBlend: 0
+    ReverbZoneMix: 1
+    DopplerLevel: 1
+    Spread: 0
+    MinDistance: 1
+    MaxDistance: 500
+    IgnoreListenerVolume: 0
+    IgnoreListenerPause: 0
+    rolloffMode: 0
   waterSpill: {fileID: 0}
 --- !u!65 &9052780547791690119
 BoxCollider:
