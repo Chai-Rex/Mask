@@ -3754,7 +3754,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4358547394090561897, guid: 616c98aaf72501543b99e03fcd52e71b, type: 3}
       propertyPath: m_text
-      value: Chai
+      value: Chai, Ray
       objectReference: {fileID: 0}
     - target: {fileID: 4358547394090561897, guid: 616c98aaf72501543b99e03fcd52e71b, type: 3}
       propertyPath: m_fontColor32.rgba

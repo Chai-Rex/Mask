@@ -152,10 +152,10 @@ public class FirstPersonController : MonoBehaviour {
         }
 
         // Horizontal rotation (Y-axis) - rotate the player body
-        transform.Rotate(Vector3.up * lookInput.x * currentSensitivity * lookMultiplier);
+        transform.Rotate(Vector3.up * lookInput.x * currentSensitivity * lookMultiplier * SaveManager.Instance.SaveSettingsSO.Sensitivity);
 
         // Vertical rotation (X-axis) - rotate the camera
-        rotationX += lookInput.y * currentSensitivity * lookMultiplier * (invertY ? 1f : -1f);
+        rotationX += lookInput.y * currentSensitivity * lookMultiplier * SaveManager.Instance.SaveSettingsSO.Sensitivity * (invertY ? 1f : -1f);
         rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
         cameraTransform.localRotation = Quaternion.Euler(rotationX, 0, 0);
     }
