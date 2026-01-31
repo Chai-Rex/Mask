@@ -10,12 +10,18 @@ public class BathHeat : BaseTimeEvent
     [SerializeField] private float heatDuration = 5.0f;
 
     [SerializeField] private float doorLockTime = 120.0f;
+    [SerializeField] private ParticleSystem bathHeatParticles;
 
     private bool isPlayerDead = false;
     private Coroutine bathCoroutine;
 
     private void Start()
     {
+        if (bathHeatParticles)
+        {
+            bathHeatParticles.gameObject.SetActive(false);
+        }
+
         TimeManager.Instance.ScheduleAt(doorLockTime, ActivateTimeEvent);
     }
 
@@ -29,6 +35,12 @@ public class BathHeat : BaseTimeEvent
     IEnumerator BathHeating()
     {
         float elapsedHeat = 0.0f;
+
+        if (bathHeatParticles)
+        {
+            bathHeatParticles.gameObject.SetActive(true);
+            bathHeatParticles.Play();
+        }
 
         while (elapsedHeat < heatDuration)
         {

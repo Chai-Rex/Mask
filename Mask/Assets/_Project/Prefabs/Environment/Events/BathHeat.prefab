@@ -30,7 +30,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3721503928407787268}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &7479045022959550113
@@ -89,4 +90,90 @@ MonoBehaviour:
     IgnoreListenerVolume: 0
     IgnoreListenerPause: 0
     rolloffMode: 0
+  doorToLock: {fileID: 0}
   heatDuration: 5
+  doorLockTime: 120
+  bathHeatParticles: {fileID: 4626931122962481901}
+--- !u!1001 &739525874390212479
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 306240261894413117}
+    m_Modifications:
+    - target: {fileID: 4172060340077107323, guid: b3094eb604919a141a41557af64e9fe8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172060340077107323, guid: b3094eb604919a141a41557af64e9fe8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172060340077107323, guid: b3094eb604919a141a41557af64e9fe8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172060340077107323, guid: b3094eb604919a141a41557af64e9fe8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172060340077107323, guid: b3094eb604919a141a41557af64e9fe8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172060340077107323, guid: b3094eb604919a141a41557af64e9fe8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172060340077107323, guid: b3094eb604919a141a41557af64e9fe8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172060340077107323, guid: b3094eb604919a141a41557af64e9fe8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172060340077107323, guid: b3094eb604919a141a41557af64e9fe8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4172060340077107323, guid: b3094eb604919a141a41557af64e9fe8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365330367297215890, guid: b3094eb604919a141a41557af64e9fe8, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365330367297215890, guid: b3094eb604919a141a41557af64e9fe8, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5365330367297215890, guid: b3094eb604919a141a41557af64e9fe8, type: 3}
+      propertyPath: EmissionModule.rateOverTime.minScalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6861325580415363150, guid: b3094eb604919a141a41557af64e9fe8, type: 3}
+      propertyPath: m_Name
+      value: VFX_RisingSteam
+      objectReference: {fileID: 0}
+    - target: {fileID: 6861325580415363150, guid: b3094eb604919a141a41557af64e9fe8, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b3094eb604919a141a41557af64e9fe8, type: 3}
+--- !u!4 &3721503928407787268 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4172060340077107323, guid: b3094eb604919a141a41557af64e9fe8, type: 3}
+  m_PrefabInstance: {fileID: 739525874390212479}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &4626931122962481901 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5365330367297215890, guid: b3094eb604919a141a41557af64e9fe8, type: 3}
+  m_PrefabInstance: {fileID: 739525874390212479}
+  m_PrefabAsset: {fileID: 0}

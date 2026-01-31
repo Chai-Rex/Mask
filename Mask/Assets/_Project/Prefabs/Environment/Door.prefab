@@ -29,7 +29,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5727861714227782536}
@@ -56,8 +56,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 5}
-  m_Center: {x: 0, y: 0, z: 2.5}
+  m_Size: {x: 1, y: 2, z: 2}
+  m_Center: {x: -0.56, y: 1, z: 1}
 --- !u!114 &1778920481796655341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,8 +83,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4582e3fc3ab511540b1bc98835ce8069, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Door
+  isDoorLocked: 0
   doorDuration: 1
   betweenDoorCollider: {fileID: 3172237773796689801}
+  opensOnStateChange: 0
+  stateName: 
 --- !u!1 &5125380750242588931
 GameObject:
   m_ObjectHideFlags: 0
@@ -112,7 +115,7 @@ Transform:
   m_GameObject: {fileID: 5125380750242588931}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.56, y: 1, z: -0.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -137,8 +140,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 0.5}
-  m_Center: {x: 0, y: 0, z: -0.75}
+  m_Size: {x: 1, y: 2, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4108181133005655590
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,7 +182,7 @@ Transform:
   m_GameObject: {fileID: 7249646078260018330}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.56, y: 1, z: 0.25}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -204,8 +207,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 0.5}
-  m_Center: {x: 0, y: 0, z: 0.75}
+  m_Size: {x: 1, y: 2, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4228843685359592425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -260,7 +263,7 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7839308121906125167}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: -1856344252225202068, guid: ee7b3d607ee89fd4d9e33be4bd5b9236, type: 3}
 --- !u!23 &492253466507866522
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -329,5 +332,5 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1.14, y: 3, z: 0.05}
+  m_Center: {x: -0.56, y: 1.5, z: -0.025}
