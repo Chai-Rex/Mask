@@ -34,11 +34,11 @@ public class Chandelier : BaseTimeEvent
             });
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
         if (hasFallen.Value) { return; }
 
-        if (collision.gameObject.tag == "Player")
+        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             // Player Death
             DeathManager.Instance.Die("Chandelier Bonked you on the head");

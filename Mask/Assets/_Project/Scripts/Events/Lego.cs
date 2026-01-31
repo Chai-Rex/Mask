@@ -3,10 +3,11 @@ using UnityEngine;
 public class Lego : BaseTimeEvent
 {
     private StateVariable isLegoActive = new StateVariable("isLegoActive", false);
+    [SerializeField] private float legoActivateTime = 120.0f;
 
     private void Start()
     {
-        this.ActivateTimeEvent();
+        TimeManager.Instance.ScheduleAt(legoActivateTime, ActivateTimeEvent);
     }
 
     protected override void ActivateTimeEvent()
@@ -16,14 +17,14 @@ public class Lego : BaseTimeEvent
         SetLegoIsActive(true);
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
         if (!isLegoActive.Value) { return; }
 
-        if (collision.gameObject.tag == "Player")
+        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             PlayTriggerSound();
-            // Player Death
+            DeathManager.Instance.Die("Stepped On Baby Building Block");
         }
     }
 
