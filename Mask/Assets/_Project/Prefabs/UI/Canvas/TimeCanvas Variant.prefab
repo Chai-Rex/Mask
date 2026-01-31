@@ -248,3 +248,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::TimeCanvas
   _iText: {fileID: 2336431340512282785}
   secondsPerGameMinute: 1
+  startHour: 8
+  startMinute: 0
+  useAmPmFormat: 1

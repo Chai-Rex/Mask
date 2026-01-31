@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,8 +23,12 @@ public class NPCLocationPoints
     public List<Transform> npcTransforms;
 }
 
+[RequireComponent(typeof(NavMeshAgent))]
+[RequireComponent(typeof(ProceduralWalkAnimation))]
 public class NPCMove : BaseTimeEvent
 {
+    [SerializeField] private ProceduralWalkAnimation _iProceduralWalkAnimation;
+
     [SerializeField] private float moveSpeed = 2.5f;
 
     [SerializeField] private List<NPCLocationPoints> npcLocationPoints = new List<NPCLocationPoints>();
@@ -38,6 +43,8 @@ public class NPCMove : BaseTimeEvent
 
     protected virtual void Awake()
     {
+        if (_iProceduralWalkAnimation == null) _iProceduralWalkAnimation = GetComponent<ProceduralWalkAnimation>();
+
         navMeshAgent = GetComponent<NavMeshAgent>();
         navMeshAgent.speed = moveSpeed;
 
@@ -67,7 +74,9 @@ public class NPCMove : BaseTimeEvent
 
     protected virtual IEnumerator OnNPCMove()
     {
-        yield return collectionPointsCoroutine = StartCoroutine(OnNPCMoveThroughCollectionOfPoints());    
+        yield return collectionPointsCoroutine = StartCoroutine(OnNPCMoveThroughCollectionOfPoints());
+
+        currentNPCLocationState++;
 
         switch (currentNPCLocationState)
         {
@@ -107,7 +116,10 @@ public class NPCMove : BaseTimeEvent
     {
         navMeshAgent.isStopped = false;
 
-        navMeshAgent.SetDestination(npcLocationDictionary[currentNPCLocationState][_currentPoint].position);      
+        navMeshAgent.SetDestination(npcLocationDictionary[currentNPCLocationState][_currentPoint].position);
+
+        // move animation start
+        _iProceduralWalkAnimation.StartWalking(moveSpeed);
 
         while (navMeshAgent.pathPending)
         {
@@ -120,5 +132,9 @@ public class NPCMove : BaseTimeEvent
         }
 
         navMeshAgent.isStopped = true;
+
+        // move animation end
+        _iProceduralWalkAnimation.StopWalking();
+
     }
 }
