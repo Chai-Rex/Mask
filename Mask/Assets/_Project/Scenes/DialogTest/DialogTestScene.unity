@@ -2235,19 +2235,19 @@ MonoBehaviour:
   _StoryState: {fileID: 11400000, guid: cdd420038140c28488a65d05b61e1c6d, type: 2}
   _treeOptions:
   - requiredStates:
-    - name: hasMetDaffodilInIntro
+    - name: hasTalkedToDaffodilInIntro
       _value: 0
     - name: hasTalkedToNateInIntro
       _value: 0
     dialogTree: {fileID: 11400000, guid: 9478bea73931a9249b97761ab5387035, type: 2}
   - requiredStates:
-    - name: hasMetDaffodilInIntro
+    - name: hasTalkedToDaffodilInIntro
       _value: 1
     - name: hasTalkedToNateInIntro
       _value: 0
     dialogTree: {fileID: 11400000, guid: cfb58ae29263a624182390895b9ab497, type: 2}
   - requiredStates:
-    - name: hasMetDaffodilInIntro
+    - name: hasTalkedToDaffodilInIntro
       _value: 1
     - name: hasTalkedToNateInIntro
       _value: 1
@@ -2512,7 +2512,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractableTalk
   _iVerb: Talk
-  _iName: Nate
+  _iName: Callum
   _dialogTreeSelector: {fileID: 1872744679}
   _iDialogueAnimationHandler: {fileID: 1872744678}
   _iSoundData: {fileID: 11400000, guid: dd0b2cc7d97535a44b6ca437a0b11709, type: 2}
@@ -3041,23 +3041,23 @@ MonoBehaviour:
   _StoryState: {fileID: 11400000, guid: cdd420038140c28488a65d05b61e1c6d, type: 2}
   _treeOptions:
   - requiredStates:
-    - name: hasMetDaffodilInIntro
+    - name: hasTalkedToDaffodilInIntro
       _value: 0
     - name: hasTalkedToNateInIntro
       _value: 0
-    dialogTree: {fileID: 11400000, guid: 9478bea73931a9249b97761ab5387035, type: 2}
+    dialogTree: {fileID: 11400000, guid: 9da16cc0fcc561f49ad4ca938c05faa3, type: 2}
   - requiredStates:
-    - name: hasMetDaffodilInIntro
-      _value: 1
-    - name: hasTalkedToNateInIntro
+    - name: hasTalkedToDaffodilInIntro
       _value: 0
-    dialogTree: {fileID: 11400000, guid: cfb58ae29263a624182390895b9ab497, type: 2}
+    - name: hasTalkedToNateInIntro
+      _value: 1
+    dialogTree: {fileID: 11400000, guid: 716c425b0ff4eb8409e3122018af7f4c, type: 2}
   - requiredStates:
-    - name: hasMetDaffodilInIntro
+    - name: hasTalkedToDaffodilInIntro
       _value: 1
     - name: hasTalkedToNateInIntro
       _value: 1
-    dialogTree: {fileID: 11400000, guid: 7c54278d1ca27704db9218e26ac7ee70, type: 2}
+    dialogTree: {fileID: 11400000, guid: 38283edd66d1c7046ba6aad5c29b3a00, type: 2}
   _defaultDialogTree: {fileID: 11400000, guid: 1833968e8177ed24eab724aa5493b4a0, type: 2}
   _iCompleteDialogue: {fileID: 11400000, guid: 2b7ec59d95c38b74eb3ad9eeee673389, type: 2}
 --- !u!114 &2081681752
@@ -3073,7 +3073,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InteractableTalk
   _iVerb: Talk
-  _iName: Nate
+  _iName: Daffodil
   _dialogTreeSelector: {fileID: 2081681751}
   _iDialogueAnimationHandler: {fileID: 2081681750}
   _iSoundData: {fileID: 11400000, guid: dd0b2cc7d97535a44b6ca437a0b11709, type: 2}

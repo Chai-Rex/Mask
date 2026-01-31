@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: NateBallroomIntro MetDaffReturn
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
   DialogText:
-  - Oh, so you met my daughter?
-  - Hopefully she wasn't too abrasive haha, she gets it from her mother I swear
+  - So you met my daughter?
+  - Hopefully she wasn't too much for you haha. She gets it from her mother I swear...
   decisionOptions:
   - text: Not at all, she was lovely
     nextDialog: {fileID: 0}

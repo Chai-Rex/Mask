@@ -10,13 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
-  m_Name: CallumBallroomIntro 2 Alt2
+  m_Name: DaffodilBallroomIntro 2 MetNate
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
   DialogText:
-  - Yeehaw brother.
+  - 'Yes! He did the flowers, do you like them? He says that daffodils means beginnings,
+    thats how my parents picked my name! '
   decisionOptions:
-  - text: You don't really seem like a party person
-    nextDialog: {fileID: 11400000, guid: 04f2eff2ff6f443418d5f22db7ae7e87, type: 2}
+  - text: Do you help out your dad?
+    nextDialog: {fileID: 11400000, guid: e8b4f92b4c744354584f47273a9d9cb2, type: 2}
+    affectsState: 0
+    stateVariable: 
+    stateValue: 0
+  - text: You enjoying the party so far?
+    nextDialog: {fileID: 11400000, guid: c33c046663c8d024291be31909c2607d, type: 2}
     affectsState: 0
     stateVariable: 
     stateValue: 0
