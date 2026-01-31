@@ -166,31 +166,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6673191387194846727, guid: 6d32e0020e997254aa4635ed454c6001, type: 3}
       propertyPath: npcLocationPoints.Array.data[0].npcLocationState
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6673191387194846727, guid: 6d32e0020e997254aa4635ed454c6001, type: 3}
       propertyPath: npcLocationPoints.Array.data[1].npcLocationState
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6673191387194846727, guid: 6d32e0020e997254aa4635ed454c6001, type: 3}
       propertyPath: npcLocationPoints.Array.data[2].npcLocationState
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6673191387194846727, guid: 6d32e0020e997254aa4635ed454c6001, type: 3}
       propertyPath: npcLocationPoints.Array.data[3].npcLocationState
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6673191387194846727, guid: 6d32e0020e997254aa4635ed454c6001, type: 3}
       propertyPath: npcLocationPoints.Array.data[4].npcLocationState
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6673191387194846727, guid: 6d32e0020e997254aa4635ed454c6001, type: 3}
       propertyPath: npcLocationPoints.Array.data[5].npcLocationState
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6673191387194846727, guid: 6d32e0020e997254aa4635ed454c6001, type: 3}
       propertyPath: npcLocationPoints.Array.data[6].npcLocationState
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6673191387194846727, guid: 6d32e0020e997254aa4635ed454c6001, type: 3}
       propertyPath: npcLocationPoints.Array.data[0].npcTransforms.Array.size
@@ -732,31 +732,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5654934030990785646, guid: bf60ff51e17135a4d83947fa97312980, type: 3}
       propertyPath: npcLocationPoints.Array.data[0].npcLocationState
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -5654934030990785646, guid: bf60ff51e17135a4d83947fa97312980, type: 3}
       propertyPath: npcLocationPoints.Array.data[1].npcLocationState
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -5654934030990785646, guid: bf60ff51e17135a4d83947fa97312980, type: 3}
       propertyPath: npcLocationPoints.Array.data[2].npcLocationState
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -5654934030990785646, guid: bf60ff51e17135a4d83947fa97312980, type: 3}
       propertyPath: npcLocationPoints.Array.data[3].npcLocationState
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -5654934030990785646, guid: bf60ff51e17135a4d83947fa97312980, type: 3}
       propertyPath: npcLocationPoints.Array.data[4].npcLocationState
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -5654934030990785646, guid: bf60ff51e17135a4d83947fa97312980, type: 3}
       propertyPath: npcLocationPoints.Array.data[5].npcLocationState
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: -5654934030990785646, guid: bf60ff51e17135a4d83947fa97312980, type: 3}
       propertyPath: npcLocationPoints.Array.data[6].npcLocationState
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -5654934030990785646, guid: bf60ff51e17135a4d83947fa97312980, type: 3}
       propertyPath: npcLocationPoints.Array.data[0].npcTransforms.Array.size
@@ -1523,31 +1523,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6392526726330516046, guid: c9e80b68cf272a54d930dbe4ea658f1b, type: 3}
       propertyPath: npcLocationPoints.Array.data[0].npcLocationState
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6392526726330516046, guid: c9e80b68cf272a54d930dbe4ea658f1b, type: 3}
       propertyPath: npcLocationPoints.Array.data[1].npcLocationState
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6392526726330516046, guid: c9e80b68cf272a54d930dbe4ea658f1b, type: 3}
       propertyPath: npcLocationPoints.Array.data[2].npcLocationState
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6392526726330516046, guid: c9e80b68cf272a54d930dbe4ea658f1b, type: 3}
       propertyPath: npcLocationPoints.Array.data[3].npcLocationState
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6392526726330516046, guid: c9e80b68cf272a54d930dbe4ea658f1b, type: 3}
       propertyPath: npcLocationPoints.Array.data[4].npcLocationState
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6392526726330516046, guid: c9e80b68cf272a54d930dbe4ea658f1b, type: 3}
       propertyPath: npcLocationPoints.Array.data[5].npcLocationState
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6392526726330516046, guid: c9e80b68cf272a54d930dbe4ea658f1b, type: 3}
       propertyPath: npcLocationPoints.Array.data[6].npcLocationState
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 6392526726330516046, guid: c9e80b68cf272a54d930dbe4ea658f1b, type: 3}
       propertyPath: npcLocationPoints.Array.data[0].npcTransforms.Array.size
@@ -3020,31 +3020,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2770540440867458327, guid: f97e6ef3ff804824f9f318ea6a310518, type: 3}
       propertyPath: npcLocationPoints.Array.data[0].npcLocationState
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2770540440867458327, guid: f97e6ef3ff804824f9f318ea6a310518, type: 3}
       propertyPath: npcLocationPoints.Array.data[1].npcLocationState
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2770540440867458327, guid: f97e6ef3ff804824f9f318ea6a310518, type: 3}
       propertyPath: npcLocationPoints.Array.data[2].npcLocationState
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2770540440867458327, guid: f97e6ef3ff804824f9f318ea6a310518, type: 3}
       propertyPath: npcLocationPoints.Array.data[3].npcLocationState
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2770540440867458327, guid: f97e6ef3ff804824f9f318ea6a310518, type: 3}
       propertyPath: npcLocationPoints.Array.data[4].npcLocationState
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2770540440867458327, guid: f97e6ef3ff804824f9f318ea6a310518, type: 3}
       propertyPath: npcLocationPoints.Array.data[5].npcLocationState
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2770540440867458327, guid: f97e6ef3ff804824f9f318ea6a310518, type: 3}
       propertyPath: npcLocationPoints.Array.data[6].npcLocationState
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2770540440867458327, guid: f97e6ef3ff804824f9f318ea6a310518, type: 3}
       propertyPath: npcLocationPoints.Array.data[0].npcTransforms.Array.size

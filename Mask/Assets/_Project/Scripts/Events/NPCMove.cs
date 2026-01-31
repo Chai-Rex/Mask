@@ -5,7 +5,6 @@ using UnityEngine.AI;
 
 public enum ENPCLocationState
 {
-    None,
     PointOne,
     PointTwo,
     PointThree,
@@ -16,19 +15,28 @@ public enum ENPCLocationState
 }
 
 [System.Serializable]
-public class NPCLocationPoints
+public struct NPCLocationPoints
 {
     public ENPCLocationState npcLocationState;
     public List<Transform> npcTransforms;
 }
 
-public class NPCMove : BaseTimeEvent
+[System.Serializable]
+public struct NPCTimePoints
+{
+    public ENPCLocationState npcLocationState;
+    public float npcLocationTime;
+}
+
+    public class NPCMove : BaseTimeEvent
 {
     [SerializeField] private float moveSpeed = 2.5f;
 
-    [SerializeField] private List<NPCLocationPoints> npcLocationPoints = new List<NPCLocationPoints>();
+    [SerializeField] protected List<NPCLocationPoints> npcLocationPoints = new List<NPCLocationPoints>();
+    [SerializeField] protected List<NPCTimePoints> npcTimePoints = new List<NPCTimePoints>();
     protected Dictionary<ENPCLocationState, List<Transform>> npcLocationDictionary = new Dictionary<ENPCLocationState, List<Transform>>();
     protected ENPCLocationState currentNPCLocationState = ENPCLocationState.PointOne;
+    protected int currentNPCTimePointIndex = 0;
 
     protected Coroutine collectionPointsCoroutine;
     protected Coroutine pointCoroutine;
@@ -58,7 +66,7 @@ public class NPCMove : BaseTimeEvent
             pointCoroutine = null;
             npcMoveCoroutine = null;
 
-            if (npcLocationDictionary.Count != 0 && npcLocationDictionary.ContainsKey(currentNPCLocationState))
+            if (npcLocationDictionary.Count != 0 && npcLocationDictionary.ContainsKey(currentNPCLocationState) && npcTimePoints.Count != 0)
             {
                 npcMoveCoroutine = StartCoroutine(OnNPCMove());
             }
@@ -67,29 +75,16 @@ public class NPCMove : BaseTimeEvent
 
     protected virtual IEnumerator OnNPCMove()
     {
-        yield return collectionPointsCoroutine = StartCoroutine(OnNPCMoveThroughCollectionOfPoints());    
+        yield return collectionPointsCoroutine = StartCoroutine(OnNPCMoveThroughCollectionOfPoints());
 
-        switch (currentNPCLocationState)
+        currentNPCTimePointIndex++;
+
+        if (currentNPCTimePointIndex >= npcTimePoints.Count)
         {
-            case ENPCLocationState.PointOne:
-                currentNPCLocationState = ENPCLocationState.PointTwo;
-                break;
-            case ENPCLocationState.PointTwo:
-                currentNPCLocationState = ENPCLocationState.PointThree;
-                break;
-            case ENPCLocationState.PointThree:
-                currentNPCLocationState = ENPCLocationState.PointFour;
-                break;
-            case ENPCLocationState.PointFour:
-                currentNPCLocationState = ENPCLocationState.PointFive;
-                break;
-            case ENPCLocationState.PointFive:
-                currentNPCLocationState = ENPCLocationState.PointSix;
-                break;
-            case ENPCLocationState.PointSix:
-                currentNPCLocationState = ENPCLocationState.PointSeven;
-                break;
+            currentNPCTimePointIndex = 0;
         }
+
+        currentNPCLocationState = npcTimePoints[currentNPCTimePointIndex].npcLocationState;
     }
 
     protected virtual IEnumerator OnNPCMoveThroughCollectionOfPoints()
