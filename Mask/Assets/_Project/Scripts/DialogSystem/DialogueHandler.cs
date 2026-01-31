@@ -68,9 +68,6 @@ public class DialogueHandler : Singleton<DialogueHandler> {
 
         InputManager.Instance.SetDialogueActionMap();
 
-        _iDialogueCanvas.gameObject.SetActive(true);
-        _iDialogueCanvas.SetName(i_name);
-
         _currentDialog = i_dialogueTree;
         _currentDialogSound = i_dialogSound;
         _currentNPCAnimator = i_npcAnimator;
@@ -79,6 +76,9 @@ public class DialogueHandler : Singleton<DialogueHandler> {
         _interactableSpeaker = i_speaker;
 
         await i_speaker.RotateTowardsAsync(gameObject.transform);
+
+        _iDialogueCanvas.gameObject.SetActive(true);
+        _iDialogueCanvas.SetName(i_name);
 
         _currentNPCAnimator.SetOriginTransforms();
 
