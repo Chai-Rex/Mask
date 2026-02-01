@@ -54,6 +54,7 @@ public enum ENPCLocationState
     PointFive,
     PointSix,
     PointSeven,
+    PointEight
 }
 
 [System.Serializable]
