@@ -208,6 +208,7 @@ MonoBehaviour:
     IgnoreListenerVolume: 0
     IgnoreListenerPause: 0
     rolloffMode: 0
+  meshKnifeRenderer: {fileID: 9209940820351988879}
   boxLid: {fileID: 0}
   boxLidDuration: 1.5
 --- !u!65 &2019841645263981350

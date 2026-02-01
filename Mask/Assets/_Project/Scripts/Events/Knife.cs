@@ -16,15 +16,10 @@ public class Knife : BaseTimeEvent
     [SerializeField]
     private SoundData _footstepsAudio;
 
-    private MeshRenderer meshRenderer;
+    [SerializeField] private MeshRenderer meshKnifeRenderer;
 
     [SerializeField] private GameObject boxLid;
     [SerializeField] private float boxLidDuration = 1.5f;
-
-    private void Awake()
-    {
-        meshRenderer = GetComponent<MeshRenderer>();
-    }
 
     private void Start()
     {
@@ -94,7 +89,15 @@ public class Knife : BaseTimeEvent
     public void OnKnifeDisappear()
     {
         isActive = true;
-        meshRenderer.enabled = false;
+        if (meshKnifeRenderer)
+        {
+            if (isPlayerNear)
+            {
+                LightManager.Instance.TurnOffLights();
+            }
+
+            meshKnifeRenderer.enabled = false;
+        }
     }
 
     public void OnBoxOpen()
@@ -113,7 +116,7 @@ public class Knife : BaseTimeEvent
     {
         if (isPlayerNear)
         {
-            // Stab Sound
+            PlayTriggerSound();
             LightManager.Instance.TurnOnLights();
             DeathManager.Instance.Die("You were Stabbed...", "Knife");
         }
