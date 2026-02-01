@@ -42,6 +42,9 @@ public class Lego : BaseTimeEvent
 
     private void OnDestroy()
     {
-        DeathManager.Instance.HasSlept -= SetLegoIsActive;
+        if (DeathManager.Instance != null)
+        {
+            DeathManager.Instance.HasSlept -= SetLegoIsActive;
+        }
     }
 }

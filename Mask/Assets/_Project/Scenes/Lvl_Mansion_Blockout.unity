@@ -3441,7 +3441,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 953125386424613131, guid: e08aff1eabc55384a930f8d0e6f12dd9, type: 3}
       propertyPath: electricCableActivateTime
-      value: 5
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 953125386424613131, guid: e08aff1eabc55384a930f8d0e6f12dd9, type: 3}
       propertyPath: 'waterSpills.Array.data[0]'

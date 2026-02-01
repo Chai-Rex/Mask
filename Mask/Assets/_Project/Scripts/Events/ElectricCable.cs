@@ -44,6 +44,7 @@ public class ElectricCable : BaseTimeEvent
                 {
                     if (waterSpill)
                     {
+                        waterSpill.SetWaterSpillActive(true);
                         waterSpill.SetIsCableTouching(true);
                     }
                 }
@@ -58,6 +59,7 @@ public class ElectricCable : BaseTimeEvent
                 {
                     if (waterSpill)
                     {
+                        waterSpill.SetWaterSpillActive(false);
                         waterSpill.SetIsCableTouching(false);
                     }
                 }

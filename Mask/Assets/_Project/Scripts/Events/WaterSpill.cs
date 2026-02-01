@@ -7,10 +7,18 @@ public class WaterSpill : BaseTimeEvent
 
     [SerializeField] private float waterSpillTime = 120.0f;
 
+    private SphereCollider sphereCollider;
+
+    private void Awake()
+    {
+        sphereCollider = GetComponent<SphereCollider>();
+        sphereCollider.enabled = false;
+    }
+
     private void Start()
     {
         SetWaterSpillActive(false);
-        TimeManager.Instance.ScheduleAt(waterSpillTime, ActivateTimeEvent);
+        //TimeManager.Instance.ScheduleAt(waterSpillTime, ActivateTimeEvent);
     }
 
     protected override void ActivateTimeEvent()
@@ -39,11 +47,11 @@ public class WaterSpill : BaseTimeEvent
 
         if (isActive.Value)
         {
-            gameObject.SetActive(true);
+            sphereCollider.enabled = true;
         }
         else
         {
-            gameObject.SetActive(false);
+            sphereCollider.enabled = false;
         }       
     }
 
