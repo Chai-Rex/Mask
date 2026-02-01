@@ -10,21 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
-  m_Name: ClaudetteDrawer 2
+  m_Name: DaffodilBanana Blame
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
   DialogText:
-  - Oh don't worry about it dear, that won't be an issue for at least a few months
-    to a year, you have plenty of time to prepare.
-  - You <i>have</i> been stockpiling non-perishables, water, and ammo I assume?
+  - But I was never even in the dining room tonight! I know my dad mentioned he would
+    be heading there when everyone separated from the ballroom but he's not the type
+    to leave a mess.
   decisionOptions:
-  - text: Oh of course! I thought you meant soon...
+  - text: ...
     nextDialog: {fileID: 0}
     affectsState: 1
-    stateVariable: hasTalkedClaudetteApocalypse
-    stateValue: 1
-  - text: Uhhh, you'll have to excuse me I have some doomsday prep to do
-    nextDialog: {fileID: 0}
-    affectsState: 1
-    stateVariable: hasTalkedClaudetteApocalypse
+    stateVariable: hasBlamedDaffodilBanana
     stateValue: 1
   conditionalDecisions: []
