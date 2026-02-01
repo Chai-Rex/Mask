@@ -180,6 +180,12 @@ MonoBehaviour:
     IgnoreListenerVolume: 0
     IgnoreListenerPause: 0
     rolloffMode: 0
+  soundClips:
+  - {fileID: 8300000, guid: 63202970b2c301d49af50873162b8233, type: 3}
+  - {fileID: 8300000, guid: e0a5fa214e7fc9f438e853e8c66b03e0, type: 3}
+  - {fileID: 8300000, guid: d92bb336165e46e43a23bc9a89e40ba7, type: 3}
   targetLocation: {fileID: 1804978278480782389}
   fallDuration: 0.5
   chandelierFallTime: 60
+  beforeFallDelay: 2
+  interFallDelay: 2
