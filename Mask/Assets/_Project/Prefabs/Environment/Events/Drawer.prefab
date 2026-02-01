@@ -242,8 +242,12 @@ MonoBehaviour:
     rolloffMode: 0
   drawerDuration: 0.25
   deathDelay: 1
-  timeToActivate: 120
+  timeToActivate: 5
   endLocation: {fileID: 2564946995020820614}
+  revolver: {fileID: 5380480664866526336}
+  DrawerEmpty: {fileID: -5972565402888072414, guid: 3998a264a00d2a24799fa5d949ea8cd1, type: 3}
+  DrawerPaper: {fileID: -4422321137964768497, guid: 14536d8f5efd6c5448748ad599545245, type: 3}
+  isDrawerEmptyMesh: 1
 --- !u!1 &5380480664866526336
 GameObject:
   m_ObjectHideFlags: 0

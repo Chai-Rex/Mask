@@ -22,10 +22,16 @@ public class InteractableDrawer : BaseTimeEvent, IInteractable
 
     [SerializeField] private float drawerDuration = 0.25f;
     [SerializeField] private float deathDelay = 1.0f;
-    [SerializeField] private float timeToActivate = 120.0f;
+    [SerializeField] private float timeToActivate = 5.0f;
 
     [SerializeField] private Transform endLocation;
     [SerializeField] private GameObject revolver;
+
+    [SerializeField] private Mesh DrawerEmpty;
+    [SerializeField] private Mesh DrawerPaper;
+
+    [SerializeField] private bool isDrawerEmptyMesh = true;
+    private MeshFilter meshFilter;
 
     private Coroutine currentBlastCoroutine;
 
@@ -33,7 +39,21 @@ public class InteractableDrawer : BaseTimeEvent, IInteractable
 
     private void Awake()
     {
+        meshFilter = GetComponent<MeshFilter>();
+
         startLocation = transform.position;
+
+        if (DrawerEmpty && DrawerPaper && meshFilter)
+        {
+            if (isDrawerEmptyMesh)
+            {
+                meshFilter.mesh = DrawerEmpty;
+            }
+            else
+            {
+                meshFilter.mesh = DrawerPaper;
+            }
+        }
 
         if (isDeathDrawer)
         {
@@ -43,6 +63,11 @@ public class InteractableDrawer : BaseTimeEvent, IInteractable
 
     private void Start()
     {
+        if (revolver && !isDeathDrawer)
+        {
+            revolver.SetActive(false);
+        }
+
         TimeManager.Instance.ScheduleAt(timeToActivate, ActivateTimeEvent);
     }
 
