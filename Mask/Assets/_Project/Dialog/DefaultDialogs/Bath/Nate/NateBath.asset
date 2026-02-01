@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
+  m_Name: NateBath
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
+  DialogText:
+  - I've also felt like I was burning in the alcove, but I'm more sensitive to heat.
+  - <color=#ffc0cbff>Daffodil</color> always teases me about how quickly I start
+    sweating in the summer
+  decisionOptions:
+  - text: Thats nice
+    nextDialog: {fileID: 0}
+    affectsState: 0
+    stateVariable: 
+    stateValue: 0
+  - text: This was more than a <i>little</i> hot
+    nextDialog: {fileID: 11400000, guid: 096be751dc3b2cc4ba57b2b2c924c3ad, type: 2}
+    affectsState: 0
+    stateVariable: 
+    stateValue: 0
+  conditionalDecisions:
+  - conditionalStates:
+    - name: hasBlamedNateBath
+      _value: 0
+    decision:
+      text: I know it was you (Blame)
+      nextDialog: {fileID: 11400000, guid: 8cbe86bb03111454fb0dea5dffcaffc2, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasBlamedNateBath
+      _value: 1
+    decision:
+      text: I know it was you (Blame)
+      nextDialog: {fileID: 11400000, guid: 5ac176d024bd4db4a870df5f82b70c32, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
