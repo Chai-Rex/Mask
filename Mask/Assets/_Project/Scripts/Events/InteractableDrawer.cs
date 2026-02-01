@@ -25,6 +25,7 @@ public class InteractableDrawer : BaseTimeEvent, IInteractable
     [SerializeField] private float timeToActivate = 120.0f;
 
     [SerializeField] private Transform endLocation;
+    [SerializeField] private GameObject revolver;
 
     private Coroutine currentBlastCoroutine;
 
