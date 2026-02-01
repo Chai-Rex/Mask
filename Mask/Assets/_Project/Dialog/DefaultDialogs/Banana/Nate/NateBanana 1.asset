@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
+  m_Name: NateBanana 1
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
+  DialogText:
+  - Slipped on a banana peel? That's quite impressive. You do look rather alive though.
+  decisionOptions:
+  - text: Um... I died of embarrassment
+    nextDialog: {fileID: 11400000, guid: f5284bf91dfbccc418f45a3cc8ceb565, type: 2}
+    affectsState: 0
+    stateVariable: 
+    stateValue: 0
+  - text: I don't wanna talk about it
+    nextDialog: {fileID: 0}
+    affectsState: 0
+    stateVariable: 
+    stateValue: 0
+  conditionalDecisions:
+  - conditionalStates:
+    - name: hasBlamedNateBanana
+      _value: 0
+    decision:
+      text: I know it was you (Blame)
+      nextDialog: {fileID: 11400000, guid: e01ab59c4d8936c47942555bd0b1f6b7, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasBlamedNateBanana
+      _value: 1
+    decision:
+      text: I know it was you (Blame)
+      nextDialog: {fileID: 11400000, guid: 5b7d6be31a5d51944a8e25aec07f2d37, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
