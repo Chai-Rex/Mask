@@ -16,7 +16,7 @@ public class Guitar : PickupableItem
 
     public void SetOutroStarted()
     {
-        StoryStateSO.Instance.SetValue("isOutroStarted", true);
+        StoryStateSO.Instance.SetValue("hasOutroStarted", true);
     }
 
     StateVariable isPickedUp = new StateVariable("isGuitarPickedUp", false);

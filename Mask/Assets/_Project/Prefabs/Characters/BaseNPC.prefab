@@ -278,6 +278,8 @@ MonoBehaviour:
     npcLocationTime: 360
   - npcLocationState: 6
     npcLocationTime: 420
+  - npcLocationState: 7
+    npcLocationTime: 480
   isLoop: 0
   startMoveTime: 5
   delayBetweenMoves: 5
