@@ -128,6 +128,7 @@ MonoBehaviour:
     IgnoreListenerVolume: 0
     IgnoreListenerPause: 0
     rolloffMode: 0
+  soundClips: []
   waterSpills: []
   electricCableActivateTime: 5
   sparkParticles: {fileID: 7077759663421124898}
@@ -146,7 +147,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3

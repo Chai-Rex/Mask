@@ -8,7 +8,6 @@ public class Guitar : PickupableItem
 
         if (i_isPickedUp)
         {
-
             if (soundClips.Count != 0 && soundClips.Count >= 3)
             {
                 int randomIndex = Random.Range(0, soundClips.Count);

@@ -6,6 +6,7 @@ public class Revolver : PickupableItem
 {
     [SerializeField] private float dischargeDelay = 0.5f;
     [SerializeField] private float rotateDuration = 0.15f;
+
     public override void SetItemPickedUp(bool i_isPickedUp)
     {
         base.SetItemPickedUp(i_isPickedUp);
