@@ -23,12 +23,15 @@ public class MainMenuCanvas : MonoBehaviour {
         _iMasterVolumeSlider.value = _settings.MasterVolume;
 
         // Slider
-        _iMasterVolumeSlider.onValueChanged.AddListener((float value) => { _settings.MasterVolume = value; SoundManager.Instance.SetMixerFloat(MIXER_MASTER, value); });
+        _iMasterVolumeSlider.onValueChanged.AddListener((float value) => { _settings.MasterVolume = value; SoundManager.Instance.SetMixerFloat(MIXER_MASTER, value); SoundManager.Instance.PlayMenuSliderSFX(); });
 
         // Buttons
         _iStartButton.onClick.AddListener(StartGame);
+        _iStartButton.onClick.AddListener(SoundManager.Instance.PlayMenuButtonSFX);
         _iQuitButton.onClick.AddListener(Quit);
+        _iQuitButton.onClick.AddListener(SoundManager.Instance.PlayMenuButtonSFX);
         _iFullScreenButton.onClick.AddListener(FullSCreen);
+        _iFullScreenButton.onClick.AddListener(SoundManager.Instance.PlayMenuButtonSFX);
     }
 
     private void OnDestroy() {

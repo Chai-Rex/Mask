@@ -1,16 +1,26 @@
 using UnityEngine;
 
-public class Guitar : MonoBehaviour
+public class Guitar : PickupableItem
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] RoomSoundEmitter _guitarAudioEmitter;
 
-    // Update is called once per frame
-    void Update()
+    StateVariable isPickedUp = new StateVariable("isGuitarPickedUp", false);
+
+    public override void SetItemPickedUp(bool i_isPickedUp)
     {
-        
+        base.SetItemPickedUp(i_isPickedUp);
+        isPickedUp.SetValueAndUpdateBlackboard(i_isPickedUp);
+
+        if (i_isPickedUp)
+        {
+            if (soundClips.Count != 0 && soundClips.Count >= 3)
+            {
+                int randomIndex = Random.Range(0, soundClips.Count);
+                _eventAudioData.Clip = soundClips[randomIndex];
+            }
+
+            PlayTriggerSound();
+            ResetSoundTriggered();
+        }
     }
 }

@@ -9,7 +9,7 @@ public class RoomSoundEmitter : MonoBehaviour
     [SerializeField]
     private float fadeTime = 1.0f;
     [SerializeField]
-    private float volumeMultiplier = 1.0f;
+    public float volumeMultiplier = 1.0f;
     private float volumeLevel = 0f;
     private float startFadeTime = 0f;
     private bool fadeIn = false;
@@ -19,6 +19,12 @@ public class RoomSoundEmitter : MonoBehaviour
     private AudioSource MusicSource;
     [SerializeField]
     private List<AudioSource> AmbianceSource;
+
+    [SerializeField] private bool hasCheckValue = false;
+    [SerializeField] private string checkValueName = string.Empty;
+    [SerializeField] private bool checkValue = true;
+    private bool playerInArea = false;
+
 
     private void Start()
     {
@@ -30,11 +36,17 @@ public class RoomSoundEmitter : MonoBehaviour
                 source.loop = true;
             }
         }
+
+        if(hasCheckValue)
+        {
+            StoryStateSO.Instance.RegisterCallback(checkValueName, SetCheckValue);
+        }
+        
     }
 
     IEnumerator FadeAudioIn()
     {
-        Debug.Log("start");
+        
         fadeOut = false;
         fadeIn = true;
         while(volumeLevel < 1.0f && !fadeOut)
@@ -92,9 +104,36 @@ public class RoomSoundEmitter : MonoBehaviour
         }
     }
 
+    private void SetCheckValue(bool value)
+    {
+        if (!playerInArea) return;
+
+        if(value == checkValue)
+        {
+            StartFadeIn();
+        }
+        else
+        {
+            StartFadeOut();
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player" && !fadeIn)
+        if(other.gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
+            playerInArea = true;
+            if (!hasCheckValue || StoryStateSO.Instance.GetValue(checkValueName) == checkValue)
+            {
+                StartFadeIn();
+            }
+        }
+    }
+
+    public void StartFadeIn()
+    {
+
+        if(!fadeIn)
         {
             if (MusicSource != null && MusicSource.clip != null)
             {
@@ -109,14 +148,14 @@ public class RoomSoundEmitter : MonoBehaviour
                         MusicSource.Play();
                     }
                 }
-                    
+
             }
 
-            foreach(AudioSource source in AmbianceSource)
+            foreach (AudioSource source in AmbianceSource)
             {
-                if(source != null && source.clip != null)
+                if (source != null && source.clip != null)
                 {
-                    if(!source.isPlaying)
+                    if (!source.isPlaying)
                     {
                         if (source.time != 0)
                         {
@@ -133,14 +172,31 @@ public class RoomSoundEmitter : MonoBehaviour
             startFadeTime = Time.time - (volumeLevel * fadeTime);
             StartCoroutine(FadeAudioIn());
         }
+        
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.tag == "Player" && !fadeOut)
+        if(other.gameObject.layer == LayerMask.NameToLayer("Player"))
+        {
+            playerInArea = false;
+
+            if (!hasCheckValue || StoryStateSO.Instance.GetValue(checkValueName) == checkValue)
+            {
+                StartFadeOut();
+            }
+            
+        }
+    }
+
+    public void StartFadeOut()
+    {
+
+        if (!fadeOut)
         {
             startFadeTime = Time.time - ((1 - volumeLevel) * fadeTime);
             StartCoroutine(FadeAudioOut());
         }
+
     }
 }

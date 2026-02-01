@@ -39,17 +39,24 @@ public class PauseCanvas : MonoBehaviour {
         _iLookSensitivitySlider.value = _settings.Sensitivity;
 
         // Slider
-        _iMasterVolumeSlider.onValueChanged.AddListener((float value) => { _settings.MasterVolume = value; SoundManager.Instance.SetMixerFloat(MIXER_MASTER, value); });
-        _iMusicVolumeSlider.onValueChanged.AddListener((float value) => { _settings.MusicVolume = value; SoundManager.Instance.SetMixerFloat(MIXER_MUSIC, value); });
-        _iEffectsVolumeSlider.onValueChanged.AddListener((float value) => { _settings.EffectsVolume = value; SoundManager.Instance.SetMixerFloat(MIXER_SFX, value); });
-        _iDialogueVolumeSlider.onValueChanged.AddListener((float value) => { _settings.DialogueVolume = value; SoundManager.Instance.SetMixerFloat(MIXER_DIALOGUE, value); });
-        _iLookSensitivitySlider.onValueChanged.AddListener((float value) => { _settings.Sensitivity = value; });
+        _iMasterVolumeSlider.onValueChanged.AddListener((float value) => { _settings.MasterVolume = value; SoundManager.Instance.SetMixerFloat(MIXER_MASTER, value); SoundManager.Instance.PlayMenuSliderSFX(); });
+        _iMusicVolumeSlider.onValueChanged.AddListener((float value) => { _settings.MusicVolume = value; SoundManager.Instance.SetMixerFloat(MIXER_MUSIC, value); SoundManager.Instance.PlayMenuSliderSFX(); });
+        _iEffectsVolumeSlider.onValueChanged.AddListener((float value) => { _settings.EffectsVolume = value; SoundManager.Instance.SetMixerFloat(MIXER_SFX, value); SoundManager.Instance.PlayMenuSliderSFX(); });
+        _iDialogueVolumeSlider.onValueChanged.AddListener((float value) => { _settings.DialogueVolume = value; SoundManager.Instance.SetMixerFloat(MIXER_DIALOGUE, value); SoundManager.Instance.PlayMenuSliderSFX(); });
+        _iLookSensitivitySlider.onValueChanged.AddListener((float value) => { _settings.Sensitivity = value; SoundManager.Instance.PlayMenuSliderSFX(); });
 
         // Buttons
         _iResumeButton.onClick.AddListener(Resume);
+        _iResumeButton.onClick.AddListener(SoundManager.Instance.PlayMenuButtonSFX);
+
         _iMainMenuButton.onClick.AddListener(ReturnToMenu);
+        _iMainMenuButton.onClick.AddListener(SoundManager.Instance.PlayMenuButtonSFX);
+
         _iQuitButton.onClick.AddListener(Quit);
+        _iQuitButton.onClick.AddListener(SoundManager.Instance.PlayMenuButtonSFX);
+
         _iFullScreenButton.onClick.AddListener(FullScreen);
+        _iFullScreenButton.onClick.AddListener(SoundManager.Instance.PlayMenuButtonSFX);
     }
 
     private void OnDestroy() {

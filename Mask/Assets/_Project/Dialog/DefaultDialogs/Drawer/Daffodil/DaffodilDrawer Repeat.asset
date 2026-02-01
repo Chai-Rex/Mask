@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
+  m_Name: DaffodilDrawer Repeat
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
+  DialogText:
+  - A part of me is tempted to go find it. Well... if I didn't worry about getting
+    shot at least.
+  decisionOptions:
+  - text: Yeah 0/10 experience. Would not recommend
+    nextDialog: {fileID: 0}
+    affectsState: 0
+    stateVariable: 
+    stateValue: 0
+  conditionalDecisions:
+  - conditionalStates:
+    - name: hasTalkedClaudetteApocalypse
+      _value: 1
+    decision:
+      text: 'Speaking of weapons, I think <color=#4b006eff>Claudette</color> is prepping
+        for the apocalypse... '
+      nextDialog: {fileID: 11400000, guid: cf597d28f1e848d409d09121ffbdd73a, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasTalkedClaudetteArsenal
+      _value: 1
+    decision:
+      text: 'Speaking of weapons, I think <color=#4b006eff>Claudette</color> has
+        a small nation''s worth of weapons '
+      nextDialog: {fileID: 11400000, guid: 1d152452c48b25b45a6da4e55288ed09, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasBlamedDaffodilDrawer
+      _value: 0
+    decision:
+      text: I know it was you (Blame)
+      nextDialog: {fileID: 11400000, guid: d1e99bd58eeea9349be5659a0f624eb3, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasBlamedDaffodilDrawer
+      _value: 1
+    decision:
+      text: I know it was you (Blame)
+      nextDialog: {fileID: 11400000, guid: dda82e695e5b9f640aa90d60a3b2cc4b, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0

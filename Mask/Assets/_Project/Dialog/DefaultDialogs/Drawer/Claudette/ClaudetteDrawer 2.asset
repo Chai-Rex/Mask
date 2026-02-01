@@ -19,12 +19,12 @@ MonoBehaviour:
   decisionOptions:
   - text: Oh of course! I thought you meant soon...
     nextDialog: {fileID: 0}
-    affectsState: 0
-    stateVariable: 
-    stateValue: 0
+    affectsState: 1
+    stateVariable: hasTalkedClaudetteApocalypse
+    stateValue: 1
   - text: Uhhh, you'll have to excuse me I have some doomsday prep to do
     nextDialog: {fileID: 0}
-    affectsState: 0
-    stateVariable: 
-    stateValue: 0
+    affectsState: 1
+    stateVariable: hasTalkedClaudetteApocalypse
+    stateValue: 1
   conditionalDecisions: []

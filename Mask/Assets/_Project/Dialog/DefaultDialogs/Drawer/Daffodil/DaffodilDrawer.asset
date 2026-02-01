@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
+  m_Name: DaffodilDrawer
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
+  DialogText:
+  - Wow thats like a spy movie! I don'tt know how or why someone would put that there
+    though. Seems like a bad place for something like that.
+  decisionOptions:
+  - text: I don't know either
+    nextDialog: {fileID: 0}
+    affectsState: 0
+    stateVariable: 
+    stateValue: 0
+  - text: It was armed and ready to fire too
+    nextDialog: {fileID: 11400000, guid: 97ba07b05993f5c4ea608761bb582203, type: 2}
+    affectsState: 0
+    stateVariable: 
+    stateValue: 0
+  conditionalDecisions:
+  - conditionalStates:
+    - name: hasBlamedDaffodilDrawer
+      _value: 0
+    decision:
+      text: I know it was you (Blame)
+      nextDialog: {fileID: 11400000, guid: d1e99bd58eeea9349be5659a0f624eb3, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasBlamedDaffodilDrawer
+      _value: 1
+    decision:
+      text: I know it was you (Blame)
+      nextDialog: {fileID: 11400000, guid: dda82e695e5b9f640aa90d60a3b2cc4b, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0

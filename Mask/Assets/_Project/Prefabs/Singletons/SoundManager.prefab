@@ -51,3 +51,49 @@ MonoBehaviour:
   maxPoolSize: 100
   maxSoundInstances: 30
   _iMixer: {fileID: 24100000, guid: 49963274511b53442bc8ea85953fe90d, type: 2}
+  _MenuButtonSFX:
+    Clip: {fileID: 8300000, guid: afa11249f0af68f4b98ef806379b6d02, type: 3}
+    MixerGroup: {fileID: -7791223585700606962, guid: 49963274511b53442bc8ea85953fe90d, type: 2}
+    Loop: 0
+    PlayOnAwake: 0
+    FrequentSound: 0
+    Mute: 0
+    BypassEffects: 0
+    BypassListenerEffects: 0
+    BypassReverbZones: 0
+    Priority: 128
+    Volume: 0.4
+    Pitch: 1
+    PanStereo: 0
+    SpatialBlend: 0
+    ReverbZoneMix: 1
+    DopplerLevel: 1
+    Spread: 0
+    MinDistance: 1
+    MaxDistance: 500
+    IgnoreListenerVolume: 0
+    IgnoreListenerPause: 0
+    rolloffMode: 0
+  _MenuSliderSFX:
+    Clip: {fileID: 8300000, guid: 0e2b769fe01d9514b946cb8dbe0c28dd, type: 3}
+    MixerGroup: {fileID: -7791223585700606962, guid: 49963274511b53442bc8ea85953fe90d, type: 2}
+    Loop: 0
+    PlayOnAwake: 0
+    FrequentSound: 0
+    Mute: 0
+    BypassEffects: 0
+    BypassListenerEffects: 0
+    BypassReverbZones: 0
+    Priority: 128
+    Volume: 0.6
+    Pitch: 1
+    PanStereo: 0
+    SpatialBlend: 0
+    ReverbZoneMix: 1
+    DopplerLevel: 1
+    Spread: 0
+    MinDistance: 1
+    MaxDistance: 500
+    IgnoreListenerVolume: 0
+    IgnoreListenerPause: 0
+    rolloffMode: 0

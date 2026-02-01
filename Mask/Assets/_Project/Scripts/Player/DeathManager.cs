@@ -1,4 +1,5 @@
 using AudioSystem;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -7,6 +8,8 @@ public class DeathManager : Singleton<DeathManager> {
 
     [SerializeField] private EyesCanvas _iEyeCanvas;
     [SerializeField] private LevelManager.Levels levelToLoad;
+
+    public Action HasSlept;
 
     private StateVariable _hasDiedState = new StateVariable("hasPlayerDied", false);
 
@@ -26,18 +29,12 @@ public class DeathManager : Singleton<DeathManager> {
         InputManager.Instance.SetPlayerActionMap();
         _iEyeCanvas.gameObject.SetActive(false);
 
-        InputManager.Instance._PlayerJumpAction.started += _PlayerJumpAction_started; // remove
         InputManager.Instance._DeathRespawnAction.started += _DeathRespawnAction_started;
     }
 
     private void OnDestroy() {
         if (InputManager.Instance == null) return;
-        InputManager.Instance._PlayerJumpAction.started -= _PlayerJumpAction_started; // remove
         InputManager.Instance._DeathRespawnAction.started -= _DeathRespawnAction_started;
-    }
-
-    private void _PlayerJumpAction_started(UnityEngine.InputSystem.InputAction.CallbackContext obj) {
-        Die("BEEs", "Bees");
     }
 
     private void _DeathRespawnAction_started(UnityEngine.InputSystem.InputAction.CallbackContext obj) {
@@ -74,6 +71,21 @@ public class DeathManager : Singleton<DeathManager> {
 
         StoryStateSO.Instance.ResetState();
 
+    }
+
+    public async void Sleep()
+    {
+        _iEyeCanvas.gameObject.SetActive(true);
+
+        await _iEyeCanvas.CloseEyes();
+
+        HasSlept?.Invoke();
+
+        await Task.Delay(3500);
+
+        await _iEyeCanvas.OpenEyes();
+
+        _iEyeCanvas.gameObject.SetActive(true);
     }
 
 

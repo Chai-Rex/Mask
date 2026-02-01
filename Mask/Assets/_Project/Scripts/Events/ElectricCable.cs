@@ -8,22 +8,33 @@ public class ElectricCable : BaseTimeEvent
     [SerializeField] private float electricCableActivateTime = 60.0f;
     [SerializeField] private ParticleSystem sparkParticles;
 
+    [SerializeField] RoomSoundEmitter _electricAudioEmitter;
+
     private void Start()
     {
         sparkParticles.gameObject.SetActive(false);
+        if(_electricAudioEmitter != null)
+        {
+            _electricAudioEmitter.gameObject.SetActive(false);
+        }
+        
         TimeManager.Instance.ScheduleAt(electricCableActivateTime, ActivateTimeEvent);
     }
 
     protected override void ActivateTimeEvent()
     {
         base.ActivateTimeEvent();
-
+        
         SetIsElectricCableActive(true);
     }
 
     public void SetIsElectricCableActive(bool _isActive)
     {
         isActive.SetValueAndUpdateBlackboard(_isActive);
+        if (_electricAudioEmitter != null)
+        {
+            _electricAudioEmitter.gameObject.SetActive(_isActive);
+        }
 
         if (sparkParticles)
         {
@@ -40,6 +51,7 @@ public class ElectricCable : BaseTimeEvent
                 {
                     if (waterSpill)
                     {
+                        waterSpill.SetWaterSpillActive(true);
                         waterSpill.SetIsCableTouching(true);
                     }
                 }
@@ -54,6 +66,7 @@ public class ElectricCable : BaseTimeEvent
                 {
                     if (waterSpill)
                     {
+                        waterSpill.SetWaterSpillActive(false);
                         waterSpill.SetIsCableTouching(false);
                     }
                 }
