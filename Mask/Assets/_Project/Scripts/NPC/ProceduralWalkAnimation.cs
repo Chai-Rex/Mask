@@ -32,6 +32,10 @@ public class ProceduralWalkAnimation : MonoBehaviour {
         _headBaseLocalRot = _iHead.localRotation;
     }
 
+    private void OnDestroy() {
+        _walkTween?.Kill();
+    }
+
     /// <summary>
     /// Call when the NPC starts moving.
     /// Speed is used to scale animation intensity.
