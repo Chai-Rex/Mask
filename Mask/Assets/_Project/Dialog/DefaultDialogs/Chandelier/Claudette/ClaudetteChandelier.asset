@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
+  m_Name: ClaudetteChandelier
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
+  DialogText:
+  - My chandelier? A trap? That's absurd.
+  decisionOptions:
+  - text: Its true. I saw someone fiddling with the rope.
+    nextDialog: {fileID: 11400000, guid: 22fd232bff2c032409259915ff6f4e94, type: 2}
+    affectsState: 0
+    stateVariable: 
+    stateValue: 0
+  - text: Its true. It fell and killed me.
+    nextDialog: {fileID: 11400000, guid: ab39d806461ec774b9f7c2e9f9d66466, type: 2}
+    affectsState: 1
+    stateVariable: hasToldClaudetteChandelier
+    stateValue: 1
+  conditionalDecisions: []

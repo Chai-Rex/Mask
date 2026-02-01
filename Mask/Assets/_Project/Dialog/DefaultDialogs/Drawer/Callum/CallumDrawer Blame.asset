@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
+  m_Name: CallumDrawer Blame
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
+  DialogText:
+  - No way would I do anything that dangerous. look, how could <color=#4b006eff>Claudette</color>
+    not know about this in her home? It seems strange if you ask me.
+  decisionOptions:
+  - text: ...
+    nextDialog: {fileID: 0}
+    affectsState: 1
+    stateVariable: hasBlamedCallumDrawer
+    stateValue: 1
+  conditionalDecisions:
+  - conditionalStates:
+    - name: hasAskedClaudetteDrawer
+      _value: 0
+    decision:
+      text: Yeah, I'll go see what she knows
+      nextDialog: {fileID: 0}
+      affectsState: 1
+      stateVariable: hasBlamedCallumDrawer
+      stateValue: 1
+  - conditionalStates:
+    - name: hasAskedClaudetteDrawer
+      _value: 1
+    decision:
+      text: She didn't seem to know anything about it
+      nextDialog: {fileID: 0}
+      affectsState: 1
+      stateVariable: hasBlamedCallumDrawer
+      stateValue: 1

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
+  m_Name: CallumBanana Alt 1
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
+  DialogText:
+  - Sorry, you [emphasis]<i>DIED</i>[/emphasis]???
+  - What are you even saying dude?
+  - Are you pranking me or something?
+  decisionOptions:
+  - text: Sorry yeah, just a prank. I wanted to see your reaction
+    nextDialog: {fileID: 11400000, guid: 8e3300df02f6be9408fe98280abc4135, type: 2}
+    affectsState: 0
+    stateVariable: 
+    stateValue: 0
+  - text: I'm serious man, I literally died like earlier today. Or later? I'm not
+      sure to be honest
+    nextDialog: {fileID: 11400000, guid: 8e3300df02f6be9408fe98280abc4135, type: 2}
+    affectsState: 1
+    stateVariable: hasToldCallumBanana
+    stateValue: 1
+  conditionalDecisions: []
