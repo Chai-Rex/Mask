@@ -14,7 +14,6 @@ public class Chandelier : BaseTimeEvent
     private BoxCollider boxCollider;
 
     [SerializeField] private float beforeFallDelay = 2.0f;
-    [SerializeField] private float interFallDelay = 2.0f;
 
     private Coroutine beforeFallCoroutine;
 
