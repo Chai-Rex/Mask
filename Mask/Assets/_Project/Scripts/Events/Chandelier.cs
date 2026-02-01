@@ -10,7 +10,12 @@ public class Chandelier : BaseTimeEvent
     private StateVariable hasFallen = new StateVariable("hasChandelierFallen", false);
 
     [SerializeField] private float chandelierFallTime = 60.0f;
+    private BoxCollider boxCollider;
 
+    private void Awake()
+    {
+        boxCollider = GetComponent<BoxCollider>();
+    }
     private void Start()
     {
         TimeManager.Instance.ScheduleAt(chandelierFallTime, ActivateTimeEvent);
@@ -20,6 +25,7 @@ public class Chandelier : BaseTimeEvent
     {
         base.ActivateTimeEvent();
 
+        canFall.SetValueAndUpdateBlackboard(true);
         if (canFall.Value && !hasFallen.Value)
         {
             ChandelierFall();
@@ -33,9 +39,12 @@ public class Chandelier : BaseTimeEvent
             .OnComplete(() =>
             {
                 hasFallen.SetValueAndUpdateBlackboard(true);
+                if (boxCollider)
+                {
+                    boxCollider.isTrigger = false;
+                }
             });
     }
-
     private void OnTriggerEnter(Collider other)
     {
         if (hasFallen.Value) { return; }
