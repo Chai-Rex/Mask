@@ -1,0 +1,289 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
+  m_Name: Claudette Default
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
+  DialogText:
+  - Can I help you?
+  decisionOptions:
+  - text: Nevermind
+    nextDialog: {fileID: 0}
+    affectsState: 0
+    stateVariable: 
+    stateValue: 0
+  conditionalDecisions:
+  - conditionalStates:
+    - name: hasDiedToBanana
+      _value: 1
+    - name: hasAskedClaudetteBanana
+      _value: 0
+    decision:
+      text: Did you leave a banana peel in the Dining Room?
+      nextDialog: {fileID: 11400000, guid: 445dbd383db721a4aabdb4a4428930e7, type: 2}
+      affectsState: 1
+      stateVariable: hasAskedClaudetteBanana
+      stateValue: 1
+  - conditionalStates:
+    - name: hasDiedToBanana
+      _value: 1
+    - name: hasAskedClaudetteBanana
+      _value: 1
+    - name: hasToldClaudetteBanana
+      _value: 0
+    decision:
+      text: Did you leave a banana peel in the Dining Room?
+      nextDialog: {fileID: 11400000, guid: bf41a22e7d70a8649a8215be1c643287, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasDiedToBanana
+      _value: 1
+    - name: hasAskedClaudetteBanana
+      _value: 1
+    - name: hasToldClaudetteBanana
+      _value: 1
+    decision:
+      text: Did you leave a banana peel in the Dining Room?
+      nextDialog: {fileID: 11400000, guid: cffd6cd2b80ab274895c91243a30b4dc, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasDiedToBath
+      _value: 1
+    - name: hasAskedClaudetteBath
+      _value: 0
+    decision:
+      text: Have you noticed how hot the Alcove is? It could literally kill someone
+      nextDialog: {fileID: 11400000, guid: 04f8fed950956b443a212505bea708ab, type: 2}
+      affectsState: 1
+      stateVariable: hasAskedClaudetteBath
+      stateValue: 1
+  - conditionalStates:
+    - name: hasDiedToBath
+      _value: 1
+    - name: hasAskedClaudetteBath
+      _value: 1
+    - name: hasToldClaudetteBath
+      _value: 0
+    decision:
+      text: Have you noticed how hot the Alcove is? It could literally kill someone
+      nextDialog: {fileID: 11400000, guid: 48bde17a4a831a444968a9e240582db9, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasDiedToBath
+      _value: 1
+    - name: hasAskedClaudetteBath
+      _value: 1
+    - name: hasToldClaudetteBath
+      _value: 1
+    decision:
+      text: Have you noticed how hot the Alcove is? It could literally kill someone
+      nextDialog: {fileID: 11400000, guid: 884e34a2dbac59f44994780a51072628, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasDiedToBlock
+      _value: 1
+    - name: hasAskedClaudetteBlock
+      _value: 0
+    decision:
+      text: Do you like playing with building blocks?
+      nextDialog: {fileID: 11400000, guid: 2f0cc3d4e33ad4c42aec817e7b5a1307, type: 2}
+      affectsState: 1
+      stateVariable: hasAskedClaudetteBlock
+      stateValue: 1
+  - conditionalStates:
+    - name: hasDiedToBlock
+      _value: 1
+    - name: hasAskedClaudetteBlock
+      _value: 1
+    - name: hasToldClaudetteBlock
+      _value: 0
+    decision:
+      text: Do you like playing with building blocks?
+      nextDialog: {fileID: 11400000, guid: 0e1b20b928f5c3640bfd07999af387da, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasDiedToBlock
+      _value: 1
+    - name: hasAskedClaudetteBlock
+      _value: 1
+    - name: hasToldClaudetteBlock
+      _value: 1
+    decision:
+      text: Do you like playing with building blocks?
+      nextDialog: {fileID: 11400000, guid: 5b1711a037d531c488188fbad83237fe, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasDiedToChandelier
+      _value: 1
+    - name: hasAskedClaudetteChandelier
+      _value: 0
+    decision:
+      text: What if the chandelier in the library suddenly fell on someone?
+      nextDialog: {fileID: 11400000, guid: 317faabdf26ae00498463bda9df3757b, type: 2}
+      affectsState: 1
+      stateVariable: hasAskedClaudetteChandelier
+      stateValue: 1
+  - conditionalStates:
+    - name: hasDiedToChandelier
+      _value: 1
+    - name: hasAskedClaudetteChandelier
+      _value: 1
+    - name: hasToldClaudetteChandelier
+      _value: 0
+    decision:
+      text: What if the chandelier in the library suddenly fell on someone?
+      nextDialog: {fileID: 11400000, guid: ec7ce9a0fb8533d4e8f9b1b1ece1c3c6, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasDiedToChandelier
+      _value: 1
+    - name: hasAskedClaudetteChandelier
+      _value: 1
+    - name: hasToldClaudetteChandelier
+      _value: 1
+    decision:
+      text: What if the chandelier in the library suddenly fell on someone?
+      nextDialog: {fileID: 11400000, guid: de797d95404f01f4a985bb46bdcdbe4c, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasDiedToDrawer
+      _value: 1
+    - name: hasAskedClaudetteDrawer
+      _value: 0
+    decision:
+      text: I think one of the drawers in the Tea Room is a hidden gun.
+      nextDialog: {fileID: 11400000, guid: 27b912ea506210b4c9b7015c1d0be9bc, type: 2}
+      affectsState: 1
+      stateVariable: hasAskedClaudetteDrawer
+      stateValue: 1
+  - conditionalStates:
+    - name: hasDiedToDrawer
+      _value: 1
+    - name: hasAskedClaudetteDrawer
+      _value: 1
+    - name: hasToldClaudetteDrawer
+      _value: 0
+    decision:
+      text: I think one of the drawers in the Tea Room is a hidden gun.
+      nextDialog: {fileID: 11400000, guid: 5c7b73693c755864cb2f8bffcc100a18, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasDiedToDrawer
+      _value: 1
+    - name: hasAskedClaudetteDrawer
+      _value: 1
+    - name: hasToldClaudetteDrawer
+      _value: 1
+    decision:
+      text: I think one of the drawers in the Tea Room is a hidden gun.
+      nextDialog: {fileID: 11400000, guid: 5d67862089bcf9348a014251e599e515, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasDiedToDrink
+      _value: 1
+    - name: hasAskedClaudetteDrink
+      _value: 0
+    decision:
+      text: I hear that someone poisoned one of the drinks
+      nextDialog: {fileID: 11400000, guid: 0ebe956266adca145b61107f06345638, type: 2}
+      affectsState: 1
+      stateVariable: hasAskedClaudetteDrink
+      stateValue: 1
+  - conditionalStates:
+    - name: hasDiedToDrink
+      _value: 1
+    - name: hasAskedClaudetteDrink
+      _value: 1
+    decision:
+      text: I hear that someone poisoned one of the drinks
+      nextDialog: {fileID: 11400000, guid: 408969d62d6220743ab9ced17382e915, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasDiedToKnife
+      _value: 1
+    - name: hasAskedClaudetteKnife
+      _value: 0
+    decision:
+      text: I think the display knife is missing
+      nextDialog: {fileID: 11400000, guid: f509d910f1cd5cf4cacbd60711c6ae28, type: 2}
+      affectsState: 1
+      stateVariable: hasAskedClaudetteKnife
+      stateValue: 1
+  - conditionalStates:
+    - name: hasDiedToKnife
+      _value: 1
+    - name: hasAskedClaudetteKnife
+      _value: 1
+    - name: hasToldClaudetteKnife
+      _value: 0
+    decision:
+      text: I think the display knife is missing
+      nextDialog: {fileID: 11400000, guid: 2fed79124667ad443b08c81350d6b03a, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasDiedToKnife
+      _value: 1
+    - name: hasAskedClaudetteKnife
+      _value: 1
+    - name: hasToldClaudetteKnife
+      _value: 1
+    decision:
+      text: I think the display knife is missing
+      nextDialog: {fileID: 11400000, guid: b3444fa2a0850424a92de6430001e4af, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasDiedToSpill
+      _value: 1
+    - name: hasAskedClaudetteSpill
+      _value: 0
+    decision:
+      text: Did you see that live wire in the billiards room?
+      nextDialog: {fileID: 11400000, guid: 53ac74fe3399f014f828887fb7ecd711, type: 2}
+      affectsState: 1
+      stateVariable: hasAskedClaudetteSpill
+      stateValue: 1
+  - conditionalStates:
+    - name: hasDiedToSpill
+      _value: 1
+    - name: hasAskedClaudetteSpill
+      _value: 1
+    decision:
+      text: Did you see that live wire in the billiards room?
+      nextDialog: {fileID: 11400000, guid: 4d9d539685b5f27449ff51cfed1e8692, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
