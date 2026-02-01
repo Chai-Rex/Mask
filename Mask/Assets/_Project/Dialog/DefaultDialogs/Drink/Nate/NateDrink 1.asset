@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
+  m_Name: NateDrink 1
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
+  DialogText:
+  - Sorry, were you not joking? I feel like I would've heard if someone had been
+    poisoned tonight
+  decisionOptions:
+  - text: Nobody was, but I know the drink was poisoned
+    nextDialog: {fileID: 11400000, guid: 9abe57a8efbb65d4681bcc871b3b4ec7, type: 2}
+    affectsState: 0
+    stateVariable: 
+    stateValue: 0
+  - text: I suppose you're right
+    nextDialog: {fileID: 0}
+    affectsState: 0
+    stateVariable: 
+    stateValue: 0
+  conditionalDecisions:
+  - conditionalStates:
+    - name: hasBlamedNateDrink
+      _value: 0
+    decision:
+      text: I know it was you (Blame)
+      nextDialog: {fileID: 11400000, guid: 167b76ebcbb07b442934741fc4405436, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasBlamedNateDrink
+      _value: 1
+    decision:
+      text: I know it was you (Blame)
+      nextDialog: {fileID: 11400000, guid: 5c375b5c3230eff4f9ad95b09c15c1fc, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
