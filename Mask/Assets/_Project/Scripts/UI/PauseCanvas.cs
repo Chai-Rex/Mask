@@ -12,6 +12,7 @@ public class PauseCanvas : MonoBehaviour {
     [SerializeField] private Button _iResumeButton;
     [SerializeField] private Button _iMainMenuButton;
     [SerializeField] private Button _iQuitButton;
+    [SerializeField] private Button _iFullScreenButton;
 
     [Header("Sliders")]
     [SerializeField] private Slider _iMasterVolumeSlider;
@@ -48,6 +49,7 @@ public class PauseCanvas : MonoBehaviour {
         _iResumeButton.onClick.AddListener(Resume);
         _iMainMenuButton.onClick.AddListener(ReturnToMenu);
         _iQuitButton.onClick.AddListener(Quit);
+        _iFullScreenButton.onClick.AddListener(FullScreen);
     }
 
     private void OnDestroy() {
@@ -61,6 +63,7 @@ public class PauseCanvas : MonoBehaviour {
         _iResumeButton.onClick.RemoveAllListeners();
         _iMainMenuButton.onClick.RemoveAllListeners();
         _iQuitButton.onClick.RemoveAllListeners();
+        _iFullScreenButton.onClick.RemoveAllListeners();
     }
 
     private void OnDisable() {
@@ -79,6 +82,8 @@ public class PauseCanvas : MonoBehaviour {
         Application.Quit();
     }
 
-
+    public void FullScreen() {
+        Screen.fullScreen = !Screen.fullScreen;
+    }
 
 }
