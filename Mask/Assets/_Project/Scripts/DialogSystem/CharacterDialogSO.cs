@@ -15,7 +15,7 @@ public struct PlayerDecision
 [System.Serializable]
 public struct ConditionalDecision
 {
-    public string conditionalState;
+    public List<StateVariable> conditionalStates;
     public PlayerDecision decision;
 }
 
@@ -43,11 +43,15 @@ public class CharacterDialogSO : ScriptableObject
 
         foreach(ConditionalDecision conditional in conditionalDecisions)
         {
-            StoryStateSO.RegisterInitialState(new StateVariable(conditional.conditionalState, false, false));
+            foreach(StateVariable var in conditional.conditionalStates)
+            {
+                StoryStateSO.RegisterInitialState(new StateVariable(var.Name, false, false));
+            }
             if (conditional.decision.affectsState)
             {
                 StoryStateSO.RegisterInitialState(new StateVariable(conditional.decision.stateVariable, false, false));
             }
+
         }
 
     }
@@ -58,8 +62,17 @@ public class CharacterDialogSO : ScriptableObject
 
         foreach (ConditionalDecision conditional in conditionalDecisions)
         {
-            Debug.Log(conditional.conditionalState + " is " + StoryStateSO.Instance.GetValue(conditional.conditionalState));
-            if (StoryStateSO.Instance.GetValue(conditional.conditionalState))
+            bool stateMatches = true;
+            foreach (StateVariable variable in conditional.conditionalStates)
+            {
+                if (StoryStateSO.Instance.GetValue(variable.Name) != variable.Value)
+                {
+                    stateMatches = false;
+                    break;
+                }
+            }
+
+            if (stateMatches)
             {
                 activeConditionals.Add(conditional.decision);
             }

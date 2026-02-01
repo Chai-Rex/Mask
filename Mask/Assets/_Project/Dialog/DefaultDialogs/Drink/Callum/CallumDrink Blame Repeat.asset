@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
+  m_Name: CallumDrink Blame Repeat
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
+  DialogText:
+  - Look I'm not the kinda guy to spike drinks. Thats some vile behavior. Like I
+    said, the only poisons I'm familiar with are alcohol and gambling.
+  - Damn sports betters always harassing me online, who in their right mind bets
+    on the number of times I'm going to scratch my nose on camera?
+  decisionOptions:
+  - text: ...
+    nextDialog: {fileID: 0}
+    affectsState: 1
+    stateVariable: hasBlamedCallumDrink
+    stateValue: 1
+  - text: I need you to do at least 3 unique dances next game...
+    nextDialog: {fileID: 0}
+    affectsState: 1
+    stateVariable: hasBlamedCallumDrink
+    stateValue: 1
+  conditionalDecisions: []

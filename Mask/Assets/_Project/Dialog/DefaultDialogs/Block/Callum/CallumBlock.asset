@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
+  m_Name: CallumBlock
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
+  DialogText:
+  - 'Building blocks? My kids like them but I don''t play with them much on my own '
+  - They're really the worst to step on though. My kids never clean up properly so
+    walking around my house feels like I'm in a minefield
+  decisionOptions:
+  - text: You wouldn't happen to have any on you would you?
+    nextDialog: {fileID: 11400000, guid: b7beb2cbdf307dc4ca7c1c9a4b6456c4, type: 2}
+    affectsState: 0
+    stateVariable: 
+    stateValue: 0
+  conditionalDecisions: []

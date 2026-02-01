@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
+  m_Name: CallumDrawer Blame Repeat
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
+  DialogText:
+  - I'll admit that it sounds like a cool novelty item, but whoever sold it should
+    have made sure it was disarmed properly! Gun safety is no joke.
+  decisionOptions:
+  - text: ...
+    nextDialog: {fileID: 0}
+    affectsState: 1
+    stateVariable: hasBlamedCallumDrawer
+    stateValue: 1
+  - text: Just as the founding fathers intended...
+    nextDialog: {fileID: 0}
+    affectsState: 1
+    stateVariable: hasBlamedCallumDrawer
+    stateValue: 1
+  conditionalDecisions: []

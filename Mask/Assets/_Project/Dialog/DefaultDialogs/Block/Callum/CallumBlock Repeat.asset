@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
+  m_Name: CallumBlock Repeat
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
+  DialogText:
+  - Look as much as I enjoy chatting about building blocks I'm gonna need you to
+    stop
+  decisionOptions:
+  - text: I'll leave you alone...
+    nextDialog: {fileID: 0}
+    affectsState: 0
+    stateVariable: 
+    stateValue: 0
+  conditionalDecisions:
+  - conditionalStates:
+    - name: hasDiedToBlock
+      _value: 1
+    decision:
+      text: Would you believe me if I told you stepping on one killed me and sent
+        me back in time?
+      nextDialog: {fileID: 11400000, guid: 80e6d274559b07244be879c4fd02ef7f, type: 2}
+      affectsState: 1
+      stateVariable: hasToldCallumBlock
+      stateValue: 1
+  - conditionalStates:
+    - name: hasBlamedCallumBlock
+      _value: 0
+    decision:
+      text: I know it was you (Blame)
+      nextDialog: {fileID: 11400000, guid: 5637b768fa336c84fb75018d4c6dca80, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasBlamedCallumBlock
+      _value: 1
+    decision:
+      text: I know it was you (Blame)
+      nextDialog: {fileID: 11400000, guid: de4e97b1c4bc5cf48bc652adab8fc05b, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0

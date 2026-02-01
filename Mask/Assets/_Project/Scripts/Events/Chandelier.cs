@@ -52,7 +52,7 @@ public class Chandelier : BaseTimeEvent
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             // Player Death
-            DeathManager.Instance.Die("Chandelier Bonked you on the head");
+            DeathManager.Instance.Die("Chandelier Bonked you on the head", "Chandelier");
         }
     }
 }
