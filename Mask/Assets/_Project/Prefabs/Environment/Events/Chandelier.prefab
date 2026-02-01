@@ -287,5 +287,5 @@ MonoBehaviour:
   targetLocation: {fileID: 1804978278480782389}
   fallDuration: 0.5
   isBadChandelier: 0
-  chandelierFallTime: 60
+  chandelierFallTime: 240
   beforeFallDelay: 2
