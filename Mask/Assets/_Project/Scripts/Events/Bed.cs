@@ -20,6 +20,7 @@ public class Bed : BaseTimeEvent, IInteractable
             _hasNapActive.SetValueAndUpdateBlackboard(true);
             PlayTriggerSound();
             DeathManager.Instance.Sleep();
+            interactor.GetComponent<InteractionHandler>().OverrideInteractionPrompt(verbNotSleepy);
         }
     }
 
