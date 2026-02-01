@@ -4002,10 +4002,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2564946995020820614, guid: 4c8cc976e466b2444b868cec84bd5614, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 2.06
-      objectReference: {fileID: 0}
     - target: {fileID: 2951871539645604936, guid: 4c8cc976e466b2444b868cec84bd5614, type: 3}
       propertyPath: m_Name
       value: Drawer
@@ -4413,7 +4409,7 @@ PrefabInstance:
       objectReference: {fileID: 195732866}
     - target: {fileID: 368201965182611532, guid: 551419ebafea48d49bed3fc64ef075e6, type: 3}
       propertyPath: m_VersionIndex
-      value: 20004
+      value: 20007
       objectReference: {fileID: 0}
     - target: {fileID: 625385060002854760, guid: 551419ebafea48d49bed3fc64ef075e6, type: 3}
       propertyPath: m_LocalScale.z
@@ -4649,7 +4645,7 @@ PrefabInstance:
       objectReference: {fileID: 2100175358}
     - target: {fileID: 2643359154785284657, guid: 551419ebafea48d49bed3fc64ef075e6, type: 3}
       propertyPath: m_VersionIndex
-      value: 7841
+      value: 7844
       objectReference: {fileID: 0}
     - target: {fileID: 2660067295364316201, guid: 551419ebafea48d49bed3fc64ef075e6, type: 3}
       propertyPath: m_LocalScale.z
@@ -5449,7 +5445,7 @@ PrefabInstance:
       objectReference: {fileID: 619234846}
     - target: {fileID: 8124526283386551020, guid: 551419ebafea48d49bed3fc64ef075e6, type: 3}
       propertyPath: m_VersionIndex
-      value: 12142
+      value: 12145
       objectReference: {fileID: 0}
     - target: {fileID: 8222586564528399713, guid: 551419ebafea48d49bed3fc64ef075e6, type: 3}
       propertyPath: m_LocalScale.z
