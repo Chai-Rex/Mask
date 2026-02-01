@@ -221,6 +221,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Drawer
       objectReference: {fileID: 0}
+    - target: {fileID: 5938979962418214512, guid: 4c8cc976e466b2444b868cec84bd5614, type: 3}
+      propertyPath: isDeathDrawer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9163590029313334384, guid: 4c8cc976e466b2444b868cec84bd5614, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.37
