@@ -173,7 +173,7 @@ public class FirstPersonController : MonoBehaviour {
 
         // Adjust camera position
         Vector3 cameraLocalPos = cameraTransform.localPosition;
-        cameraLocalPos.y = currentHeight - 0.2f;
+        cameraLocalPos.y = currentHeight - 0.6f;
         cameraTransform.localPosition = cameraLocalPos;
     }
 
