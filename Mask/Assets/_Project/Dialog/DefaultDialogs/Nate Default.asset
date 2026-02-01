@@ -1,0 +1,199 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
+  m_Name: Nate Default
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
+  DialogText:
+  - Can I help you?
+  decisionOptions:
+  - text: Nevermind
+    nextDialog: {fileID: 0}
+    affectsState: 0
+    stateVariable: 
+    stateValue: 0
+  conditionalDecisions:
+  - conditionalStates:
+    - name: hasDiedToBanana
+      _value: 1
+    - name: hasAskedNateBanana
+      _value: 0
+    decision:
+      text: I think I saw a banana peel on the Dining Room floor
+      nextDialog: {fileID: 11400000, guid: b19d79bc27da67f40ab96641af7c63b1, type: 2}
+      affectsState: 1
+      stateVariable: hasAskedNateBanana
+      stateValue: 1
+  - conditionalStates:
+    - name: hasDiedToBanana
+      _value: 1
+    - name: hasAskedNateBanana
+      _value: 1
+    decision:
+      text: I think I saw a banana peel on the Dining Room floor
+      nextDialog: {fileID: 11400000, guid: 0d7d4c07b1c612a47bddd10ed6a5da31, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasDiedToBath
+      _value: 1
+    - name: hasAskedNateBath
+      _value: 0
+    decision:
+      text: The Alcove is hot enough to kill a person!
+      nextDialog: {fileID: 11400000, guid: 65619bc2daeebdb47b4284d3306ccd67, type: 2}
+      affectsState: 1
+      stateVariable: hasAskedNateBath
+      stateValue: 1
+  - conditionalStates:
+    - name: hasDiedToBath
+      _value: 1
+    - name: hasAskedNateBath
+      _value: 1
+    decision:
+      text: The Alcove is hot enough to kill a person!
+      nextDialog: {fileID: 11400000, guid: 0db9684c2acddff428ecc8a01719fc2e, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasDiedToBlock
+      _value: 1
+    - name: hasAskedNateBlock
+      _value: 0
+    decision:
+      text: I stepped on a building block upstairs
+      nextDialog: {fileID: 11400000, guid: 2106c438b1df9134a8b1edef2e3de7c3, type: 2}
+      affectsState: 1
+      stateVariable: hasAskedNateBlock
+      stateValue: 1
+  - conditionalStates:
+    - name: hasDiedToBlock
+      _value: 1
+    - name: hasAskedNateBlock
+      _value: 1
+    decision:
+      text: I stepped on a building block upstairs
+      nextDialog: {fileID: 11400000, guid: 7eea7a834c05d3441b8a78b60de07a40, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasDiedToChandelier
+      _value: 1
+    - name: hasAskedNateChandelier
+      _value: 0
+    decision:
+      text: The chandelier in the library fell!
+      nextDialog: {fileID: 11400000, guid: 317c22d9cb9a0a44b9ac29da8762eb3f, type: 2}
+      affectsState: 1
+      stateVariable: hasAskedNateChandelier
+      stateValue: 1
+  - conditionalStates:
+    - name: hasDiedToChandelier
+      _value: 1
+    - name: hasAskedNateChandelier
+      _value: 1
+    decision:
+      text: The chandelier in the library fell!
+      nextDialog: {fileID: 11400000, guid: 125656aa04591a74eb5850aa80504e8f, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasDiedToDrawer
+      _value: 1
+    - name: hasAskedNateDrawer
+      _value: 0
+    decision:
+      text: I think one of the drawers in the Tea Room is a hidden gun.
+      nextDialog: {fileID: 11400000, guid: a811bae2c69c0c84292a55ff120760ec, type: 2}
+      affectsState: 1
+      stateVariable: hasAskedNateDrawer
+      stateValue: 1
+  - conditionalStates:
+    - name: hasDiedToDrawer
+      _value: 1
+    - name: hasAskedNateDrawer
+      _value: 1
+    decision:
+      text: I think one of the drawers in the Tea Room is a hidden gun.
+      nextDialog: {fileID: 11400000, guid: b3401ee7c9b2fff46ae9d00a7d75d82e, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasDiedToDrink
+      _value: 1
+    - name: hasAskedNateDrink
+      _value: 0
+    decision:
+      text: Someones putting poison into the drinks
+      nextDialog: {fileID: 11400000, guid: 4cf91872528c2c9408abe6595c862923, type: 2}
+      affectsState: 1
+      stateVariable: hasAskedNateDrink
+      stateValue: 1
+  - conditionalStates:
+    - name: hasDiedToDrink
+      _value: 1
+    - name: hasAskedNateDrink
+      _value: 1
+    decision:
+      text: Someones putting poison into the drinks
+      nextDialog: {fileID: 11400000, guid: 37027d7f6cc9060439a46476d0e49306, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasDiedToKnife
+      _value: 1
+    - name: hasAskedNateKnife
+      _value: 0
+    decision:
+      text: I think someones after that fancy knife
+      nextDialog: {fileID: 11400000, guid: 279f06d2f5d5d7b4d97218933a6d03c9, type: 2}
+      affectsState: 1
+      stateVariable: hasAskedNateKnife
+      stateValue: 1
+  - conditionalStates:
+    - name: hasDiedToKnife
+      _value: 1
+    - name: hasAskedNateKnife
+      _value: 1
+    decision:
+      text: I think someones after that fancy knife
+      nextDialog: {fileID: 11400000, guid: 53ac80aa14c308743bb91e30df42a2f8, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasDiedToSpill
+      _value: 1
+    - name: hasAskedNateSpill
+      _value: 0
+    decision:
+      text: Theres a dangerous spill in the Billiards Room
+      nextDialog: {fileID: 11400000, guid: 04d24a52ca22134429548fe3ad1f41fb, type: 2}
+      affectsState: 1
+      stateVariable: hasAskedNateSpill
+      stateValue: 1
+  - conditionalStates:
+    - name: hasDiedToSpill
+      _value: 1
+    - name: hasAskedNateSpill
+      _value: 1
+    decision:
+      text: Theres a dangerous spill in the Billiards Room
+      nextDialog: {fileID: 11400000, guid: d4f8fe3bb688c7c4fad080944505f570, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
