@@ -28,6 +28,8 @@ MonoBehaviour:
       _value: 0
     - name: hasOutroStarted
       _value: 0
+    - name: isIntroFinished
+      _value: 1
     decision:
       text: I think I saw a banana peel on the Dining Room floor
       nextDialog: {fileID: 11400000, guid: b19d79bc27da67f40ab96641af7c63b1, type: 2}
@@ -41,6 +43,8 @@ MonoBehaviour:
       _value: 1
     - name: hasOutroStarted
       _value: 0
+    - name: isIntroFinished
+      _value: 1
     decision:
       text: I think I saw a banana peel on the Dining Room floor
       nextDialog: {fileID: 11400000, guid: 0d7d4c07b1c612a47bddd10ed6a5da31, type: 2}
@@ -54,6 +58,8 @@ MonoBehaviour:
       _value: 0
     - name: hasOutroStarted
       _value: 0
+    - name: isIntroFinished
+      _value: 1
     decision:
       text: The Alcove is hot enough to kill a person!
       nextDialog: {fileID: 11400000, guid: 65619bc2daeebdb47b4284d3306ccd67, type: 2}
@@ -67,6 +73,8 @@ MonoBehaviour:
       _value: 1
     - name: hasOutroStarted
       _value: 0
+    - name: isIntroFinished
+      _value: 1
     decision:
       text: The Alcove is hot enough to kill a person!
       nextDialog: {fileID: 11400000, guid: 0db9684c2acddff428ecc8a01719fc2e, type: 2}
@@ -80,6 +88,8 @@ MonoBehaviour:
       _value: 0
     - name: hasOutroStarted
       _value: 0
+    - name: isIntroFinished
+      _value: 1
     decision:
       text: I stepped on a building block upstairs
       nextDialog: {fileID: 11400000, guid: 2106c438b1df9134a8b1edef2e3de7c3, type: 2}
@@ -93,6 +103,8 @@ MonoBehaviour:
       _value: 1
     - name: hasOutroStarted
       _value: 0
+    - name: isIntroFinished
+      _value: 1
     decision:
       text: I stepped on a building block upstairs
       nextDialog: {fileID: 11400000, guid: 7eea7a834c05d3441b8a78b60de07a40, type: 2}
@@ -106,6 +118,8 @@ MonoBehaviour:
       _value: 0
     - name: hasOutroStarted
       _value: 0
+    - name: isIntroFinished
+      _value: 1
     decision:
       text: The chandelier in the library fell!
       nextDialog: {fileID: 11400000, guid: 317c22d9cb9a0a44b9ac29da8762eb3f, type: 2}
@@ -119,6 +133,8 @@ MonoBehaviour:
       _value: 1
     - name: hasOutroStarted
       _value: 0
+    - name: isIntroFinished
+      _value: 1
     decision:
       text: The chandelier in the library fell!
       nextDialog: {fileID: 11400000, guid: 125656aa04591a74eb5850aa80504e8f, type: 2}
@@ -132,6 +148,8 @@ MonoBehaviour:
       _value: 0
     - name: hasOutroStarted
       _value: 0
+    - name: isIntroFinished
+      _value: 1
     decision:
       text: I think one of the drawers in the Tea Room is a hidden gun.
       nextDialog: {fileID: 11400000, guid: a811bae2c69c0c84292a55ff120760ec, type: 2}
@@ -145,6 +163,8 @@ MonoBehaviour:
       _value: 1
     - name: hasOutroStarted
       _value: 0
+    - name: isIntroFinished
+      _value: 1
     decision:
       text: I think one of the drawers in the Tea Room is a hidden gun.
       nextDialog: {fileID: 11400000, guid: b3401ee7c9b2fff46ae9d00a7d75d82e, type: 2}
@@ -158,6 +178,8 @@ MonoBehaviour:
       _value: 0
     - name: hasOutroStarted
       _value: 0
+    - name: isIntroFinished
+      _value: 1
     decision:
       text: Someones putting poison into the drinks
       nextDialog: {fileID: 11400000, guid: 4cf91872528c2c9408abe6595c862923, type: 2}
@@ -171,6 +193,8 @@ MonoBehaviour:
       _value: 1
     - name: hasOutroStarted
       _value: 0
+    - name: isIntroFinished
+      _value: 1
     decision:
       text: Someones putting poison into the drinks
       nextDialog: {fileID: 11400000, guid: 37027d7f6cc9060439a46476d0e49306, type: 2}
@@ -184,6 +208,8 @@ MonoBehaviour:
       _value: 0
     - name: hasOutroStarted
       _value: 0
+    - name: isIntroFinished
+      _value: 1
     decision:
       text: I think someones after that fancy knife
       nextDialog: {fileID: 11400000, guid: 279f06d2f5d5d7b4d97218933a6d03c9, type: 2}
@@ -197,6 +223,8 @@ MonoBehaviour:
       _value: 1
     - name: hasOutroStarted
       _value: 0
+    - name: isIntroFinished
+      _value: 1
     decision:
       text: I think someones after that fancy knife
       nextDialog: {fileID: 11400000, guid: 53ac80aa14c308743bb91e30df42a2f8, type: 2}
@@ -210,6 +238,8 @@ MonoBehaviour:
       _value: 0
     - name: hasOutroStarted
       _value: 0
+    - name: isIntroFinished
+      _value: 1
     decision:
       text: Theres a dangerous spill in the Billiards Room
       nextDialog: {fileID: 11400000, guid: 04d24a52ca22134429548fe3ad1f41fb, type: 2}
@@ -223,9 +253,22 @@ MonoBehaviour:
       _value: 1
     - name: hasOutroStarted
       _value: 0
+    - name: isIntroFinished
+      _value: 1
     decision:
       text: Theres a dangerous spill in the Billiards Room
       nextDialog: {fileID: 11400000, guid: d4f8fe3bb688c7c4fad080944505f570, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasOutroStarted
+      _value: 0
+    - name: isIntroFinished
+      _value: 0
+    decision:
+      text: I should probably grab my guitar and go to the stage
+      nextDialog: {fileID: 0}
       affectsState: 0
       stateVariable: 
       stateValue: 0

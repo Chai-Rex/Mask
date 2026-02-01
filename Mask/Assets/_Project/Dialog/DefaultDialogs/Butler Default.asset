@@ -46,3 +46,14 @@ MonoBehaviour:
       affectsState: 0
       stateVariable: 
       stateValue: 0
+  - conditionalStates:
+    - name: hasOutroStarted
+      _value: 0
+    - name: isIntroFinished
+      _value: 0
+    decision:
+      text: What should I do?
+      nextDialog: {fileID: 11400000, guid: bd2f26fa3db2a5b47ba08696d2cec493, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
