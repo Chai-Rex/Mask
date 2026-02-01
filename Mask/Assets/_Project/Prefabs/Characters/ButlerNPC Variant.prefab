@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2727172695743526699}
   - component: {fileID: 2838841248515030595}
   - component: {fileID: 8945803204471690910}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Platter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -410,13 +410,29 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 2712681913050643578, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2726508045104797948, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: -3466602872088835984, guid: b4d62c34264c4954cbe8d24ecfd07100, type: 3}
+    - target: {fileID: 2857450572691040408, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2906133591313795411, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
       propertyPath: m_Name
       value: ButlerNPC Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2906133591313795411, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3528026927776078272, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4680610497886866286, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
       propertyPath: isLoop
@@ -478,6 +494,14 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: -897982315910761788, guid: b4d62c34264c4954cbe8d24ecfd07100, type: 3}
+    - target: {fileID: 8858831235220030072, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9043151964891717711, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:

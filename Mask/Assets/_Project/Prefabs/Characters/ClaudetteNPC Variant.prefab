@@ -56,13 +56,29 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 122210485170080061, guid: 7b1fa4bfa824f914d8f31e00468ad23b, type: 3}
+    - target: {fileID: 2712681913050643578, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2726508045104797948, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 8579181599469543581, guid: 7b1fa4bfa824f914d8f31e00468ad23b, type: 3}
+    - target: {fileID: 2857450572691040408, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2906133591313795411, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
       propertyPath: m_Name
       value: ClaudetteNPC Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2906133591313795411, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3528026927776078272, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5792891304182682920, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
       propertyPath: _iSpeakingAnimationHandler
@@ -140,6 +156,14 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: -4588317471802484387, guid: 7b1fa4bfa824f914d8f31e00468ad23b, type: 3}
+    - target: {fileID: 8858831235220030072, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9043151964891717711, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
