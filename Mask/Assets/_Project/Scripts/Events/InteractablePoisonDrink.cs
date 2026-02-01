@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class InteractablePoisonDrink : BaseTimeEvent, IInteractable
@@ -14,6 +15,10 @@ public class InteractablePoisonDrink : BaseTimeEvent, IInteractable
     private bool isPoisoned = false;
     [SerializeField] float poisonScheduledTime = 120.0f;
     [SerializeField] float fillDrinkDelay = 5.0f;
+    [SerializeField] float deathDelay = 3.0f;
+    [SerializeField] float drinkDelay = 2.5f;
+
+    private Coroutine poisonCoroutine;
 
     private MeshFilter meshFilter;
 
@@ -40,6 +45,14 @@ public class InteractablePoisonDrink : BaseTimeEvent, IInteractable
     {
         if (meshFilter && drinkEmpty && isEmpty) { return; }
 
+        if (soundClips.Count != 0 && soundClips.Count >= 2)
+        {
+            _eventAudioData.Clip = soundClips[0];
+        }
+
+        PlayTriggerSound();
+        ResetSoundTriggered();
+
         if (meshFilter && drinkEmpty)
         {
             meshFilter.mesh = drinkEmpty;
@@ -49,10 +62,7 @@ public class InteractablePoisonDrink : BaseTimeEvent, IInteractable
         if (isPoison)
         {
             if (!isPoisoned && !isActive.Value) { return; }
-
-            PlayTriggerSound();
-
-            DeathManager.Instance.Die("Drink was Poisoned");
+            poisonCoroutine = StartCoroutine(OnGotPoisoned());
         }
         else
         {
@@ -74,6 +84,23 @@ public class InteractablePoisonDrink : BaseTimeEvent, IInteractable
         }
     }
 
+    private IEnumerator OnGotPoisoned()
+    {
+        yield return new WaitForSeconds(drinkDelay);
+
+        if (soundClips.Count != 0 && soundClips.Count >= 2)
+        {
+            Debug.Log("Switch Sound");
+            _eventAudioData.Clip = soundClips[1];
+        }
+
+        PlayTriggerSound();
+
+        yield return new WaitForSeconds(deathDelay);
+
+        DeathManager.Instance.Die("Drink was Poisoned");
+    }
+
     public void OnFillUpDrink()
     {
         if (meshFilter && drinkFull && isEmpty)
@@ -92,5 +119,11 @@ public class InteractablePoisonDrink : BaseTimeEvent, IInteractable
         }
 
         OnFillUpDrink();
+    }
+
+    private void OnDestroy()
+    {
+        StopAllCoroutines();
+        poisonCoroutine = null;
     }
 }

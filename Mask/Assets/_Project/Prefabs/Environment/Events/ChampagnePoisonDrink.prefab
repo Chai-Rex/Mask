@@ -127,12 +127,18 @@ MonoBehaviour:
     IgnoreListenerVolume: 0
     IgnoreListenerPause: 0
     rolloffMode: 0
+  soundClips:
+  - {fileID: 8300000, guid: 0a0e6fffffd225b438d2c15940bc606e, type: 3}
+  - {fileID: 8300000, guid: 89ba73612de01d14faa7075d71dab910, type: 3}
   verb: Drink
+  verbWhenEmpty: Empty
   drinkFull: {fileID: -4673739618234027376, guid: 8d191af816b1b8348b48ab32db9016be, type: 3}
   drinkEmpty: {fileID: -5112139889896815565, guid: 30f0a1a20d5ae9246835aea6d81b6482, type: 3}
-  isPoison: 0
+  isPoison: 1
   poisonScheduledTime: 120
   fillDrinkDelay: 5
+  deathDelay: 4
+  drinkDelay: 2.5
 --- !u!65 &1191486473694107621
 BoxCollider:
   m_ObjectHideFlags: 0
