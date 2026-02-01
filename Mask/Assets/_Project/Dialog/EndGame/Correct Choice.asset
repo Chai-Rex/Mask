@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
+  m_Name: Correct Choice
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
+  DialogText:
+  - "[na]Nate\u2019s name echoed in the room as he stood there with his mouth open.[/na]"
+  - "[na]His protest and denial of the accusation eventually died out as the secret
+    he\u2019s fought to keep was finally revealed.[/na]"
+  - "[na]Turns out he and Daffodil weren\u2019t doing well. Financially. Nate has
+    been trying to keep them both afloat for quite some time.[/na]"
+  - '[na]His last ditch effort was trying to kill Aiden.[/na]'
+  - "[na]Aiden\u2019s death would provide Nate with what he needed, money. More specifically,
+    his late brother\u2019s inheritance to Aiden\u2019s surprise.[/na]"
+  - "[na]Aiden\u2019s death would provide Nate with what he needed, money. More specifically,
+    his late brother\u2019s inheritance to Aiden\u2019s surprise.[/na]"
+  - '[na]Good thing this was thwarted.[/na]'
+  decisionOptions:
+  - text: The End.
+    nextDialog: {fileID: 0}
+    affectsState: 1
+    stateVariable: guessedCorrect
+    stateValue: 1
+  conditionalDecisions: []

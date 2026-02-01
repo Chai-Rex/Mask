@@ -13,17 +13,19 @@ MonoBehaviour:
   m_Name: NateBallroomIntro1
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
   DialogText:
-  - You're the musician for tonight, I presume? I am <color=green>Nate</color>, a
-    florist. I hope the greenry helps set the stage for you.
+  - Im <color=green>Nate</color>, the florist. You're my brother's kid right? I know
+    we don't see extended family much but I think I saw you at his funeral...
+  - Anyway, lets not think about such depressing topics tonight. You got brought
+    on as the music, I presume?  I hope the greenry helps set the stage for you.
   decisionOptions:
-  - text: Thats me, just trying to make some connections
+  - text: Thats me, just trying to make some connections before things kick off.
     nextDialog: {fileID: 11400000, guid: 9984a251bd90d9241ab1a9844f850301, type: 2}
     affectsState: 1
     stateVariable: hasTalkedToNateInIntro
     stateValue: 1
-  - text: Yes sir. I thought I'd introduce myself to some guests before going on
-      stage
+  - text: Yes sir. I thought I'd introduce myself before going on stage
     nextDialog: {fileID: 11400000, guid: 9984a251bd90d9241ab1a9844f850301, type: 2}
     affectsState: 1
     stateVariable: hasTalkedToNateInIntro
     stateValue: 1
+  conditionalDecisions: []

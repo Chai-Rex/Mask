@@ -19,7 +19,16 @@ public class DeathManager : Singleton<DeathManager> {
     private SoundData _fallAudio;
 
     private void Start() {
+        StoryStateSO.Instance.RegisterCallback("guessedWrong", IncorrectGuess);
         AwakenSequence();
+    }
+
+    private void IncorrectGuess(bool value)
+    {
+        if(value)
+        {
+            Die("Embarrassment", "Embarrassment");
+        }
     }
 
     private async void AwakenSequence() {

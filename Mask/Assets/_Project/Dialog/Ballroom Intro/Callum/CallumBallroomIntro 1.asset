@@ -15,7 +15,7 @@ MonoBehaviour:
   DialogText:
   - "Well if it\u2019s anything like football just take that anxiety and turn it
     into focus. Though I guess I\u2019m not one to talk."
-  - "My wife and kids haven\u2019t been too happy since I decided to retire. "
+  - "My wife and kids haven\u2019t been too happy since I started considering retirement. "
   decisionOptions:
   - text: Are they here tonight?
     nextDialog: {fileID: 11400000, guid: 5c44d95a4c96ea348ad0aaf978f06998, type: 2}
@@ -27,3 +27,4 @@ MonoBehaviour:
     affectsState: 0
     stateVariable: 
     stateValue: 0
+  conditionalDecisions: []

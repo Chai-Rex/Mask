@@ -10,16 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
-  m_Name: CallumBallroomIntro
+  m_Name: End Dialog 1
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
   DialogText:
-  - Hey, I'm <color=#ca3433ff>Callum</color>, I'm assuming you're the music?
-  - Interesting to see a new face around here, <color=#4b006eff>Claudette</color>
-    doesn't often bring in fresh meat.
+  - You had something to say to everyone?
   decisionOptions:
-  - text: Thats me, I'm bit nervous though. Any tips?
-    nextDialog: {fileID: 11400000, guid: b72208a1fb4fb214cb5aba2561b0c5eb, type: 2}
-    affectsState: 1
-    stateVariable: hasTalkedToCallumInIntro
-    stateValue: 1
+  - text: "I have found myself in a very weird loop tonight and trust me when I say
+      that there is a killer among us \u0D9E."
+    nextDialog: {fileID: 0}
+    affectsState: 0
+    stateVariable: 
+    stateValue: 0
   conditionalDecisions: []

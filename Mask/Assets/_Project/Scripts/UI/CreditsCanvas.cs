@@ -22,7 +22,15 @@ public class CreditsCanvas : MonoBehaviour {
     }
 
     private void Start() {
-        StartCredits(); // temp
+        StoryStateSO.Instance.RegisterCallback("guessedCorrect", TriggerGameEnd);
+    }
+
+    private void TriggerGameEnd(bool value)
+    {
+        if(value)
+        {
+            StartCredits();
+        }
     }
 
     private void OnDestroy() {
