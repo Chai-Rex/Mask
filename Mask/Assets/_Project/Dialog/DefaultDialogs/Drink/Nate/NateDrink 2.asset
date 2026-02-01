@@ -10,16 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
-  m_Name: NateDrink Blame
+  m_Name: NateDrink 2
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
   DialogText:
-  - I suppose you could argue that I'm poisoning my own drinks with how much liquor
-    is in this. I guess thats what I get for requesting an extra strong long island
-    but I digress.
+  - 'If you say so, but I trust <color=#4b006eff>Claudette</color> and her staff.
+    They''re professional and will pour you a stiff drink if you ask nicely. '
   decisionOptions:
   - text: ...
     nextDialog: {fileID: 0}
-    affectsState: 1
-    stateVariable: hasBlamedNateDrink
-    stateValue: 1
+    affectsState: 0
+    stateVariable: 
+    stateValue: 0
   conditionalDecisions: []

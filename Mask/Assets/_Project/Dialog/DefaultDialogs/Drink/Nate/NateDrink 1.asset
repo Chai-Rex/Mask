@@ -10,18 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
-  m_Name: NateDrink
+  m_Name: NateDrink 1
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
   DialogText:
-  - Well my drink doesn't seem poisoned, so I'll be sure to stick with it haha.
+  - Sorry, were you not joking? I feel like I would've heard if someone had been
+    poisoned tonight
   decisionOptions:
-  - text: Just be careful
-    nextDialog: {fileID: 0}
+  - text: Nobody was, but I know the drink was poisoned
+    nextDialog: {fileID: 11400000, guid: 9abe57a8efbb65d4681bcc871b3b4ec7, type: 2}
     affectsState: 0
     stateVariable: 
     stateValue: 0
-  - text: This isn't the time to be cracking jokes
-    nextDialog: {fileID: 11400000, guid: d0c698466d11bd24f81b661ab661c28d, type: 2}
+  - text: I suppose you're right
+    nextDialog: {fileID: 0}
     affectsState: 0
     stateVariable: 
     stateValue: 0

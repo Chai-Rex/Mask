@@ -13,16 +13,14 @@ MonoBehaviour:
   m_Name: NateDrink Blame Repeat
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
   DialogText:
-  - I don't know what you think I'd get out of messing with that chandelier.
+  - You got me. My hobby is going around fancy parties and poisoning random drinks
+    for fun...
+  - But seriously I haven't touched any drinks other than this one right here and
+    the one I downed before your performance
   decisionOptions:
   - text: ...
     nextDialog: {fileID: 0}
     affectsState: 1
-    stateVariable: hasBlamedNateDrawer
-    stateValue: 1
-  - text: Maybe just for kicks?
-    nextDialog: {fileID: 0}
-    affectsState: 1
-    stateVariable: hasBlamedNateDrawer
+    stateVariable: hasBlamedNateDrink
     stateValue: 1
   conditionalDecisions: []

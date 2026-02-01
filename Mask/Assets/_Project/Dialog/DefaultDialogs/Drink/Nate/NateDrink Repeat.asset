@@ -13,21 +13,16 @@ MonoBehaviour:
   m_Name: NateDrink Repeat
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
   DialogText:
-  - Snoo-PINGAS usual I see...
+  - Where are you even getting this info from?
   decisionOptions:
-  - text: Did you just?
-    nextDialog: {fileID: 11400000, guid: 70603d8ae63dc6446bd333308f3e1532, type: 2}
-    affectsState: 0
-    stateVariable: 
-    stateValue: 0
-  - text: Huh?
+  - text: Its complicated...
     nextDialog: {fileID: 0}
     affectsState: 0
     stateVariable: 
     stateValue: 0
   conditionalDecisions:
   - conditionalStates:
-    - name: hasBlamedNateDrawer
+    - name: hasBlamedNateDrink
       _value: 0
     decision:
       text: I know it was you (Blame)
@@ -36,7 +31,7 @@ MonoBehaviour:
       stateVariable: 
       stateValue: 0
   - conditionalStates:
-    - name: hasBlamedNateDrawer
+    - name: hasBlamedNateDrink
       _value: 1
     decision:
       text: I know it was you (Blame)
