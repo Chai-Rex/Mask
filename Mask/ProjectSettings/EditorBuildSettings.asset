@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/_Project/Scenes/ChaiScene/ChaiMansionScene.unity
+    guid: f7101e08b7731e34cb7f80412c383f0a
+  - enabled: 1
     path: Assets/_Project/Scenes/MainMenuScene/MainMenuScene.unity
     guid: 1e5dc0864f2db944e9ff877f7945d4d3
   - enabled: 1
