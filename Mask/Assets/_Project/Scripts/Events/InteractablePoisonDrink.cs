@@ -57,6 +57,8 @@ public class InteractablePoisonDrink : BaseTimeEvent, IInteractable
         {
             meshFilter.mesh = drinkEmpty;
             isEmpty = true;
+
+            interactor.GetComponent<InteractionHandler>().OverrideInteractionPrompt(verbWhenEmpty);
         }
 
         if (isPoison)
@@ -102,7 +104,7 @@ public class InteractablePoisonDrink : BaseTimeEvent, IInteractable
 
         yield return new WaitForSeconds(deathDelay);
 
-        DeathManager.Instance.Die("Drink was Poisoned", "poisonDrink");
+        DeathManager.Instance.Die("Drink was Poisoned", "Drink");
     }
 
     public void OnFillUpDrink()

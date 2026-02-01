@@ -122,4 +122,8 @@ public class InteractionHandler : MonoBehaviour {
     public void DisplayHUD() {
         _iHUDCanvas.ShowInteractionPrompt();
     }
+
+    public void OverrideInteractionPrompt(string i_verb) {
+        _iHUDCanvas.ShowInteractionPrompt("[e] " + i_verb);
+    }
 }
