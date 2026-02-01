@@ -76,6 +76,8 @@ public class DeathManager : Singleton<DeathManager> {
 
         await _iEyeCanvas.CloseEyes();
 
+        await Task.Delay(3500);
+
         await _iEyeCanvas.OpenEyes();
 
         _iEyeCanvas.gameObject.SetActive(true);

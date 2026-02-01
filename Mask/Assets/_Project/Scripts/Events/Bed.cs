@@ -18,6 +18,7 @@ public class Bed : BaseTimeEvent, IInteractable
         if (!StoryStateSO.Instance.GetValue("isNapActive"))
         {
             _hasNapActive.SetValueAndUpdateBlackboard(true);
+            PlayTriggerSound();
             DeathManager.Instance.Sleep();
         }
     }
