@@ -26,6 +26,8 @@ MonoBehaviour:
       _value: 1
     - name: hasAskedClaudetteBanana
       _value: 0
+    - name: hasOutroStarted
+      _value: 0
     decision:
       text: I think I saw a banana peel on the Dining Room floor
       nextDialog: {fileID: 11400000, guid: c676182fa71f57e46b7e445ded3452a9, type: 2}
@@ -37,6 +39,8 @@ MonoBehaviour:
       _value: 1
     - name: hasAskedClaudetteBanana
       _value: 1
+    - name: hasOutroStarted
+      _value: 0
     decision:
       text: I think I saw a banana peel on the Dining Room floor
       nextDialog: {fileID: 11400000, guid: 3a71bc3271a456d45af4ec5cda90b22b, type: 2}
@@ -47,6 +51,8 @@ MonoBehaviour:
     - name: hasDiedToBath
       _value: 1
     - name: hasAskedClaudetteBath
+      _value: 0
+    - name: hasOutroStarted
       _value: 0
     decision:
       text: The Alcove is hot enough to kill a person!
@@ -59,6 +65,8 @@ MonoBehaviour:
       _value: 1
     - name: hasAskedClaudetteBath
       _value: 1
+    - name: hasOutroStarted
+      _value: 0
     decision:
       text: The Alcove is hot enough to kill a person!
       nextDialog: {fileID: 11400000, guid: 611ff9d374cd7104bb1898055fe95bc2, type: 2}
@@ -69,6 +77,8 @@ MonoBehaviour:
     - name: hasDiedToBlock
       _value: 1
     - name: hasAskedClaudetteBlock
+      _value: 0
+    - name: hasOutroStarted
       _value: 0
     decision:
       text: I stepped on a building block upstairs
@@ -81,6 +91,8 @@ MonoBehaviour:
       _value: 1
     - name: hasAskedClaudetteBlock
       _value: 1
+    - name: hasOutroStarted
+      _value: 0
     decision:
       text: I stepped on a building block upstairs
       nextDialog: {fileID: 11400000, guid: 2f4a3c25127d50648acfbc61b7df7ab4, type: 2}
@@ -91,6 +103,8 @@ MonoBehaviour:
     - name: hasDiedToChandelier
       _value: 1
     - name: hasAskedClaudetteChandelier
+      _value: 0
+    - name: hasOutroStarted
       _value: 0
     decision:
       text: Your chandelier is booby trapped.
@@ -105,6 +119,8 @@ MonoBehaviour:
       _value: 1
     - name: hasToldClaudetteChandelier
       _value: 0
+    - name: hasOutroStarted
+      _value: 0
     decision:
       text: Your chandelier is booby trapped.
       nextDialog: {fileID: 11400000, guid: 36525e75de849bf44be34c3dd48e0d48, type: 2}
@@ -118,6 +134,8 @@ MonoBehaviour:
       _value: 1
     - name: hasToldClaudetteChandelier
       _value: 1
+    - name: hasOutroStarted
+      _value: 0
     decision:
       text: Your chandelier is booby trapped.
       nextDialog: {fileID: 11400000, guid: cd283f5464347034ab10095a05d5f1b9, type: 2}
@@ -128,6 +146,8 @@ MonoBehaviour:
     - name: hasDiedToDrawer
       _value: 1
     - name: hasAskedClaudetteDrawer
+      _value: 0
+    - name: hasOutroStarted
       _value: 0
     decision:
       text: One of the drawers in your Tea Room has a hidden gun.
@@ -140,6 +160,8 @@ MonoBehaviour:
       _value: 1
     - name: hasAskedClaudetteDrawer
       _value: 1
+    - name: hasOutroStarted
+      _value: 0
     decision:
       text: One of the drawers in your Tea Room has a hidden gun.
       nextDialog: {fileID: 11400000, guid: 76b92b9a76f7c874598d22bb0376c449, type: 2}
@@ -150,6 +172,8 @@ MonoBehaviour:
     - name: hasDiedToDrink
       _value: 1
     - name: hasAskedClaudetteDrink
+      _value: 0
+    - name: hasOutroStarted
       _value: 0
     decision:
       text: Someones putting poison into the drinks
@@ -162,6 +186,8 @@ MonoBehaviour:
       _value: 1
     - name: hasAskedClaudetteDrink
       _value: 1
+    - name: hasOutroStarted
+      _value: 0
     decision:
       text: Someones putting poison into the drinks
       nextDialog: {fileID: 11400000, guid: 419a1e83b672d0e4dbdf185ac3f49525, type: 2}
@@ -172,6 +198,8 @@ MonoBehaviour:
     - name: hasDiedToKnife
       _value: 1
     - name: hasAskedClaudetteKnife
+      _value: 0
+    - name: hasOutroStarted
       _value: 0
     decision:
       text: Someone's targetting the knife you have on display
@@ -184,6 +212,8 @@ MonoBehaviour:
       _value: 1
     - name: hasAskedClaudetteKnife
       _value: 1
+    - name: hasOutroStarted
+      _value: 0
     decision:
       text: Someone's targetting the knife you have on display
       nextDialog: {fileID: 11400000, guid: 3c10443ac450e39448d572621f4cb2a5, type: 2}
@@ -194,6 +224,8 @@ MonoBehaviour:
     - name: hasDiedToSpill
       _value: 1
     - name: hasAskedClaudetteSpill
+      _value: 0
+    - name: hasOutroStarted
       _value: 0
     decision:
       text: Theres a dangerous spill in the Billiards Room
@@ -206,6 +238,8 @@ MonoBehaviour:
       _value: 1
     - name: hasAskedClaudetteSpill
       _value: 1
+    - name: hasOutroStarted
+      _value: 0
     decision:
       text: Theres a dangerous spill in the Billiards Room
       nextDialog: {fileID: 11400000, guid: 26e36f207d662c64e8c21aebb55e7fbd, type: 2}

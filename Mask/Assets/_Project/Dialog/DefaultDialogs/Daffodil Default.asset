@@ -26,6 +26,8 @@ MonoBehaviour:
       _value: 1
     - name: hasAskedDaffodilBanana
       _value: 0
+    - name: hasOutroStarted
+      _value: 0
     decision:
       text: I think someone left a banana peel on the Dining Room floor
       nextDialog: {fileID: 11400000, guid: c1678669852dab54fbf15d8c07297ea9, type: 2}
@@ -37,6 +39,8 @@ MonoBehaviour:
       _value: 1
     - name: hasAskedDaffodilBanana
       _value: 1
+    - name: hasOutroStarted
+      _value: 0
     decision:
       text: I think someone left a banana peel on the Dining Room floor
       nextDialog: {fileID: 11400000, guid: 8a6557269767b604891a9a997386efd5, type: 2}
@@ -47,6 +51,8 @@ MonoBehaviour:
     - name: hasDiedToBath
       _value: 1
     - name: hasAskedDaffodilBath
+      _value: 0
+    - name: hasOutroStarted
       _value: 0
     decision:
       text: I think theres a trap in the alcove
@@ -59,6 +65,8 @@ MonoBehaviour:
       _value: 1
     - name: hasAskedDaffodilBath
       _value: 1
+    - name: hasOutroStarted
+      _value: 0
     decision:
       text: I think theres a trap in the alcove
       nextDialog: {fileID: 11400000, guid: 6c353fe6744cfcd4e922748bd50a5969, type: 2}
@@ -69,6 +77,8 @@ MonoBehaviour:
     - name: hasDiedToBlock
       _value: 1
     - name: hasAskedDaffodilBlock
+      _value: 0
+    - name: hasOutroStarted
       _value: 0
     decision:
       text: There was a building block on the ground upstairs
@@ -81,6 +91,8 @@ MonoBehaviour:
       _value: 1
     - name: hasAskedDaffodilBlock
       _value: 1
+    - name: hasOutroStarted
+      _value: 0
     decision:
       text: There was a building block on the ground upstairs
       nextDialog: {fileID: 11400000, guid: 9cbc1336b430beb4fa4de910ccfe3817, type: 2}
@@ -91,6 +103,8 @@ MonoBehaviour:
     - name: hasDiedToChandelier
       _value: 1
     - name: hasAskedDaffodilChandelier
+      _value: 0
+    - name: hasOutroStarted
       _value: 0
     decision:
       text: Someone sabotaged the chandelier in the library!
@@ -103,6 +117,8 @@ MonoBehaviour:
       _value: 1
     - name: hasAskedDaffodilChandelier
       _value: 1
+    - name: hasOutroStarted
+      _value: 0
     decision:
       text: Someone sabotaged the chandelier in the library!
       nextDialog: {fileID: 11400000, guid: 10fa3886074bcd64a8ca78e4639931b2, type: 2}
@@ -113,6 +129,8 @@ MonoBehaviour:
     - name: hasDiedToDrawer
       _value: 1
     - name: hasAskedDaffodilDrawer
+      _value: 0
+    - name: hasOutroStarted
       _value: 0
     decision:
       text: I think one of the drawers in the Tea Room is a hidden gun.
@@ -125,6 +143,8 @@ MonoBehaviour:
       _value: 1
     - name: hasAskedDaffodilDrawer
       _value: 1
+    - name: hasOutroStarted
+      _value: 0
     decision:
       text: I think one of the drawers in the Tea Room is a hidden gun.
       nextDialog: {fileID: 11400000, guid: 867f27300aae61d42b29bc35ddda2dd1, type: 2}
@@ -135,6 +155,8 @@ MonoBehaviour:
     - name: hasDiedToDrink
       _value: 1
     - name: hasAskedDaffodilDrink
+      _value: 0
+    - name: hasOutroStarted
       _value: 0
     decision:
       text: I hear that someone poisoned one of the drinks
@@ -147,6 +169,8 @@ MonoBehaviour:
       _value: 1
     - name: hasAskedDaffodilDrink
       _value: 1
+    - name: hasOutroStarted
+      _value: 0
     decision:
       text: I hear that someone poisoned one of the drinks
       nextDialog: {fileID: 11400000, guid: 37189d04f603924489888087ee888735, type: 2}
@@ -157,6 +181,8 @@ MonoBehaviour:
     - name: hasDiedToKnife
       _value: 1
     - name: hasAskedDaffodilKnife
+      _value: 0
+    - name: hasOutroStarted
       _value: 0
     decision:
       text: I think someones after that fancy knife
@@ -169,6 +195,8 @@ MonoBehaviour:
       _value: 1
     - name: hasAskedDaffodilKnife
       _value: 1
+    - name: hasOutroStarted
+      _value: 0
     decision:
       text: I think someones after that fancy knife
       nextDialog: {fileID: 11400000, guid: 8f85dfb30fe0f59448580c5fff271fa0, type: 2}
@@ -179,6 +207,8 @@ MonoBehaviour:
     - name: hasDiedToSpill
       _value: 1
     - name: hasAskedDaffodilSpill
+      _value: 0
+    - name: hasOutroStarted
       _value: 0
     decision:
       text: Did you see that spill and wire in the billiards room?
@@ -191,6 +221,8 @@ MonoBehaviour:
       _value: 1
     - name: hasAskedDaffodilSpill
       _value: 1
+    - name: hasOutroStarted
+      _value: 0
     decision:
       text: Did you see that spill and wire in the billiards room?
       nextDialog: {fileID: 11400000, guid: 33d30e4dc799c374ba1b976e4176aced, type: 2}

@@ -29,9 +29,20 @@ MonoBehaviour:
   - conditionalStates:
     - name: hasPlayerDied
       _value: 1
+    - name: hasOutroStarted
+      _value: 0
     decision:
       text: Did I die?
       nextDialog: {fileID: 11400000, guid: 85cf1f784562195489bbb3785a19419a, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasOutroStarted
+      _value: 1
+    decision:
+      text: I have something to say to everyone
+      nextDialog: {fileID: 11400000, guid: d2d3ab5c787b259498b31f7ee0c8f736, type: 2}
       affectsState: 0
       stateVariable: 
       stateValue: 0
