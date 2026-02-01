@@ -3,6 +3,22 @@ using UnityEngine;
 public class Guitar : PickupableItem
 {
 
+    public void Start()
+    {
+        TimeManager.Instance.ScheduleAt(60, SetIntroFinished);
+        TimeManager.Instance.ScheduleAt(540, SetOutroStarted);
+    }
+
+    public void SetIntroFinished()
+    {
+        StoryStateSO.Instance.SetValue("isIntroFinished", true);
+    }
+
+    public void SetOutroStarted()
+    {
+        StoryStateSO.Instance.SetValue("isOutroStarted", true);
+    }
+
     StateVariable isPickedUp = new StateVariable("isGuitarPickedUp", false);
 
     public override void SetItemPickedUp(bool i_isPickedUp)
