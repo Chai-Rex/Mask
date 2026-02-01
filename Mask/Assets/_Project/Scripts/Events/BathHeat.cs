@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class BathHeat : BaseTimeEvent
@@ -10,16 +11,19 @@ public class BathHeat : BaseTimeEvent
     [SerializeField] private float heatDuration = 5.0f;
 
     [SerializeField] private float doorLockTime = 120.0f;
-    [SerializeField] private ParticleSystem bathHeatParticles;
+    [SerializeField] private List<ParticleSystem> bathHeatParticles = new List<ParticleSystem>();
 
     private bool isPlayerDead = false;
     private Coroutine bathCoroutine;
 
     private void Start()
     {
-        if (bathHeatParticles)
+        if (bathHeatParticles.Count != 0)
         {
-            bathHeatParticles.gameObject.SetActive(false);
+            foreach (ParticleSystem bathHeatParticle in bathHeatParticles)
+            {
+                bathHeatParticle.gameObject.SetActive(false);
+            }
         }
 
         TimeManager.Instance.ScheduleAt(doorLockTime, ActivateTimeEvent);
@@ -36,10 +40,13 @@ public class BathHeat : BaseTimeEvent
     {
         float elapsedHeat = 0.0f;
 
-        if (bathHeatParticles)
+        if (bathHeatParticles.Count != 0)
         {
-            bathHeatParticles.gameObject.SetActive(true);
-            bathHeatParticles.Play();
+            foreach (ParticleSystem bathHeatParticle in bathHeatParticles)
+            {
+                bathHeatParticle.gameObject.SetActive(true);
+                bathHeatParticle.Play();
+            }
         }
 
         while (elapsedHeat < heatDuration)
