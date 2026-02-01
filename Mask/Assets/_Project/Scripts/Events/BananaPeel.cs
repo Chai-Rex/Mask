@@ -19,10 +19,11 @@ public class BananaPeel : BaseTimeEvent
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!isActive.Value) { return; }
+        //if (!isActive.Value) { return; }
 
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
+            Debug.Log("HIT");
             PlayTriggerSound();
             DeathManager.Instance.Die("Slipped On A Banana Peel");
         }
