@@ -3,6 +3,48 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+/* 
+    * Claudette
+    * Character Starting at Ballroom
+    * Point One - Ballroom - 9:00PM
+    * Point Two - Tea Room - 10:00PM
+    * Point Three - Reception - 11:00PM
+    * Point Four - Dining - 12:00AM
+    * Point Five - Library - 1:00AM
+    * Point Six - Ballroom - 2:00AM
+    * Point Seven - Room 2 - 3:00AM
+    * 
+    * Nate
+    * Character Starting at Ballroom
+    * Point One - Dining Room - 9:00PM
+    * Point Two - Tea Room - 10:00PM
+    * Point Three - Ballroom - 11:00PM
+    * Point Four - Room 1 - 12:00AM
+    * Point Five - Sitting Room - 1:00AM
+    * Point Six - Reception - 2:00AM
+    * Point Seven - Ballroom - 3:00AM
+    * 
+    * Daffodil
+    * Character Starting at Ballroom
+    * Point One - Room 1 - 9:00PM
+    * Point Two - Alcove - 10:00PM
+    * Point Three - Ballroom - 11:00PM
+    * Point Four - Ballroom - 12:00AM
+    * Point Five - Library - 1:00AM
+    * Point Six - Tea Room - 2:00AM
+    * Point Seven - Billards - 3:00AM
+    * 
+    * Callum
+    * Character Starting at Ballroom
+    * Point One - Room 1 - 9:00PM
+    * Point Two - Billards - 10:00PM
+    * Point Three - Billards - 11:00PM
+    * Point Four - Library - 12:00AM
+    * Point Five - Sitting Room - 1:00AM
+    * Point Six - Ballroom - 2:00AM
+    * Point Seven - Ballroom - 3:00AM
+*/
+
 public enum ENPCLocationState
 {
     PointOne,
@@ -47,6 +89,11 @@ public class NPCMove : BaseTimeEvent
 
     protected NavMeshAgent navMeshAgent;
 
+    [Header("If Loop is Enabled, Ignores NPC Time Points and Just Loops Through NPC Location Points")]
+    [SerializeField] private bool isLoop = false;
+    [SerializeField] private float startMoveTime = 5.0f;
+    [SerializeField] private float delayBetweenMoves = 5.0f;
+
     protected virtual void Awake()
     {
         if (_iProceduralWalkAnimation == null) _iProceduralWalkAnimation = GetComponent<ProceduralWalkAnimation>();
@@ -57,6 +104,25 @@ public class NPCMove : BaseTimeEvent
         foreach (NPCLocationPoints npcLocationPoint in npcLocationPoints)
         {
             npcLocationDictionary[npcLocationPoint.npcLocationState] = npcLocationPoint.npcTransforms;
+        }
+    }
+
+    private void Start()
+    {
+        currentNPCLocationState = ENPCLocationState.PointOne;
+
+        if (npcTimePoints.Count == 0) { return; }
+
+        if (isLoop)
+        {
+            TimeManager.Instance.ScheduleAt(startMoveTime, ActivateTimeEvent);
+        }
+        else
+        {
+            foreach (NPCTimePoints npcTimePoint in npcTimePoints)
+            {
+                TimeManager.Instance.ScheduleAt(npcTimePoint.npcLocationTime, ActivateTimeEvent);
+            }
         }
     }
 
@@ -90,6 +156,11 @@ public class NPCMove : BaseTimeEvent
         }
 
         currentNPCLocationState = npcTimePoints[currentNPCTimePointIndex].npcLocationState;
+
+        if (isLoop)
+        {
+            TimeManager.Instance.ScheduleAfter(delayBetweenMoves, ActivateTimeEvent);
+        }
     }
 
     protected virtual IEnumerator OnNPCMoveThroughCollectionOfPoints()
