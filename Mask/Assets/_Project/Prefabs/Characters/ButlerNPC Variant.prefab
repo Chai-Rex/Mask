@@ -121,6 +121,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 7465173341465671001}
     m_Modifications:
     - target: {fileID: 2433587022945872421, guid: d4d6bd2a898738f4e996688b4c250ef7, type: 3}
+      propertyPath: isPoison
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2433587022945872421, guid: d4d6bd2a898738f4e996688b4c250ef7, type: 3}
       propertyPath: poisonScheduledTime
       value: 5
       objectReference: {fileID: 0}
@@ -187,6 +191,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 7465173341465671001}
     m_Modifications:
     - target: {fileID: 2433587022945872421, guid: 9d9fa23b041c8ac429bf0df7fa601716, type: 3}
+      propertyPath: isPoison
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2433587022945872421, guid: 9d9fa23b041c8ac429bf0df7fa601716, type: 3}
       propertyPath: poisonScheduledTime
       value: 5
       objectReference: {fileID: 0}
@@ -252,6 +260,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7465173341465671001}
     m_Modifications:
+    - target: {fileID: 2433587022945872421, guid: d4d6bd2a898738f4e996688b4c250ef7, type: 3}
+      propertyPath: isPoison
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2433587022945872421, guid: d4d6bd2a898738f4e996688b4c250ef7, type: 3}
       propertyPath: poisonScheduledTime
       value: 5
@@ -406,6 +418,10 @@ PrefabInstance:
       propertyPath: delayBetweenMoves
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4680610497886866286, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
+      propertyPath: npcTimePoints.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -439,6 +455,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7465173341465671001}
     m_Modifications:
+    - target: {fileID: 2433587022945872421, guid: 9d9fa23b041c8ac429bf0df7fa601716, type: 3}
+      propertyPath: isPoison
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2433587022945872421, guid: 9d9fa23b041c8ac429bf0df7fa601716, type: 3}
       propertyPath: poisonScheduledTime
       value: 5
