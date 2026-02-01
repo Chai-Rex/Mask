@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
+  m_Name: CallumKnife 1
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
+  DialogText:
+  - 'Ominous. Well I hope you''re wrong but I''ll keep an eye out for anyone suspicious '
+  decisionOptions:
+  - text: Sounds good
+    nextDialog: {fileID: 0}
+    affectsState: 0
+    stateVariable: 
+    stateValue: 0
+  conditionalDecisions:
+  - conditionalStates:
+    - name: hasDiedToKnife
+      _value: 1
+    decision:
+      text: I already ran into them
+      nextDialog: {fileID: 11400000, guid: dfa27bf08f6b7cc4e8dce9dc8120515b, type: 2}
+      affectsState: 1
+      stateVariable: hasToldCallumKnife
+      stateValue: 1
+  - conditionalStates:
+    - name: hasBlamedCallumKnife
+      _value: 0
+    decision:
+      text: I know it was you (Blame)
+      nextDialog: {fileID: 11400000, guid: 2c0431e371f6d7d4aa5d8fe8471b3b8a, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasBlamedCallumKnife
+      _value: 1
+    decision:
+      text: I know it was you (Blame)
+      nextDialog: {fileID: 11400000, guid: a8917fc8491bcae43ba2bbd60ef2b439, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0

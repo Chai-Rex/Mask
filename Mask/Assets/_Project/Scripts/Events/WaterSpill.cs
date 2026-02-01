@@ -29,7 +29,7 @@ public class WaterSpill : BaseTimeEvent
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             PlayTriggerSound();
-            DeathManager.Instance.Die("Was Electrocuted");
+            DeathManager.Instance.Die("Was Electrocuted", "Spill");
         }
     }
 

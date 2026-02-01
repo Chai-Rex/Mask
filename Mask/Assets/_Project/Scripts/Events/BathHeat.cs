@@ -4,7 +4,7 @@ using UnityEngine;
 public class BathHeat : BaseTimeEvent
 {
     private StateVariable isPlayerIn = new StateVariable("isPlayerInBath", false);
-    private StateVariable isActive = new StateVariable("isBathHeatActive", false);
+    private StateVariable isActive = new StateVariable("isBathActive", false);
 
     [SerializeField] private Door doorToLock;
     [SerializeField] private float heatDuration = 5.0f;
@@ -52,7 +52,7 @@ public class BathHeat : BaseTimeEvent
         isPlayerDead = true;
         bathCoroutine = null;
 
-        DeathManager.Instance.Die("Bath Heat...");
+        DeathManager.Instance.Die("Bath Heat...", "Bath");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -86,7 +86,11 @@ public class BathHeat : BaseTimeEvent
     {
         if (isActive.Value && isPlayerIn.Value)
         {
-            doorToLock.SetIsDoorLocked(true);
+            if (doorToLock)
+            {
+                doorToLock.SetIsDoorLocked(true);
+            }
+
             PlayTriggerSound();
             bathCoroutine = StartCoroutine(BathHeating());
 

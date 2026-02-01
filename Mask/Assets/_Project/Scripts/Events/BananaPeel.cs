@@ -25,7 +25,7 @@ public class BananaPeel : BaseTimeEvent
         {
             Debug.Log("HIT");
             PlayTriggerSound();
-            DeathManager.Instance.Die("Slipped On A Banana Peel");
+            DeathManager.Instance.Die("Slipped On A Banana Peel", "Banana");
         }
     }
 

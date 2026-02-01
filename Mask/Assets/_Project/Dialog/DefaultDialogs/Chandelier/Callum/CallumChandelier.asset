@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
+  m_Name: CallumChandelier
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
+  DialogText:
+  - A chandelier falling, that would be a scary sight I imagine. Kinda morbid to
+    bring up though isn't it?
+  decisionOptions:
+  - text: I thought I saw someone tampering with it
+    nextDialog: {fileID: 11400000, guid: 822ad3961ef88c041a038120efa62998, type: 2}
+    affectsState: 0
+    stateVariable: 
+    stateValue: 0
+  conditionalDecisions:
+  - conditionalStates:
+    - name: hasDiedToChandelier
+      _value: 1
+    decision:
+      text: Well it did just fall on me recently
+      nextDialog: {fileID: 11400000, guid: d089e40df8b26b0409a73eda64191726, type: 2}
+      affectsState: 1
+      stateVariable: hasToldCallumChandelier
+      stateValue: 1

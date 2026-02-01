@@ -6,7 +6,7 @@ public class DialogueCanvas : MonoBehaviour {
 
     [SerializeField] private ResponseButton _iResponseButton;
     [SerializeField] private GameObject _iResponseOptions;
-    [SerializeField] private int _iMaxResponseOptions = 5;
+    [SerializeField] private int _iMaxResponseOptions = 10;
 
     [SerializeField] private TMP_Text _iDialogueText; 
     [SerializeField] private TMP_Text _iNameText;

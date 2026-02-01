@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
+  m_Name: ClaudetteBlock Blame
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
+  DialogText:
+  - How dare you! I assure you it was clean! I can safely say I've never even been
+    in possession of one of these building blocks you speak of.
+  - 'If you indeed found one as you say, it must have been dropped by one of my guests.
+    Although whoever it was I will have to reconsider their invitation next time. '
+  decisionOptions:
+  - text: A harsh but fair punishment...
+    nextDialog: {fileID: 0}
+    affectsState: 1
+    stateVariable: hasBlamedClaudetteBlock
+    stateValue: 1
+  - text: Finally, justice for my foot.
+    nextDialog: {fileID: 0}
+    affectsState: 1
+    stateVariable: hasBlamedClaudetteBlock
+    stateValue: 1
+  conditionalDecisions: []

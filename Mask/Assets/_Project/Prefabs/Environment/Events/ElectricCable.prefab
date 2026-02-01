@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 8477918801158738315}
   - component: {fileID: 953125386424613131}
   - component: {fileID: 9052780547791690119}
-  - component: {fileID: 1199382099984927252}
   m_Layer: 0
   m_Name: ElectricCable
   m_TagString: Untagged
@@ -33,7 +32,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7239578103616005309}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6969214581283498922
@@ -129,7 +129,8 @@ MonoBehaviour:
     IgnoreListenerPause: 0
     rolloffMode: 0
   waterSpills: []
-  electricCableActivateTime: 60
+  electricCableActivateTime: 5
+  sparkParticles: {fileID: 7077759663421124898}
 --- !u!65 &9052780547791690119
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -149,32 +150,76 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &1199382099984927252
-Rigidbody:
+  m_Size: {x: 1, y: 1, z: 2}
+  m_Center: {x: 0, y: 0, z: 1}
+--- !u!1001 &3552734954173987680
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1228216221197856314}
+    m_Modifications:
+    - target: {fileID: 6013600126267460162, guid: 264c63cd0c0c73a43b655529efd355fe, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6140091240946671581, guid: 264c63cd0c0c73a43b655529efd355fe, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.439
+      objectReference: {fileID: 0}
+    - target: {fileID: 6140091240946671581, guid: 264c63cd0c0c73a43b655529efd355fe, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.023
+      objectReference: {fileID: 0}
+    - target: {fileID: 6140091240946671581, guid: 264c63cd0c0c73a43b655529efd355fe, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.567
+      objectReference: {fileID: 0}
+    - target: {fileID: 6140091240946671581, guid: 264c63cd0c0c73a43b655529efd355fe, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.90424395
+      objectReference: {fileID: 0}
+    - target: {fileID: 6140091240946671581, guid: 264c63cd0c0c73a43b655529efd355fe, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.22312576
+      objectReference: {fileID: 0}
+    - target: {fileID: 6140091240946671581, guid: 264c63cd0c0c73a43b655529efd355fe, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.3534768
+      objectReference: {fileID: 0}
+    - target: {fileID: 6140091240946671581, guid: 264c63cd0c0c73a43b655529efd355fe, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.087246545
+      objectReference: {fileID: 0}
+    - target: {fileID: 6140091240946671581, guid: 264c63cd0c0c73a43b655529efd355fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -27.723
+      objectReference: {fileID: 0}
+    - target: {fileID: 6140091240946671581, guid: 264c63cd0c0c73a43b655529efd355fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 42.701
+      objectReference: {fileID: 0}
+    - target: {fileID: 6140091240946671581, guid: 264c63cd0c0c73a43b655529efd355fe, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0.003
+      objectReference: {fileID: 0}
+    - target: {fileID: 8111917620441296783, guid: 264c63cd0c0c73a43b655529efd355fe, type: 3}
+      propertyPath: m_Name
+      value: VFX_CableSparks
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 264c63cd0c0c73a43b655529efd355fe, type: 3}
+--- !u!198 &7077759663421124898 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 6013600126267460162, guid: 264c63cd0c0c73a43b655529efd355fe, type: 3}
+  m_PrefabInstance: {fileID: 3552734954173987680}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1537066525305245495}
-  serializedVersion: 5
-  m_Mass: 1
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
+--- !u!4 &7239578103616005309 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6140091240946671581, guid: 264c63cd0c0c73a43b655529efd355fe, type: 3}
+  m_PrefabInstance: {fileID: 3552734954173987680}
+  m_PrefabAsset: {fileID: 0}
