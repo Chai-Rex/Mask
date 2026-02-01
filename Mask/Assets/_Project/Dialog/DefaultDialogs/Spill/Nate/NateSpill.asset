@@ -18,6 +18,24 @@ MonoBehaviour:
   decisionOptions: []
   conditionalDecisions:
   - conditionalStates:
+    - name: hasAskedCallumSpill
+      _value: 0
+    decision:
+      text: Thanks, Ill go ask him
+      nextDialog: {fileID: 0}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasAskedCallumSpill
+      _value: 1
+    decision:
+      text: He didn't seem to know much...
+      nextDialog: {fileID: 0}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
     - name: hasBlamedNateSpill
       _value: 0
     decision:

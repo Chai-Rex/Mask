@@ -1,4 +1,4 @@
-All uncredited sounds and adaptations made by Gabriel Robinson-Barr using FLStudio
+All uncredited sounds and adaptations made by Gabe Robinson-Barr using FLStudio
 
 ----- DialogSFX -----
 "SFX_RetroSinglev1", "SFX_RetroSinglev4", and "SFX_SingleLowONoReverbv1" by AD Sounds has no license to use or distribute and can be found here: https://ad-sounds.itch.io/dialog-text-sound-effects
@@ -25,13 +25,15 @@ Library with Light Chatter by calebowenw -- https://freesound.org/s/215963/ -- L
 DinnerDishes.mp3 by shelbyshark -- https://freesound.org/s/466608/ -- License: Creative Commons 0 -- Adapted for SilverwareAmbiance.wav
 
 ----- GameSFX -----
-soga.wav by lunches -- https://freesound.org/s/165895/ -- License: Attribution 3.0 -- Adapted for ChandelierFallFull.wav
-35_CorteCuerda.wav by Lextao -- https://freesound.org/s/471793/ -- License: Attribution 4.0 -- Adapted for ChandelierFallFull.wav
-Breaking Glass 7.mp3 by FunWithSound -- https://freesound.org/s/390714/ -- License: Attribution 4.0 -- Adapted for ChandelierFallFull.wav
-40x40cm_WindowGlass_Carpet_3.wav by P.Jezisek -- https://freesound.org/s/519342/ -- License: Attribution 3.0 -- Adapted for ChandelierFallFull.wav
-Falling scrap metal by 13FPanská_Tolar_David -- https://freesound.org/s/378670/ -- License: Creative Commons 0 -- Adapted for ChandelierFallFull.wav
+soga.wav by lunches -- https://freesound.org/s/165895/ -- License: Attribution 3.0 -- Adapted for RopeCut.wav
+35_CorteCuerda.wav by Lextao -- https://freesound.org/s/471793/ -- License: Attribution 4.0 -- Adapted for RopeCut.wav
 
-FXLM soda can sipping sparkling beverage swallow sizzling fizzing drinking exhale by LudwigMueller -- https://freesound.org/s/459164/ -- License: Creative Commons 0 -- Adapted for DrinkDeath.wav
+Breaking Glass 7.mp3 by FunWithSound -- https://freesound.org/s/390714/ -- License: Attribution 4.0 -- Adapted for ChandelierCrash.wav
+40x40cm_WindowGlass_Carpet_3.wav by P.Jezisek -- https://freesound.org/s/519342/ -- License: Attribution 3.0 -- Adapted for ChandelierCrash.wav
+Falling scrap metal by 13FPanská_Tolar_David -- https://freesound.org/s/378670/ -- License: Creative Commons 0 -- Adapted for ChandelierCrash.wav
+
+FXLM soda can sipping sparkling beverage swallow sizzling fizzing drinking exhale by LudwigMueller -- https://freesound.org/s/459164/ -- License: Creative Commons 0 -- Adapted for DrinkSip.wav
+
 Pepper Spray Coughing by qubodup -- https://freesound.org/s/739416/ -- License: Attribution 4.0 -- Adapted for DrinkDeath.wav
 
 Body fall.wav by DylanTheFish -- https://freesound.org/s/417994/ -- License: Creative Commons 0 -- Adapted for PlayerFall.wav
@@ -58,6 +60,7 @@ JacobsLadderSingle2.flac by Halleck -- https://freesound.org/s/19487/ -- License
 electric_wire_02.wav by Glaneur de sons -- https://freesound.org/s/34169/ -- License: Attribution 4.0 -- Adapted for electric zap.aiff by bevibeldesign
 electric zap.aiff by bevibeldesign -- https://freesound.org/s/315918/ -- License: Attribution 4.0 -- Adapted for ElectricDeath.wav
 Electric Shock.wav by GlenCurtisAdams -- https://freesound.org/s/326923/ -- License: Attribution NonCommercial 3.0 -- Adapted for ElectricDeath.wav
+
 Bug Zapper_Long moth electrocution.wav by CGEffex -- https://freesound.org/s/101127/ -- License: Attribution 4.0 -- Adapted for Remix of 101127__CGEffex__Bug_Zapper_Long_moth_electrocution_Remix.wav by Timbre
 Remix of 101127__CGEffex__Bug_Zapper_Long_moth_electrocution_Remix.wav by Timbre -- https://freesound.org/s/101334/ -- License: Attribution NonCommercial 4.0 -- Adapted for ElectricLoop.wav
 
