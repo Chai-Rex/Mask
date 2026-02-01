@@ -197,7 +197,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6289789906347859427, guid: cb25612529d3b454c89861f8e2ddc321, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6289789906347859427, guid: cb25612529d3b454c89861f8e2ddc321, type: 3}
       propertyPath: m_LocalPosition.z
@@ -234,6 +234,10 @@ PrefabInstance:
     - target: {fileID: 6617856651270789684, guid: cb25612529d3b454c89861f8e2ddc321, type: 3}
       propertyPath: m_Name
       value: FullDrawer (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7251590846789158172, guid: cb25612529d3b454c89861f8e2ddc321, type: 3}
+      propertyPath: isDrawerEmptyMesh
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -809,6 +813,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: FullDrawer (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7505690344951699538, guid: cb25612529d3b454c89861f8e2ddc321, type: 3}
+      propertyPath: isDrawerEmptyMesh
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1221,7 +1229,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6289789906347859427, guid: cb25612529d3b454c89861f8e2ddc321, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6289789906347859427, guid: cb25612529d3b454c89861f8e2ddc321, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1258,6 +1266,14 @@ PrefabInstance:
     - target: {fileID: 6617856651270789684, guid: cb25612529d3b454c89861f8e2ddc321, type: 3}
       propertyPath: m_Name
       value: FullDrawer
+      objectReference: {fileID: 0}
+    - target: {fileID: 7251590846789158172, guid: cb25612529d3b454c89861f8e2ddc321, type: 3}
+      propertyPath: isDrawerEmptyMesh
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7505690344951699538, guid: cb25612529d3b454c89861f8e2ddc321, type: 3}
+      propertyPath: isDeathDrawer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
