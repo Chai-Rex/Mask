@@ -8,9 +8,12 @@ public class ElectricCable : BaseTimeEvent
     [SerializeField] private float electricCableActivateTime = 60.0f;
     [SerializeField] private ParticleSystem sparkParticles;
 
+    [SerializeField] RoomSoundEmitter _electricAudioEmitter;
+
     private void Start()
     {
         sparkParticles.gameObject.SetActive(false);
+        _electricAudioEmitter.volumeMultiplier = 0;
         TimeManager.Instance.ScheduleAt(electricCableActivateTime, ActivateTimeEvent);
     }
 
@@ -24,6 +27,7 @@ public class ElectricCable : BaseTimeEvent
     public void SetIsElectricCableActive(bool _isActive)
     {
         isActive.SetValueAndUpdateBlackboard(_isActive);
+        _electricAudioEmitter.volumeMultiplier = _isActive ? 1 : 0;
 
         if (sparkParticles)
         {

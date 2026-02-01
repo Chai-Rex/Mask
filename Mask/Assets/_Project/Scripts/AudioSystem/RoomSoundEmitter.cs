@@ -9,7 +9,7 @@ public class RoomSoundEmitter : MonoBehaviour
     [SerializeField]
     private float fadeTime = 1.0f;
     [SerializeField]
-    private float volumeMultiplier = 1.0f;
+    public float volumeMultiplier = 1.0f;
     private float volumeLevel = 0f;
     private float startFadeTime = 0f;
     private bool fadeIn = false;
