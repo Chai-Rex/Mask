@@ -80,6 +80,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 442f151b01e39b3428ae74c06fa7e06b, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 82c76bb170966ef4796d739b7e27c588, type: 2}
     - target: {fileID: 919132149155446097, guid: 442f151b01e39b3428ae74c06fa7e06b, type: 3}
       propertyPath: m_Name
       value: SM_InnerWindow2x10m
@@ -87,10 +91,40 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 442f151b01e39b3428ae74c06fa7e06b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 540650722109503273}
   m_SourcePrefab: {fileID: 100100000, guid: 442f151b01e39b3428ae74c06fa7e06b, type: 3}
 --- !u!4 &1561160477302723946 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 442f151b01e39b3428ae74c06fa7e06b, type: 3}
   m_PrefabInstance: {fileID: 1306292741163938433}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2225213082931711952 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 442f151b01e39b3428ae74c06fa7e06b, type: 3}
+  m_PrefabInstance: {fileID: 1306292741163938433}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &540650722109503273
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2225213082931711952}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6330417671743156323, guid: 442f151b01e39b3428ae74c06fa7e06b, type: 3}
