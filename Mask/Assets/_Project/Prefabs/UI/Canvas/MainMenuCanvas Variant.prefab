@@ -401,7 +401,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3219506214290705523, guid: fb396e95ab375a44686b94b6301eb689, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 128
+      value: -260.76923
       objectReference: {fileID: 0}
     - target: {fileID: 3219506214290705523, guid: fb396e95ab375a44686b94b6301eb689, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -422,7 +422,11 @@ PrefabInstance:
     - target: {fileID: 5734431888181686562, guid: fb396e95ab375a44686b94b6301eb689, type: 3}
       propertyPath: m_fontAsset
       value: 
-      objectReference: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: 11400000, guid: 0749220aae4476645b73f937e945116d, type: 2}
+    - target: {fileID: 5734431888181686562, guid: fb396e95ab375a44686b94b6301eb689, type: 3}
+      propertyPath: m_fontStyle
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5734431888181686562, guid: fb396e95ab375a44686b94b6301eb689, type: 3}
       propertyPath: m_fontColor.b
       value: 1
@@ -438,7 +442,7 @@ PrefabInstance:
     - target: {fileID: 5734431888181686562, guid: fb396e95ab375a44686b94b6301eb689, type: 3}
       propertyPath: m_sharedMaterial
       value: 
-      objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+      objectReference: {fileID: 4709618885223168457, guid: 0749220aae4476645b73f937e945116d, type: 2}
     - target: {fileID: 5734431888181686562, guid: fb396e95ab375a44686b94b6301eb689, type: 3}
       propertyPath: m_fontColor32.rgba
       value: 4294967295
