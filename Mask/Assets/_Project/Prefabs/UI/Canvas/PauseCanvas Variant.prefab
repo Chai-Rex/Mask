@@ -1005,6 +1005,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Dialog Volume
       objectReference: {fileID: 0}
+    - target: {fileID: 2148997430134814610, guid: 0956f3c1359bfbd49870dea9e5686d4b, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 4709618885223168457, guid: 0749220aae4476645b73f937e945116d, type: 2}
     - target: {fileID: 2564535775691292438, guid: 0956f3c1359bfbd49870dea9e5686d4b, type: 3}
       propertyPath: m_Name
       value: Dialogue Volume Slider
@@ -1194,6 +1198,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Music Volume
       objectReference: {fileID: 0}
+    - target: {fileID: 2148997430134814610, guid: 0956f3c1359bfbd49870dea9e5686d4b, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 4709618885223168457, guid: 0749220aae4476645b73f937e945116d, type: 2}
     - target: {fileID: 2564535775691292438, guid: 0956f3c1359bfbd49870dea9e5686d4b, type: 3}
       propertyPath: m_Name
       value: Music Volume Slider
@@ -1383,6 +1391,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Effects Volume
       objectReference: {fileID: 0}
+    - target: {fileID: 2148997430134814610, guid: 0956f3c1359bfbd49870dea9e5686d4b, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 4709618885223168457, guid: 0749220aae4476645b73f937e945116d, type: 2}
     - target: {fileID: 2564535775691292438, guid: 0956f3c1359bfbd49870dea9e5686d4b, type: 3}
       propertyPath: m_Name
       value: Effects Volume Slider
@@ -1548,6 +1560,152 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 6129179300917580872, guid: 0956f3c1359bfbd49870dea9e5686d4b, type: 3}
   m_PrefabInstance: {fileID: 3306292557516400042}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3755152043079600999
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1354451055646283275}
+    m_Modifications:
+    - target: {fileID: 128017703764761830, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
+      propertyPath: m_Name
+      value: Full Screen Button
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099201887736502364, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099201887736502364, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099201887736502364, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099201887736502364, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099201887736502364, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099201887736502364, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099201887736502364, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099201887736502364, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099201887736502364, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099201887736502364, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099201887736502364, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099201887736502364, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099201887736502364, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099201887736502364, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099201887736502364, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099201887736502364, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -64
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099201887736502364, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 64
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099201887736502364, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099201887736502364, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2099201887736502364, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000592833594365096, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: eaa3c9feb2d073b4aa44e23320ca1ddc, type: 3}
+    - target: {fileID: 4000592833594365096, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000592833594365096, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000592833594365096, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681363264718655159, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
+      propertyPath: m_text
+      value: Quit
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681363264718655159, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 4709618885223168457, guid: 0749220aae4476645b73f937e945116d, type: 2}
+    - target: {fileID: 5681363264718655159, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681363264718655159, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects:
+    - {fileID: 7839240873969690095, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
+--- !u!224 &2971573237731463995 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2099201887736502364, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
+  m_PrefabInstance: {fileID: 3755152043079600999}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7227558921708650010 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5787556980649473405, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
+  m_PrefabInstance: {fileID: 3755152043079600999}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
 --- !u!1001 &4973089118794583480
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1643,6 +1801,14 @@ PrefabInstance:
     - target: {fileID: 5681363264718655159, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
       propertyPath: m_text
       value: Main Menu
+      objectReference: {fileID: 0}
+    - target: {fileID: 5681363264718655159, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 4709618885223168457, guid: 0749220aae4476645b73f937e945116d, type: 2}
+    - target: {fileID: 5681363264718655159, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1761,6 +1927,14 @@ PrefabInstance:
       propertyPath: m_text
       value: Quit
       objectReference: {fileID: 0}
+    - target: {fileID: 5681363264718655159, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 4709618885223168457, guid: 0749220aae4476645b73f937e945116d, type: 2}
+    - target: {fileID: 5681363264718655159, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1806,6 +1980,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Master Volume
       objectReference: {fileID: 0}
+    - target: {fileID: 2148997430134814610, guid: 0956f3c1359bfbd49870dea9e5686d4b, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 4709618885223168457, guid: 0749220aae4476645b73f937e945116d, type: 2}
     - target: {fileID: 2564535775691292438, guid: 0956f3c1359bfbd49870dea9e5686d4b, type: 3}
       propertyPath: m_Name
       value: Master Volume Slider
@@ -2201,6 +2379,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 9095881581520061616, guid: 63f0aac048144f846b15d230daf68846, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5472917383932612404}
+    - targetCorrespondingSourceObject: {fileID: 9095881581520061616, guid: 63f0aac048144f846b15d230daf68846, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2971573237731463995}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 2573746385078967684, guid: 63f0aac048144f846b15d230daf68846, type: 3}
       insertIndex: -1
@@ -2233,6 +2414,7 @@ MonoBehaviour:
   _iResumeButton: {fileID: 2440040155726002447}
   _iMainMenuButton: {fileID: 1536429358752544965}
   _iQuitButton: {fileID: 1531437647128669927}
+  _iFullScreenButton: {fileID: 7227558921708650010}
   _iMasterVolumeSlider: {fileID: 724368611887680021}
   _iMusicVolumeSlider: {fileID: 7764899052190609839}
   _iEffectsVolumeSlider: {fileID: 6939523321607799255}
@@ -2334,6 +2516,14 @@ PrefabInstance:
       propertyPath: m_text
       value: Continue
       objectReference: {fileID: 0}
+    - target: {fileID: 5681363264718655159, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 4709618885223168457, guid: 0749220aae4476645b73f937e945116d, type: 2}
+    - target: {fileID: 5681363264718655159, guid: 053c85902e7aa704f94888891c4a7a19, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2379,6 +2569,10 @@ PrefabInstance:
       propertyPath: m_text
       value: Mouse Sensitivity
       objectReference: {fileID: 0}
+    - target: {fileID: 2148997430134814610, guid: 0956f3c1359bfbd49870dea9e5686d4b, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 4709618885223168457, guid: 0749220aae4476645b73f937e945116d, type: 2}
     - target: {fileID: 2564535775691292438, guid: 0956f3c1359bfbd49870dea9e5686d4b, type: 3}
       propertyPath: m_Name
       value: Mouse Senstivity Slider

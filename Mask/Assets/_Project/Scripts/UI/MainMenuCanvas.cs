@@ -7,6 +7,7 @@ public class MainMenuCanvas : MonoBehaviour {
     [Header("Buttons")]
     [SerializeField] private Button _iStartButton;
     [SerializeField] private Button _iQuitButton;
+    [SerializeField] private Button _iFullScreenButton;
 
     [Header("Sliders")]
     [SerializeField] private Slider _iMasterVolumeSlider;
@@ -27,6 +28,7 @@ public class MainMenuCanvas : MonoBehaviour {
         // Buttons
         _iStartButton.onClick.AddListener(StartGame);
         _iQuitButton.onClick.AddListener(Quit);
+        _iFullScreenButton.onClick.AddListener(FullSCreen);
     }
 
     private void OnDestroy() {
@@ -35,6 +37,7 @@ public class MainMenuCanvas : MonoBehaviour {
 
         _iStartButton.onClick.RemoveAllListeners();
         _iQuitButton.onClick.RemoveAllListeners();
+        _iFullScreenButton.onClick.RemoveAllListeners();
     }
 
     private void OnDisable() {
@@ -49,4 +52,7 @@ public class MainMenuCanvas : MonoBehaviour {
         Application.Quit();
     }
 
+    public void FullSCreen() {
+        Screen.fullScreen = !Screen.fullScreen;
+    }
 }
