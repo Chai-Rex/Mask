@@ -9,6 +9,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -4828595535520469065, guid: 70757e5e006a76d43b8da734de080935, type: 3}
+      propertyPath: checkValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4828595535520469065, guid: 70757e5e006a76d43b8da734de080935, type: 3}
+      propertyPath: hasCheckValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -4828595535520469065, guid: 70757e5e006a76d43b8da734de080935, type: 3}
+      propertyPath: checkValueName
+      value: isGuitarPickedUp
+      objectReference: {fileID: 0}
+    - target: {fileID: -4828595535520469065, guid: 70757e5e006a76d43b8da734de080935, type: 3}
       propertyPath: AmbianceSource.Array.size
       value: 0
       objectReference: {fileID: 0}
