@@ -441,7 +441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d10a691835d662e4abdc8f89c7cf1233, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueAnimationHandler
-  _iBodyTransform: {fileID: 6074542068716217673}
+  _iBodyTransform: {fileID: 355573954978882221}
   _iHeadTransform: {fileID: 4460415535426358233}
   _iEmotionPreset: {fileID: 11400000, guid: d7cff1fa385e01b4fad216ba5dcf064d, type: 2}
   _iAnimationProfile: {fileID: 11400000, guid: 17dce80549ffae041bb00ece86221a0a, type: 2}
