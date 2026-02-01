@@ -10,33 +10,32 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
-  m_Name: Nate Default
+  m_Name: CallumBlock Alt 2
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
   DialogText:
-  - Can I help you?
+  - Uh, you might wanna get that checked out
   decisionOptions:
-  - text: Sorry
-    nextDialog: {fileID: 0}
-    affectsState: 0
-    stateVariable: 
-    stateValue: 0
-  - text: Nevermind
+  - text: ...
     nextDialog: {fileID: 0}
     affectsState: 0
     stateVariable: 
     stateValue: 0
   conditionalDecisions:
-  - conditionalState: hasTalkedToClaudetteInIntro
+  - conditionalStates:
+    - name: hasBlamedCallumBlock
+      _value: 0
     decision:
-      text: damn that claudette kinda nasty tho
-      nextDialog: {fileID: 0}
+      text: I know it was you (Blame)
+      nextDialog: {fileID: 11400000, guid: 5637b768fa336c84fb75018d4c6dca80, type: 2}
       affectsState: 0
       stateVariable: 
       stateValue: 0
-  - conditionalState: hasDiedToBEEs
+  - conditionalStates:
+    - name: hasBlamedCallumBlock
+      _value: 1
     decision:
-      text: bro... did you bring bees?
-      nextDialog: {fileID: 11400000, guid: 25c8221c57a48c74fa42ee8145daa345, type: 2}
+      text: I know it was you (Blame)
+      nextDialog: {fileID: 11400000, guid: de4e97b1c4bc5cf48bc652adab8fc05b, type: 2}
       affectsState: 0
       stateVariable: 
       stateValue: 0

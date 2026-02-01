@@ -24,7 +24,7 @@ public class BananaPeel : BaseTimeEvent
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             PlayTriggerSound();
-            DeathManager.Instance.Die("Slipped On A Banana Peel");
+            DeathManager.Instance.Die("Slipped On A Banana Peel", "Banana");
         }
     }
 

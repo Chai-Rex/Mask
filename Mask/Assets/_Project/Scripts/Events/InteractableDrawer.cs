@@ -44,7 +44,7 @@ public class InteractableDrawer : BaseTimeEvent, IInteractable
         if (isActive && isDeathDrawer)
         {
             PlayTriggerSound();
-            DeathManager.Instance.Die("Got Blasted");
+            DeathManager.Instance.Die("Got Blasted", "Drawer");
         }
     }
 

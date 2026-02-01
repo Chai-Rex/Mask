@@ -49,7 +49,7 @@ public class InteractablePoisonDrink : BaseTimeEvent, IInteractable
         {
             if (!isPoisoned && !isActive.Value) { return; }
 
-            DeathManager.Instance.Die("Drink was Poisoned");
+            DeathManager.Instance.Die("Drink was Poisoned", "Drink");
         }
         else
         {

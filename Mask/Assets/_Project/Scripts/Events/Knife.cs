@@ -102,7 +102,7 @@ public class Knife : BaseTimeEvent
         {
             // Stab Sound
             LightManager.Instance.TurnOnLights();
-            DeathManager.Instance.Die("You were Stabbed...");
+            DeathManager.Instance.Die("You were Stabbed...", "Knife");
         }
     }
 }

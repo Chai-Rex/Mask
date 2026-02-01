@@ -37,8 +37,7 @@ public class DeathManager : Singleton<DeathManager> {
     }
 
     private void _PlayerJumpAction_started(UnityEngine.InputSystem.InputAction.CallbackContext obj) {
-        StoryStateSO.Instance.RegisterDeath("hasDiedToBEEs");
-        Die("BEEs");
+        Die("BEEs", "Bees");
     }
 
     private void _DeathRespawnAction_started(UnityEngine.InputSystem.InputAction.CallbackContext obj) {
@@ -53,7 +52,8 @@ public class DeathManager : Singleton<DeathManager> {
         
     }
 
-    public async void Die(string i_causeOfDeath) {
+    public async void Die(string i_causeOfDeath, string i_deathTag) {
+        StoryStateSO.Instance.RegisterDeath("hasDiedTo"+i_deathTag);
         InputManager.Instance.SetDeathActionMap();
 
         _iEyeCanvas.gameObject.SetActive(true);

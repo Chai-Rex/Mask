@@ -15,21 +15,120 @@ MonoBehaviour:
   DialogText:
   - Can I help you?
   decisionOptions:
-  - text: Sorry
-    nextDialog: {fileID: 0}
-    affectsState: 0
-    stateVariable: 
-    stateValue: 0
   - text: Nevermind
     nextDialog: {fileID: 0}
     affectsState: 0
     stateVariable: 
     stateValue: 0
   conditionalDecisions:
-  - conditionalState: hasTalkedToClaudetteInIntro
+  - conditionalStates:
+    - name: hasDiedToBanana
+      _value: 1
+    - name: hasAskedCallumBanana
+      _value: 0
     decision:
-      text: damn that claudette kinda nasty tho
-      nextDialog: {fileID: 0}
+      text: Did you leave a banana peel in the Dining Room?
+      nextDialog: {fileID: 11400000, guid: 445dbd383db721a4aabdb4a4428930e7, type: 2}
+      affectsState: 1
+      stateVariable: hasAskedCallumBanana
+      stateValue: 1
+  - conditionalStates:
+    - name: hasDiedToBanana
+      _value: 1
+    - name: hasAskedCallumBanana
+      _value: 1
+    - name: hasToldCallumBanana
+      _value: 0
+    decision:
+      text: Did you leave a banana peel in the Dining Room?
+      nextDialog: {fileID: 11400000, guid: bf41a22e7d70a8649a8215be1c643287, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasDiedToBanana
+      _value: 1
+    - name: hasAskedCallumBanana
+      _value: 1
+    - name: hasToldCallumBanana
+      _value: 1
+    decision:
+      text: Did you leave a banana peel in the Dining Room?
+      nextDialog: {fileID: 11400000, guid: cffd6cd2b80ab274895c91243a30b4dc, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasDiedToBath
+      _value: 1
+    - name: hasAskedCallumBath
+      _value: 0
+    decision:
+      text: Have you noticed how hot the Alcove is? It could literally kill someone
+      nextDialog: {fileID: 11400000, guid: 04f8fed950956b443a212505bea708ab, type: 2}
+      affectsState: 1
+      stateVariable: hasAskedCallumBath
+      stateValue: 1
+  - conditionalStates:
+    - name: hasDiedToBath
+      _value: 1
+    - name: hasAskedCallumBath
+      _value: 1
+    - name: hasToldCallumBath
+      _value: 0
+    decision:
+      text: Have you noticed how hot the Alcove is? It could literally kill someone
+      nextDialog: {fileID: 11400000, guid: 48bde17a4a831a444968a9e240582db9, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasDiedToBath
+      _value: 1
+    - name: hasAskedCallumBath
+      _value: 1
+    - name: hasToldCallumBath
+      _value: 1
+    decision:
+      text: Have you noticed how hot the Alcove is? It could literally kill someone
+      nextDialog: {fileID: 11400000, guid: 884e34a2dbac59f44994780a51072628, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasDiedToBlock
+      _value: 1
+    - name: hasAskedCallumBlock
+      _value: 0
+    decision:
+      text: Do you like playing with building blocks?
+      nextDialog: {fileID: 11400000, guid: 2f0cc3d4e33ad4c42aec817e7b5a1307, type: 2}
+      affectsState: 1
+      stateVariable: hasAskedCallumBlock
+      stateValue: 1
+  - conditionalStates:
+    - name: hasDiedToBlock
+      _value: 1
+    - name: hasAskedCallumBlock
+      _value: 1
+    - name: hasToldCallumBlock
+      _value: 0
+    decision:
+      text: Do you like playing with building blocks?
+      nextDialog: {fileID: 11400000, guid: 0e1b20b928f5c3640bfd07999af387da, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasDiedToBlock
+      _value: 1
+    - name: hasAskedCallumBlock
+      _value: 1
+    - name: hasToldCallumBlock
+      _value: 1
+    decision:
+      text: Do you like playing with building blocks?
+      nextDialog: {fileID: 11400000, guid: 5b1711a037d531c488188fbad83237fe, type: 2}
       affectsState: 0
       stateVariable: 
       stateValue: 0

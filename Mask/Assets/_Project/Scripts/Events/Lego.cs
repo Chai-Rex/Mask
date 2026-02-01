@@ -24,7 +24,7 @@ public class Lego : BaseTimeEvent
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
             PlayTriggerSound();
-            DeathManager.Instance.Die("Stepped On Baby Building Block");
+            DeathManager.Instance.Die("Stepped On Baby Building Block", "Block");
         }
     }
 
