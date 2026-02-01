@@ -127,7 +127,8 @@ MonoBehaviour:
     IgnoreListenerVolume: 0
     IgnoreListenerPause: 0
     rolloffMode: 0
-  bananaPeelActivateTime: 160
+  soundClips: []
+  bananaPeelActivateTime: 60
 --- !u!65 &775453508134793385
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -3,10 +3,11 @@ using UnityEngine;
 public class BananaPeel : BaseTimeEvent
 {
     private StateVariable isActive = new StateVariable("isBananaPeelActive", false);
-    [SerializeField] private float bananaPeelActivateTime = 160.0f;
+    [SerializeField] private float bananaPeelActivateTime = 60.0f;
 
     private void Start()
     {
+        SetBananaPeelIsActive(false);
         TimeManager.Instance.ScheduleAt(bananaPeelActivateTime, ActivateTimeEvent);
     }
 
@@ -19,11 +20,10 @@ public class BananaPeel : BaseTimeEvent
 
     private void OnTriggerEnter(Collider other)
     {
-        //if (!isActive.Value) { return; }
+        if (!isActive.Value) { return; }
 
         if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            Debug.Log("HIT");
             PlayTriggerSound();
             DeathManager.Instance.Die("Slipped On A Banana Peel", "Banana");
         }
