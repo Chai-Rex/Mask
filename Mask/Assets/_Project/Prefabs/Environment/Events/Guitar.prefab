@@ -128,8 +128,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Guitar
   _eventAudioData:
-    Clip: {fileID: 0}
-    MixerGroup: {fileID: 0}
+    Clip: {fileID: 8300000, guid: 993d93430465b52498247d7feb8f7c42, type: 3}
+    MixerGroup: {fileID: -7791223585700606962, guid: 49963274511b53442bc8ea85953fe90d, type: 2}
     Loop: 0
     PlayOnAwake: 0
     FrequentSound: 0
@@ -150,7 +150,10 @@ MonoBehaviour:
     IgnoreListenerVolume: 0
     IgnoreListenerPause: 0
     rolloffMode: 0
-  soundClips: []
+  soundClips:
+  - {fileID: 8300000, guid: 993d93430465b52498247d7feb8f7c42, type: 3}
+  - {fileID: 8300000, guid: d5f9d8dfb01ad5a4281c0d9d37087d4c, type: 3}
+  - {fileID: 8300000, guid: c5c16a20d81cc7a44986ffb02de57bb6, type: 3}
   _iItemName: Guitar
   _iPickupVerb: Pickup
 --- !u!135 &231299831244297645
