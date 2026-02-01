@@ -10,32 +10,34 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
-  m_Name: ClaudetteChandelier Repeat
+  m_Name: ClaudetteDrawer
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
   DialogText:
-  - This again? I've already asked the butler to investigate any funny business.
+  - A gun in the tea room? It's a place for relaxation dear, not violence. We have
+    a range out back if you'd really like to practice your aim, although it's far
+    too dark for that now.
   decisionOptions:
-  - text: Oh, well thats good.
-    nextDialog: {fileID: 0}
+  - text: You have a gun range?
+    nextDialog: {fileID: 11400000, guid: 87a75faad6cc56b489b79363a2e211d1, type: 2}
     affectsState: 0
     stateVariable: 
     stateValue: 0
   conditionalDecisions:
   - conditionalStates:
-    - name: hasBlamedClaudetteChandelier
+    - name: hasBlamedClaudetteDrawer
       _value: 0
     decision:
       text: I know it was you (Blame)
-      nextDialog: {fileID: 11400000, guid: bc00f2d6cbff13b49b6268d15dcaf1c7, type: 2}
+      nextDialog: {fileID: 11400000, guid: 7b74eb52124875c4486726ea9d82f102, type: 2}
       affectsState: 0
       stateVariable: 
       stateValue: 0
   - conditionalStates:
-    - name: hasBlamedClaudetteChandelier
+    - name: hasBlamedClaudetteDrawer
       _value: 1
     decision:
       text: I know it was you (Blame)
-      nextDialog: {fileID: 11400000, guid: bc00f2d6cbff13b49b6268d15dcaf1c7, type: 2}
+      nextDialog: {fileID: 11400000, guid: 01dbc7af84d2e9f47a060d64c545b98d, type: 2}
       affectsState: 0
       stateVariable: 
       stateValue: 0

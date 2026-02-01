@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: ClaudetteChandelier Blame Repeat
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
   DialogText:
-  - I'm starting to believe you either fabricated this story or placed it yourself
-    just to start an argument with me
+  - While your faith in my physical abilities is flattering I assure you I have never
+    even attempted to adjust that chandelier.
+  - 'Besides why would I tamper with the crown jewel of my library? '
   decisionOptions:
-  - text: I would never
+  - text: Fair enough...
     nextDialog: {fileID: 0}
     affectsState: 1
-    stateVariable: hasBlamedClaudetteBlock
+    stateVariable: hasBlamedClaudetteChandelier
     stateValue: 1
   conditionalDecisions: []

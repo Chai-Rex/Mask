@@ -10,20 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
-  m_Name: ClaudetteChandelier Blame
+  m_Name: ClaudetteDrawer 2
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
   DialogText:
-  - Hmph! I think you should ask someone stronger! The rope is so thick I'm afraid
-    I would be hard pressed to even untie the thing.
+  - Oh don't worry about it dear, that won't be an issue for at least a few months
+    to a year, you have plenty of time to prepare.
+  - You <i>have</i> been stockpiling non-perishables, water, and ammo I assume?
   decisionOptions:
-  - text: ...
+  - text: Oh of course! I thought you meant soon...
     nextDialog: {fileID: 0}
-    affectsState: 1
-    stateVariable: hasBlamedClaudetteChandelier
-    stateValue: 1
-  - text: You should probably hit the gym
+    affectsState: 0
+    stateVariable: 
+    stateValue: 0
+  - text: Uhhh, you'll have to excuse me I have some doomsday prep to do
     nextDialog: {fileID: 0}
-    affectsState: 1
-    stateVariable: hasBlamedClaudetteChandelier
-    stateValue: 1
+    affectsState: 0
+    stateVariable: 
+    stateValue: 0
   conditionalDecisions: []

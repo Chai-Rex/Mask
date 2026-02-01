@@ -10,32 +10,33 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
-  m_Name: ClaudetteChandelier Repeat
+  m_Name: ClaudetteDrink
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
   DialogText:
-  - This again? I've already asked the butler to investigate any funny business.
+  - The wine and drinks are professionally handled, they couldn't have possibly been
+    poisoned.
   decisionOptions:
-  - text: Oh, well thats good.
+  - text: Oh, my mistake
     nextDialog: {fileID: 0}
     affectsState: 0
     stateVariable: 
     stateValue: 0
   conditionalDecisions:
   - conditionalStates:
-    - name: hasBlamedClaudetteChandelier
+    - name: hasBlamedClaudetteDrink
       _value: 0
     decision:
       text: I know it was you (Blame)
-      nextDialog: {fileID: 11400000, guid: bc00f2d6cbff13b49b6268d15dcaf1c7, type: 2}
+      nextDialog: {fileID: 11400000, guid: f7d9cd80088b72a4baf8b130c965412d, type: 2}
       affectsState: 0
       stateVariable: 
       stateValue: 0
   - conditionalStates:
-    - name: hasBlamedClaudetteChandelier
+    - name: hasBlamedClaudetteDrink
       _value: 1
     decision:
       text: I know it was you (Blame)
-      nextDialog: {fileID: 11400000, guid: bc00f2d6cbff13b49b6268d15dcaf1c7, type: 2}
+      nextDialog: {fileID: 11400000, guid: ed3a2e2fb0607e740ae08c98f4b16780, type: 2}
       affectsState: 0
       stateVariable: 
       stateValue: 0

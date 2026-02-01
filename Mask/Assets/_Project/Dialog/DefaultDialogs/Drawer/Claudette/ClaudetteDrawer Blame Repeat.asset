@@ -10,20 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
-  m_Name: ClaudetteChandelier Blame
+  m_Name: ClaudetteDrawer Blame Repeat
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
   DialogText:
-  - Hmph! I think you should ask someone stronger! The rope is so thick I'm afraid
-    I would be hard pressed to even untie the thing.
+  - Again, the idea is simply absurd. What good is a gun if you don't control when
+    it goes off? Anyone could accidentally open it and be shot!
   decisionOptions:
-  - text: ...
+  - text: So it seems...
     nextDialog: {fileID: 0}
     affectsState: 1
-    stateVariable: hasBlamedClaudetteChandelier
-    stateValue: 1
-  - text: You should probably hit the gym
-    nextDialog: {fileID: 0}
-    affectsState: 1
-    stateVariable: hasBlamedClaudetteChandelier
+    stateVariable: hasBlamedClaudetteDrawer
     stateValue: 1
   conditionalDecisions: []
