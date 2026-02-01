@@ -98,7 +98,7 @@ public class InteractablePoisonDrink : BaseTimeEvent, IInteractable
 
         yield return new WaitForSeconds(deathDelay);
 
-        DeathManager.Instance.Die("Drink was Poisoned");
+        DeathManager.Instance.Die("Drink was Poisoned", "poisonDrink");
     }
 
     public void OnFillUpDrink()
