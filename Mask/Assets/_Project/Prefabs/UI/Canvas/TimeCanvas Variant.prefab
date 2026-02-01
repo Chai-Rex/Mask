@@ -373,6 +373,6 @@ MonoBehaviour:
   _iTimeText: {fileID: 2336431340512282785}
   _iPauseText: {fileID: 6908509979148380361}
   secondsPerGameMinute: 1
-  startHour: 8
+  startHour: 20
   startMinute: 0
   useAmPmFormat: 1
