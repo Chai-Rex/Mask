@@ -1,4 +1,5 @@
 using AudioSystem;
+using DG.Tweening;
 using System;
 using UnityEngine;
 
@@ -17,6 +18,9 @@ public class Knife : BaseTimeEvent
 
     private MeshRenderer meshRenderer;
 
+    [SerializeField] private GameObject boxLid;
+    [SerializeField] private float boxLidDuration = 1.5f;
+
     private void Awake()
     {
         meshRenderer = GetComponent<MeshRenderer>();
@@ -33,7 +37,7 @@ public class Knife : BaseTimeEvent
 
         if (!isActive)
         {
-            OnKnifeDisappear();
+            OnBoxOpen();
         }
         else
         {
@@ -89,10 +93,19 @@ public class Knife : BaseTimeEvent
 
     public void OnKnifeDisappear()
     {
-        if (!isPlayerNear)
+        isActive = true;
+        meshRenderer.enabled = false;
+    }
+
+    public void OnBoxOpen()
+    {
+        if (boxLid)
         {
-            isActive = true;
-            meshRenderer.enabled = false;
+            boxLid.transform.DORotate(new Vector3(-90.0f, 0.0f, 0.0f), boxLidDuration)
+                .OnComplete(() =>
+                {
+                    OnKnifeDisappear();
+                });
         }
     }
 
