@@ -57,6 +57,8 @@ public class InteractablePoisonDrink : BaseTimeEvent, IInteractable
         {
             meshFilter.mesh = drinkEmpty;
             isEmpty = true;
+
+            interactor.GetComponent<InteractionHandler>().OverrideInteractionPrompt(verbWhenEmpty);
         }
 
         if (isPoison)

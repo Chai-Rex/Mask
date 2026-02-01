@@ -21,6 +21,8 @@ public class FirstPersonController : MonoBehaviour {
     [SerializeField] private float standingHeight = 2f;
     [SerializeField] private float crouchHeight = 1f;
     [SerializeField] private float crouchTransitionSpeed = 10f;
+    [SerializeField] private Transform modelTransform;
+    [SerializeField] private Vector3 crouchScale;
 
     [Header("Gravity Settings")]
     [SerializeField] private float gravity = 20f;
@@ -175,6 +177,13 @@ public class FirstPersonController : MonoBehaviour {
         Vector3 cameraLocalPos = cameraTransform.localPosition;
         cameraLocalPos.y = currentHeight - 0.6f;
         cameraTransform.localPosition = cameraLocalPos;
+
+        // Scale Model Down
+        if (targetHeight == crouchHeight) {
+            modelTransform.localScale = crouchScale;
+        } else {
+            modelTransform.localScale = Vector3.one;
+        }
     }
 
     private void HandleMovement() {

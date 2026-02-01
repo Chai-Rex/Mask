@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: End Dialog 1
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
   DialogText:
-  - You had something to say to everyone?
+  - Yes? We're all here, what is it?
   decisionOptions:
   - text: "I have found myself in a very weird loop tonight and trust me when I say
       that there is a killer among us \u0D9E."
-    nextDialog: {fileID: 0}
+    nextDialog: {fileID: 11400000, guid: fc3bbda9867f70d42858b8051ea3b205, type: 2}
     affectsState: 0
     stateVariable: 
     stateValue: 0

@@ -26,6 +26,10 @@ MonoBehaviour:
       _value: 1
     - name: hasAskedCallumBanana
       _value: 0
+    - name: hasOutroStarted
+      _value: 0
+    - name: isIntroFinished
+      _value: 1
     decision:
       text: Did you leave a banana peel in the Dining Room?
       nextDialog: {fileID: 11400000, guid: 445dbd383db721a4aabdb4a4428930e7, type: 2}
@@ -39,6 +43,10 @@ MonoBehaviour:
       _value: 1
     - name: hasToldCallumBanana
       _value: 0
+    - name: hasOutroStarted
+      _value: 0
+    - name: isIntroFinished
+      _value: 1
     decision:
       text: Did you leave a banana peel in the Dining Room?
       nextDialog: {fileID: 11400000, guid: bf41a22e7d70a8649a8215be1c643287, type: 2}
@@ -52,6 +60,10 @@ MonoBehaviour:
       _value: 1
     - name: hasToldCallumBanana
       _value: 1
+    - name: hasOutroStarted
+      _value: 0
+    - name: isIntroFinished
+      _value: 1
     decision:
       text: Did you leave a banana peel in the Dining Room?
       nextDialog: {fileID: 11400000, guid: cffd6cd2b80ab274895c91243a30b4dc, type: 2}
@@ -63,6 +75,10 @@ MonoBehaviour:
       _value: 1
     - name: hasAskedCallumBath
       _value: 0
+    - name: hasOutroStarted
+      _value: 0
+    - name: isIntroFinished
+      _value: 1
     decision:
       text: Have you noticed how hot the Alcove is? It could literally kill someone
       nextDialog: {fileID: 11400000, guid: 04f8fed950956b443a212505bea708ab, type: 2}
@@ -76,6 +92,10 @@ MonoBehaviour:
       _value: 1
     - name: hasToldCallumBath
       _value: 0
+    - name: hasOutroStarted
+      _value: 0
+    - name: isIntroFinished
+      _value: 1
     decision:
       text: Have you noticed how hot the Alcove is? It could literally kill someone
       nextDialog: {fileID: 11400000, guid: 48bde17a4a831a444968a9e240582db9, type: 2}
@@ -89,6 +109,10 @@ MonoBehaviour:
       _value: 1
     - name: hasToldCallumBath
       _value: 1
+    - name: hasOutroStarted
+      _value: 0
+    - name: isIntroFinished
+      _value: 1
     decision:
       text: Have you noticed how hot the Alcove is? It could literally kill someone
       nextDialog: {fileID: 11400000, guid: 884e34a2dbac59f44994780a51072628, type: 2}
@@ -100,6 +124,10 @@ MonoBehaviour:
       _value: 1
     - name: hasAskedCallumBlock
       _value: 0
+    - name: hasOutroStarted
+      _value: 0
+    - name: isIntroFinished
+      _value: 1
     decision:
       text: Do you like playing with building blocks?
       nextDialog: {fileID: 11400000, guid: 2f0cc3d4e33ad4c42aec817e7b5a1307, type: 2}
@@ -113,6 +141,10 @@ MonoBehaviour:
       _value: 1
     - name: hasToldCallumBlock
       _value: 0
+    - name: hasOutroStarted
+      _value: 0
+    - name: isIntroFinished
+      _value: 1
     decision:
       text: Do you like playing with building blocks?
       nextDialog: {fileID: 11400000, guid: 0e1b20b928f5c3640bfd07999af387da, type: 2}
@@ -126,6 +158,10 @@ MonoBehaviour:
       _value: 1
     - name: hasToldCallumBlock
       _value: 1
+    - name: hasOutroStarted
+      _value: 0
+    - name: isIntroFinished
+      _value: 1
     decision:
       text: Do you like playing with building blocks?
       nextDialog: {fileID: 11400000, guid: 5b1711a037d531c488188fbad83237fe, type: 2}
@@ -137,6 +173,10 @@ MonoBehaviour:
       _value: 1
     - name: hasAskedCallumChandelier
       _value: 0
+    - name: hasOutroStarted
+      _value: 0
+    - name: isIntroFinished
+      _value: 1
     decision:
       text: What if the chandelier in the library suddenly fell on someone?
       nextDialog: {fileID: 11400000, guid: 317faabdf26ae00498463bda9df3757b, type: 2}
@@ -150,6 +190,10 @@ MonoBehaviour:
       _value: 1
     - name: hasToldCallumChandelier
       _value: 0
+    - name: hasOutroStarted
+      _value: 0
+    - name: isIntroFinished
+      _value: 1
     decision:
       text: What if the chandelier in the library suddenly fell on someone?
       nextDialog: {fileID: 11400000, guid: ec7ce9a0fb8533d4e8f9b1b1ece1c3c6, type: 2}
@@ -163,6 +207,10 @@ MonoBehaviour:
       _value: 1
     - name: hasToldCallumChandelier
       _value: 1
+    - name: hasOutroStarted
+      _value: 0
+    - name: isIntroFinished
+      _value: 1
     decision:
       text: What if the chandelier in the library suddenly fell on someone?
       nextDialog: {fileID: 11400000, guid: de797d95404f01f4a985bb46bdcdbe4c, type: 2}
@@ -174,6 +222,10 @@ MonoBehaviour:
       _value: 1
     - name: hasAskedCallumDrawer
       _value: 0
+    - name: hasOutroStarted
+      _value: 0
+    - name: isIntroFinished
+      _value: 1
     decision:
       text: I think one of the drawers in the Tea Room is a hidden gun.
       nextDialog: {fileID: 11400000, guid: 27b912ea506210b4c9b7015c1d0be9bc, type: 2}
@@ -187,6 +239,10 @@ MonoBehaviour:
       _value: 1
     - name: hasToldCallumDrawer
       _value: 0
+    - name: hasOutroStarted
+      _value: 0
+    - name: isIntroFinished
+      _value: 1
     decision:
       text: I think one of the drawers in the Tea Room is a hidden gun.
       nextDialog: {fileID: 11400000, guid: 5c7b73693c755864cb2f8bffcc100a18, type: 2}
@@ -200,6 +256,10 @@ MonoBehaviour:
       _value: 1
     - name: hasToldCallumDrawer
       _value: 1
+    - name: hasOutroStarted
+      _value: 0
+    - name: isIntroFinished
+      _value: 1
     decision:
       text: I think one of the drawers in the Tea Room is a hidden gun.
       nextDialog: {fileID: 11400000, guid: 5d67862089bcf9348a014251e599e515, type: 2}
@@ -211,6 +271,10 @@ MonoBehaviour:
       _value: 1
     - name: hasAskedCallumDrink
       _value: 0
+    - name: hasOutroStarted
+      _value: 0
+    - name: isIntroFinished
+      _value: 1
     decision:
       text: I hear that someone poisoned one of the drinks
       nextDialog: {fileID: 11400000, guid: 0ebe956266adca145b61107f06345638, type: 2}
@@ -221,6 +285,10 @@ MonoBehaviour:
     - name: hasDiedToDrink
       _value: 1
     - name: hasAskedCallumDrink
+      _value: 1
+    - name: hasOutroStarted
+      _value: 0
+    - name: isIntroFinished
       _value: 1
     decision:
       text: I hear that someone poisoned one of the drinks
@@ -233,6 +301,10 @@ MonoBehaviour:
       _value: 1
     - name: hasAskedCallumKnife
       _value: 0
+    - name: hasOutroStarted
+      _value: 0
+    - name: isIntroFinished
+      _value: 1
     decision:
       text: I think the display knife is missing
       nextDialog: {fileID: 11400000, guid: f509d910f1cd5cf4cacbd60711c6ae28, type: 2}
@@ -246,6 +318,10 @@ MonoBehaviour:
       _value: 1
     - name: hasToldCallumKnife
       _value: 0
+    - name: hasOutroStarted
+      _value: 0
+    - name: isIntroFinished
+      _value: 1
     decision:
       text: I think the display knife is missing
       nextDialog: {fileID: 11400000, guid: 2fed79124667ad443b08c81350d6b03a, type: 2}
@@ -259,6 +335,10 @@ MonoBehaviour:
       _value: 1
     - name: hasToldCallumKnife
       _value: 1
+    - name: hasOutroStarted
+      _value: 0
+    - name: isIntroFinished
+      _value: 1
     decision:
       text: I think the display knife is missing
       nextDialog: {fileID: 11400000, guid: b3444fa2a0850424a92de6430001e4af, type: 2}
@@ -270,6 +350,10 @@ MonoBehaviour:
       _value: 1
     - name: hasAskedCallumSpill
       _value: 0
+    - name: hasOutroStarted
+      _value: 0
+    - name: isIntroFinished
+      _value: 1
     decision:
       text: Did you see that live wire in the billiards room?
       nextDialog: {fileID: 11400000, guid: 53ac74fe3399f014f828887fb7ecd711, type: 2}
@@ -281,9 +365,24 @@ MonoBehaviour:
       _value: 1
     - name: hasAskedCallumSpill
       _value: 1
+    - name: hasOutroStarted
+      _value: 0
+    - name: isIntroFinished
+      _value: 1
     decision:
       text: Did you see that live wire in the billiards room?
       nextDialog: {fileID: 11400000, guid: 4d9d539685b5f27449ff51cfed1e8692, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasOutroStarted
+      _value: 0
+    - name: isIntroFinished
+      _value: 0
+    decision:
+      text: I should probably grab my guitar and go to the stage
+      nextDialog: {fileID: 0}
       affectsState: 0
       stateVariable: 
       stateValue: 0

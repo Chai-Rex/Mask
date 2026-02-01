@@ -67,11 +67,14 @@ public class StoryStateSO : ScriptableObject
 
     public Dictionary<string, bool> pairs = new Dictionary<string, bool>();
     private Dictionary<string, List<StateCallback>> functionCallbacks = new Dictionary<string, List<StateCallback>>();
+    public int _numDeaths = 0;
 
     [SerializeField]
     private List<string> DeathFlags = new List<string>();
     public void RegisterDeath(string i_deathType)
     {
+        _numDeaths++;
+
         if (!DeathFlags.Contains(i_deathType))
         {
             DeathFlags.Add(i_deathType);
@@ -96,6 +99,7 @@ public class StoryStateSO : ScriptableObject
         if(_hasBeenRegistered) { return; }
         _hasBeenRegistered = true;
 
+        _numDeaths = 0;
         DeathFlags.Clear();
 
         _initialStateVariables.Clear();
