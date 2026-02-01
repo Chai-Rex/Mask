@@ -36,7 +36,7 @@ public class PickupableItem : MonoBehaviour, IInteractable {
         return transform;
     }
 
-    public void SetItemPickedUp(bool i_isPickedUp)
+    virtual public void SetItemPickedUp(bool i_isPickedUp)
     {
         StoryStateSO.Instance.SetValue(_stateString, i_isPickedUp);
     }
