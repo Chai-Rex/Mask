@@ -235,7 +235,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2091312643236754370, guid: ccd7914c94e43ff4384a64852ac6d87c, type: 3}
       propertyPath: chandelierFallTime
-      value: 5
+      value: 240
       objectReference: {fileID: 0}
     - target: {fileID: 2347251979045652474, guid: ccd7914c94e43ff4384a64852ac6d87c, type: 3}
       propertyPath: m_LocalScale.x
