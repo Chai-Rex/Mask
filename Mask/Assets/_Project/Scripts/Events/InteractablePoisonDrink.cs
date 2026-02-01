@@ -62,7 +62,12 @@ public class InteractablePoisonDrink : BaseTimeEvent, IInteractable
         if (isPoison)
         {
             if (!isPoisoned && !isActive.Value) { return; }
-            poisonCoroutine = StartCoroutine(OnGotPoisoned());
+
+            if (poisonCoroutine == null)
+            {
+                poisonCoroutine = StartCoroutine(OnGotPoisoned());
+            }
+
         }
         else
         {
@@ -90,7 +95,6 @@ public class InteractablePoisonDrink : BaseTimeEvent, IInteractable
 
         if (soundClips.Count != 0 && soundClips.Count >= 2)
         {
-            Debug.Log("Switch Sound");
             _eventAudioData.Clip = soundClips[1];
         }
 
