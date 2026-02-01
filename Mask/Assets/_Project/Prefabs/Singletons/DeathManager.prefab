@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DeathManager
   _iEyeCanvas: {fileID: 6017552764636212802}
-  levelToLoad: 3
+  levelToLoad: 1
   _deathAudio:
     Clip: {fileID: 8300000, guid: dea6f352f614a8148a6db6c78dd1f03b, type: 3}
     MixerGroup: {fileID: -7791223585700606962, guid: 49963274511b53442bc8ea85953fe90d, type: 2}
