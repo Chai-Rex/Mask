@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
+  m_Name: DaffodilSpill Blame Repeat
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
+  DialogText:
+  - I'm not particularly good at biliards but I sure can handle a stick and some
+    balls...
+  - Sorry, I had to inspect some old dude's groin for testicular cancer and he wouldn't
+    stop cracking dirty jokes. I think it did irreparable damage to my frontal cortex...
+  decisionOptions:
+  - text: I get it, I damaged mine reading posts from JJK fans analyzing the manga...
+    nextDialog: {fileID: 11400000, guid: 56f5afa128220aa4abf42505ee8bb55a, type: 2}
+    affectsState: 1
+    stateVariable: hasBlamedDaffodilSpill
+    stateValue: 1
+  conditionalDecisions: []
