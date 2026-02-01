@@ -194,7 +194,6 @@ GameObject:
   - component: {fileID: 1483510424292181035}
   - component: {fileID: 1362078884702610190}
   - component: {fileID: 5266276435172274321}
-  - component: {fileID: 5792891304182682920}
   - component: {fileID: 503361702403170245}
   - component: {fileID: 6976054915486723924}
   - component: {fileID: 1534367544267574593}
@@ -348,23 +347,6 @@ MonoBehaviour:
   _iHeadBobHeight: 0.05
   _iHeadTiltAngle: 5
   _iWalkEase: 4
---- !u!114 &5792891304182682920
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2906133591313795411}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cba49c58964521b49a7c719e52d791dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DialogueHandler
-  _iDialogueCanvas: {fileID: 0}
-  _iStoryState: {fileID: 11400000, guid: cdd420038140c28488a65d05b61e1c6d, type: 2}
-  _iSpeakingAnimationHandler: {fileID: 0}
-  _iCanSkip: 1
-  _silentPresetName: na
 --- !u!114 &503361702403170245
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -56,13 +56,29 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 8702960628655859338, guid: ddf798f1b42dd4246863cdd5e49653c8, type: 3}
+    - target: {fileID: 2712681913050643578, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2726508045104797948, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: -317748348368614005, guid: ddf798f1b42dd4246863cdd5e49653c8, type: 3}
+    - target: {fileID: 2857450572691040408, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2906133591313795411, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
       propertyPath: m_Name
       value: CallumNPC Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 2906133591313795411, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3528026927776078272, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5792891304182682920, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
       propertyPath: _iSpeakingAnimationHandler
@@ -132,6 +148,14 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 167958815365034614, guid: ddf798f1b42dd4246863cdd5e49653c8, type: 3}
+    - target: {fileID: 8858831235220030072, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 9043151964891717711, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

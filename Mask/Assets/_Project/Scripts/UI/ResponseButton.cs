@@ -14,7 +14,6 @@ public class ResponseButton : MonoBehaviour {
 
     private void Awake() {
         _iButton.onClick.AddListener(PressButton);
-        _iButton.onClick.AddListener(SoundManager.Instance.PlayMenuButtonSFX);
     }
 
     public void SetText(string i_text, int i_id) {
