@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
+  m_Name: ClaudetteSpill Blame Repeat
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
+  DialogText:
+  - 'Can you even imagine the amount I''d have to pay if these floors were to get
+    water damaged? These are mahogany... [emphasis]<i>MAHOGANY!</i>[/emphasis]'
+  decisionOptions:
+  - text: Oh
+    nextDialog: {fileID: 0}
+    affectsState: 1
+    stateVariable: hasBlamedClaudetteSpill
+    stateValue: 1
+  - text: Mahogany?
+    nextDialog: {fileID: 11400000, guid: c35081c89a89f3b4c8e28507ebdf13e2, type: 2}
+    affectsState: 1
+    stateVariable: hasBlamedClaudetteSpill
+    stateValue: 1
+  conditionalDecisions: []

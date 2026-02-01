@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
+  m_Name: ClaudetteSpill Blame
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
+  DialogText:
+  - Are you accusing me of destroying my own property? And for what? To create a
+    hazard for any billiards players I happen to dislike?
+  - Actually... maybe there are a few for which that would be worth it
+  decisionOptions:
+  - text: ...
+    nextDialog: {fileID: 0}
+    affectsState: 1
+    stateVariable: hasBlamedClaudetteSpill
+    stateValue: 1
+  - text: Remind me to never play billiards with you.
+    nextDialog: {fileID: 0}
+    affectsState: 1
+    stateVariable: hasBlamedClaudetteSpill
+    stateValue: 1
+  conditionalDecisions: []
