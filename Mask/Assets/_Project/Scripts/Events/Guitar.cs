@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class Guitar : PickupableItem
 {
-    [SerializeField] RoomSoundEmitter _guitarAudioEmitter;
 
     StateVariable isPickedUp = new StateVariable("isGuitarPickedUp", false);
 
