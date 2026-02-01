@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody), typeof(Collider))]
-public class PickupableItem : MonoBehaviour, IInteractable {
+public class PickupableItem : BaseTimeEvent, IInteractable {
     [SerializeField] private string _iItemName = "Item";
     [SerializeField] private string _iPickupVerb = "Pickup";
 
