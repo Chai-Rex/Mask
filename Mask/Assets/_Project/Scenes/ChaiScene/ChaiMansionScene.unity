@@ -1722,9 +1722,7 @@ PrefabInstance:
       value: MansionPrefab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects:
-    - {fileID: 6489968721885643210, guid: 013732ccb23ebf741b5a75f9d70ba5fe, type: 3}
-    - {fileID: 7523083549360616954, guid: 013732ccb23ebf741b5a75f9d70ba5fe, type: 3}
+    m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 013732ccb23ebf741b5a75f9d70ba5fe, type: 3}
