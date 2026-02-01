@@ -13,17 +13,18 @@ MonoBehaviour:
   m_Name: ButlerOpensDoor
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
   DialogText:
-  - Well then please enter and enjoy the masquerade until it is time for your performance
+  - Well then please enjoy the masquerade until it is time for your performance
   - Oh, and I do reccomend speaking with mistress Claudette. She will want to meet
     you before your performance.
   decisionOptions:
   - text: Ok, thanks
     nextDialog: {fileID: 0}
-    affectsState: 1
-    stateVariable: introIsDoorOpen
-    stateValue: 1
+    affectsState: 0
+    stateVariable: 
+    stateValue: 0
   - text: Will do
     nextDialog: {fileID: 0}
-    affectsState: 1
-    stateVariable: introIsDoorOpen
-    stateValue: 1
+    affectsState: 0
+    stateVariable: 
+    stateValue: 0
+  conditionalDecisions: []

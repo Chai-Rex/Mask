@@ -25,6 +25,10 @@ public class RoomSoundEmitter : MonoBehaviour
     [SerializeField] private bool checkValue = true;
     private bool playerInArea = false;
 
+    [SerializeField] private bool triggerValueOnFirstPlay = false;
+    [SerializeField] private string triggerValueName = string.Empty;
+    [SerializeField] private bool triggerValue = true;
+    private bool hasTriggered = false;
 
     private void Start()
     {
@@ -57,6 +61,11 @@ public class RoomSoundEmitter : MonoBehaviour
             yield return null;
         }
         fadeIn = false;
+
+        if(triggerValueOnFirstPlay && !hasTriggered)
+        {
+            StoryStateSO.Instance.SetValue(triggerValueName, triggerValue);
+        }
     }
 
     IEnumerator FadeAudioOut()
