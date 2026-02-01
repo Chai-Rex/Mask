@@ -16,6 +16,8 @@ public class DialogueCanvas : MonoBehaviour {
 
     private ResponseButton[] _responseButtons;
 
+    private bool _refresh;
+
     private void Awake() {
         _responseButtons = new ResponseButton[_iMaxResponseOptions];
         for (int i = 0; i < _iMaxResponseOptions; i++) {
@@ -39,13 +41,18 @@ public class DialogueCanvas : MonoBehaviour {
     public void AddResponse(string i_response, int i_id) {
         _responseButtons[i_id].gameObject.SetActive(true);
         _responseButtons[i_id].SetText(i_response, i_id);
-        LayoutRebuilder.ForceRebuildLayoutImmediate(_iRebuildTransform);
+        WaitFrameBeforeCanvasRefresh();
     }
 
     public void ClearResponses() {
         foreach (var response in _responseButtons) {
             response.gameObject.SetActive(false);
         }
+    }
+
+    private async void WaitFrameBeforeCanvasRefresh() {
+        await Awaitable.NextFrameAsync();
+        LayoutRebuilder.ForceRebuildLayoutImmediate(_iRebuildTransform);
     }
 
 }
