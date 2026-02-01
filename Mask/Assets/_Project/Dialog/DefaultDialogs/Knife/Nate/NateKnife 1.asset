@@ -10,32 +10,38 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
-  m_Name: NateDrink Repeat
+  m_Name: NateKnife 1
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
   DialogText:
-  - Where are you even getting this info from?
+  - I suppose it would make sense that someone would want it. By the looks of it
+    I'm sure it's quite valuable
   decisionOptions:
-  - text: Its complicated...
+  - text: Yeah... valuable
     nextDialog: {fileID: 0}
+    affectsState: 0
+    stateVariable: 
+    stateValue: 0
+  - text: Its also very sharp
+    nextDialog: {fileID: 11400000, guid: 8145771f011b9034cbe7ac67fbb4a920, type: 2}
     affectsState: 0
     stateVariable: 
     stateValue: 0
   conditionalDecisions:
   - conditionalStates:
-    - name: hasBlamedNateDrink
+    - name: hasBlamedNateKnife
       _value: 0
     decision:
       text: I know it was you (Blame)
-      nextDialog: {fileID: 11400000, guid: 167b76ebcbb07b442934741fc4405436, type: 2}
+      nextDialog: {fileID: 11400000, guid: 2ca0a313a39f80740a314d133aad35ac, type: 2}
       affectsState: 0
       stateVariable: 
       stateValue: 0
   - conditionalStates:
-    - name: hasBlamedNateDrink
+    - name: hasBlamedNateKnife
       _value: 1
     decision:
       text: I know it was you (Blame)
-      nextDialog: {fileID: 11400000, guid: 5c375b5c3230eff4f9ad95b09c15c1fc, type: 2}
+      nextDialog: {fileID: 11400000, guid: 772d072ae9345254c8c4cfa85b288984, type: 2}
       affectsState: 0
       stateVariable: 
       stateValue: 0
