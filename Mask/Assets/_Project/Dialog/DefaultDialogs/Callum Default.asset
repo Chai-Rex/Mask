@@ -132,3 +132,158 @@ MonoBehaviour:
       affectsState: 0
       stateVariable: 
       stateValue: 0
+  - conditionalStates:
+    - name: hasDiedToChandelier
+      _value: 1
+    - name: hasAskedCallumChandelier
+      _value: 0
+    decision:
+      text: What if the chandelier in the library suddenly fell on someone?
+      nextDialog: {fileID: 11400000, guid: 317faabdf26ae00498463bda9df3757b, type: 2}
+      affectsState: 1
+      stateVariable: hasAskedCallumChandelier
+      stateValue: 1
+  - conditionalStates:
+    - name: hasDiedToChandelier
+      _value: 1
+    - name: hasAskedCallumChandelier
+      _value: 1
+    - name: hasToldCallumChandelier
+      _value: 0
+    decision:
+      text: What if the chandelier in the library suddenly fell on someone?
+      nextDialog: {fileID: 11400000, guid: ec7ce9a0fb8533d4e8f9b1b1ece1c3c6, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasDiedToChandelier
+      _value: 1
+    - name: hasAskedCallumChandelier
+      _value: 1
+    - name: hasToldCallumChandelier
+      _value: 1
+    decision:
+      text: What if the chandelier in the library suddenly fell on someone?
+      nextDialog: {fileID: 11400000, guid: de797d95404f01f4a985bb46bdcdbe4c, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasDiedToDrawer
+      _value: 1
+    - name: hasAskedCallumDrawer
+      _value: 0
+    decision:
+      text: I think one of the drawers in the Tea Room is a hidden gun.
+      nextDialog: {fileID: 11400000, guid: 27b912ea506210b4c9b7015c1d0be9bc, type: 2}
+      affectsState: 1
+      stateVariable: hasAskedCallumDrawer
+      stateValue: 1
+  - conditionalStates:
+    - name: hasDiedToDrawer
+      _value: 1
+    - name: hasAskedCallumDrawer
+      _value: 1
+    - name: hasToldCallumDrawer
+      _value: 0
+    decision:
+      text: I think one of the drawers in the Tea Room is a hidden gun.
+      nextDialog: {fileID: 11400000, guid: 5c7b73693c755864cb2f8bffcc100a18, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasDiedToDrawer
+      _value: 1
+    - name: hasAskedCallumDrawer
+      _value: 1
+    - name: hasToldCallumDrawer
+      _value: 1
+    decision:
+      text: I think one of the drawers in the Tea Room is a hidden gun.
+      nextDialog: {fileID: 11400000, guid: 5d67862089bcf9348a014251e599e515, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasDiedToDrink
+      _value: 1
+    - name: hasAskedCallumDrink
+      _value: 0
+    decision:
+      text: I hear that someone poisoned one of the drinks
+      nextDialog: {fileID: 11400000, guid: 0ebe956266adca145b61107f06345638, type: 2}
+      affectsState: 1
+      stateVariable: hasAskedCallumDrink
+      stateValue: 1
+  - conditionalStates:
+    - name: hasDiedToDrink
+      _value: 1
+    - name: hasAskedCallumDrink
+      _value: 1
+    decision:
+      text: I hear that someone poisoned one of the drinks
+      nextDialog: {fileID: 11400000, guid: 408969d62d6220743ab9ced17382e915, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasDiedToKnife
+      _value: 1
+    - name: hasAskedCallumKnife
+      _value: 0
+    decision:
+      text: I think the display knife is missing
+      nextDialog: {fileID: 11400000, guid: f509d910f1cd5cf4cacbd60711c6ae28, type: 2}
+      affectsState: 1
+      stateVariable: hasAskedCallumKnife
+      stateValue: 1
+  - conditionalStates:
+    - name: hasDiedToKnife
+      _value: 1
+    - name: hasAskedCallumKnife
+      _value: 1
+    - name: hasToldCallumKnife
+      _value: 0
+    decision:
+      text: I think the display knife is missing
+      nextDialog: {fileID: 11400000, guid: 2fed79124667ad443b08c81350d6b03a, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasDiedToKnife
+      _value: 1
+    - name: hasAskedCallumKnife
+      _value: 1
+    - name: hasToldCallumKnife
+      _value: 1
+    decision:
+      text: I think the display knife is missing
+      nextDialog: {fileID: 11400000, guid: b3444fa2a0850424a92de6430001e4af, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasDiedToSpill
+      _value: 1
+    - name: hasAskedCallumSpill
+      _value: 0
+    decision:
+      text: Did you see that live wire in the billiards room?
+      nextDialog: {fileID: 11400000, guid: 53ac74fe3399f014f828887fb7ecd711, type: 2}
+      affectsState: 1
+      stateVariable: hasAskedCallumSpill
+      stateValue: 1
+  - conditionalStates:
+    - name: hasDiedToSpill
+      _value: 1
+    - name: hasAskedCallumSpill
+      _value: 1
+    decision:
+      text: Did you see that live wire in the billiards room?
+      nextDialog: {fileID: 11400000, guid: 4d9d539685b5f27449ff51cfed1e8692, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
