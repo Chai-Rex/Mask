@@ -25,9 +25,9 @@ MonoBehaviour:
   decisionOptions:
   - text: Of course... ridiculous...
     nextDialog: {fileID: 0}
-    affectsState: 0
-    stateVariable: 
-    stateValue: 0
+    affectsState: 1
+    stateVariable: hasTalkedClaudetteArsenal
+    stateValue: 1
   conditionalDecisions:
   - conditionalStates:
     - name: hasBlamedClaudetteDrawer
@@ -35,15 +35,15 @@ MonoBehaviour:
     decision:
       text: I know it was you (Blame)
       nextDialog: {fileID: 11400000, guid: 7b74eb52124875c4486726ea9d82f102, type: 2}
-      affectsState: 0
-      stateVariable: 
-      stateValue: 0
+      affectsState: 1
+      stateVariable: hasTalkedClaudetteArsenal
+      stateValue: 1
   - conditionalStates:
     - name: hasBlamedClaudetteDrawer
       _value: 1
     decision:
       text: I know it was you (Blame)
       nextDialog: {fileID: 11400000, guid: 01dbc7af84d2e9f47a060d64c545b98d, type: 2}
-      affectsState: 0
-      stateVariable: 
-      stateValue: 0
+      affectsState: 1
+      stateVariable: hasTalkedClaudetteArsenal
+      stateValue: 1

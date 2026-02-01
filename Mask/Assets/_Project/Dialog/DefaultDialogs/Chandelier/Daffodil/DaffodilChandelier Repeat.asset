@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
+  m_Name: DaffodilChandelier Repeat
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
+  DialogText:
+  - Don't worry I'm gonna stay away from it. I don't have to be a doctor to know
+    getting hit with that would be bad for my health
+  decisionOptions:
+  - text: ...
+    nextDialog: {fileID: 0}
+    affectsState: 0
+    stateVariable: 
+    stateValue: 0
+  conditionalDecisions:
+  - conditionalStates:
+    - name: hasBlamedDaffodilChandelier
+      _value: 0
+    decision:
+      text: I know it was you (Blame)
+      nextDialog: {fileID: 11400000, guid: 8c1fa1760f46a33469f1d4897ea87f3c, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasBlamedDaffodilChandelier
+      _value: 1
+    decision:
+      text: I know it was you (Blame)
+      nextDialog: {fileID: 11400000, guid: aae185626665df7439e1b803a41f8c4f, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0

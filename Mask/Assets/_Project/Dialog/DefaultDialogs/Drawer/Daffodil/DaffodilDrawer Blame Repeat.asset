@@ -10,21 +10,20 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
-  m_Name: ClaudetteDrawer 2
+  m_Name: DaffodilDrawer Blame Repeat
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
   DialogText:
-  - Oh don't worry about it dear, that won't be an issue for at least a few months
-    to a year, you have plenty of time to prepare.
-  - You <i>have</i> been stockpiling non-perishables, water, and ammo I assume?
+  - How would I even get my hands on one of those? I'm not rich... Actually you could
+    probably buy one with the student debt I owe
   decisionOptions:
-  - text: Oh of course! I thought you meant soon...
+  - text: ...
     nextDialog: {fileID: 0}
     affectsState: 1
-    stateVariable: hasTalkedClaudetteApocalypse
+    stateVariable: hasBlamedDaffodilDrawer
     stateValue: 1
-  - text: Uhhh, you'll have to excuse me I have some doomsday prep to do
+  - text: Big mood...
     nextDialog: {fileID: 0}
     affectsState: 1
-    stateVariable: hasTalkedClaudetteApocalypse
+    stateVariable: hasBlamedDaffodilDrawer
     stateValue: 1
   conditionalDecisions: []
