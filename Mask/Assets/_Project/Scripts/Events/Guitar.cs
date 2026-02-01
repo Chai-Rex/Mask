@@ -1,16 +1,21 @@
 using UnityEngine;
 
-public class Guitar : MonoBehaviour
+public class Guitar : PickupableItem
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override void SetItemPickedUp(bool i_isPickedUp)
     {
-        
-    }
+        base.SetItemPickedUp(i_isPickedUp);
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (i_isPickedUp)
+        {
+            if (soundClips.Count != 0 && soundClips.Count >= 3)
+            {
+                int randomIndex = Random.Range(0, soundClips.Count);
+                _eventAudioData.Clip = soundClips[randomIndex];
+            }
+
+            PlayTriggerSound();
+            ResetSoundTriggered();
+        }
     }
 }

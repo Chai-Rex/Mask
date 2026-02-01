@@ -26,18 +26,12 @@ public class DeathManager : Singleton<DeathManager> {
         InputManager.Instance.SetPlayerActionMap();
         _iEyeCanvas.gameObject.SetActive(false);
 
-        InputManager.Instance._PlayerJumpAction.started += _PlayerJumpAction_started; // remove
         InputManager.Instance._DeathRespawnAction.started += _DeathRespawnAction_started;
     }
 
     private void OnDestroy() {
         if (InputManager.Instance == null) return;
-        InputManager.Instance._PlayerJumpAction.started -= _PlayerJumpAction_started; // remove
         InputManager.Instance._DeathRespawnAction.started -= _DeathRespawnAction_started;
-    }
-
-    private void _PlayerJumpAction_started(UnityEngine.InputSystem.InputAction.CallbackContext obj) {
-        Die("BEEs", "Bees");
     }
 
     private void _DeathRespawnAction_started(UnityEngine.InputSystem.InputAction.CallbackContext obj) {
@@ -74,6 +68,17 @@ public class DeathManager : Singleton<DeathManager> {
 
         StoryStateSO.Instance.ResetState();
 
+    }
+
+    public async void Sleep()
+    {
+        _iEyeCanvas.gameObject.SetActive(true);
+
+        await _iEyeCanvas.CloseEyes();
+
+        await _iEyeCanvas.OpenEyes();
+
+        _iEyeCanvas.gameObject.SetActive(true);
     }
 
 
