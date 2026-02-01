@@ -216,7 +216,7 @@ MonoBehaviour:
   soundClips: []
   verb: Open
   verbWhenOpen: Close
-  isDeathDrawer: 1
+  isDeathDrawer: 0
   _openDrawerAudio:
     Clip: {fileID: 0}
     MixerGroup: {fileID: 0}
