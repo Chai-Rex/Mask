@@ -1,12 +1,13 @@
 using AudioSystem;
 using DG.Tweening;
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class InteractableDrawer : BaseTimeEvent, IInteractable
 {
-    [SerializeField] private string verb = "Close";
-    [SerializeField] private string verbWhenOpen = "Open";
+    [SerializeField] private string verb = "Open";
+    [SerializeField] private string verbWhenOpen = "Close";
     [SerializeField] private bool isDeathDrawer = false;
 
     [SerializeField]
@@ -18,18 +19,20 @@ public class InteractableDrawer : BaseTimeEvent, IInteractable
     private StateVariable _deathDrawerActive = new StateVariable("", false, false);
 
     private Vector3 startLocation;
-    private Vector3 endLocation;
 
-    [SerializeField] private float drawerDuration = 3.0f;
-    [SerializeField] private float deathDelay = 0.5f;
-    private Action currentCallback;
+    [SerializeField] private float drawerDuration = 0.25f;
+    [SerializeField] private float deathDelay = 1.0f;
+    [SerializeField] private float timeToActivate = 120.0f;
+
+    [SerializeField] private Transform endLocation;
+
+    private Coroutine currentBlastCoroutine;
 
     public string InteractionVerb => isOpen ? verbWhenOpen : verb;
 
     private void Awake()
     {
         startLocation = transform.position;
-        endLocation = transform.position + new Vector3(0.0f, 0.0f, 100.0f);
 
         if (isDeathDrawer)
         {
@@ -37,11 +40,33 @@ public class InteractableDrawer : BaseTimeEvent, IInteractable
         }
     }
 
+    private void Start()
+    {
+        TimeManager.Instance.ScheduleAt(timeToActivate, ActivateTimeEvent);
+    }
+
     protected override void ActivateTimeEvent()
     {
         base.ActivateTimeEvent();
+        isActive = true;    
+    }
 
-        if (isActive && isDeathDrawer)
+    private IEnumerator OnGettingBlasted()
+    {
+        float currentDelay = 0.0f;
+
+        while (currentDelay < deathDelay)
+        {
+            if (!isOpen)
+            {
+                break;
+            }
+
+            currentDelay += Time.deltaTime;
+            yield return null;
+        }
+
+        if (isOpen && isActive && isDeathDrawer)
         {
             PlayTriggerSound();
             DeathManager.Instance.Die("Got Blasted");
@@ -68,29 +93,37 @@ public class InteractableDrawer : BaseTimeEvent, IInteractable
                 .OnComplete(() =>
                 {
                     isOpen = false;
-                    isActive = false;
 
-                    if (currentCallback != null && isDeathDrawer)
+                    if (isDeathDrawer)
                     {
                         _deathDrawerActive.SetValueAndUpdateBlackboard(false);
-                        TimeManager.Instance.CancelScheduled(currentCallback);
+
+                        if (currentBlastCoroutine != null)
+                        {
+                            StopAllCoroutines();
+                            currentBlastCoroutine = null;
+                        }
                     }
 
                 });
         }
         else
         {
-            transform.DOMove(endLocation, drawerDuration)
+            if (endLocation == null) { return; }
+
+            transform.DOMove(endLocation.position, drawerDuration)
                 .OnComplete(() =>
                 {
                     isOpen = true;
-                    isActive = true;
 
-                    if (currentCallback == null && isDeathDrawer)
+                    if (isDeathDrawer && isActive)
                     {
                         _deathDrawerActive.SetValueAndUpdateBlackboard(true);
-                        currentCallback = ActivateTimeEvent;
-                        TimeManager.Instance.ScheduleAfter(deathDelay, currentCallback);
+
+                        if (currentBlastCoroutine == null)
+                        {
+                            currentBlastCoroutine = StartCoroutine(OnGettingBlasted());
+                        }
                     }
                 });
         }
