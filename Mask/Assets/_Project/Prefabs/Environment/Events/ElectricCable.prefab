@@ -34,6 +34,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7239578103616005309}
+  - {fileID: 6404725514040241487}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6969214581283498922
@@ -132,6 +133,7 @@ MonoBehaviour:
   waterSpills: []
   electricCableActivateTime: 5
   sparkParticles: {fileID: 7077759663421124898}
+  _electricAudioEmitter: {fileID: 13637506324295171}
 --- !u!65 &9052780547791690119
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -223,4 +225,89 @@ ParticleSystem:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6140091240946671581, guid: 264c63cd0c0c73a43b655529efd355fe, type: 3}
   m_PrefabInstance: {fileID: 3552734954173987680}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &4737782972955860796
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1228216221197856314}
+    m_Modifications:
+    - target: {fileID: 1827858266891383411, guid: 237e6644f1ce93946be7ddb4a70de680, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.16593
+      objectReference: {fileID: 0}
+    - target: {fileID: 1827858266891383411, guid: 237e6644f1ce93946be7ddb4a70de680, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1827858266891383411, guid: 237e6644f1ce93946be7ddb4a70de680, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.77353
+      objectReference: {fileID: 0}
+    - target: {fileID: 1827858266891383411, guid: 237e6644f1ce93946be7ddb4a70de680, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1827858266891383411, guid: 237e6644f1ce93946be7ddb4a70de680, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1827858266891383411, guid: 237e6644f1ce93946be7ddb4a70de680, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1827858266891383411, guid: 237e6644f1ce93946be7ddb4a70de680, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1827858266891383411, guid: 237e6644f1ce93946be7ddb4a70de680, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1827858266891383411, guid: 237e6644f1ce93946be7ddb4a70de680, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1827858266891383411, guid: 237e6644f1ce93946be7ddb4a70de680, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3567004456654750640, guid: 237e6644f1ce93946be7ddb4a70de680, type: 3}
+      propertyPath: m_Name
+      value: ElectricAudio
+      objectReference: {fileID: 0}
+    - target: {fileID: 7945120735054516600, guid: 237e6644f1ce93946be7ddb4a70de680, type: 3}
+      propertyPath: m_Size.x
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7945120735054516600, guid: 237e6644f1ce93946be7ddb4a70de680, type: 3}
+      propertyPath: m_Size.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7945120735054516600, guid: 237e6644f1ce93946be7ddb4a70de680, type: 3}
+      propertyPath: m_Size.z
+      value: 4.5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 237e6644f1ce93946be7ddb4a70de680, type: 3}
+--- !u!114 &13637506324295171 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4724152582320779583, guid: 237e6644f1ce93946be7ddb4a70de680, type: 3}
+  m_PrefabInstance: {fileID: 4737782972955860796}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cc6eff96dab6b1459e9356869bedbfb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoomSoundEmitter
+--- !u!4 &6404725514040241487 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1827858266891383411, guid: 237e6644f1ce93946be7ddb4a70de680, type: 3}
+  m_PrefabInstance: {fileID: 4737782972955860796}
   m_PrefabAsset: {fileID: 0}

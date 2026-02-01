@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Lego : BaseTimeEvent
@@ -7,14 +8,16 @@ public class Lego : BaseTimeEvent
 
     private void Start()
     {
-        TimeManager.Instance.ScheduleAt(legoActivateTime, ActivateTimeEvent);
+        DeathManager.Instance.HasSlept += SetLegoIsActive;
+        // TimeManager.Instance.ScheduleAt(legoActivateTime, ActivateTimeEvent);
+        gameObject.SetActive(false);
     }
 
     protected override void ActivateTimeEvent()
     {
         base.ActivateTimeEvent();
 
-        SetLegoIsActive(true);
+        //SetLegoIsActive();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -28,17 +31,17 @@ public class Lego : BaseTimeEvent
         }
     }
 
-    public void SetLegoIsActive(bool _isActive)
+    public void SetLegoIsActive()
     {
-        isLegoActive.SetValueAndUpdateBlackboard(_isActive);
+        isLegoActive.SetValueAndUpdateBlackboard(true);
 
-        if (isLegoActive.Value)
-        {
-            gameObject.SetActive(true);
-        }
-        else
-        {
-            gameObject.SetActive(false);
-        }
+        gameObject.SetActive(true);
+
+        DeathManager.Instance.HasSlept -= SetLegoIsActive;
+    }
+
+    private void OnDestroy()
+    {
+        DeathManager.Instance.HasSlept -= SetLegoIsActive;
     }
 }

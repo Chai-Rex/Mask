@@ -6,6 +6,8 @@ public class Chandelier : BaseTimeEvent
 {
     [SerializeField] private Transform targetLocation;
     [SerializeField] private float fallDuration = 0.5f;
+    [SerializeField] private bool isBadChandelier = false;
+    private bool canStartFalling = false;
 
     private StateVariable canFall = new StateVariable("canChandelierFall", false);
     private StateVariable hasFallen = new StateVariable("hasChandelierFallen", false);
@@ -23,7 +25,10 @@ public class Chandelier : BaseTimeEvent
     }
     private void Start()
     {
-        TimeManager.Instance.ScheduleAt(chandelierFallTime, ActivateTimeEvent);
+        if (isBadChandelier)
+        {
+            TimeManager.Instance.ScheduleAt(chandelierFallTime, ActivateTimeEvent);
+        }
     }
 
     protected override void ActivateTimeEvent()
@@ -31,13 +36,6 @@ public class Chandelier : BaseTimeEvent
         base.ActivateTimeEvent();
 
         canFall.SetValueAndUpdateBlackboard(true);
-        if (canFall.Value && !hasFallen.Value)
-        {
-            if (beforeFallCoroutine == null)
-            {
-                beforeFallCoroutine = StartCoroutine(OnBeforeFall());
-            }
-        }
     }
 
     private IEnumerator OnBeforeFall()
@@ -103,5 +101,22 @@ public class Chandelier : BaseTimeEvent
     {
         StopAllCoroutines();
         beforeFallCoroutine = null;
+    }
+
+    public void StartFalling()
+    {
+        if (!canStartFalling)
+        {
+            canStartFalling = true;
+
+            if (canFall.Value && !hasFallen.Value)
+            {
+                if (beforeFallCoroutine == null)
+                {
+                    beforeFallCoroutine = StartCoroutine(OnBeforeFall());
+                }
+            }
+
+        }
     }
 }

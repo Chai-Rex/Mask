@@ -94,7 +94,7 @@ public class RoomSoundEmitter : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player" && !fadeIn)
+        if(other.gameObject.layer == LayerMask.NameToLayer("Player") && !fadeIn)
         {
             if (MusicSource != null && MusicSource.clip != null)
             {
@@ -137,7 +137,7 @@ public class RoomSoundEmitter : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.tag == "Player" && !fadeOut)
+        if(other.gameObject.layer == LayerMask.NameToLayer("Player") && !fadeOut)
         {
             startFadeTime = Time.time - ((1 - volumeLevel) * fadeTime);
             StartCoroutine(FadeAudioOut());
