@@ -10,6 +10,7 @@ public class LevelManager : PersistentSingleton<LevelManager> {
 
     public enum Levels {
         MainMenuScene,
+        Lvl_Mansion_Blockout,
         ChaiScene,
         EventTestScene,
         DialogTestScene
