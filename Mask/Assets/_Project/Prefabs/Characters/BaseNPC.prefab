@@ -194,6 +194,10 @@ GameObject:
   - component: {fileID: 1483510424292181035}
   - component: {fileID: 1362078884702610190}
   - component: {fileID: 5266276435172274321}
+  - component: {fileID: 5792891304182682920}
+  - component: {fileID: 503361702403170245}
+  - component: {fileID: 6976054915486723924}
+  - component: {fileID: 1534367544267574593}
   m_Layer: 0
   m_Name: BaseNPC
   m_TagString: Untagged
@@ -255,6 +259,7 @@ MonoBehaviour:
     IgnoreListenerVolume: 0
     IgnoreListenerPause: 0
     rolloffMode: 0
+  soundClips: []
   _iProceduralWalkAnimation: {fileID: 0}
   moveSpeed: 2.5
   npcLocationPoints: []
@@ -341,6 +346,121 @@ MonoBehaviour:
   _iHeadBobHeight: 0.05
   _iHeadTiltAngle: 5
   _iWalkEase: 4
+--- !u!114 &5792891304182682920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2906133591313795411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cba49c58964521b49a7c719e52d791dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueHandler
+  _iDialogueCanvas: {fileID: 0}
+  _iStoryState: {fileID: 11400000, guid: cdd420038140c28488a65d05b61e1c6d, type: 2}
+  _iSpeakingAnimationHandler: {fileID: 0}
+  _iCanSkip: 1
+  _silentPresetName: na
+--- !u!114 &503361702403170245
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2906133591313795411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cccb3c1f387eb949a760eccab2115cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractableTalk
+  _iVerb: Talk
+  _iName: 
+  _dialogTreeSelector: {fileID: 6976054915486723924}
+  _iDialogueAnimationHandler: {fileID: 1534367544267574593}
+  _iSoundData: {fileID: 11400000, guid: dd0b2cc7d97535a44b6ca437a0b11709, type: 2}
+  turnDurationSeconds: 0.5
+  turnCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  returnCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &6976054915486723924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2906133591313795411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c23acaf37dbfa54ebfdeb7f984f2806, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogTreeSelector
+  _StoryState: {fileID: 0}
+  _treeOptions: []
+  _defaultDialogTree: {fileID: 0}
+  _iCompleteDialogue: {fileID: 0}
+--- !u!114 &1534367544267574593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2906133591313795411}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d10a691835d662e4abdc8f89c7cf1233, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueAnimationHandler
+  _iBodyTransform: {fileID: 6074542068716217673}
+  _iHeadTransform: {fileID: 4460415535426358233}
+  _iEmotionPreset: {fileID: 11400000, guid: d7cff1fa385e01b4fad216ba5dcf064d, type: 2}
+  _iAnimationProfile: {fileID: 11400000, guid: 17dce80549ffae041bb00ece86221a0a, type: 2}
 --- !u!1 &3528026927776078272
 GameObject:
   m_ObjectHideFlags: 0

@@ -48,10 +48,6 @@ public class DeathManager : Singleton<DeathManager> {
 
     private void _DeathRespawnAction_started(UnityEngine.InputSystem.InputAction.CallbackContext obj) {
 
-        // reset blackboard
-        
-        _hasDiedState.SetValueAndUpdateBlackboard(true);
-
         InputManager.Instance.SetPlayerActionMap();
         LevelManager.Instance.LoadScene(levelToLoad);
 
@@ -79,7 +75,7 @@ public class DeathManager : Singleton<DeathManager> {
         InputManager.Instance.SetDeathActionMap();
 
         StoryStateSO.Instance.ResetState();
-
+        _hasDiedState.SetValueAndUpdateBlackboard(true);
     }
 
     public async void Sleep()

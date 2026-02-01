@@ -370,6 +370,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 503361702403170245, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
+      propertyPath: _iName
+      value: Butler
+      objectReference: {fileID: 0}
     - target: {fileID: 2134032791035249953, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -430,6 +434,10 @@ PrefabInstance:
       propertyPath: npcTimePoints.Array.size
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5792891304182682920, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
+      propertyPath: _iSpeakingAnimationHandler
+      value: 
+      objectReference: {fileID: 8520234472087902901}
     - target: {fileID: 6369162767604405494, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -438,6 +446,34 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 7701701754989426506, guid: b4d62c34264c4954cbe8d24ecfd07100, type: 3}
+    - target: {fileID: 6976054915486723924, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
+      propertyPath: _StoryState
+      value: 
+      objectReference: {fileID: 11400000, guid: cdd420038140c28488a65d05b61e1c6d, type: 2}
+    - target: {fileID: 6976054915486723924, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
+      propertyPath: _defaultDialogTree
+      value: 
+      objectReference: {fileID: 11400000, guid: 413b9cd304e214a4881d0d1a7c48ca41, type: 2}
+    - target: {fileID: 6976054915486723924, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
+      propertyPath: _iCompleteDialogue
+      value: 
+      objectReference: {fileID: 11400000, guid: 2b7ec59d95c38b74eb3ad9eeee673389, type: 2}
+    - target: {fileID: 6976054915486723924, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
+      propertyPath: _treeOptions.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6976054915486723924, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
+      propertyPath: _treeOptions.Array.data[0].dialogTree
+      value: 
+      objectReference: {fileID: 11400000, guid: 3da65634c8b95bc479ace9ef6757cd22, type: 2}
+    - target: {fileID: 6976054915486723924, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
+      propertyPath: _treeOptions.Array.data[0].requiredStates.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6976054915486723924, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
+      propertyPath: _treeOptions.Array.data[0].requiredStates.Array.data[0].name
+      value: isIntroFinished
+      objectReference: {fileID: 0}
     - target: {fileID: 8041418594308436863, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
       propertyPath: m_Mesh
       value: 
@@ -467,6 +503,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 355573954978882221, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
   m_PrefabInstance: {fileID: 7167161300850792436}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8520234472087902901 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1534367544267574593, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
+  m_PrefabInstance: {fileID: 7167161300850792436}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d10a691835d662e4abdc8f89c7cf1233, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueAnimationHandler
 --- !u!1001 &8287297572181224601
 PrefabInstance:
   m_ObjectHideFlags: 0
