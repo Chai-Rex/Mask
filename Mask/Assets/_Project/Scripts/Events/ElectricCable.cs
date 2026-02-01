@@ -6,9 +6,11 @@ public class ElectricCable : BaseTimeEvent
     [SerializeField] private List<WaterSpill> waterSpills = new List<WaterSpill>();
     private StateVariable isActive = new StateVariable("isElectricCableActive", false);
     [SerializeField] private float electricCableActivateTime = 60.0f;
+    [SerializeField] private ParticleSystem sparkParticles;
 
     private void Start()
     {
+        sparkParticles.gameObject.SetActive(false);
         TimeManager.Instance.ScheduleAt(electricCableActivateTime, ActivateTimeEvent);
     }
 
@@ -22,6 +24,12 @@ public class ElectricCable : BaseTimeEvent
     public void SetIsElectricCableActive(bool _isActive)
     {
         isActive.SetValueAndUpdateBlackboard(_isActive);
+
+        if (sparkParticles)
+        {
+            sparkParticles.gameObject.SetActive(true);
+            sparkParticles.Play();
+        }
 
         if (isActive.Value)
         {

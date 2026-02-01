@@ -4,9 +4,11 @@ public class InteractablePoisonDrink : BaseTimeEvent, IInteractable
 {
     private StateVariable isActive = new StateVariable("isPoisonDrinkActive", false);
     [SerializeField] private string verb = "Drink";
+    [SerializeField] private string verbWhenEmpty = "Empty";
 
     [SerializeField] private Mesh drinkFull;
     [SerializeField] private Mesh drinkEmpty;
+    private bool isEmpty = false;
 
     [SerializeField] bool isPoison = true;
     private bool isPoisoned = false;
@@ -15,7 +17,7 @@ public class InteractablePoisonDrink : BaseTimeEvent, IInteractable
 
     private MeshFilter meshFilter;
 
-    public string InteractionVerb => verb;
+    public string InteractionVerb => isEmpty ? verbWhenEmpty : verb;
 
     private void Awake()
     {
@@ -36,18 +38,19 @@ public class InteractablePoisonDrink : BaseTimeEvent, IInteractable
 
     public void OnInteract(GameObject interactor)
     {
-        if (meshFilter && drinkEmpty && meshFilter.mesh == drinkEmpty) { return; }
-
-        PlayTriggerSound();
+        if (meshFilter && drinkEmpty && isEmpty) { return; }
 
         if (meshFilter && drinkEmpty)
         {
             meshFilter.mesh = drinkEmpty;
+            isEmpty = true;
         }
 
         if (isPoison)
         {
             if (!isPoisoned && !isActive.Value) { return; }
+
+            PlayTriggerSound();
 
             DeathManager.Instance.Die("Drink was Poisoned");
         }
@@ -73,9 +76,10 @@ public class InteractablePoisonDrink : BaseTimeEvent, IInteractable
 
     public void OnFillUpDrink()
     {
-        if (meshFilter && drinkFull && meshFilter.mesh != drinkFull)
+        if (meshFilter && drinkFull && isEmpty)
         {
             meshFilter.mesh = drinkFull;
+            isEmpty = false;
         }
     }
 

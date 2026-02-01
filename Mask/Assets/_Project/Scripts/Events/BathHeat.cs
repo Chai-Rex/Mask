@@ -86,7 +86,11 @@ public class BathHeat : BaseTimeEvent
     {
         if (isActive.Value && isPlayerIn.Value)
         {
-            doorToLock.SetIsDoorLocked(true);
+            if (doorToLock)
+            {
+                doorToLock.SetIsDoorLocked(true);
+            }
+
             PlayTriggerSound();
             bathCoroutine = StartCoroutine(BathHeating());
 
