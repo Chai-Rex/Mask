@@ -13,21 +13,28 @@ public class ElectricCable : BaseTimeEvent
     private void Start()
     {
         sparkParticles.gameObject.SetActive(false);
-        _electricAudioEmitter.volumeMultiplier = 0;
+        if(_electricAudioEmitter != null)
+        {
+            _electricAudioEmitter.gameObject.SetActive(false);
+        }
+        
         TimeManager.Instance.ScheduleAt(electricCableActivateTime, ActivateTimeEvent);
     }
 
     protected override void ActivateTimeEvent()
     {
         base.ActivateTimeEvent();
-
+        
         SetIsElectricCableActive(true);
     }
 
     public void SetIsElectricCableActive(bool _isActive)
     {
         isActive.SetValueAndUpdateBlackboard(_isActive);
-        _electricAudioEmitter.volumeMultiplier = _isActive ? 1 : 0;
+        if (_electricAudioEmitter != null)
+        {
+            _electricAudioEmitter.gameObject.SetActive(_isActive);
+        }
 
         if (sparkParticles)
         {

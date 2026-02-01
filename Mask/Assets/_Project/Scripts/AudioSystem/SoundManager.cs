@@ -23,6 +23,9 @@ namespace AudioSystem {
         [SerializeField] private AudioMixer _iMixer;
 
 
+        [SerializeField] private SoundData _MenuButtonSFX;
+        [SerializeField] private SoundData _MenuSliderSFX;
+
         protected override void Awake() {
             base.Awake();
             InitializePool();
@@ -102,6 +105,18 @@ namespace AudioSystem {
 
             float dB = Mathf.Log10(value) * 20f;
             _iMixer.SetFloat(mixerParam, dB);
+        }
+
+        public void PlayMenuButtonSFX()
+        {
+            CreateSound()
+                .Play(_MenuButtonSFX);
+        }
+
+        public void PlayMenuSliderSFX()
+        {
+            CreateSound()
+                .Play(_MenuSliderSFX);
         }
     }
 
