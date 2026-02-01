@@ -1,6 +1,7 @@
 using System.Xml.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class DialogueCanvas : MonoBehaviour {
 
@@ -11,6 +12,7 @@ public class DialogueCanvas : MonoBehaviour {
     [SerializeField] private TMP_Text _iDialogueText; 
     [SerializeField] private TMP_Text _iNameText;
 
+    [SerializeField] private RectTransform _iRebuildTransform;
 
     private ResponseButton[] _responseButtons;
 
@@ -37,6 +39,7 @@ public class DialogueCanvas : MonoBehaviour {
     public void AddResponse(string i_response, int i_id) {
         _responseButtons[i_id].gameObject.SetActive(true);
         _responseButtons[i_id].SetText(i_response, i_id);
+        LayoutRebuilder.ForceRebuildLayoutImmediate(_iRebuildTransform);
     }
 
     public void ClearResponses() {

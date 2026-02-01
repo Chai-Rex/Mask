@@ -12,6 +12,8 @@ public class CreditsCanvas : MonoBehaviour {
 
     [SerializeField] private float scrollSpeed = 50f; // pixels per second
 
+    [SerializeField] private TMP_Text _iDeathsText;
+
     private float maxScrollY;
     private bool isScrolling;
 
@@ -48,6 +50,8 @@ public class CreditsCanvas : MonoBehaviour {
 
         try {
             InputManager.Instance.DisablePlayerActions();
+
+            _iDeathsText.text = $"Deaths {StoryStateSO.Instance._numDeaths}";
 
             await Awaitable.WaitForSecondsAsync(2f, token);
 

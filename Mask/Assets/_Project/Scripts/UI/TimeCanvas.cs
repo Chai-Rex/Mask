@@ -1,8 +1,10 @@
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 
 public class TimeCanvas : MonoBehaviour {
-    [SerializeField] private TMP_Text _iText;
+    [SerializeField] private TMP_Text _iTimeText;
+    [SerializeField] private TMP_Text _iPauseText;
 
     [Header("Time Scaling")]
     [Tooltip("How many real-life seconds equal ONE in-game minute")]
@@ -17,6 +19,14 @@ public class TimeCanvas : MonoBehaviour {
 
     [Header("Display")]
     [SerializeField] private bool useAmPmFormat = false;
+
+    private void Start() {
+        FadePausePrompt();
+    }
+
+    private void OnDestroy() {
+        _iPauseText.DOKill();
+    }
 
     /// <summary>
     /// Sets the displayed in-game time based on real seconds elapsed.
@@ -41,9 +51,15 @@ public class TimeCanvas : MonoBehaviour {
                 displayHour = 12;
 
             string suffix = hours < 12 ? "AM" : "PM";
-            _iText.text = $"{displayHour:00}:{minutes:00} {suffix}";
+            _iTimeText.text = $"{displayHour:00}:{minutes:00} {suffix}";
         } else {
-            _iText.text = $"{hours:00}:{minutes:00}";
+            _iTimeText.text = $"{hours:00}:{minutes:00}";
         }
+    }
+
+    private async void FadePausePrompt() {
+
+        await Awaitable.WaitForSecondsAsync(5);
+        _iPauseText.DOFade(0f, 3f);
     }
 }
