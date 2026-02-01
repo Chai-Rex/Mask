@@ -1,4 +1,5 @@
 using AudioSystem;
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 using UnityEngine;
@@ -7,6 +8,8 @@ public class DeathManager : Singleton<DeathManager> {
 
     [SerializeField] private EyesCanvas _iEyeCanvas;
     [SerializeField] private LevelManager.Levels levelToLoad;
+
+    public Action HasSlept;
 
     private StateVariable _hasDiedState = new StateVariable("hasPlayerDied", false);
 
@@ -75,6 +78,8 @@ public class DeathManager : Singleton<DeathManager> {
         _iEyeCanvas.gameObject.SetActive(true);
 
         await _iEyeCanvas.CloseEyes();
+
+        HasSlept?.Invoke();
 
         await Task.Delay(3500);
 
