@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
+  m_Name: DaffodilBlock 1
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
+  DialogText:
+  - Oh no, not anymore. I'm sure I still have them somewhere in storage but between
+    pre-med and figuring out my life I don't have much time for that sort of thing.
+  - 'I do remember my <color=green>Dad</color> always yelling at me to clean up after
+    myself though hehe. I did feel bad when he stepped on the ones I left laying
+    around. '
+  decisionOptions:
+  - text: I can relate.
+    nextDialog: {fileID: 0}
+    affectsState: 0
+    stateVariable: 
+    stateValue: 0
+  conditionalDecisions:
+  - conditionalStates:
+    - name: hasBlamedDaffodilBlock
+      _value: 0
+    decision:
+      text: I know it was you (Blame)
+      nextDialog: {fileID: 11400000, guid: df5b2dc4dcadd1a42a570306e4d54475, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasBlamedDaffodilBlock
+      _value: 1
+    decision:
+      text: I know it was you (Blame)
+      nextDialog: {fileID: 11400000, guid: 9d26246a3bc3af54fa0abf3385dc561e, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0

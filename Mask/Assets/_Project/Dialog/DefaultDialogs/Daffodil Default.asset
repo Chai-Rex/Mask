@@ -1,0 +1,199 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
+  m_Name: Daffodil Default
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
+  DialogText:
+  - Can I help you?
+  decisionOptions:
+  - text: Nevermind
+    nextDialog: {fileID: 0}
+    affectsState: 0
+    stateVariable: 
+    stateValue: 0
+  conditionalDecisions:
+  - conditionalStates:
+    - name: hasDiedToBanana
+      _value: 1
+    - name: hasAskedDaffodilBanana
+      _value: 0
+    decision:
+      text: I think someone left a banana peel on the Dining Room floor
+      nextDialog: {fileID: 11400000, guid: c1678669852dab54fbf15d8c07297ea9, type: 2}
+      affectsState: 1
+      stateVariable: hasAskedDaffodilBanana
+      stateValue: 1
+  - conditionalStates:
+    - name: hasDiedToBanana
+      _value: 1
+    - name: hasAskedDaffodilBanana
+      _value: 1
+    decision:
+      text: I think someone left a banana peel on the Dining Room floor
+      nextDialog: {fileID: 11400000, guid: 8a6557269767b604891a9a997386efd5, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasDiedToBath
+      _value: 1
+    - name: hasAskedDaffodilBath
+      _value: 0
+    decision:
+      text: I think theres a trap in the alcove
+      nextDialog: {fileID: 11400000, guid: 67a00310af662934094984e268e83368, type: 2}
+      affectsState: 1
+      stateVariable: hasAskedDaffodilBath
+      stateValue: 1
+  - conditionalStates:
+    - name: hasDiedToBath
+      _value: 1
+    - name: hasAskedDaffodilBath
+      _value: 1
+    decision:
+      text: I think theres a trap in the alcove
+      nextDialog: {fileID: 11400000, guid: 6c353fe6744cfcd4e922748bd50a5969, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasDiedToBlock
+      _value: 1
+    - name: hasAskedDaffodilBlock
+      _value: 0
+    decision:
+      text: There was a building block on the ground upstairs
+      nextDialog: {fileID: 11400000, guid: d71048e427b07184386aa333a81adc46, type: 2}
+      affectsState: 1
+      stateVariable: hasAskedDaffodilBlock
+      stateValue: 1
+  - conditionalStates:
+    - name: hasDiedToBlock
+      _value: 1
+    - name: hasAskedDaffodilBlock
+      _value: 1
+    decision:
+      text: There was a building block on the ground upstairs
+      nextDialog: {fileID: 11400000, guid: 9cbc1336b430beb4fa4de910ccfe3817, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasDiedToChandelier
+      _value: 1
+    - name: hasAskedDaffodilChandelier
+      _value: 0
+    decision:
+      text: Someone sabotaged the chandelier in the library!
+      nextDialog: {fileID: 11400000, guid: 0135fbd3b8aec124a84305dc8a70f008, type: 2}
+      affectsState: 1
+      stateVariable: hasAskedDaffodilChandelier
+      stateValue: 1
+  - conditionalStates:
+    - name: hasDiedToChandelier
+      _value: 1
+    - name: hasAskedDaffodilChandelier
+      _value: 1
+    decision:
+      text: Someone sabotaged the chandelier in the library!
+      nextDialog: {fileID: 11400000, guid: 10fa3886074bcd64a8ca78e4639931b2, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasDiedToDrawer
+      _value: 1
+    - name: hasAskedDaffodilDrawer
+      _value: 0
+    decision:
+      text: I think one of the drawers in the Tea Room is a hidden gun.
+      nextDialog: {fileID: 11400000, guid: 75ac29571859f154d8fe31c8ea91d29b, type: 2}
+      affectsState: 1
+      stateVariable: hasAskedDaffodilDrawer
+      stateValue: 1
+  - conditionalStates:
+    - name: hasDiedToDrawer
+      _value: 1
+    - name: hasAskedDaffodilDrawer
+      _value: 1
+    decision:
+      text: I think one of the drawers in the Tea Room is a hidden gun.
+      nextDialog: {fileID: 11400000, guid: 867f27300aae61d42b29bc35ddda2dd1, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasDiedToDrink
+      _value: 1
+    - name: hasAskedDaffodilDrink
+      _value: 0
+    decision:
+      text: I hear that someone poisoned one of the drinks
+      nextDialog: {fileID: 11400000, guid: 53d7ab020693ebf46b7a4950fbefa27d, type: 2}
+      affectsState: 1
+      stateVariable: hasAskedDaffodilDrink
+      stateValue: 1
+  - conditionalStates:
+    - name: hasDiedToDrink
+      _value: 1
+    - name: hasAskedDaffodilDrink
+      _value: 1
+    decision:
+      text: I hear that someone poisoned one of the drinks
+      nextDialog: {fileID: 11400000, guid: 37189d04f603924489888087ee888735, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasDiedToKnife
+      _value: 1
+    - name: hasAskedDaffodilKnife
+      _value: 0
+    decision:
+      text: I think someones after that fancy knife
+      nextDialog: {fileID: 11400000, guid: 1ffe326cb69224846895949286249ff9, type: 2}
+      affectsState: 1
+      stateVariable: hasAskedDaffodilKnife
+      stateValue: 1
+  - conditionalStates:
+    - name: hasDiedToKnife
+      _value: 1
+    - name: hasAskedDaffodilKnife
+      _value: 1
+    decision:
+      text: I think someones after that fancy knife
+      nextDialog: {fileID: 11400000, guid: 8f85dfb30fe0f59448580c5fff271fa0, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0
+  - conditionalStates:
+    - name: hasDiedToSpill
+      _value: 1
+    - name: hasAskedDaffodilSpill
+      _value: 0
+    decision:
+      text: Did you see that spill and wire in the billiards room?
+      nextDialog: {fileID: 11400000, guid: e07872179cb6bec4896506b84e0374e7, type: 2}
+      affectsState: 1
+      stateVariable: hasAskedDaffodilSpill
+      stateValue: 1
+  - conditionalStates:
+    - name: hasDiedToSpill
+      _value: 1
+    - name: hasAskedDaffodilSpill
+      _value: 1
+    decision:
+      text: Did you see that spill and wire in the billiards room?
+      nextDialog: {fileID: 11400000, guid: 33d30e4dc799c374ba1b976e4176aced, type: 2}
+      affectsState: 0
+      stateVariable: 
+      stateValue: 0

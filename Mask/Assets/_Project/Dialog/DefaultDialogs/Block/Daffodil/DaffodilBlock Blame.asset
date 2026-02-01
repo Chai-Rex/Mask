@@ -10,21 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
-  m_Name: ClaudetteDrawer 2
+  m_Name: DaffodilBlock Blame
   m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
   DialogText:
-  - Oh don't worry about it dear, that won't be an issue for at least a few months
-    to a year, you have plenty of time to prepare.
-  - You <i>have</i> been stockpiling non-perishables, water, and ammo I assume?
+  - "No way! The only time I see a building block is when\u2026 Well, when I see
+    <color=#ca3433ff>Callum</color>, his kids tend to put those types of things in
+    his pockets."
   decisionOptions:
-  - text: Oh of course! I thought you meant soon...
+  - text: ...
     nextDialog: {fileID: 0}
     affectsState: 1
-    stateVariable: hasTalkedClaudetteApocalypse
-    stateValue: 1
-  - text: Uhhh, you'll have to excuse me I have some doomsday prep to do
-    nextDialog: {fileID: 0}
-    affectsState: 1
-    stateVariable: hasTalkedClaudetteApocalypse
+    stateVariable: hasBlamedDaffodilBlock
     stateValue: 1
   conditionalDecisions: []
