@@ -1349,6 +1349,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: KnifeBox
       objectReference: {fileID: 0}
+    - target: {fileID: 5255791235190976723, guid: 60305bfd65e2b1e4c94e44671580b42b, type: 3}
+      propertyPath: disappearTime
+      value: 180
+      objectReference: {fileID: 0}
     - target: {fileID: 6280648146498342259, guid: 60305bfd65e2b1e4c94e44671580b42b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -22.07
