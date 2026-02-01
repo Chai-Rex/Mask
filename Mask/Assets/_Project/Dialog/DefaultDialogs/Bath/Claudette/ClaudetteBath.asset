@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 159f126833fcd064391e942acd52a7cc, type: 3}
+  m_Name: ClaudetteBath
+  m_EditorClassIdentifier: Assembly-CSharp::CharacterDialogSO
+  DialogText:
+  - The alcove has always been hot, but it certainly isn't hot enough to be killing
+    anyone.
+  - If you cannot handle the temperature I recommend you refrain from entering the
+    room.
+  decisionOptions:
+  - text: Ok...
+    nextDialog: {fileID: 0}
+    affectsState: 0
+    stateVariable: 
+    stateValue: 0
+  - text: I can handle heat fine
+    nextDialog: {fileID: 11400000, guid: 45026fe21d31b7f429c9c8784f84df1c, type: 2}
+    affectsState: 0
+    stateVariable: 
+    stateValue: 0
+  - text: Can you just check the temperature please?
+    nextDialog: {fileID: 11400000, guid: d9357abcfb03fc846ba6aa5b758d8b7e, type: 2}
+    affectsState: 0
+    stateVariable: 
+    stateValue: 0
+  conditionalDecisions: []
