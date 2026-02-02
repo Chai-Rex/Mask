@@ -34,6 +34,8 @@ public class DialogueHandler : Singleton<DialogueHandler> {
     private DialogueAnimationParser.AnimationTag _currentAnimation = null;
     private string _currentActivePreset = null; // Track current preset name
 
+    private List<NPCMove> _npcMovementComponents = new List<NPCMove>();
+
     private InteractableTalk _interactableSpeaker;
 
     private void Start() {
@@ -61,12 +63,26 @@ public class DialogueHandler : Singleton<DialogueHandler> {
         }
     }
 
+    public void AddNPCMovementComponent(NPCMove i_npcMovementComponent)
+    {
+        _npcMovementComponents.Add(i_npcMovementComponent);
+    }
+
     public async void StartDialogueTree(InteractableTalk i_speaker, CharacterDialogSO i_dialogueTree, string i_name, DialogSoundSO i_dialogSound, DialogueAnimationHandler i_npcAnimator = null) {
 
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
         InputManager.Instance.SetDialogueActionMap();
+
+        // Stop NPC Move if NPC talking
+        if (_npcMovementComponents.Count != 0)
+        {
+            foreach (NPCMove npcMovementComponent in _npcMovementComponents)
+            {
+                npcMovementComponent.SetIsPausedNPCMovement(true);
+            }
+        }
 
         _currentDialog = i_dialogueTree;
         _currentDialogSound = i_dialogSound;
@@ -130,6 +146,15 @@ public class DialogueHandler : Singleton<DialogueHandler> {
         _currentAnimation = null;
         _currentActivePreset = null;
 
+        // Resume NPC Move if stopped talking
+        if (_npcMovementComponents.Count != 0)
+        {
+            foreach (NPCMove npcMovementComponent in _npcMovementComponents)
+            {
+                npcMovementComponent.SetIsPausedNPCMovement(false);
+            }
+        }
+
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -179,6 +204,12 @@ public class DialogueHandler : Singleton<DialogueHandler> {
     }
 
     private async Task TypeTextWithRichText(string i_text, CancellationToken i_cancellationToken) {
+
+        //// Stop NPC Move if currently talking
+        //if (_currentNPCMoveComponent != null)
+        //{
+        //    _currentNPCMoveComponent.SetIsPausedNPCMovement(true);
+        //}   
 
         // Start NPC speaking animation with default preset at the beginning
         if (_currentNPCAnimator != null) {
@@ -258,7 +289,7 @@ public class DialogueHandler : Singleton<DialogueHandler> {
         // Stop NPC speaking animation when text is done displaying
         if (_currentNPCAnimator != null) {
             _currentNPCAnimator.StopSpeaking();
-        }
+        }   
 
         // Reset animation and preset tracking when done
         _currentAnimation = null;

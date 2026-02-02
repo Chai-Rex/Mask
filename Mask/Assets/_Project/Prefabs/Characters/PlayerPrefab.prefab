@@ -966,6 +966,10 @@ PrefabInstance:
       propertyPath: _playerObject
       value: 
       objectReference: {fileID: 3044203949616991097}
+    - target: {fileID: 1062117979957642329, guid: 9d209b2dc037e844cb5289e5ad1cb556, type: 3}
+      propertyPath: _dialogueHandler
+      value: 
+      objectReference: {fileID: 4897912698217570490}
     - target: {fileID: 2093416431697489254, guid: 9d209b2dc037e844cb5289e5ad1cb556, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

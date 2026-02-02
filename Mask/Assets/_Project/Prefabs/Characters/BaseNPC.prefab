@@ -413,6 +413,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  _iNPCMoveComponent: {fileID: 4680610497886866286}
 --- !u!114 &6976054915486723924
 MonoBehaviour:
   m_ObjectHideFlags: 0

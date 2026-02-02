@@ -31,6 +31,7 @@ public class InteractableTalk : MonoBehaviour, IInteractable {
         _interactionHandler = i_interactor.GetComponent<InteractionHandler>();
 
         _dialogueTree = _dialogTreeSelector.GetDialogTree();
+
         handler.StartDialogueTree(this, _dialogueTree, _iName, _iSoundData, _iDialogueAnimationHandler);
     }
 

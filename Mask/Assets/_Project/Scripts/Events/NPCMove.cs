@@ -95,6 +95,8 @@ public class NPCMove : BaseTimeEvent
     [SerializeField] private float startMoveTime = 5.0f;
     [SerializeField] private float delayBetweenMoves = 5.0f;
 
+    private bool isPausedNPCMovement = false;
+
     protected virtual void Awake()
     {
         if (_iProceduralWalkAnimation == null) _iProceduralWalkAnimation = GetComponent<ProceduralWalkAnimation>();
@@ -110,6 +112,8 @@ public class NPCMove : BaseTimeEvent
 
     private void Start()
     {
+        LevelManager.Instance.GetDialogueHandler().AddNPCMovementComponent(this);
+
         currentNPCLocationState = ENPCLocationState.PointOne;
 
         if (npcTimePoints.Count == 0) { return; }
@@ -175,6 +179,11 @@ public class NPCMove : BaseTimeEvent
         }
     }
 
+    public void SetIsPausedNPCMovement(bool _isPausedNPCMovement)
+    {
+        isPausedNPCMovement = _isPausedNPCMovement;
+    }
+
     protected virtual IEnumerator OnNPCMoveToPoint(int _currentPoint)
     {
         navMeshAgent.isStopped = false;
@@ -191,6 +200,8 @@ public class NPCMove : BaseTimeEvent
 
         while (navMeshAgent.remainingDistance > 0.001f)
         {
+            if (isPausedNPCMovement) { break; }
+
             yield return null;
         }
 
@@ -198,5 +209,20 @@ public class NPCMove : BaseTimeEvent
 
         // move animation end
         _iProceduralWalkAnimation.StopWalking();
+
+        if (isPausedNPCMovement)
+        {
+            yield return OnNPCIsTalking(_currentPoint);
+        }
+    }
+
+    protected virtual IEnumerator OnNPCIsTalking(int _currentPoint)
+    {
+        yield return new WaitUntil(() => !isPausedNPCMovement);
+
+        if (_currentPoint < npcLocationDictionary[currentNPCLocationState].Count)
+        {
+            yield return OnNPCMoveToPoint(_currentPoint);
+        }
     }
 }
