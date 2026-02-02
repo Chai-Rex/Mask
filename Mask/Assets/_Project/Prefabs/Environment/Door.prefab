@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3172237773796689801}
   - component: {fileID: 1778920481796655341}
   - component: {fileID: 5813366370196961629}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,8 +56,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.5, y: 2, z: 2}
-  m_Center: {x: -0.75, y: 1, z: 1}
+  m_Size: {x: 1.5, y: 2, z: 3}
+  m_Center: {x: -0.75, y: 1, z: 1.55}
 --- !u!114 &1778920481796655341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70,7 +70,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c13a6506e5d858b4d858fccfcfcbfec7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BetweenDoor
-  door: {fileID: 5813366370196961629}
 --- !u!114 &5813366370196961629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -84,10 +83,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Door
   isDoorLocked: 0
-  doorDuration: 1
+  doorDuration: 0.75
   betweenDoorCollider: {fileID: 3172237773796689801}
   opensOnStateChange: 0
   stateName: 
+  openAngle: 90
 --- !u!1 &5125380750242588931
 GameObject:
   m_ObjectHideFlags: 0
@@ -99,7 +99,7 @@ GameObject:
   - component: {fileID: 5900244457271739628}
   - component: {fileID: 8961455318427066136}
   - component: {fileID: 4108181133005655590}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: BackCollision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -166,7 +166,7 @@ GameObject:
   - component: {fileID: 4755751037080030408}
   - component: {fileID: 4516117204209715912}
   - component: {fileID: 4228843685359592425}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: FrontCollision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -230,9 +230,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4583598252089079033}
     m_Modifications:
+    - target: {fileID: 5887592022206263182, guid: e6b2fae3e883b9e4c905c041716d5d34, type: 3}
+      propertyPath: m_Layer
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 6174265024558103062, guid: e6b2fae3e883b9e4c905c041716d5d34, type: 3}
       propertyPath: m_Name
       value: SM_WoodDoor
+      objectReference: {fileID: 0}
+    - target: {fileID: 6174265024558103062, guid: e6b2fae3e883b9e4c905c041716d5d34, type: 3}
+      propertyPath: m_Layer
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7614263557018988345, guid: e6b2fae3e883b9e4c905c041716d5d34, type: 3}
       propertyPath: m_LocalPosition.x

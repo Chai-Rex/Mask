@@ -1,5 +1,6 @@
 using DG.Tweening;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class Door : MonoBehaviour
 {
@@ -7,11 +8,19 @@ public class Door : MonoBehaviour
     [SerializeField] private bool isDoorLocked = false;
 
     Tween doorTween;
-    [SerializeField] private float doorDuration = 1.0f;
+    [SerializeField] private float doorDuration = 0.75f;
     [SerializeField] private BoxCollider betweenDoorCollider;
 
     [SerializeField] private bool opensOnStateChange = false;
     [SerializeField] private string stateName;
+
+    private Quaternion closedRotation;
+    [SerializeField] private float openAngle = 90.0f;
+
+    private void Awake()
+    {
+        closedRotation = transform.localRotation;
+    }
 
     private void Start()
     {
@@ -35,44 +44,40 @@ public class Door : MonoBehaviour
 
     public void OnDoorOpen(bool isFront)
     {
-        if (isDoorLocked) { return; }
+        if (isDoorLocked || isOpen) { return; }
 
-        if (!isOpen)
+        doorTween?.Kill();
+
+        float swingDirection = isFront ? -1.0f : 1.0f;
+
+        if (isFront)
         {
-            doorTween.Kill();
-
-            if (isFront)
+            if (betweenDoorCollider != null)
             {
-                if (betweenDoorCollider != null)
-                {
-                    betweenDoorCollider.center = new Vector3(-0.56f, 1.0f, 1.0f);
-                }
-                doorTween = transform.DORotate(new Vector3(0.0f, -90.0f, 0.0f), doorDuration)
-                .OnComplete(() =>
-                {
-                    isOpen = true;
-                });
+                betweenDoorCollider.center = new Vector3(-0.56f, 1.0f, 1.55f);
             }
-            else
-            {
-                if (betweenDoorCollider != null)
-                {
-                    betweenDoorCollider.center = new Vector3(-0.56f, 1.0f, -1.0f);
-                }
-                doorTween = transform.DORotate(new Vector3(0.0f, 90.0f, 0.0f), doorDuration)
-                .OnComplete(() =>
-                {
-                    isOpen = true;
-                });
-            }      
         }
-    }
+        else
+        {
+            if (betweenDoorCollider != null)
+            {
+                betweenDoorCollider.center = new Vector3(-0.56f, 1.0f, -1.55f);
+            }
+        }
+        
+        Quaternion target = closedRotation * Quaternion.Euler(0.0f, swingDirection * openAngle, 0.0f);
 
+        doorTween = transform.DOLocalRotateQuaternion(target, doorDuration)
+            .OnComplete(() =>
+            {
+                isOpen = true;
+            });
+    }
     public void OnDoorClose()
     {
         doorTween.Kill();
 
-        doorTween = transform.DORotate(new Vector3(0.0f, 0.0f, 0.0f), doorDuration)
+        doorTween = transform.DOLocalRotateQuaternion(closedRotation, doorDuration)
             .OnComplete(() =>
             {
                 isOpen = false;

@@ -8,7 +8,8 @@ public class HitBackDoor : MonoBehaviour
     {
         // Has NPC or Pllayer Touched Back of Door
 
-        if (door != null && other.gameObject.layer == LayerMask.NameToLayer("Player"))
+        if (door != null && other.gameObject.layer == LayerMask.NameToLayer("Player") ||
+            other.gameObject.tag == "NPC")
         {
             door.OnDoorOpen(false);
         }     

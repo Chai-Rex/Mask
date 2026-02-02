@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4460415535426358233}
   - component: {fileID: 2134032791035249953}
   - component: {fileID: 6448239387595456890}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   - component: {fileID: 6074542068716217673}
   - component: {fileID: 6369162767604405494}
   - component: {fileID: 800323865308166935}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Torso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -197,9 +197,9 @@ GameObject:
   - component: {fileID: 503361702403170245}
   - component: {fileID: 6976054915486723924}
   - component: {fileID: 1534367544267574593}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BaseNPC
-  m_TagString: Untagged
+  m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -456,7 +456,7 @@ GameObject:
   - component: {fileID: 2651036446314368391}
   - component: {fileID: 2726508045104797948}
   - component: {fileID: 7455678258112366595}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HandRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -546,7 +546,7 @@ GameObject:
   - component: {fileID: 1968127351950414100}
   - component: {fileID: 6382077607601297325}
   - component: {fileID: 2327528176244005671}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HandLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -636,7 +636,7 @@ GameObject:
   - component: {fileID: 1838440207950656891}
   - component: {fileID: 8041418594308436863}
   - component: {fileID: 3559489484797884905}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Mask
   m_TagString: Untagged
   m_Icon: {fileID: 0}
