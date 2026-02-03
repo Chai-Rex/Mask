@@ -5,6 +5,7 @@ using UtilitySingletons;
 public class TimeManager : Singleton<TimeManager> {
 
     [SerializeField] private TimeCanvas _iTimeCanvas;
+    [SerializeField] private float timeMultiplier = 1.0f;
 
     private class ScheduledEvent : IComparable<ScheduledEvent> {
         public float _TriggerTime;
@@ -27,7 +28,7 @@ public class TimeManager : Singleton<TimeManager> {
     private void Update() {
         if (_isPaused) return;
 
-        _currentTime += Time.deltaTime;
+        _currentTime += Time.deltaTime * timeMultiplier;
 
         // update canvas
         _iTimeCanvas.SetTime(_currentTime);

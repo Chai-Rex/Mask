@@ -197,6 +197,7 @@ GameObject:
   - component: {fileID: 503361702403170245}
   - component: {fileID: 6976054915486723924}
   - component: {fileID: 1534367544267574593}
+  - component: {fileID: 5832964030078518388}
   m_Layer: 10
   m_Name: BaseNPC
   m_TagString: NPC
@@ -260,7 +261,7 @@ MonoBehaviour:
     rolloffMode: 0
   soundClips: []
   _iProceduralWalkAnimation: {fileID: 0}
-  moveSpeed: 2.5
+  moveSpeed: 3.5
   npcLocationPoints: []
   npcTimePoints:
   - npcLocationState: 0
@@ -279,6 +280,7 @@ MonoBehaviour:
     npcLocationTime: 420
   - npcLocationState: 7
     npcLocationTime: 480
+  dialogueHandler: {fileID: 0}
   isButler: 0
   isLoop: 0
   startMoveTime: 5
@@ -451,6 +453,33 @@ MonoBehaviour:
   _iHeadTransform: {fileID: 4460415535426358233}
   _iEmotionPreset: {fileID: 11400000, guid: d7cff1fa385e01b4fad216ba5dcf064d, type: 2}
   _iAnimationProfile: {fileID: 11400000, guid: 17dce80549ffae041bb00ece86221a0a, type: 2}
+--- !u!54 &5832964030078518388
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2906133591313795411}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &3528026927776078272
 GameObject:
   m_ObjectHideFlags: 0
