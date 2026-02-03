@@ -279,9 +279,15 @@ MonoBehaviour:
     npcLocationTime: 420
   - npcLocationState: 7
     npcLocationTime: 480
+  isButler: 0
   isLoop: 0
   startMoveTime: 5
   delayBetweenMoves: 5
+  butlerFinalLocation:
+    npcLocationState: 0
+    npcTransforms: []
+  PlatterWithDrinks: {fileID: 0}
+  RightHand: {fileID: 0}
 --- !u!136 &1483510424292181035
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -413,7 +419,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  _iNPCMoveComponent: {fileID: 4680610497886866286}
 --- !u!114 &6976054915486723924
 MonoBehaviour:
   m_ObjectHideFlags: 0

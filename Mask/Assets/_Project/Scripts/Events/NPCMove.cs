@@ -90,10 +90,14 @@ public class NPCMove : BaseTimeEvent
 
     protected NavMeshAgent navMeshAgent;
 
-    [Header("If Loop is Enabled, Ignores NPC Time Points and Just Loops Through NPC Location Points")]
+    [Header("IS BUTLER: If Loop is Enabled, Ignores NPC Time Points and Just Loops Through NPC Location Points")]
+    [SerializeField] private bool isButler = false;
     [SerializeField] private bool isLoop = false;
     [SerializeField] private float startMoveTime = 5.0f;
     [SerializeField] private float delayBetweenMoves = 5.0f;
+    [SerializeField] private NPCLocationPoints butlerFinalLocation = new NPCLocationPoints();
+    [SerializeField] private GameObject PlatterWithDrinks;
+    [SerializeField] private GameObject RightHand;
 
     private bool isPausedNPCMovement = false;
 
@@ -114,6 +118,11 @@ public class NPCMove : BaseTimeEvent
     {
         LevelManager.Instance.GetDialogueHandler().AddNPCMovementComponent(this);
 
+        if (isButler)
+        {
+            TimeManager.Instance.ScheduleAt(480.0f, OnButlerFinalMove);
+        }
+
         currentNPCLocationState = ENPCLocationState.PointOne;
 
         if (npcTimePoints.Count == 0) { return; }
@@ -129,6 +138,28 @@ public class NPCMove : BaseTimeEvent
                 TimeManager.Instance.ScheduleAt(npcTimePoint.npcLocationTime, ActivateTimeEvent);
             }
         }
+    }
+
+    private void OnButlerFinalMove()
+    {
+        StopAllCoroutines();
+        collectionPointsCoroutine = null;
+        pointCoroutine = null;
+        npcMoveCoroutine = null;
+
+        isLoop = false;
+        npcLocationDictionary.Clear();
+        npcLocationDictionary.Add(butlerFinalLocation.npcLocationState, butlerFinalLocation.npcTransforms);
+        currentNPCTimePointIndex = 0;
+        currentNPCLocationState = npcTimePoints[currentNPCTimePointIndex].npcLocationState;
+        if (PlatterWithDrinks && RightHand)
+        {
+            PlatterWithDrinks.SetActive(false);
+            RightHand.transform.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
+            RightHand.transform.localRotation = Quaternion.identity;
+        }
+
+        ActivateTimeEvent();
     }
 
     protected override void ActivateTimeEvent()

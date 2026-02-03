@@ -1,5 +1,41 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4208006160794359668
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5145453506230576142}
+  m_Layer: 0
+  m_Name: PlatterWithDrinks
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5145453506230576142
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4208006160794359668}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 3409889786853103354}
+  - {fileID: 4263589118265162161}
+  - {fileID: 4560081779518594534}
+  - {fileID: 7962594563625703403}
+  - {fileID: 4928749740952766379}
+  m_Father: {fileID: 7465173341465671001}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6112999990542038584
 GameObject:
   m_ObjectHideFlags: 0
@@ -32,7 +68,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7465173341465671001}
+  m_Father: {fileID: 5145453506230576142}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2727172695743526699
 MeshFilter:
@@ -104,7 +140,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -118,8 +154,12 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 7465173341465671001}
+    m_TransformParent: {fileID: 5145453506230576142}
     m_Modifications:
+    - target: {fileID: 1191486473694107621, guid: d4d6bd2a898738f4e996688b4c250ef7, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
     - target: {fileID: 2433587022945872421, guid: d4d6bd2a898738f4e996688b4c250ef7, type: 3}
       propertyPath: isPoison
       value: 1
@@ -188,8 +228,12 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 7465173341465671001}
+    m_TransformParent: {fileID: 5145453506230576142}
     m_Modifications:
+    - target: {fileID: 1191486473694107621, guid: 9d9fa23b041c8ac429bf0df7fa601716, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
     - target: {fileID: 2433587022945872421, guid: 9d9fa23b041c8ac429bf0df7fa601716, type: 3}
       propertyPath: isPoison
       value: 1
@@ -258,8 +302,12 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 7465173341465671001}
+    m_TransformParent: {fileID: 5145453506230576142}
     m_Modifications:
+    - target: {fileID: 1191486473694107621, guid: d4d6bd2a898738f4e996688b4c250ef7, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
     - target: {fileID: 2433587022945872421, guid: d4d6bd2a898738f4e996688b4c250ef7, type: 3}
       propertyPath: isPoison
       value: 1
@@ -439,9 +487,21 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4680610497886866286, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
+      propertyPath: isButler
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4680610497886866286, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
+      propertyPath: RightHand
+      value: 
+      objectReference: {fileID: 6017036661164625460}
+    - target: {fileID: 4680610497886866286, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
       propertyPath: startMoveTime
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4680610497886866286, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
+      propertyPath: PlatterWithDrinks
+      value: 
+      objectReference: {fileID: 4208006160794359668}
     - target: {fileID: 4680610497886866286, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
       propertyPath: delayBetweenMoves
       value: 5
@@ -507,21 +567,14 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 355573954978882221, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 3409889786853103354}
-    - targetCorrespondingSourceObject: {fileID: 355573954978882221, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4263589118265162161}
-    - targetCorrespondingSourceObject: {fileID: 355573954978882221, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4560081779518594534}
-    - targetCorrespondingSourceObject: {fileID: 355573954978882221, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7962594563625703403}
-    - targetCorrespondingSourceObject: {fileID: 355573954978882221, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4928749740952766379}
+      addedObject: {fileID: 5145453506230576142}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
+--- !u!1 &6017036661164625460 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3528026927776078272, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
+  m_PrefabInstance: {fileID: 7167161300850792436}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7465173341465671001 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 355573954978882221, guid: 9e47e6a2cf5216941ad43cf671786b69, type: 3}
@@ -544,8 +597,12 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 7465173341465671001}
+    m_TransformParent: {fileID: 5145453506230576142}
     m_Modifications:
+    - target: {fileID: 1191486473694107621, guid: 9d9fa23b041c8ac429bf0df7fa601716, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 1024
+      objectReference: {fileID: 0}
     - target: {fileID: 2433587022945872421, guid: 9d9fa23b041c8ac429bf0df7fa601716, type: 3}
       propertyPath: isPoison
       value: 1
