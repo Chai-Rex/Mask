@@ -289,3 +289,4 @@ MonoBehaviour:
   isBadChandelier: 0
   chandelierFallTime: 240
   beforeFallDelay: 2
+  deathCollider: {fileID: 448328105476459832}

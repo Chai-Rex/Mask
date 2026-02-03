@@ -16,6 +16,7 @@ public class Chandelier : BaseTimeEvent
     private BoxCollider boxCollider;
 
     [SerializeField] private float beforeFallDelay = 2.0f;
+    [SerializeField] private BoxCollider deathCollider;
 
     private Coroutine beforeFallCoroutine;
 
@@ -36,6 +37,10 @@ public class Chandelier : BaseTimeEvent
         base.ActivateTimeEvent();
 
         canFall.SetValueAndUpdateBlackboard(true);
+        if (deathCollider)
+        {
+            deathCollider.enabled = true;
+        }
     }
 
     private IEnumerator OnBeforeFall()
@@ -105,6 +110,8 @@ public class Chandelier : BaseTimeEvent
 
     public void StartFalling()
     {
+        if (!canFall.Value) { return; }
+
         if (!canStartFalling)
         {
             canStartFalling = true;

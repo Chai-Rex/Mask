@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TimeManager
   _iTimeCanvas: {fileID: 3556636348124159372}
-  timeMultiplier: 1
+  timeMultiplier: 1.75
 --- !u!1001 &4487341801901175555
 PrefabInstance:
   m_ObjectHideFlags: 0

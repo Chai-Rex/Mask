@@ -3237,10 +3237,6 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4935210215538141434, guid: a606e884a4375954d8bbfe35913b6dcb, type: 3}
-      propertyPath: timeMultiplier
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5281874015030085490, guid: a606e884a4375954d8bbfe35913b6dcb, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -4075,6 +4071,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2140808975}
     m_Modifications:
+    - target: {fileID: 58436937162330132, guid: fc4576c991216354689deff48dfc770d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 14.8
+      objectReference: {fileID: 0}
     - target: {fileID: 511531864036218899, guid: fc4576c991216354689deff48dfc770d, type: 3}
       propertyPath: m_Name
       value: NateNPCLocations
@@ -4118,6 +4118,10 @@ PrefabInstance:
     - target: {fileID: 3053248824133511548, guid: fc4576c991216354689deff48dfc770d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438282403305662132, guid: fc4576c991216354689deff48dfc770d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 15.59
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

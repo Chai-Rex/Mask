@@ -198,6 +198,7 @@ GameObject:
   - component: {fileID: 6976054915486723924}
   - component: {fileID: 1534367544267574593}
   - component: {fileID: 5832964030078518388}
+  - component: {fileID: 2744223794204787671}
   m_Layer: 10
   m_Name: BaseNPC
   m_TagString: NPC
@@ -261,7 +262,7 @@ MonoBehaviour:
     rolloffMode: 0
   soundClips: []
   _iProceduralWalkAnimation: {fileID: 0}
-  moveSpeed: 3.5
+  moveSpeed: 5
   npcLocationPoints: []
   npcTimePoints:
   - npcLocationState: 0
@@ -480,6 +481,29 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!136 &2744223794204787671
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2906133591313795411}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1 &3528026927776078272
 GameObject:
   m_ObjectHideFlags: 0
