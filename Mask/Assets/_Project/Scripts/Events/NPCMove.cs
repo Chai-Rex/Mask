@@ -175,7 +175,10 @@ public class NPCMove : BaseTimeEvent
 
             if (npcLocationDictionary.Count != 0 && npcLocationDictionary.ContainsKey(currentNPCLocationState) && npcTimePoints.Count != 0)
             {
-                npcMoveCoroutine = StartCoroutine(OnNPCMove());
+                if (navMeshAgent.isOnNavMesh)
+                {
+                    npcMoveCoroutine = StartCoroutine(OnNPCMove());
+                }
             }
         }
     }
@@ -219,7 +222,11 @@ public class NPCMove : BaseTimeEvent
     {
         navMeshAgent.isStopped = false;
 
-        navMeshAgent.SetDestination(npcLocationDictionary[currentNPCLocationState][_currentPoint].position);
+        if (navMeshAgent.isOnNavMesh)
+        {
+            navMeshAgent.SetDestination(npcLocationDictionary[currentNPCLocationState][_currentPoint].position);
+
+        }
 
         // move animation start
         _iProceduralWalkAnimation.StartWalking(moveSpeed);
