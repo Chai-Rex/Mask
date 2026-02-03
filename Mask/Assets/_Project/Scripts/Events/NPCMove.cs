@@ -90,6 +90,8 @@ public class NPCMove : BaseTimeEvent
 
     protected NavMeshAgent navMeshAgent;
 
+    [SerializeField] private DialogueHandler dialogueHandler;
+
     [Header("IS BUTLER: If Loop is Enabled, Ignores NPC Time Points and Just Loops Through NPC Location Points")]
     [SerializeField] private bool isButler = false;
     [SerializeField] private bool isLoop = false;
@@ -116,7 +118,10 @@ public class NPCMove : BaseTimeEvent
 
     private void Start()
     {
-        LevelManager.Instance.GetDialogueHandler().AddNPCMovementComponent(this);
+        if (dialogueHandler)
+        {
+            dialogueHandler.AddNPCMovementComponent(this);
+        }
 
         if (isButler)
         {

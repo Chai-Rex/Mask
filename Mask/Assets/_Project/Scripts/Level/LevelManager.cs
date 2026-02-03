@@ -8,8 +8,6 @@ using UtilitySingletons;
 public class LevelManager : PersistentSingleton<LevelManager> {
     [SerializeField] private GameObject _iLoadingCanvas;
     [SerializeField] private Image _iProgressImage;
-    [SerializeField] private GameObject _playerObject;
-    [SerializeField] private DialogueHandler _dialogueHandler;
 
     public enum Levels {
         MainMenuScene,
@@ -46,16 +44,7 @@ public class LevelManager : PersistentSingleton<LevelManager> {
         }
 
         scene.allowSceneActivation = true;
+
         _iLoadingCanvas.gameObject.SetActive(false);
-    }
-
-    public GameObject GetPlayerObject()
-    {
-        return _playerObject;
-    }
-
-    public DialogueHandler GetDialogueHandler()
-    {
-        return _dialogueHandler;
     }
 }

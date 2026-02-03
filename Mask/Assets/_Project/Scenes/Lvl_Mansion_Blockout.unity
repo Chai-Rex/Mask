@@ -410,6 +410,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 2140808975}
     m_Modifications:
     - target: {fileID: 2380917268074047537, guid: 44171b7b5dd083542bb245124f77b5e5, type: 3}
+      propertyPath: dialogueHandler
+      value: 
+      objectReference: {fileID: 1746617389}
+    - target: {fileID: 2380917268074047537, guid: 44171b7b5dd083542bb245124f77b5e5, type: 3}
       propertyPath: npcTimePoints.Array.size
       value: 8
       objectReference: {fileID: 0}
@@ -1649,6 +1653,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1210036092}
     - target: {fileID: 4260269491426852372, guid: 2ae0b532e12deda44a58a33d131d6c20, type: 3}
+      propertyPath: dialogueHandler
+      value: 
+      objectReference: {fileID: 1746617389}
+    - target: {fileID: 4260269491426852372, guid: 2ae0b532e12deda44a58a33d131d6c20, type: 3}
       propertyPath: npcLocationPoints.Array.size
       value: 8
       objectReference: {fileID: 0}
@@ -2156,6 +2164,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1210036092}
     - target: {fileID: 2107826450234138534, guid: d80fbb0f143404449b494976b3677d52, type: 3}
+      propertyPath: dialogueHandler
+      value: 
+      objectReference: {fileID: 1746617389}
+    - target: {fileID: 2107826450234138534, guid: d80fbb0f143404449b494976b3677d52, type: 3}
       propertyPath: npcLocationPoints.Array.size
       value: 8
       objectReference: {fileID: 0}
@@ -2457,6 +2469,10 @@ PrefabInstance:
       propertyPath: _iDialogueCanvas
       value: 
       objectReference: {fileID: 1210036092}
+    - target: {fileID: 4233502977240228508, guid: 9a6bea3c06b1a824fa15ad153305d09e, type: 3}
+      propertyPath: dialogueHandler
+      value: 
+      objectReference: {fileID: 1746617389}
     - target: {fileID: 4233502977240228508, guid: 9a6bea3c06b1a824fa15ad153305d09e, type: 3}
       propertyPath: npcLocationPoints.Array.size
       value: 8
@@ -4757,6 +4773,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4367884378949939375, guid: e87f984baedd2994e9fa1241752449ab, type: 3}
   m_PrefabInstance: {fileID: 2007815276}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1746617389 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4897912698217570490, guid: a606e884a4375954d8bbfe35913b6dcb, type: 3}
+  m_PrefabInstance: {fileID: 1210036090}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cba49c58964521b49a7c719e52d791dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueHandler
 --- !u!4 &1756855731 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 557064374874548787, guid: e87f984baedd2994e9fa1241752449ab, type: 3}
@@ -5608,6 +5635,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2140808975}
     m_Modifications:
+    - target: {fileID: 2558608947915365530, guid: 777e88a77082a04498b087deb4368d11, type: 3}
+      propertyPath: dialogueHandler
+      value: 
+      objectReference: {fileID: 1746617389}
     - target: {fileID: 2558608947915365530, guid: 777e88a77082a04498b087deb4368d11, type: 3}
       propertyPath: npcLocationPoints.Array.size
       value: 4
